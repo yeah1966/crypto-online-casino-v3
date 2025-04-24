@@ -1,0 +1,7 @@
+/* Force white text on black background for input fields, including autofill */
+.forceWhiteInput {
+  background: #000 !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #fff !important;
+}

@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&family=Luckiest+Guy&display=swap');
+
+body {
+  @apply text-white font-casino;
+}
+
+button {
+  @apply bg-gradient-to-r from-neon-yellow via-neon-orange to-neon-red rounded-full shadow-neon hover:scale-105 transition-transform;
+}
+
+h1, h2, h3 {
+  @apply uppercase text-neon-yellow drop-shadow;
+}
+
+.card {
+  @apply border-neon-yellow shadow-lg hover:scale-105 hover:ring;
+}
+
+.neon-button {
+  box-shadow: 0 0 10px #ff9800, 0 0 20px #ff5722, 0 0 30px #ffeb3b;
+  transition: all 0.3s ease-in-out;
+}
+.neon-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ffeb3b, 0 0 40px #ff9800, 0 0 60px #ff5722;
+}
+.glow {
+  text-shadow: 0 0 5px #facc15, 0 0 10px #f59e0b;
+}
+.drop-shadow-neon {
+  filter: drop-shadow(0 0 8px #ffdf00) drop-shadow(0 0 16px #ff1493);
+}
+.text-neon-pink {
+  color: #ff1493;
+}
+@keyframes confetti {
+  0% { opacity: 0; transform: translateY(-40px) scale(0.5); }
+  10% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(300px) scale(1.2); }
+}
+.animate-confetti {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+  background: repeating-linear-gradient(90deg, #ffeb3b 0 10px, #ff1493 10px 20px, #ff9800 20px 30px, #00e6e6 30px 40px, #ffeb3b 40px 50px);
+  opacity: 0.7;
+  animation: confetti 1.2s cubic-bezier(0.4,0,0.2,1) 1;
+}
+@keyframes pulse-spin {
+  0%, 100% {
+    filter: drop-shadow(0 0 16px #ffb800) brightness(1.1);
+    opacity: 1;
+  }
+  50% {
+    filter: drop-shadow(0 0 32px #fff700) brightness(1.4);
+    opacity: 0.7;
+  }
+}
+.animate-pulse-spin {
+  animation: pulse-spin 1.1s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@layer utilities {
+  .neon-glow {
+    text-shadow:
+      0 0 5px #ffd700,
+      0 0 10px #ff0080,
+      0 0 20px #ff0080,
+      0 0 40px #ff0080;
+  }
+  .neon-navbar-btn {
+    box-shadow: 0 0 8px #a21caf, 0 0 16px #7c3aed, 0 0 32px #a21caf;
+  }
+  .neon-navbar-btn:hover {
+    box-shadow: 0 0 16px #f472b6, 0 0 32px #a21caf, 0 0 64px #f472b6;
+    border-color: #f472b6;
+  }
+}
+
+/* Fix voor autofill-wit-op-wit bug */
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #000000 !important;
+}

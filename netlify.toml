@@ -1,0 +1,10 @@
+# Netlify configuration for crypto-online-casino.com
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[dev]
+  command = "npm run dev"
+
+[functions]
+  directory = "netlify/functions"
