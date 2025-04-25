@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
-// i18n-config verwijderd ivm static export beperking
 const nextConfig = {
-  output: 'export',
+  // output: 'export', // ❌ verwijderen of uitcommenten
   async redirects() {
     return [
       {
