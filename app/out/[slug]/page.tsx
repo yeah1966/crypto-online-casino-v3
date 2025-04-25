@@ -1,17 +1,14 @@
 import { redirect } from 'next/navigation';
 import affiliateLinks from '../../../data/affiliateLinks.json';
 
-type Props = {
-  params: { slug: string }
-};
-
-export default function OutPage({ params }: Props) {
+export default function OutPage({ params }) {
   const url = (affiliateLinks as Record<string, string>)[params.slug];
 
   if (url) {
-    redirect(url);
+    redirect(url); // server-side redirect
   }
 
+  // Geen geldige affiliate link gevonden
   return (
     <div style={{ color: 'white', textAlign: 'center', marginTop: 80 }}>
       <h1>Casino niet gevonden: {params.slug}</h1>
