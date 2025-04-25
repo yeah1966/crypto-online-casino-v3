@@ -35,7 +35,7 @@ export default function Home() {
               🎰 TOP 10 CRYPTO CASINOS
             </h1>
             <p className="mb-8 text-xl text-neon-pink text-center font-casino max-w-2xl mx-auto">
-              Ontdek de beste crypto casino’s van dit moment, spin het wheel en laat het lot bepalen waar je speelt!
+              Discover the best crypto casinos of the moment, spin the wheel and let fate decide where you play!
             </p>
           </div>
           {/* Wheel of Fortune Las Vegas style */}
