@@ -26,7 +26,7 @@ const segments = [
     name: "Betzard",
     slug: "betzard",
     img: "betzard.png",
-    url: "https://www.betzard.com/?ref=YOUR_ID",
+    url: "https://7bit.partners/pe27a3a44",
   },
   {
     name: "Cloudbet",
