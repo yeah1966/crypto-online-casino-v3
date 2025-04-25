@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { topCasinos } from "../lib/topCasinos";
+import affiliateLinks from "../data/affiliateLinks.json";
 
 export default function Top10List() {
   return (
@@ -24,11 +25,14 @@ export default function Top10List() {
             <div className="text-green-400 font-semibold">{casino.bonus}</div>
             <p className="text-white text-sm mt-1">{casino.details}</p>
           </div>
-          <Link href={`/out/${casino.slug}`}>
-            <span className="bg-gradient-to-r from-yellow-300 to-pink-500 text-white font-bold py-2 px-4 rounded-xl hover:scale-105 transition">
-              Play Now
-            </span>
-          </Link>
+          <a
+            href={affiliateLinks[casino.slug]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-yellow-300 to-pink-500 text-white font-bold py-2 px-4 rounded-xl hover:scale-105 transition"
+          >
+            Play Now
+          </a>
         </div>
       ))}
     </section>
