@@ -1,27 +1,12 @@
 import { redirect } from 'next/navigation';
-import fs from 'fs';
-import path from 'path';
+import affiliateLinks from '../../../data/affiliateLinks.json';
 
 type Props = {
   params: { slug: string }
 };
 
-export default async function OutPage({ params }: Props) {
-  const filePath = path.join(process.cwd(), 'data', 'affiliateLinks.json');
-  let links = {};
-
-  try {
-    const raw = fs.readFileSync(filePath, 'utf-8');
-    links = JSON.parse(raw);
-  } catch (e) {
-    return (
-      <div style={{ color: 'white', textAlign: 'center', marginTop: 80 }}>
-        <h1>Affiliate links niet gevonden</h1>
-      </div>
-    );
-  }
-
-  const url = (links as Record<string, string>)[params.slug];
+export default function OutPage({ params }: Props) {
+  const url = (affiliateLinks as Record<string, string>)[params.slug];
 
   if (url) {
     redirect(url);
