@@ -39,7 +39,7 @@ export default function Top10List() {
               <div className="text-pink-300 text-sm font-bold mb-1">{badges[index]}</div>
             )}
             <div className="text-yellow-400 font-extrabold text-2xl">
-              #{index + 1} {casino.name}
+            #{index + 1} {index === 0 ? '👑' : index === 1 ? '🥈' : index === 2 ? '🥉' : ''} {casino.name}
             </div>
             <div className="text-pink-400 mt-1">{casino.description}</div>
             <div className="text-green-400 font-semibold mt-1">{casino.bonus}</div>
