@@ -38,6 +38,3 @@ export default function Top10List() {
     </section>
   );
 }
-
-
-export default Top10List;
