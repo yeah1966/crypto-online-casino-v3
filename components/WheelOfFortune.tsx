@@ -138,7 +138,7 @@ const WheelOfFortune = forwardRef(function WheelOfFortune(props, ref) {
     <div className="flex flex-col items-center justify-center py-8">
       {/* Audio element for ratel sound */}
       <audio ref={audioRef} src="/sounds/reel-spin.mp3" preload="auto" />
-      <div className="relative w-72 h-72 md:w-96 md:h-96 mb-8 select-none">
+      <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] shadow-[0_0_20px_5px_gold] animate-pulse">
         {/* Wheel */}
         <div
           ref={wheelRef}
