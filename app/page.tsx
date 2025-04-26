@@ -47,11 +47,15 @@ export default function Home() {
           </div>
           {/* Top 10 List hieronder, in Las Vegas neon stijl */}
           <div className="max-w-5xl mx-auto px-4 py-12 space-y-6">
-            <h2 className="text-4xl text-yellow-400 font-bold text-center glow mb-8 font-casino uppercase drop-shadow-neon animate-pulse">
-              🎰 Top 10 Crypto Casinos
-            </h2>
-            <Top10List />
-          </div>
+  <div className="flex justify-center mt-8">
+    <img
+      src="/images/top10-crypto-casinos-2025.png"
+      alt="Top 10 Crypto Casinos 2025"
+      className="w-full max-w-3xl animate-fade-in-up drop-shadow-[0_0_20px_gold]"
+    />
+  </div>
+  <Top10List />
+</div>
         </div>
       </div>
       <Footer />
