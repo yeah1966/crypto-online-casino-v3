@@ -20,7 +20,7 @@ const SpinButton: React.FC<SpinButtonProps> = ({ onClick }: SpinButtonProps) => 
       <img
         src={`/images/${isLight ? 'spin-light.png' : 'spin-dark.png'}`}
         alt="Spin"
-        className="w-full cursor-pointer"
+        className="bg-pink-500 hover:bg-yellow-400 text-black font-bold py-3 px-8 rounded-full shadow-2xl animate-bounce transition-all duration-300"
       />
     </button>
   );
