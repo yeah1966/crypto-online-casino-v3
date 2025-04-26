@@ -1,6 +1,4 @@
-"use client";
-
-import React from "react";
+'use client';
 
 type SpinButtonProps = {
   onClick: () => void;
@@ -10,10 +8,9 @@ export default function SpinButton({ onClick }: SpinButtonProps) {
   return (
     <button
       onClick={onClick}
-      className="relative px-12 py-4 text-3xl font-extrabold uppercase text-white bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 rounded-full shadow-[0_0_20px_gold] hover:scale-110 hover:shadow-[0_0_30px_gold] transition-all duration-300 ease-in-out animate-pulse"
+      className="px-8 py-4 text-xl font-bold text-white bg-gradient-to-r from-pink-500 to-yellow-400 rounded-full shadow-lg hover:scale-105 transition-all duration-300 animate-pulse"
     >
-      <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 opacity-50 rounded-full blur-md"></span>
-      <span className="relative z-10">🎰 Spin</span>
+      🎰 Spin the Wheel
     </button>
   );
 }
