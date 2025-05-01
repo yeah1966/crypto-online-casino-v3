@@ -178,7 +178,6 @@ export default function VegasHeader() {
         <MobileMenu
           open={isMobileMenuOpen}
           onClose={() => setIsMobileMenuOpen(false)}
-          navItems={navItems}
         />
       </nav>
       {/* Branding for desktop */}
