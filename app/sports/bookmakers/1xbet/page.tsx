@@ -65,12 +65,6 @@ export default function OneXBetBookmaker() {
       logo="/logos/1xbet.png"
       title="1XBET SPORTSBOOK — CRYPTO BETTING REVIEW 2025"
       description="1xBet is a world-renowned crypto sportsbook and casino with a huge selection of sports betting, casino games, and bonuses. Perfect for crypto bettors who value speed and versatility."
-      pros={[
-        "Huge range of sports betting markets",
-        "Fast crypto deposits & withdrawals",
-        "Big bonuses and promotions",
-        "24/7 live support"
-      ]}
       cons={[
         "Site can be overwhelming for beginners",
         "Some country restrictions"
