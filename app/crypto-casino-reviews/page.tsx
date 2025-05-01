@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Head from 'next/head';
 import { FaStar, FaBolt, FaGift, FaShieldAlt, FaTrophy, FaDice, FaCoins } from "react-icons/fa";
 import { casinos } from './casinosData';
 
@@ -13,8 +14,40 @@ const getStars = (rating: number) => {
 }
 
 export default function ReviewsPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Crypto Casino Reviews 2025",
+    "itemListElement": casinos.map((casino, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": `https://www.jouwsite.nl/crypto-casino-reviews/${casino.slug}`,
+      "name": casino.name,
+      "image": casino.logo,
+      "description": casino.description
+    }))
+  };
   return (
-    <main className="relative min-h-screen pt-0 pb-16 px-4 text-white overflow-hidden">
+    <>
+      <Head>
+        <title>Crypto Casino Reviews 2025 | Top Bitcoin &amp; Crypto Casinos</title>
+        <meta name="description" content="Discover the best crypto casinos of 2025. Indepth reviews, bonuses, instant payouts, and full transparency. Only the top-rated make our list!" />
+        <link rel="canonical" href="https://www.jouwsite.nl/crypto-casino-reviews" />
+        {/* Open Graph / Facebook */}
+        <meta property="og:title" content="Crypto Casino Reviews 2025" />
+        <meta property="og:description" content="The best crypto casinos reviewed. Bonuses, instant payouts &amp; full transparency." />
+        <meta property="og:image" content="https://www.jouwsite.nl/images/crypto-casino-online.png" />
+        <meta property="og:url" content="https://www.jouwsite.nl/crypto-casino-reviews" />
+        <meta property="og:type" content="website" />
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Crypto Casino Reviews 2025" />
+        <meta name="twitter:description" content="The best crypto casinos reviewed. Bonuses, instant payouts &amp; full transparency." />
+        <meta name="twitter:image" content="https://www.jouwsite.nl/images/crypto-casino-online.png" />
+        {/* Structured Data */}
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      </Head>
+      <main className="relative min-h-screen pt-0 pb-16 px-4 text-white overflow-hidden">
       {/* VEGAS BACKGROUND + OVERLAY */}
       <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-center bg-no-repeat" aria-hidden="true" />
       <div className="fixed inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
@@ -73,5 +106,6 @@ export default function ReviewsPage() {
         </div>
       </div>
     </main>
+    </>
   );
 }
