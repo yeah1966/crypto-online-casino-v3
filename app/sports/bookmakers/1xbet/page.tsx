@@ -66,7 +66,6 @@ export default function OneXBetBookmaker() {
       title="1XBET SPORTSBOOK — CRYPTO BETTING REVIEW 2025"
       description="1xBet is een wereldberoemd crypto sportsbook en casino met een gigantisch aanbod aan sportweddenschappen, casinospellen en bonussen. Perfect voor crypto bettors die snelheid en veelzijdigheid zoeken."
       affiliateUrl="https://refpa3740576.top/L?tag=d_3915280m_1599c_&site=3915280&ad=1599"
-      affiliateLabel="Bet at 1xBet"
       introText="1xBet is a world-renowned bookmaker and crypto casino, offering a massive range of sports betting markets, casino games, and generous bonuses. Bet and play with Bitcoin, Ethereum, and more!"
       reviewText={`1xBet stands out as one of the most complete online betting platforms, with thousands of sports events, live betting, and a huge selection of slots and table games.<br><br>Crypto users benefit from instant deposits and fast withdrawals with Bitcoin, Ethereum, and other coins. The bonus offers are among the best in the industry, and regular promotions keep things exciting.<br><br>The site features a modern interface, mobile-friendly design, and 24/7 customer support. Whether you're into sports betting or casino action, 1xBet has it all – all in one place!`}
       pros={[
