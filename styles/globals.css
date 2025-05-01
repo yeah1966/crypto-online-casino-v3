@@ -52,6 +52,12 @@ h1, h2, h3 {
   opacity: 0.7;
   animation: confetti 1.2s cubic-bezier(0.4,0,0.2,1) 1;
 }
+
+/* VERWIJDER DE OUDE CONFETTI OVERLAY */
+.animate-confetti {
+  display: none !important;
+}
+
 @keyframes pulse-spin {
   0%, 100% {
     filter: drop-shadow(0 0 16px #ffb800) brightness(1.1);
@@ -92,3 +98,30 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: #000000 !important;
 }
 
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(3600deg); /* 10 keer rond */
+  }
+}
+.animate-spin-slow {
+  animation: spinSlow 5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+/* ========================= */
+/* Wheel Spin Animation Only */
+/* ========================= */
+
+@keyframes spinSlow2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spinSlow2 {
+  animation: spinSlow2 2s linear infinite;
+}

@@ -1,130 +1,148 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect, useRef } from 'react';
+import { casinos } from '../crypto-casino-reviews/casinosData';
 import Link from "next/link";
 
+// Simple confetti function (no npm needed)
+function fireConfetti(canvas) {
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width = window.innerWidth;
+  const H = canvas.height = window.innerHeight;
+  const confettiCount = 120;
+  const confetti = Array.from({ length: confettiCount }, () => ({
+    x: Math.random() * W,
+    y: Math.random() * -H,
+    r: 6 + Math.random() * 8,
+    d: 8 + Math.random() * 8,
+    color: `hsl(${Math.floor(Math.random()*360)},100%,60%)`,
+    tilt: Math.random() * 10 - 10,
+    tiltAngle: 0,
+    tiltAngleIncremental: (Math.random() * 0.07) + 0.05
+  }));
+  let angle = 0;
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    angle += 0.01;
+    confetti.forEach(c => {
+      c.y += (Math.cos(angle + c.d) + 1 + c.r/2) * 0.8;
+      c.x += Math.sin(angle);
+      c.tiltAngle += c.tiltAngleIncremental;
+      c.tilt = Math.sin(c.tiltAngle) * 15;
+      if (c.y > H) {
+        c.y = -10;
+        c.x = Math.random() * W;
+      }
+      ctx.beginPath();
+      ctx.lineWidth = c.r;
+      ctx.strokeStyle = c.color;
+      ctx.moveTo(c.x + c.tilt + c.r/3, c.y);
+      ctx.lineTo(c.x + c.tilt, c.y + c.tilt + c.d/2);
+      ctx.stroke();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
 export default function FreeSpinsPage() {
+  const confettiRef = useRef(null);
+  useEffect(() => {
+    fireConfetti(confettiRef.current);
+    // Responsive resize
+    const handleResize = () => fireConfetti(confettiRef.current);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const freeSpinCasinos = casinos.filter(
+    c => (c.noDepositBonus || (c.noDepositNote && c.noDepositNote.toLowerCase().includes('free spin')))
+  );
+  const sorted = [...freeSpinCasinos].sort((a, b) => b.rating - a.rating);
+
   return (
-    <main className="relative max-w-4xl mx-auto px-4 py-12 pt-36 text-white">
+    <main className="relative max-w-4xl mx-auto px-4 py-4 pt-6 text-white">
+      {/* Confetti Canvas */}
+      <canvas ref={confettiRef} className="fixed inset-0 w-full h-full pointer-events-none z-10" aria-hidden="true" />
       {/* VEGAS BACKGROUND + OVERLAY */}
-      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-center bg-no-repeat" aria-hidden="true" />
+      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-center bg-no-repeat animate-bg-pan" aria-hidden="true" />
       <div className="fixed inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
-      {/* HERO SECTION */}
-      <section className="mb-10 text-center animate-fade-in-up">
-        <h1 className="text-5xl font-extrabold mb-4 drop-shadow-[0_0_15px_gold] uppercase text-yellow-300 neon-glow flex items-center justify-center gap-3">
-          <span className="text-4xl">🎰</span>
-          Free Spins Overview
-        </h1>
-        <p className="text-lg text-white/90 mb-4 max-w-2xl mx-auto">
-          Free spins are one of the most exciting ways to play at crypto casinos — they’re fun, free, and full of winning potential! Whether you're testing a new slot or just spinning for thrills, free spins let you enjoy real gameplay without spending your own crypto.
-        </p>
-        <div className="bg-blue-900/80 border-l-4 border-blue-400 rounded-lg p-4 mb-4 max-w-2xl mx-auto text-left shadow-lg neon-glow">
-          <div className="flex items-start gap-2">
-            <span className="text-2xl">🧠</span>
+      {/* MAIN TRANSPARENT CONTAINER */}
+      <div className="relative z-20 max-w-3xl mx-auto rounded-3xl bg-gradient-to-br from-black/80 via-blue-900/80 to-purple-900/80 shadow-2xl p-8 space-y-10 border border-blue-400/40 mt-2 neon-glow">
+        {/* HERO SECTION */}
+        <section className="animate-fade-in-up text-center">
+          <div className="flex items-center justify-center gap-4 mb-3">
+            <span className="text-5xl animate-spin-slow">🎰</span>
+            <h1 className="text-3xl sm:text-5xl font-extrabold drop-shadow-[0_0_25px_gold] uppercase text-blue-300 tracking-tight bg-gradient-to-r from-yellow-400 via-blue-400 to-purple-500 text-transparent bg-clip-text neon-glow">Crypto Casino Free Spins</h1>
+            <span className="text-5xl animate-bounce">🪙</span>
+          </div>
+          <p className="text-lg text-white/80 mt-2 mb-1 max-w-2xl mx-auto text-center animate-fade-in">Free spins are the most exciting way to win real crypto at online casinos — try your luck, risk-free, and keep what you win!</p>
+          <div className="flex justify-center gap-2 mt-2">
+            <img src="/icons/btc.svg" alt="BTC" width={28} height={28} style={{width:'28px',height:'28px'}} className="animate-pulse inline" />
+            <img src="/icons/eth.svg" alt="ETH" width={28} height={28} style={{width:'28px',height:'28px'}} className="animate-pulse inline" />
+            <img src="/icons/ltc.svg" alt="LTC" width={28} height={28} style={{width:'28px',height:'28px'}} className="animate-pulse inline" />
+          </div>
+        </section>
+        {/* INFO BOXES */}
+        <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fade-in-up">
+          <div className="bg-blue-900/70 border-l-4 border-blue-400 rounded-xl p-4 shadow-lg flex items-start gap-3">
+            <span className="text-3xl">🧠</span>
             <div>
-              <span className="font-bold text-blue-300">But here’s a pro tip:</span>
-              <p className="text-white/90 mt-1">
-                Free spins bonuses often come with specific terms and conditions. Some casinos require wagering the winnings multiple times before you can withdraw them. Others restrict which games you can use the spins on — like Book of Dead or Wild Spin only.<br />
-                <span className="block mt-2">👉 Always check the bonus terms first. Knowing the rules means no nasty surprises when it’s time to cash out your winnings!</span>
-              </p>
+              <div className="font-bold text-blue-300 mb-1">Pro Tip</div>
+              <p className="text-white/90 text-base">Free spins bonuses often come with wagering requirements. Check the terms so your winnings don’t vanish!</p>
             </div>
           </div>
-        </div>
-        <p className="text-lg text-white/80 mb-2 max-w-2xl mx-auto">
-          Grab free spins at the top crypto casinos! No deposit needed, start spinning instantly.<br />
-          Free spins are a great way to win real money – but always check the bonus terms before withdrawing. Some games may have restrictions.
-        </p>
-        <div className="flex justify-center gap-2 mt-2">
-          <Image src="/icons/btc.svg" alt="BTC" width={28} height={28} />
-          <Image src="/icons/eth.svg" alt="ETH" width={28} height={28} />
-          <Image src="/icons/ltc.svg" alt="LTC" width={28} height={28} />
-        </div>
-      </section>
-      {/* FREE SPINS CASINO GRID */}
-      <section className="mb-10 animate-fade-in-up">
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-          {/* BitStarz */}
-          <div className="rounded-xl border-2 border-yellow-300 bg-[#1a1442] text-white p-5 shadow-xl flex flex-col items-center hover:scale-[1.03] hover:shadow-[0_0_15px_#facc15] transition-all duration-300">
-            <Image src="/logos/bitstarz.png" alt="BitStarz logo" width={60} height={60} className="rounded-lg bg-white mb-2" />
-            <div className="font-bold text-lg text-yellow-200">BitStarz</div>
-            <div className="text-white/80 text-center mb-2">180 Free Spins – Book of Dead</div>
-            <div className="text-white/60 text-center mb-2 text-sm">Play on popular slots like Book of Dead or Wild Spin!</div>
-            <Link href="/crypto-casino-reviews/bitstarz" className="bg-yellow-400 text-purple-900 font-bold px-4 py-2 rounded-full shadow-md hover:bg-yellow-300 transition hover:scale-105 flex items-center gap-2 mt-2">
-              <Image src="/icons/btc.svg" alt="BTC" width={18} height={18} /> Read Review →
-            </Link>
+          <div className="bg-yellow-900/70 border-l-4 border-yellow-400 rounded-xl p-4 shadow-lg flex items-start gap-3">
+            <span className="text-3xl">⚡</span>
+            <div>
+              <div className="font-bold text-yellow-300 mb-1">Instant Play</div>
+              <p className="text-white/90 text-base">No deposit needed at many casinos — start spinning instantly and win real crypto!</p>
+            </div>
           </div>
-          {/* 7Bit Casino */}
-          <div className="rounded-xl border-2 border-green-400 bg-[#16203a] text-white p-5 shadow-xl flex flex-col items-center hover:scale-[1.03] hover:shadow-[0_0_15px_#4ade80] transition-all duration-300">
-            <Image src="/logos/7bit.png" alt="7Bit Casino logo" width={60} height={60} className="rounded-lg bg-white mb-2" />
-            <div className="font-bold text-lg text-green-300">7Bit Casino</div>
-            <div className="text-white/80 text-center mb-2">100 Spins on First Deposit</div>
-            <div className="text-white/60 text-center mb-2 text-sm">Kickstart your crypto journey with a bonus full of spins.</div>
-            <Link href="/crypto-casino-reviews/7bit" className="bg-green-400 text-[#16203a] font-bold px-4 py-2 rounded-full shadow-md hover:bg-pink-400 hover:text-white transition hover:scale-105 flex items-center gap-2 mt-2">
-              <Image src="/icons/eth.svg" alt="ETH" width={18} height={18} /> Read Review →
-            </Link>
+        </section>
+        {/* DYNAMIC FREE SPINS CASINO GRID */}
+        <section className="animate-fade-in-up">
+          <h2 className="text-2xl font-bold text-blue-300 mb-4 flex items-center gap-2 neon-glow">Top Free Spins Casinos</h2>
+          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+            {sorted.map(casino => (
+              <div key={casino.slug} className="rounded-2xl border-2 border-blue-400 bg-black/80 text-white p-5 shadow-xl flex flex-col items-center hover:scale-[1.05] hover:shadow-blue-400/40 transition-all duration-300 group animate-float">
+                <img src={casino.logo} alt={casino.name + ' logo'} width={60} height={60} style={{width:'60px',height:'60px'}} className="rounded-lg bg-white mb-2 group-hover:animate-spin" />
+                <div className="font-bold text-lg text-blue-200">{casino.name}</div>
+                <div className="text-white/80 text-center mb-2">{casino.noDepositNote || casino.description}</div>
+                <Link href={`/crypto-casino-reviews/${casino.slug}`} className="bg-blue-400 text-purple-900 font-bold px-4 py-2 rounded-full shadow-md hover:bg-yellow-300 transition hover:scale-105 mt-2 flex items-center gap-2">🎲 Review</Link>
+              </div>
+            ))}
           </div>
-          {/* Wild Vegas */}
-          <div className="rounded-xl border-2 border-pink-400 bg-[#241f6b] text-white p-5 shadow-xl flex flex-col items-center hover:scale-[1.03] hover:shadow-[0_0_15px_#f472b6] transition-all duration-300">
-            <Image src="/logos/wildvegas.png" alt="Wild Vegas logo" width={60} height={60} className="rounded-lg bg-white mb-2" />
-            <div className="font-bold text-lg text-pink-300">Wild Vegas</div>
-            <div className="text-white/80 text-center mb-2">100 Free Spins on Book of Dead</div>
-            <div className="text-white/60 text-center mb-2 text-sm">Spin on Book of Dead – no deposit needed!</div>
-            <Link href="/crypto-casino-reviews/wildvegas" className="bg-pink-400 text-white font-bold px-4 py-2 rounded-full shadow-md hover:bg-yellow-300 hover:text-purple-900 transition hover:scale-105 flex items-center gap-2 mt-2">
-              <Image src="/icons/ltc.svg" alt="LTC" width={18} height={18} /> Read Review →
+        </section>
+        {/* HOW TO CLAIM FREE SPINS */}
+        <section className="animate-fade-in-up">
+          <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center gap-2">How to Claim Free Spins</h2>
+          <ol className="list-decimal list-inside space-y-2 text-lg text-white/90">
+            <li>Pick a casino from the list above.</li>
+            <li>Create your account (no deposit needed at some casinos).</li>
+            <li>Open the qualifying slot and claim your spins.</li>
+            <li>Meet the wagering requirements to withdraw your winnings.</li>
+          </ol>
+        </section>
+        {/* CTA & INTERNAL LINKS */}
+        <div className="mt-12 text-center animate-fade-in-up">
+          <p className="mb-4 text-white/80 text-lg animate-fade-in">Looking for more crypto bonuses?</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/welcome-bonus" className="inline-block neon-button px-8 py-4 bg-yellow-300 text-purple-900 font-extrabold rounded-full text-xl shadow-lg hover:bg-pink-600 hover:text-yellow-200 transition-all flex items-center gap-2 animate-bounce">
+              <img src="/icons/btc.svg" alt="BTC" width={22} height={22} style={{width:'22px',height:'22px'}} className="inline" /> Welcome Bonuses
             </Link>
-          </div>
-          {/* Betplay */}
-          <div className="rounded-xl border-2 border-blue-400 bg-[#16203a] text-white p-5 shadow-xl flex flex-col items-center hover:scale-[1.03] hover:shadow-[0_0_15px_#60a5fa] transition-all duration-300">
-            <Image src="/logos/betplay.png" alt="Betplay logo" width={60} height={60} className="rounded-lg bg-white mb-2" />
-            <div className="font-bold text-lg text-blue-300">Betplay</div>
-            <div className="text-white/80 text-center mb-2">125 Free Spins on Crypto Slots</div>
-            <div className="text-white/60 text-center mb-2 text-sm">Crypto slots, fast payouts & exclusive deals.</div>
-            <Link href="/crypto-casino-reviews/betplay" className="bg-blue-400 text-white font-bold px-4 py-2 rounded-full shadow-md hover:bg-yellow-300 hover:text-purple-900 transition hover:scale-105 flex items-center gap-2 mt-2">
-              <Image src="/icons/btc.svg" alt="BTC" width={18} height={18} /> Read Review →
-            </Link>
-          </div>
-          {/* Crypto Loko */}
-          <div className="rounded-xl border-2 border-yellow-400 bg-[#23214a] text-white p-5 shadow-xl flex flex-col items-center hover:scale-[1.03] hover:shadow-[0_0_15px_#fde68a] transition-all duration-300">
-            <Image src="/logos/cryptoloko.png" alt="Crypto Loko logo" width={60} height={60} className="rounded-lg bg-white mb-2" />
-            <div className="font-bold text-lg text-yellow-300">Crypto Loko</div>
-            <div className="text-white/80 text-center mb-2">50 Free Spins, no deposit needed</div>
-            <div className="text-white/60 text-center mb-2 text-sm">No deposit required – play instantly!</div>
-            <Link href="/crypto-casino-reviews/cryptoloko" className="bg-yellow-400 text-purple-900 font-bold px-4 py-2 rounded-full shadow-md hover:bg-pink-400 hover:text-white transition hover:scale-105 flex items-center gap-2 mt-2">
-              <Image src="/icons/eth.svg" alt="ETH" width={18} height={18} /> Read Review →
-            </Link>
-          </div>
-          {/* Dreams Casino */}
-          <div className="rounded-xl border-2 border-purple-400 bg-[#2e0f3a] text-white p-5 shadow-xl flex flex-col items-center hover:scale-[1.03] hover:shadow-[0_0_15px_#a78bfa] transition-all duration-300">
-            <Image src="/logos/dreams.png" alt="Dreams Casino logo" width={60} height={60} className="rounded-lg bg-white mb-2" />
-            <div className="font-bold text-lg text-purple-300">Dreams Casino</div>
-            <div className="text-white/80 text-center mb-2">200 Free Spins + Cashback on slot games</div>
-            <div className="text-white/60 text-center mb-2 text-sm">Get cashback and free spins on top slots.</div>
-            <Link href="/crypto-casino-reviews/dreams" className="bg-purple-400 text-white font-bold px-4 py-2 rounded-full shadow-md hover:bg-yellow-300 hover:text-pink-700 transition hover:scale-105 flex items-center gap-2 mt-2">
-              <Image src="/icons/ltc.svg" alt="LTC" width={18} height={18} /> Read Review →
+            <Link href="/vip-deals" className="inline-block neon-button px-8 py-4 bg-pink-600 text-yellow-200 font-extrabold rounded-full text-xl shadow-lg hover:bg-yellow-300 hover:text-pink-700 transition-all flex items-center gap-2 animate-bounce">
+              <img src="/icons/eth.svg" alt="ETH" width={22} height={22} style={{width:'22px',height:'22px'}} className="inline" /> VIP Deals
             </Link>
           </div>
         </div>
-      </section>
-      {/* PRO TIP SECTION */}
-      <section className="mb-10 animate-fade-in-up">
-        <div className="bg-blue-900/80 border-l-4 border-blue-400 rounded-lg p-4 flex items-start gap-3 shadow-lg neon-glow">
-          <span className="text-2xl">💡</span>
-          <div>
-            <div className="font-bold text-blue-300 mb-1">Pro Tip</div>
-            <p className="text-white/90 text-lg">
-              Free Spins bonuses are fun and risk-free — but check the terms before cashing out. Some may require minimum wagering or restrict certain games.
-            </p>
-          </div>
+        {/* EASTER EGG: SPINNING SLOT ICONS */}
+        <div className="absolute right-6 top-6 hidden lg:block animate-spin-slow pointer-events-none select-none opacity-80">
+          <span className="text-7xl">🎰</span>
         </div>
-      </section>
-      {/* CTA & INTERNAL LINKS */}
-      <div className="mt-12 text-center animate-fade-in-up">
-        <p className="mb-4 text-white/80 text-lg">Looking for more crypto bonuses?</p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/welcome-bonus" className="inline-block neon-button px-8 py-4 bg-yellow-300 text-purple-900 font-extrabold rounded-full text-xl shadow-lg hover:bg-pink-600 hover:text-yellow-200 transition-all flex items-center gap-2">
-            <Image src="/icons/btc.svg" alt="BTC" width={22} height={22} /> Welcome Bonuses
-          </Link>
-          <Link href="/vip-deals" className="inline-block neon-button px-8 py-4 bg-pink-600 text-yellow-200 font-extrabold rounded-full text-xl shadow-lg hover:bg-yellow-300 hover:text-pink-700 transition-all flex items-center gap-2">
-            <Image src="/icons/eth.svg" alt="ETH" width={22} height={22} /> VIP Deals
-          </Link>
+        <div className="absolute left-6 bottom-6 hidden lg:block animate-bounce pointer-events-none select-none opacity-80">
+          <span className="text-7xl">🪙</span>
         </div>
       </div>
     </main>

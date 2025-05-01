@@ -3,10 +3,11 @@ import Link from "next/link";
 
 const navItems = [
   { label: 'Home', href: '/' },
-  { label: 'Reviews', href: '/crypto-casino-reviews' },
   { label: 'Bonuses', href: '/best-crypto-casino-bonuses' },
+  { label: 'Sportsbetting', href: '/sports' },
   { label: 'Guides', href: '/crypto-gambling-101' },
   { label: 'Slots & Games', href: '/slots' },
+  { label: 'Reviews', href: '/crypto-casino-reviews' },
   { label: 'Blog', href: '/blog' },
   { label: 'FAQ', href: '/faq' },
   { label: 'About', href: '/about' },
@@ -25,6 +26,7 @@ const Header: React.FC = () => (
               ? "px-4 py-2 rounded-full text-white bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-300 hover:to-orange-400 transition font-semibold shadow-md"
               : "px-4 py-2 rounded-full text-white bg-purple-700 hover:bg-purple-600 transition font-semibold shadow-md"
           }
+          style={{ minWidth: 140, textAlign: 'center' }}
         >
           {item.label === 'Home' && '🏠 '}
           {item.label === 'Reviews' && '⭐ '}
@@ -34,6 +36,7 @@ const Header: React.FC = () => (
           {item.label === 'Blog' && '💼 '}
           {item.label === 'FAQ' && '❓ '}
           {item.label === 'About' && '🔎 '}
+          {item.label === 'Sportsbetting' && '🏈 '}
           {item.label}
         </Link>
       ))}

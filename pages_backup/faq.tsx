@@ -145,6 +145,17 @@ export default function FAQ() {
         />
       </Head>
       <main className="max-w-4xl mx-auto py-8 px-4 text-white">
+        {/* TEST: Kale Next.js Link */}
+        <div style={{ margin: '2rem', padding: '2rem', background: '#222', color: '#fff', borderRadius: '12px' }}>
+          <h2>Test kale Next.js Link</h2>
+          <Link href="/blog">
+            <a style={{ color: 'yellow', fontSize: '1.5rem', textDecoration: 'underline' }}>Ga naar Blog</a>
+          </Link>
+          <p style={{ marginTop: '1rem' }}>
+            Klik op de link hierboven. Navigeer je naar /blog? Dan werkt Next.js Link correct.<br />
+            Gebeurt er niets? Dan zit het probleem dieper (setup/import).
+          </p>
+        </div>
         {i18n.language === "es" && (
           <div className="bg-yellow-400 text-black rounded-lg px-4 py-2 mb-6 text-center font-semibold text-lg shadow">
             ¡Pronto disponible en español!

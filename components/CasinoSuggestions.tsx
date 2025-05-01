@@ -3,37 +3,37 @@ import Link from "next/link";
 const casinos = [
   {
     name: "Cloudbet",
-    emoji: "🌩",
+    logo: "/logos/cloudbet.png",
     slug: "cloudbet",
     tagline: "Sportsbook & Live crypto betting",
   },
   {
-    name: "BitStarz",
-    emoji: "🎰",
-    slug: "bitstarz",
-    tagline: "Award-winning crypto slots",
+    name: "Slots of Vegas",
+    logo: "/logos/slotsofvegas.png",
+    slug: "slotsofvegas",
+    tagline: "Classic slots & big bonuses",
   },
   {
     name: "7Bit",
-    emoji: "🎮",
+    logo: "/logos/7bit.png",
     slug: "7bit",
     tagline: "Classic slots & free spins",
   },
   {
     name: "WildVegas",
-    emoji: "🦁",
+    logo: "/logos/wildvegas.png",
     slug: "wildevegas",
     tagline: "Big wins & wild jackpots",
   },
   {
     name: "Crypto Loko",
-    emoji: "🌀",
+    logo: "/logos/cryptoloko.png",
     slug: "crypto-loko",
     tagline: "Unique crypto games & bonuses",
   },
   {
     name: "Coinpoker",
-    emoji: "🃏",
+    logo: "/logos/coinpoker.png",
     slug: "coinpoker",
     tagline: "Provably fair crypto poker",
   },
@@ -48,9 +48,12 @@ export default function CasinoSuggestions() {
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {casinos.map((casino) => (
           <Link href={`/crypto-casino-reviews/${casino.slug}`} key={casino.slug}>
-            <div className="bg-purple-900 p-4 rounded-lg hover:bg-purple-800 transition cursor-pointer h-full flex flex-col justify-center">
-              <p className="font-bold text-white text-lg">{casino.emoji} {casino.name}</p>
-              <p className="text-sm text-gray-300">{casino.tagline}</p>
+            <div className="bg-purple-900 p-4 rounded-lg hover:bg-purple-800 transition cursor-pointer h-full flex items-center gap-4">
+              <img src={casino.logo} alt={`${casino.name} logo`} width={56} height={56} className="rounded-xl bg-white shadow-md flex-shrink-0" />
+              <div>
+                <p className="font-bold text-white text-lg">{casino.name}</p>
+                <p className="text-sm text-gray-300">{casino.tagline}</p>
+              </div>
             </div>
           </Link>
         ))}

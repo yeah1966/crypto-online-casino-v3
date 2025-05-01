@@ -79,4 +79,20 @@ export const topCasinos = [
     details: "Play poker with crypto and take advantage of unique promotions.",
     slug: "coinpoker",
   },
+  {
+    name: "Golden Billy",
+    image: "goldenbilly.png",
+    bonus: "Exclusive crypto bonus!",
+    description: "Brand-new crypto casino",
+    details: "Enjoy fast payouts, big bonuses, and a modern interface at Golden Billy.",
+    slug: "goldenbilly",
+  },
+  {
+    name: "Ninlayplay Casino",
+    image: "ninlaycasino.png",
+    bonus: "Crypto welcome bonus!",
+    description: "Fresh crypto casino experience",
+    details: "Wide range of games, fast crypto payments, and 24/7 support.",
+    slug: "ninlayplay",
+  },
 ];

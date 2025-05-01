@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { topCasinos } from "../lib/topCasinos";
 import affiliateLinks from "../data/affiliateLinks.json";
+import { casinoLinks } from "./casinoLinks";
 
 export default function Top10List() {
   const badges = [
@@ -48,22 +49,32 @@ export default function Top10List() {
 
           {/* Play Now Button */}
           <div className="mt-4 md:mt-0">
-            <a
-              href={affiliateLinks[casino.slug]}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`inline-block font-extrabold py-3 px-6 rounded-full transition-all duration-300 shadow-lg border-2 ${
-                index === 0
-                  ? "bg-gradient-to-r from-yellow-400 via-pink-500 to-red-500 text-black hover:scale-110 hover:shadow-[0_0_30px_#facc15]"
-                  : index === 1
-                  ? "bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 text-white hover:scale-110 hover:shadow-[0_0_30px_#c084fc]"
-                  : index === 2
-                  ? "bg-gradient-to-r from-green-400 via-teal-500 to-blue-500 text-white hover:scale-110 hover:shadow-[0_0_30px_#5eead4]"
-                  : "bg-gradient-to-r from-yellow-300 to-pink-500 text-white hover:scale-105 hover:shadow-[0_0_20px_#f9a8d4]"
-              }`}
-            >
-              Play Now
-            </a>
+            {(() => {
+              const matchedLinkKey = Object.keys(casinoLinks).find(
+                (key) => key.replace(/\s+/g, '').toLowerCase() === casino.name.replace(/\s+/g, '').toLowerCase()
+              );
+              const matchedLink = matchedLinkKey ? casinoLinks[matchedLinkKey] : null;
+              return matchedLink ? (
+                <a
+                  href={matchedLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-block font-extrabold py-3 px-6 rounded-full transition-all duration-300 shadow-lg border-2 ${
+                    index === 0
+                      ? "bg-gradient-to-r from-yellow-400 via-pink-500 to-red-500 text-black hover:scale-110 hover:shadow-[0_0_30px_#facc15]"
+                      : index === 1
+                      ? "bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 text-white hover:scale-110 hover:shadow-[0_0_30px_#c084fc]"
+                      : index === 2
+                      ? "bg-gradient-to-r from-green-400 via-teal-500 to-blue-500 text-white hover:scale-110 hover:shadow-[0_0_30px_#5eead4]"
+                      : "bg-gradient-to-r from-yellow-300 to-pink-500 text-white hover:scale-105 hover:shadow-[0_0_20px_#f9a8d4]"
+                  }`}
+                >
+                  Play Now
+                </a>
+              ) : (
+                <span className="inline-block font-extrabold py-3 px-6 rounded-full bg-gray-600 text-white opacity-60 cursor-not-allowed border-2 border-gray-500">Link not available</span>
+              );
+            })()}
           </div>
         </div>
       ))}
