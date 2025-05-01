@@ -65,7 +65,6 @@ export default function OneXBetBookmaker() {
       logo="/logos/1xbet.png"
       title="1XBET SPORTSBOOK — CRYPTO BETTING REVIEW 2025"
       description="1xBet is een wereldberoemd crypto sportsbook en casino met een gigantisch aanbod aan sportweddenschappen, casinospellen en bonussen. Perfect voor crypto bettors die snelheid en veelzijdigheid zoeken."
-      rating={4.4}
       ratingStars="★★★★☆"
       affiliateUrl="https://refpa3740576.top/L?tag=d_3915280m_1599c_&site=3915280&ad=1599"
       affiliateLabel="Bet at 1xBet"
