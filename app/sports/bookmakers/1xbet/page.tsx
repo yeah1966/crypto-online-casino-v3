@@ -65,18 +65,20 @@ export default function OneXBetBookmaker() {
       logo="/logos/1xbet.png"
       title="1XBET SPORTSBOOK — CRYPTO BETTING REVIEW 2025"
       description="1xBet is a world-renowned crypto sportsbook and casino with a huge selection of sports betting, casino games, and bonuses. Perfect for crypto bettors who value speed and versatility."
-      reviewText={`1xBet stands out as one of the most complete online betting platforms, with thousands of sports events, live betting, and a huge selection of slots and table games.<br><br>Crypto users benefit from instant deposits and fast withdrawals with Bitcoin, Ethereum, and other coins. The bonus offers are among the best in the industry, and regular promotions keep things exciting.<br><br>The site features a modern interface, mobile-friendly design, and 24/7 customer support. Whether you're into sports betting or casino action, 1xBet has it all – all in one place!`}
-      highlights={[
-        "Bet with Bitcoin, Ethereum, Litecoin, and more",
-        "Instant crypto payouts",
-        "Thousands of slots and live games",
-        "Mobile app available"
-      ]}
       cryptocurrencies={cryptocurrencies}
       sports={sports}
       mainBlocks={mainBlocks}
       featureBlocks={featureBlocks}
     >
+      {/* OUR REVIEW */}
+      <div className="mt-8 bg-black/70 rounded-xl p-6 shadow-lg">
+        <h2 className="text-2xl font-bold text-yellow-300 mb-4">Our Review</h2>
+        <p className="text-base text-zinc-100 leading-relaxed">
+          1xBet stands out as one of the most complete online betting platforms, with thousands of sports events, live betting, and a huge selection of slots and table games.<br /><br />
+          Crypto users benefit from instant deposits and fast withdrawals with Bitcoin, Ethereum, and other coins. The bonus offers are among the best in the industry, and regular promotions keep things exciting.<br /><br />
+          The site features a modern interface, mobile-friendly design, and 24/7 customer support. Whether you're into sports betting or casino action, 1xBet has it all – all in one place!
+        </p>
+      </div>
       {/* CRYPTO & PAYMENT OPTIONS */}
       <div className="mt-8 bg-purple-900/80 rounded-xl p-6 shadow-lg">
         <div className="flex items-center gap-2 mb-2">
