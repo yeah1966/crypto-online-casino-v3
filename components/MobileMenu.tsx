@@ -40,13 +40,22 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
                 )}
               </div>
             ) : (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="px-4 py-2 rounded text-white bg-purple-700 hover:bg-purple-600 font-semibold"
-              >
-                {item.label}
-              </Link>
+              item.href ? (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="px-4 py-2 rounded text-white bg-purple-700 hover:bg-purple-600 font-semibold"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <span
+                  key={item.label}
+                  className="px-4 py-2 rounded text-white bg-purple-700 opacity-60 font-semibold cursor-not-allowed"
+                >
+                  {item.label}
+                </span>
+              )
             )
           )}
         </nav>
