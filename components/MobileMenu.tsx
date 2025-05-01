@@ -31,8 +31,8 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
                 </button>
                 {openDropdown === item.label && (
                   <div className="ml-4 mt-1 flex flex-col gap-1">
-                    {item.children.map(child => (
-                      <Link key={child.href} href={child.href} className="block px-4 py-2 text-gray-200 hover:bg-purple-600 rounded">
+                    {item.children.filter(child => !!child.href).map(child => (
+                      <Link key={child.href} href={child.href!} className="block px-4 py-2 text-gray-200 hover:bg-purple-600 rounded">
                         {child.label}
                       </Link>
                     ))}
