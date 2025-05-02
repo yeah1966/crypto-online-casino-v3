@@ -34,11 +34,11 @@ export const menuItems: MenuItem[] = [
     children: [
       { label: 'Getting Started', icon: <FaBolt />, href: '/guides/getting-started', highlight: true },
       { label: 'Crypto Gambling 101', icon: <FaCoins />, href: '/guides/crypto-gambling-101' },
-      { label: 'Deposit with Bitcoin', icon: <FaCoins />, href: '/guides/deposit-bitcoin' },
-      { label: 'Crypto Payments', icon: <FaCoins />, href: '/guides/crypto-payments' },
-      { label: 'VPN Guide', icon: <FaLock />, href: '/guides/vpn' },
-      { label: 'Provably Fair', icon: <FaTrophy />, href: '/guides/provably-fair' },
-      { label: 'Stablecoins', icon: <FaCoins />, href: '/guides/stablecoins' },
+      { label: 'Deposit with Bitcoin', icon: <FaCoins />, href: '/guides/how-to-deposit-with-bitcoin' },
+      { label: 'Crypto Payments', icon: <FaCoins />, href: '/guides/crypto-payments-guide' },
+      { label: 'VPN Guide', icon: <FaLock />, href: '/guides/how-to-use-a-vpn-for-gambling' },
+      { label: 'Provably Fair', icon: <FaTrophy />, href: '/guides/fair-play-provably-fair' },
+      { label: 'Stablecoins', icon: <FaCoins />, href: '/guides/what-are-stablecoins-casino-gambling' },
     ]
   },
   {
