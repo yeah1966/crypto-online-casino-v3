@@ -1,5 +1,6 @@
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Head from "next/head";
+import { getReviewStructuredData } from "@/lib/structuredData";
 
 export default function CoinPokerReview() {
   return (
@@ -9,6 +10,19 @@ export default function CoinPokerReview() {
         <meta name="description" content="CoinPoker is the world’s most trusted blockchain poker site, offering a provably fair experience with fast crypto payouts and decentralized gameplay. If you’re searching for secure crypto poker powered by transparency, CoinPoker combines the thrill of classic poker with the power of blockchain technology." />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="CoinPoker Casino Review (2025) – Play Blockchain Poker with Crypto" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getReviewStructuredData({
+              name: "CoinPoker",
+              reviewRating: 4.4,
+              reviewCount: 312,
+              url: "https://www.yourdomain.com/crypto-casino-reviews/coinpoker",
+              image: "https://www.yourdomain.com/logos/coinpoker.png",
+              description: "CoinPoker is the world’s most trusted blockchain poker site, offering a provably fair experience with fast crypto payouts and decentralized gameplay."
+            }))
+          }}
+        />
       </Head>
       <CasinoReviewTemplate
         logo="/logos/coinpoker.png"

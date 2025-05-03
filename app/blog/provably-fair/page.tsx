@@ -1,8 +1,27 @@
 import BlogPostLayout from "../BlogPostLayout";
+import Head from "next/head";
+import { getBlogStructuredData } from "@/lib/structuredData";
 
 export default function ProvablyFair() {
   return (
     <BlogPostLayout title="🧪 How Crypto Casinos Stay Fair: Behind the Scenes" date="April 2025">
+      <Head>
+        <title>Wat is Provably Fair? Uitleg voor Crypto Casino’s</title>
+        <meta name="description" content="Alles over Provably Fair in crypto casino’s: hoe werkt het, waarom is het veilig, en welke sites bieden het aan?" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBlogStructuredData({
+              title: "Wat is Provably Fair? Uitleg voor Crypto Casino’s",
+              description: "Alles over Provably Fair in crypto casino’s: hoe werkt het, waarom is het veilig, en welke sites bieden het aan?",
+              url: "https://www.yourdomain.com/blog/provably-fair",
+              author: "Redactie Crypto Online Casino",
+              datePublished: "2025-03-02",
+              image: "https://www.yourdomain.com/images/provably-fair-cover.png"
+            }))
+          }}
+        />
+      </Head>
       <h2 className="text-2xl font-bold mb-4">We reveal how provably fair systems actually work — and how you can verify your own game outcomes.</h2>
       <section className="mb-8">
         <h3 className="text-xl font-semibold mb-2">🎯 Introduction</h3>

@@ -1,14 +1,28 @@
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Head from "next/head";
+import { getReviewStructuredData } from "@/lib/structuredData";
 
 export default function BetzardReview() {
   return (
     <>
       <Head>
-        <title>Betzard Casino Review (2025) – Join & Play Crypto Games</title>
-        <meta name="description" content="Betzard Casino is a top-tier crypto casino known for its secure environment, fast payouts, and a wide variety of provably fair games. Whether you’re betting with Bitcoin or browsing the latest crypto promotions, Betzard combines security with excitement in one sleek platform." />
+        <title>Betzard Casino Review 2025 – Crypto Bonussen & Spellen</title>
+        <meta name="description" content="Lees onze 2025 review van Betzard Casino. Alles over bonussen, crypto betalingen, spellen en meer!" />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Betzard Casino Review (2025) – Join & Play Crypto Games" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getReviewStructuredData({
+              name: "Betzard Casino",
+              reviewRating: 4.0,
+              reviewCount: 389,
+              url: "https://www.yourdomain.com/crypto-casino-reviews/betzard",
+              image: "https://www.yourdomain.com/logos/betzard.png",
+              description: "Betzard Casino is een opkomend crypto casino met ruime bonussen, veel spellen en snelle betalingen. Lees onze volledige review!"
+            }))
+          }}
+        />
       </Head>
       <CasinoReviewTemplate
         logo="/logos/betzard.png"

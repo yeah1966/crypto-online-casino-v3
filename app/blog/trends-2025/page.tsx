@@ -1,8 +1,27 @@
 import BlogPostLayout from "../BlogPostLayout";
+import Head from "next/head";
+import { getBlogStructuredData } from "@/lib/structuredData";
 
 export default function Trends2025() {
   return (
     <BlogPostLayout title="📈 Crypto Gambling Trends: What’s Hot in 2025?" date="April 2025">
+      <Head>
+        <title>Crypto Casino Trends voor 2025</title>
+        <meta name="description" content="Bekijk de nieuwste trends in crypto casino’s voor 2025. Van nieuwe tokens tot innovatieve games en regelgeving." />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBlogStructuredData({
+              title: "Crypto Casino Trends voor 2025",
+              description: "Bekijk de nieuwste trends in crypto casino’s voor 2025. Van nieuwe tokens tot innovatieve games en regelgeving.",
+              url: "https://www.yourdomain.com/blog/trends-2025",
+              author: "Redactie Crypto Online Casino",
+              datePublished: "2025-02-18",
+              image: "https://www.yourdomain.com/images/trends-2025-cover.png"
+            }))
+          }}
+        />
+      </Head>
       <h2 className="text-2xl font-bold mb-4">From NFT slot machines to AI-powered dealers — here’s what’s shaping the future of crypto casinos.</h2>
       <section className="mb-8">
         <h3 className="text-xl font-semibold mb-2">🔮 The Industry is Booming</h3>

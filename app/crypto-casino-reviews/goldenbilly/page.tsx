@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { getReviewStructuredData } from "@/lib/structuredData";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 
 export default function GoldenBillyReview() {
@@ -9,6 +10,19 @@ export default function GoldenBillyReview() {
         <meta name="description" content="Read our Golden Billy Casino review! Discover crypto bonuses, fast payouts, and the unique advantages of this new crypto casino site." />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Golden Billy Casino Review (2025) – Crypto Bonuses & Fast Payouts" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getReviewStructuredData({
+              name: "Golden Billy Casino",
+              reviewRating: 4.3,
+              reviewCount: 98,
+              url: "https://www.yourdomain.com/crypto-casino-reviews/goldenbilly",
+              image: "https://www.yourdomain.com/logos/goldenbilly.png",
+              description: "Golden Billy is a brand-new crypto casino with a colorful theme, generous bonuses, and lightning-fast crypto payouts. Discover why more and more players are switching to Golden Billy!"
+            }))
+          }}
+        />
       </Head>
       <CasinoReviewTemplate
         logo="/logos/goldenbilly.png"

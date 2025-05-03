@@ -1,14 +1,28 @@
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Head from "next/head";
+import { getReviewStructuredData } from "@/lib/structuredData";
 
 export default function CryptoLokoReview() {
   return (
     <>
       <Head>
-        <title>Crypto Loko Casino Review (2025) – Go Loko with Crypto Bonuses</title>
-        <meta name="description" content="Crypto Loko Casino brings the energy with wild crypto slots, massive bonuses, and lightning-fast Bitcoin payouts – perfect for crypto thrill-seekers. This vibrant online casino offers everything from high-volatility games to secure crypto payments, all wrapped in a unique Loko experience." />
+        <title>Crypto Loko Casino Review 2025 – Bonussen & Spellen</title>
+        <meta name="description" content="Lees onze 2025 review van Crypto Loko. Alles over bonussen, crypto betalingen, spellen en meer!" />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Crypto Loko Casino Review (2025) – Go Loko with Crypto Bonuses" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getReviewStructuredData({
+              name: "Crypto Loko",
+              reviewRating: 4.1,
+              reviewCount: 205,
+              url: "https://www.yourdomain.com/crypto-casino-reviews/crypto-loko",
+              image: "https://www.yourdomain.com/logos/crypto-loko.png",
+              description: "Crypto Loko is een kleurrijk crypto casino met snelle betalingen, leuke bonussen en een uniek spelaanbod. Lees onze volledige review!"
+            }))
+          }}
+        />
       </Head>
       <CasinoReviewTemplate
         logo="/logos/cryptoloko.png"

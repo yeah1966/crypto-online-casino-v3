@@ -1,14 +1,28 @@
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Head from "next/head";
+import { getReviewStructuredData } from "@/lib/structuredData";
 
 export default function SevenBitReview() {
   return (
     <>
       <Head>
-        <title>7Bit Casino Review (2025) – Claim Bonus & Spin Retro</title>
-        <meta name="description" content="Read our 2025 7Bit Casino review. 7,000+ crypto slots, retro arcade vibes, fast payouts & big bonuses. Claim your 7Bit bonus now!" />
+        <title>7Bit Casino Review 2025 – Crypto Bonussen & Snel Uitbetalen</title>
+        <meta name="description" content="Lees onze 2025 review van 7Bit Casino. Ontdek alles over bonussen, crypto betalingen, spellen en meer!" />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="7Bit Casino Review (2025) – Claim Bonus & Spin Retro" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getReviewStructuredData({
+              name: "7Bit Casino",
+              reviewRating: 4.7,
+              reviewCount: 801,
+              url: "https://www.yourdomain.com/crypto-casino-reviews/7bit",
+              image: "https://www.yourdomain.com/logos/7bit.png",
+              description: "7Bit Casino is een populair crypto casino met snelle betalingen, duizenden spellen en royale bonussen. Lees onze volledige review!"
+            }))
+          }}
+        />
       </Head>
       <CasinoReviewTemplate
         logo="/logos/7bit.png"

@@ -1,5 +1,6 @@
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Head from "next/head";
+import { getReviewStructuredData } from "@/lib/structuredData";
 
 export default function DreamsReview() {
   return (
@@ -9,6 +10,19 @@ export default function DreamsReview() {
         <meta name="description" content="Dreams Casino offers a wide range of crypto slots and table games, combined with generous bonuses and fast payouts for Bitcoin users. Whether you're chasing jackpots or just looking for a safe crypto gambling site, Dreams Casino delivers a smooth and rewarding experience." />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Dreams Casino Review (2025) – Claim Bonus & Play Crypto Slots" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getReviewStructuredData({
+              name: "Dreams Casino",
+              reviewRating: 4.1,
+              reviewCount: 0,
+              url: "https://www.yourdomain.com/crypto-casino-reviews/dreams",
+              image: "/logos/dreamscasino.png",
+              description: "Dreams Casino offers a wide range of crypto slots and table games, combined with generous bonuses and fast payouts for Bitcoin users."
+            }))
+          }}
+        />
       </Head>
       <CasinoReviewTemplate
         logo="/logos/dreamscasino.png"

@@ -1,18 +1,32 @@
 import Head from "next/head";
+import { getReviewStructuredData } from "@/lib/structuredData";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 
 export default function SlotsOfVegasReview() {
   return (
     <>
       <Head>
-        <title>Slots of Vegas Review (2025) – Claim Bonus & Spin Now</title>
-        <meta name="description" content="Read our 2025 Slots of Vegas review. Get the full bonus, top games & player tips. Start playing with up to $7,000 in welcome rewards!" />
+        <title>Slots of Vegas Review 2025 – Crypto Bonussen & Spellen</title>
+        <meta name="description" content="Lees onze 2025 review van Slots of Vegas. Alles over bonussen, crypto betalingen, spellen en meer!" />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Slots of Vegas Review (2025) – Claim Bonus & Spin Now" />
         <meta property="og:description" content="Discover if Slots of Vegas is right for you – full review, bonuses & features for crypto players." />
         <meta property="og:image" content="/logos/slotsofvegas.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.yourdomain.com/crypto-casino-reviews/slotsofvegas" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getReviewStructuredData({
+              name: "Slots of Vegas",
+              reviewRating: 4.0,
+              reviewCount: 122,
+              url: "https://www.yourdomain.com/crypto-casino-reviews/slotsofvegas",
+              image: "https://www.yourdomain.com/logos/slotsofvegas.png",
+              description: "Slots of Vegas is een klassiek crypto casino met snelle betalingen, royale bonussen en een breed spelaanbod. Lees onze volledige review!"
+            }))
+          }}
+        />
       </Head>
       <CasinoReviewTemplate
         logo="/logos/slotsofvegas.png"

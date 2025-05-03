@@ -1,14 +1,28 @@
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Head from "next/head";
+import { getReviewStructuredData } from "@/lib/structuredData";
 
 export default function BetplayReview() {
   return (
     <>
       <Head>
-        <title>Betplay Casino Review (2025) – Claim Bonus & Bet Instantly</title>
-        <meta name="description" content="Betplay Casino is a top-rated platform for crypto sports betting and Bitcoin games, with lightning-fast payouts and a sleek, modern interface. Whether you're into live betting or classic slots, Betplay delivers a fast, secure crypto casino experience." />
+        <title>Betplay Casino Review 2025 – Crypto Sports & Casino</title>
+        <meta name="description" content="Lees onze 2025 review van Betplay. Alles over sportweddenschappen, casino, crypto bonussen en snelle uitbetalingen!" />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Betplay Casino Review (2025) – Claim Bonus & Bet Instantly" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getReviewStructuredData({
+              name: "Betplay",
+              reviewRating: 4.6,
+              reviewCount: 562,
+              url: "https://www.yourdomain.com/crypto-casino-reviews/betplay",
+              image: "https://www.yourdomain.com/logos/betplay.png",
+              description: "Betplay is een veelzijdig crypto casino en sportsbook met snelle uitbetalingen en aantrekkelijke bonussen. Lees onze volledige review!"
+            }))
+          }}
+        />
       </Head>
       <CasinoReviewTemplate
         logo="/logos/betplay.png"

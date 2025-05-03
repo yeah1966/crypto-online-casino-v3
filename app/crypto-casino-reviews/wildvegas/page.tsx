@@ -1,13 +1,27 @@
 import Link from "next/link";
 import Head from "next/head";
+import { getReviewStructuredData } from "@/lib/structuredData";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 
 export default function WildVegasReview() {
   return (
     <>
       <Head>
-        <title>Wild Vegas Review (2025) – Claim Bonus & Spin Wild!</title>
-        <meta name="description" content="Read our 2025 Wild Vegas review. Discover wild bonuses, top slots, and crypto payouts. Start spinning with a neon Vegas vibe!" />
+        <title>Wild Vegas Casino Review 2025 – Crypto Bonussen & Spellen</title>
+        <meta name="description" content="Lees onze 2025 review van Wild Vegas Casino. Alles over bonussen, crypto betalingen, spellen en meer!" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getReviewStructuredData({
+              name: "Wild Vegas Casino",
+              reviewRating: 4.3,
+              reviewCount: 211,
+              url: "https://www.yourdomain.com/crypto-casino-reviews/wildvegas",
+              image: "https://www.yourdomain.com/logos/wildvegas.png",
+              description: "Wild Vegas is een spannend crypto casino met snelle betalingen, royale bonussen en een breed spelaanbod. Lees onze volledige review!"
+            }))
+          }}
+        />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Wild Vegas Review (2025) – Claim Bonus & Spin Wild!" />
         <meta property="og:description" content="Find out if Wild Vegas is your next crypto casino – full review, wild bonuses, and player experience." />

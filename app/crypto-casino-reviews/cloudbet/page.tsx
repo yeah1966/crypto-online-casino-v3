@@ -1,5 +1,6 @@
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Head from "next/head";
+import { getReviewStructuredData } from "@/lib/structuredData";
 
 export default function CloudbetReview() {
   return (
@@ -9,6 +10,19 @@ export default function CloudbetReview() {
         <meta name="description" content="Read our 2025 Cloudbet review. Trusted crypto sportsbook & casino with fast payouts, high limits, and huge bonuses. Claim your bonus now!" />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Cloudbet Review (2025) – Claim Bonus & Bet Instantly" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getReviewStructuredData({
+              name: "Cloudbet",
+              reviewRating: 4.5,
+              reviewCount: 1123,
+              url: "https://www.yourdomain.com/crypto-casino-reviews/cloudbet",
+              image: "https://www.yourdomain.com/logos/cloudbet.png",
+              description: "Cloudbet is a trusted crypto casino and sportsbook with high bonuses, fast payouts, and a large game selection. Read our full review!"
+            }))
+          }}
+        />
       </Head>
       <CasinoReviewTemplate
         logo="/logos/cloudbet.png"

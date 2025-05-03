@@ -1,8 +1,27 @@
 import BlogPostLayout from "../BlogPostLayout";
+import Head from "next/head";
+import { getBlogStructuredData } from "@/lib/structuredData";
 
 export default function BiggestWins() {
   return (
     <BlogPostLayout title="🪙 Biggest Crypto Casino Jackpots Ever Won" date="April 2025">
+      <Head>
+        <title>De Grootste Crypto Casino Wins Ooit</title>
+        <meta name="description" content="Lees over de grootste crypto casino winsten ooit. Ontdek inspirerende verhalen van spelers die miljoenen wonnen met Bitcoin, Ethereum en meer." />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBlogStructuredData({
+              title: "De Grootste Crypto Casino Wins Ooit",
+              description: "Lees over de grootste crypto casino winsten ooit. Ontdek inspirerende verhalen van spelers die miljoenen wonnen met Bitcoin, Ethereum en meer.",
+              url: "https://www.yourdomain.com/blog/biggest-wins",
+              author: "Redactie Crypto Online Casino",
+              datePublished: "2025-03-10",
+              image: "https://www.yourdomain.com/images/biggest-wins-cover.png"
+            }))
+          }}
+        />
+      </Head>
       <h2 className="text-2xl font-bold mb-4">Discover the wildest wins in crypto gambling history — from million-dollar spins to legendary streaks.</h2>
       <section className="mb-8">
         <h3 className="text-xl font-semibold mb-2">🤑 The Rise of Mega Wins in Crypto Casinos</h3>

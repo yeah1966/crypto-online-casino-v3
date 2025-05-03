@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { getReviewStructuredData } from "@/lib/structuredData";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 
 export default function NinlayplayReview() {
@@ -9,6 +10,19 @@ export default function NinlayplayReview() {
         <meta name="description" content="Read our Ninlayplay Casino review! Discover crypto bonuses, fast payouts, and the unique features of this new crypto casino site." />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Ninlayplay Casino Review (2025) – Crypto Games, Bonuses & Fast Payouts" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getReviewStructuredData({
+              name: "Ninlayplay Casino",
+              reviewRating: 4.2,
+              reviewCount: 57,
+              url: "https://www.yourdomain.com/crypto-casino-reviews/ninlayplay",
+              image: "https://www.yourdomain.com/logos/ninlayplay.png",
+              description: "Ninlayplay is a new crypto casino with fast payouts, attractive bonuses, and a unique game selection. Read our full review!"
+            }))
+          }}
+        />
       </Head>
       <CasinoReviewTemplate
         logo="/logos/ninlaycasino.png"
