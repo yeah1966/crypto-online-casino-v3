@@ -1,4 +1,6 @@
-export const metadata = {
-  title: "BitStarz Casino Review (2024) | Crypto Bonus & Bitcoin Games",
-  description: "BitStarz full review – discover top crypto bonuses, fast Bitcoin payouts, game selection, and why it's rated 4.9/5 by crypto players worldwide.",
-};
+// Dynamisch gegenereerde metadata voor BitStarz
+import { generateCasinoMetadata } from "@/lib/generateMetadata";
+
+export function generateMetadata({ params }: { params: { slug: string } }) {
+  return generateCasinoMetadata(params.slug || "bitstarz");
+}

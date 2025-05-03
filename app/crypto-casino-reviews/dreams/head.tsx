@@ -1,4 +1,6 @@
-export const metadata = {
-  title: "Dreams Casino Review (2024) | Crypto Slots & Big Welcome Bonuses",
-  description: "Read our Dreams Casino review – discover crypto slots, fast payouts, and massive welcome bonuses. Safe, secure, and perfect for crypto gamblers.",
-};
+// Dynamisch gegenereerde metadata voor Dreams
+import { generateCasinoMetadata } from "@/lib/generateMetadata";
+
+export function generateMetadata({ params }: { params: { slug: string } }) {
+  return generateCasinoMetadata(params.slug || "dreams");
+}
