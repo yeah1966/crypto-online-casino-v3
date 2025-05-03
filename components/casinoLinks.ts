@@ -11,4 +11,6 @@ export const casinoLinks: { [key: string]: string } = {
   "Betzard": "https://7bit.partners/pe27a3a44",
   "Golden Billy": "https://goldenbillylink.com/h62218aaa",
   "Ninlayplay Casino": "https://ninlayplay.com/hecd2573b",
+  "NinlayPlay": "https://4ninrtevd7.com/?stag=249145_6815ca94c52f4fa416f81d91",
+  "Betplay": "https://betplay.io/?ref=b417df55cd18",
 };

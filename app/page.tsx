@@ -3,8 +3,10 @@
 import React, { useRef } from 'react';
 import Footer from '../components/Footer';
 import WheelOfFortune from '../components/WheelOfFortune';
-import Top10List from '../components/Top10List';
 import SpinButton from '@/components/SpinButton';
+import CasinoGrid from '../components/CasinoGrid';
+import Head from 'next/head';
+import { casinos } from './crypto-casino-reviews/casinosData';
 
 export default function Home() {
   const wheelRef = useRef<any>(null);
@@ -17,6 +19,74 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Best Crypto Online Casinos 2025 | Play & Win with Bitcoin & Crypto</title>
+        <meta name="description" content="Compare the top crypto casinos online for 2025. Get exclusive bonuses, fast payouts, and play safely with Bitcoin, Ethereum, and more!" />
+        <meta name="keywords" content="crypto casino, crypto online casino, bitcoin casino, ethereum casino, best crypto casinos, crypto gambling" />
+        <link rel="canonical" href="https://www.crypto-casino-online.com/" />
+        {/* FAQPage Structured Data for Google Rich Results */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          'mainEntity': [
+            {
+              '@type': 'Question',
+              'name': 'What is a crypto casino?',
+              'acceptedAnswer': {
+                '@type': 'Answer',
+                'text': 'A crypto casino is an online casino that accepts cryptocurrencies like Bitcoin, Ethereum, or Litecoin for deposits and withdrawals. They offer fast, anonymous payments and exclusive bonuses for crypto users.'
+              }
+            },
+            {
+              '@type': 'Question',
+              'name': 'Are crypto casinos safe?',
+              'acceptedAnswer': {
+                '@type': 'Answer',
+                'text': 'The best crypto casinos are licensed and use secure technology. Always check our reviews for the most trusted sites.'
+              }
+            },
+            {
+              '@type': 'Question',
+              'name': 'Which cryptocurrencies can I use?',
+              'acceptedAnswer': {
+                '@type': 'Answer',
+                'text': 'Most sites accept Bitcoin, Ethereum, Litecoin, USDT, and sometimes Dogecoin or other altcoins.'
+              }
+            },
+            {
+              '@type': 'Question',
+              'name': 'How do I claim a crypto casino bonus?',
+              'acceptedAnswer': {
+                '@type': 'Answer',
+                'text': 'Simply register at one of the top sites listed above, make a deposit with your favorite crypto, and activate the bonus from the promotions page. Some casinos offer no deposit bonuses for new players.'
+              }
+            }
+          ]
+        }) }} />
+        {/* Review schema for all casino cards shown on the homepage grid */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@graph': casinos.slice(0,12).map(casino => ({
+            '@type': 'Review',
+            'itemReviewed': {
+              '@type': 'Organization',
+              'name': casino.name,
+              'image': `https://www.crypto-casino-online.com${casino.logo}`
+            },
+            'reviewRating': {
+              '@type': 'Rating',
+              'ratingValue': casino.rating,
+              'bestRating': 5,
+              'worstRating': 1
+            },
+            'author': {
+              '@type': 'Organization',
+              'name': 'Crypto Casino Online'
+            },
+            'reviewBody': casino.description
+          }))
+        }) }} />
+      </Head>
       {/* BG image + overlay only on homepage */}
       <div className="relative min-h-screen w-full pt-32">
         {/* Background image with dark overlay */}
@@ -45,10 +115,69 @@ export default function Home() {
               <SpinButton onClick={spin} />
             </div>
           </div>
-          {/* Top 10 List hieronder, in Las Vegas neon stijl */}
-          <div className="max-w-5xl mx-auto px-4 py-12 space-y-6">
-            <Top10List />
+          {/* Neon Casino Grid hieronder, vervangt de oude lijst */}
+          <div className="max-w-6xl mx-auto px-4 py-12">
+            <CasinoGrid casinos={casinos.map(casino => ({
+              name: casino.name,
+              logo: casino.logo,
+              bonus: casino.noDepositBonus ? 'No Deposit Bonus!' : 'Deposit Bonus',
+              description: casino.description,
+              tags: [
+                casino.noDepositBonus ? 'No Deposit' : 'Deposit Only',
+                `⭐ ${casino.rating}`,
+              ].concat(casino.noDepositNote ? [casino.noDepositNote] : []),
+            }))} />
           </div>
+          {/* SEO Content Block - English */}
+          <section className="max-w-4xl mx-auto mt-16 px-4 py-10 bg-[#181826] rounded-2xl shadow-lg border border-[#A855F7]">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-yellow-400 mb-4 text-center drop-shadow-neon">
+              Everything About Crypto Casinos in 2025
+            </h2>
+            <p className="text-white/90 text-lg mb-4 text-center">
+              Crypto casinos are booming in popularity thanks to their anonymity, instant payouts, and exclusive bonuses. On this page, you’ll find an up-to-date overview of the best crypto casinos worldwide, carefully tested for reliability, game selection, and promotions.
+            </p>
+            <h3 className="text-2xl font-bold text-[#38FF14] mt-8 mb-2">Why Choose a Crypto Casino?</h3>
+            <ul className="list-disc ml-6 text-white/80 mb-4">
+              <li>Fast and anonymous deposits & withdrawals with Bitcoin, Ethereum, Litecoin, and more</li>
+              <li>High bonuses and exclusive promotions for crypto players</li>
+              <li>No bank or third party needed – play instantly</li>
+              <li>Worldwide access, including from Europe and North America</li>
+            </ul>
+            <h3 className="text-2xl font-bold text-[#A855F7] mt-8 mb-2">What to Look for in a Crypto Casino?</h3>
+            <p className="text-white/80 mb-2">
+              Always check for a valid license, a wide range of games, and fair bonus terms. Read our reviews for independent ratings and tips on safe gambling.
+            </p>
+            <p className="text-white/80">
+              Whether you’re searching for the highest crypto bonus or the fastest payout: at crypto-casino-online.com you’ll always find the best casino for your needs!
+            </p>
+            {/* Internal links for SEO */}
+            <div className="mt-8 flex flex-wrap gap-4 justify-center">
+              <a href="/reviews" className="text-[#38FF14] underline font-bold hover:text-yellow-400">Crypto Casino Reviews</a>
+              <a href="/guides" className="text-[#A855F7] underline font-bold hover:text-yellow-400">Guides</a>
+              <a href="/best-crypto-casino-bonuses" className="text-yellow-400 underline font-bold hover:text-[#38FF14]">Best Bonuses</a>
+              <a href="/crypto-gambling-101" className="text-pink-400 underline font-bold hover:text-[#A855F7]">Crypto Gambling 101</a>
+            </div>
+          </section>
+          {/* FAQ Block for SEO */}
+          <section className="max-w-4xl mx-auto mt-10 px-4 py-8 bg-[#23234d] rounded-xl">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-4">Frequently Asked Questions</h2>
+            <div className="mb-3">
+              <strong>What is a crypto casino?</strong>
+              <p className="text-white/80">A crypto casino is an online casino that accepts cryptocurrencies like Bitcoin, Ethereum, or Litecoin for deposits and withdrawals. They offer fast, anonymous payments and exclusive bonuses for crypto users.</p>
+            </div>
+            <div className="mb-3">
+              <strong>Are crypto casinos safe?</strong>
+              <p className="text-white/80">The best crypto casinos are licensed and use secure technology. Always check our reviews for the most trusted sites.</p>
+            </div>
+            <div className="mb-3">
+              <strong>Which cryptocurrencies can I use?</strong>
+              <p className="text-white/80">Most sites accept Bitcoin, Ethereum, Litecoin, USDT, and sometimes Dogecoin or other altcoins.</p>
+            </div>
+            <div className="mb-3">
+              <strong>How do I claim a crypto casino bonus?</strong>
+              <p className="text-white/80">Simply register at one of the top sites listed above, make a deposit with your favorite crypto, and activate the bonus from the promotions page. Some casinos offer no deposit bonuses for new players.</p>
+            </div>
+          </section>
         </div>
       </div>
       <Footer />
