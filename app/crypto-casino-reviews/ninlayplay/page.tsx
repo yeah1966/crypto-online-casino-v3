@@ -1,5 +1,6 @@
 import Head from "next/head";
-import { getReviewStructuredData, getBreadcrumbListStructuredData, getOgMetaForCasino } from "@/lib/structuredData";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import { getOgMetaForCasino } from "@/lib/ogMeta";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Breadcrumbs from "@/components/Breadcrumbs";
 

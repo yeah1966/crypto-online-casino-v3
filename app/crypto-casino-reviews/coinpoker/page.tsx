@@ -1,8 +1,8 @@
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Head from "next/head";
-import { getOgMetaForCasino } from "@/lib/ogMeta";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import { getOgMetaForCasino } from "@/lib/ogMeta";
 
 export default function CoinPokerReview() {
   return (

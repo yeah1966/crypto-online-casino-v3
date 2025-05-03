@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Head from "next/head";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { getReviewStructuredData, getBreadcrumbListStructuredData, getOgMetaForCasino } from "@/lib/structuredData";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import { getOgMetaForCasino } from "@/lib/ogMeta";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 
 export default function WildVegasReview() {
