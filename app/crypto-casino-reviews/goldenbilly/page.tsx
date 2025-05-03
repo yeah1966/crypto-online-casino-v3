@@ -4,6 +4,10 @@ import { getOgMetaForCasino } from "@/lib/ogMeta";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
+export const generateMetadata = async () => {
+  return getOgMetaForCasino("goldenbilly");
+};
+
 export default function GoldenBillyReview() {
   return (
     <>

@@ -4,6 +4,10 @@ import Head from "next/head";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
 
+export const generateMetadata = async () => {
+  return getOgMetaForCasino("coinpoker");
+};
+
 export default function CoinPokerReview() {
   return (
     <>
@@ -11,20 +15,6 @@ export default function CoinPokerReview() {
         <title>Coinpoker Casino Review (2025) – Crypto Bonussen & Spellen</title>
         <meta name="description" content="Lees onze 2025 Coinpoker review. Alles over crypto poker, bonussen en unieke features." />
         <meta name="robots" content="index, follow" />
-        {(() => {
-          const og = getOgMetaForCasino("coinpoker");
-          return <>
-            <meta property="og:title" content={og.title} />
-            <meta property="og:description" content={og.description} />
-            <meta property="og:image" content={og.image} />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.crypto-online-casino.com/crypto-casino-reviews/coinpoker" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={og.title} />
-            <meta name="twitter:description" content={og.description} />
-            <meta name="twitter:image" content={og.image} />
-          </>;
-        })()}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

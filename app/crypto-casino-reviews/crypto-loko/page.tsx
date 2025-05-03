@@ -4,6 +4,10 @@ import Head from "next/head";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
 
+export const generateMetadata = async () => {
+  return getOgMetaForCasino("cryptoloko");
+};
+
 export default function CryptoLokoReview() {
   return (
     <>

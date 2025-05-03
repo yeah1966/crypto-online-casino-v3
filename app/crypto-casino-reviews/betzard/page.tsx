@@ -4,6 +4,10 @@ import Head from "next/head";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
+export const generateMetadata = async () => {
+  return getOgMetaForCasino("betzard");
+};
+
 export default function BetzardReview() {
   return (
     <>

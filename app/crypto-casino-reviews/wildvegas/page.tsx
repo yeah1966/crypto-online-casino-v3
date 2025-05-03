@@ -5,6 +5,10 @@ import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/
 import { getOgMetaForCasino } from "@/lib/ogMeta";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 
+export const generateMetadata = async () => {
+  return getOgMetaForCasino("wildvegas");
+};
+
 export default function WildVegasReview() {
   return (
     <>

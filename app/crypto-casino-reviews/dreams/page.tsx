@@ -4,6 +4,10 @@ import Head from "next/head";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
 
+export const generateMetadata = async () => {
+  return getOgMetaForCasino("dreams");
+};
+
 export default function DreamsReview() {
   return (
     <>
@@ -11,20 +15,6 @@ export default function DreamsReview() {
         <title>Dreams Casino Review (2025) – Claim Bonus & Play Crypto Slots</title>
         <meta name="description" content="Dreams Casino offers a wide range of crypto slots and table games, combined with generous bonuses and fast payouts for Bitcoin users. Whether you're chasing jackpots or just looking for a safe crypto gambling site, Dreams Casino delivers a smooth and rewarding experience." />
         <meta name="robots" content="index, follow" />
-        {(() => {
-          const og = getOgMetaForCasino("dreams");
-          return <>
-            <meta property="og:title" content={og.title} />
-            <meta property="og:description" content={og.description} />
-            <meta property="og:image" content={og.image} />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.yourdomain.com/crypto-casino-reviews/dreams" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={og.title} />
-            <meta name="twitter:description" content={og.description} />
-            <meta name="twitter:image" content={og.image} />
-          </>;
-        })()}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
