@@ -1,16 +1,30 @@
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Head from "next/head";
+import { getOgMetaForCasino } from "@/lib/ogMeta";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 export default function BetzardReview() {
   return (
     <>
       <Head>
-        <title>Betzard Casino Review 2025 – Crypto Bonussen & Spellen</title>
-        <meta name="description" content="Lees onze 2025 review van Betzard Casino. Alles over bonussen, crypto betalingen, spellen en meer!" />
+        <title>Betzard Casino Review (2025) – Crypto Bonussen & Spellen</title>
+        <meta name="description" content="Lees onze 2025 Betzard review. Alles over crypto bonussen, games en unieke features." />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Betzard Casino Review (2025) – Join & Play Crypto Games" />
+        {(() => {
+          const og = getOgMetaForCasino("betzard");
+          return <>
+            <meta property="og:title" content={og.title} />
+            <meta property="og:description" content={og.description} />
+            <meta property="og:image" content={og.image} />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://www.crypto-online-casino.com/crypto-casino-reviews/betzard" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={og.title} />
+            <meta name="twitter:description" content={og.description} />
+            <meta name="twitter:image" content={og.image} />
+          </>;
+        })()}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

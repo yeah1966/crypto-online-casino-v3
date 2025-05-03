@@ -1,15 +1,30 @@
 import Link from "next/link";
 import Head from "next/head";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import { getReviewStructuredData, getBreadcrumbListStructuredData, getOgMetaForCasino } from "@/lib/structuredData";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 
 export default function WildVegasReview() {
   return (
     <>
       <Head>
-        <title>Wild Vegas Casino Review 2025 – Crypto Bonussen & Spellen</title>
-        <meta name="description" content="Lees onze 2025 review van Wild Vegas Casino. Alles over bonussen, crypto betalingen, spellen en meer!" />
+        <title>Wild Vegas Casino Review (2025) – Crypto Bonussen & Spellen</title>
+        <meta name="description" content="Lees onze 2025 Wild Vegas review. Alles over crypto bonussen, games en unieke features." />
+        <meta name="robots" content="index, follow" />
+        {(() => {
+          const og = getOgMetaForCasino("wildvegas");
+          return <>
+            <meta property="og:title" content={og.title} />
+            <meta property="og:description" content={og.description} />
+            <meta property="og:image" content={og.image} />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://www.crypto-online-casino.com/crypto-casino-reviews/wildvegas" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={og.title} />
+            <meta name="twitter:description" content={og.description} />
+            <meta name="twitter:image" content={og.image} />
+          </>;
+        })()}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -33,12 +48,6 @@ export default function WildVegasReview() {
             ], "https://www.yourdomain.com"))
           }}
         />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Wild Vegas Review (2025) – Claim Bonus & Spin Wild!" />
-        <meta property="og:description" content="Find out if Wild Vegas is your next crypto casino – full review, wild bonuses, and player experience." />
-        <meta property="og:image" content="/logos/wildvegas.png" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.yourdomain.com/crypto-casino-reviews/wildvegas" />
       </Head>
       <script
         type="application/ld+json"

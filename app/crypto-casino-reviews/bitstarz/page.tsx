@@ -20,7 +20,8 @@ export default function BitStarzReview() {
             <meta property="og:description" content={og.description} />
             <meta property="og:image" content={og.image} />
             <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.yourdomain.com/crypto-casino-reviews/bitstarz" />
+            <meta property="og:url" content="https://www.crypto-online-casino.com/crypto-casino-reviews/bitstarz" />
+            {/* Twitter Card tags */}
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={og.title} />
             <meta name="twitter:description" content={og.description} />
@@ -35,8 +36,8 @@ export default function BitStarzReview() {
                 name: "BitStarz",
                 reviewRating: 5.0,
                 reviewCount: 1242,
-                url: "https://www.yourdomain.com/crypto-casino-reviews/bitstarz",
-                image: "https://www.yourdomain.com/logos/bitstarz.png",
+                url: "https://www.crypto-online-casino.com/crypto-casino-reviews/bitstarz",
+                image: "https://www.crypto-online-casino.com/logos/bitstarz.png",
                 description: "BitStarz is an award-winning crypto casino with over 3,500 games, instant payouts, and a reputation for excellence. The gold standard for crypto gambling."
               })
             )
@@ -49,7 +50,7 @@ export default function BitStarzReview() {
               { name: "Home", href: "/" },
               { name: "Casino Reviews", href: "/crypto-casino-reviews" },
               { name: "BitStarz", href: "/crypto-casino-reviews/bitstarz" }
-            ], "https://www.yourdomain.com"))
+            ], "https://www.crypto-online-casino.com"))
           }}
         />
       </Head>
@@ -61,8 +62,8 @@ export default function BitStarzReview() {
               name: "BitStarz",
               reviewRating: 5.0,
               reviewCount: 1242,
-              url: "https://www.yourdomain.com/crypto-casino-reviews/bitstarz",
-              image: "https://www.yourdomain.com/logos/bitstarz.png",
+              url: "https://www.crypto-online-casino.com/crypto-casino-reviews/bitstarz",
+              image: "https://www.crypto-online-casino.com/logos/bitstarz.png",
               description: "BitStarz is an award-winning crypto casino with over 3,500 games, instant payouts, and a reputation for excellence. The gold standard for crypto gambling."
             })
           )

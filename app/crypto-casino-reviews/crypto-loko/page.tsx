@@ -1,16 +1,29 @@
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Head from "next/head";
-import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import { getReviewStructuredData, getBreadcrumbListStructuredData, getOgMetaForCasino } from "@/lib/structuredData";
 
 export default function CryptoLokoReview() {
   return (
     <>
       <Head>
-        <title>Crypto Loko Casino Review 2025 – Bonussen & Spellen</title>
-        <meta name="description" content="Lees onze 2025 review van Crypto Loko. Alles over bonussen, crypto betalingen, spellen en meer!" />
+        <title>Crypto Loko Casino Review (2025) – Crypto Bonussen & Spellen</title>
+        <meta name="description" content="Lees onze 2025 Crypto Loko review. Alles over crypto bonussen, games en unieke features." />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Crypto Loko Casino Review (2025) – Go Loko with Crypto Bonuses" />
+        {(() => {
+          const og = getOgMetaForCasino("crypto-loko");
+          return <>
+            <meta property="og:title" content={og.title} />
+            <meta property="og:description" content={og.description} />
+            <meta property="og:image" content={og.image} />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://www.crypto-online-casino.com/crypto-casino-reviews/crypto-loko" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={og.title} />
+            <meta name="twitter:description" content={og.description} />
+            <meta name="twitter:image" content={og.image} />
+          </>;
+        })()}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

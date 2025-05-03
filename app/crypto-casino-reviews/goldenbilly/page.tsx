@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import { getReviewStructuredData, getBreadcrumbListStructuredData, getOgMetaForCasino } from "@/lib/structuredData";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -7,10 +7,23 @@ export default function GoldenBillyReview() {
   return (
     <>
       <Head>
-        <title>Golden Billy Casino Review (2025) – Crypto Bonuses & Fast Payouts</title>
-        <meta name="description" content="Read our Golden Billy Casino review! Discover crypto bonuses, fast payouts, and the unique advantages of this new crypto casino site." />
+        <title>Golden Billy Casino Review (2025) – Crypto Bonussen & Spellen</title>
+        <meta name="description" content="Lees onze 2025 Golden Billy review. Alles over crypto bonussen, games en unieke features." />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Golden Billy Casino Review (2025) – Crypto Bonuses & Fast Payouts" />
+        {(() => {
+          const og = getOgMetaForCasino("goldenbilly");
+          return <>
+            <meta property="og:title" content={og.title} />
+            <meta property="og:description" content={og.description} />
+            <meta property="og:image" content={og.image} />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://www.crypto-online-casino.com/crypto-casino-reviews/goldenbilly" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={og.title} />
+            <meta name="twitter:description" content={og.description} />
+            <meta name="twitter:image" content={og.image} />
+          </>;
+        })()}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

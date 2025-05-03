@@ -1,7 +1,7 @@
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Head from "next/head";
-import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import { getReviewStructuredData, getBreadcrumbListStructuredData, getOgMetaForCasino } from "@/lib/structuredData";
 
 export default function CloudbetReview() {
   return (
@@ -10,7 +10,20 @@ export default function CloudbetReview() {
         <title>Cloudbet Review (2025) – Claim Bonus & Bet Instantly</title>
         <meta name="description" content="Read our 2025 Cloudbet review. Trusted crypto sportsbook & casino with fast payouts, high limits, and huge bonuses. Claim your bonus now!" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Cloudbet Review (2025) – Claim Bonus & Bet Instantly" />
+        {(() => {
+          const og = getOgMetaForCasino("cloudbet");
+          return <>
+            <meta property="og:title" content={og.title} />
+            <meta property="og:description" content={og.description} />
+            <meta property="og:image" content={og.image} />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://www.yourdomain.com/crypto-casino-reviews/cloudbet" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={og.title} />
+            <meta name="twitter:description" content={og.description} />
+            <meta name="twitter:image" content={og.image} />
+          </>;
+        })()}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
