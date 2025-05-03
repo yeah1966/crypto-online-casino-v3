@@ -1,19 +1,20 @@
 import BlogPostLayout from "../BlogPostLayout";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Head from "next/head";
-import { getBlogStructuredData } from "@/lib/structuredData";
+import { getBlogStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 export default function Trends2025() {
   return (
     <BlogPostLayout title="📈 Crypto Gambling Trends: What’s Hot in 2025?" date="April 2025">
       <Head>
-        <title>Crypto Casino Trends voor 2025</title>
-        <meta name="description" content="Bekijk de nieuwste trends in crypto casino’s voor 2025. Van nieuwe tokens tot innovatieve games en regelgeving." />
+        <title>Crypto Casino Trends 2025</title>
+        <meta name="description" content="Ontdek de belangrijkste trends voor crypto casino’s in 2025. Wat verandert er op het gebied van blockchain, bonussen en regelgeving?" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(getBlogStructuredData({
-              title: "Crypto Casino Trends voor 2025",
-              description: "Bekijk de nieuwste trends in crypto casino’s voor 2025. Van nieuwe tokens tot innovatieve games en regelgeving.",
+              title: "Crypto Casino Trends 2025",
+              description: "Ontdek de belangrijkste trends voor crypto casino’s in 2025. Wat verandert er op het gebied van blockchain, bonussen en regelgeving?",
               url: "https://www.yourdomain.com/blog/trends-2025",
               author: "Redactie Crypto Online Casino",
               datePublished: "2025-02-18",
@@ -21,7 +22,24 @@ export default function Trends2025() {
             }))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Blog", href: "/blog" },
+              { name: "Trends 2025", href: "/blog/trends-2025" }
+            ], "https://www.yourdomain.com"))
+          }}
+        />
       </Head>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Blog", href: "/blog" },
+          { name: "Trends 2025", href: "/blog/trends-2025" }
+        ]}
+      />
       <h2 className="text-2xl font-bold mb-4">From NFT slot machines to AI-powered dealers — here’s what’s shaping the future of crypto casinos.</h2>
       <section className="mb-8">
         <h3 className="text-xl font-semibold mb-2">🔮 The Industry is Booming</h3>

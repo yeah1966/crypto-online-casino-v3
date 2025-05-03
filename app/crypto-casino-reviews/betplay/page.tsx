@@ -1,13 +1,14 @@
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Head from "next/head";
-import { getReviewStructuredData } from "@/lib/structuredData";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 export default function BetplayReview() {
   return (
     <>
       <Head>
-        <title>Betplay Casino Review 2025 – Crypto Sports & Casino</title>
-        <meta name="description" content="Lees onze 2025 review van Betplay. Alles over sportweddenschappen, casino, crypto bonussen en snelle uitbetalingen!" />
+        <title>Betplay Casino Review 2025 – Crypto Bonussen & Snel Uitbetalen</title>
+        <meta name="description" content="Lees onze 2025 review van Betplay Casino. Alles over bonussen, crypto betalingen, spellen en meer!" />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Betplay Casino Review (2025) – Claim Bonus & Bet Instantly" />
         <script
@@ -23,7 +24,24 @@ export default function BetplayReview() {
             }))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+              { name: "Betplay Casino", href: "/crypto-casino-reviews/betplay" }
+            ], "https://www.yourdomain.com"))
+          }}
+        />
       </Head>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+          { name: "Betplay Casino", href: "/crypto-casino-reviews/betplay" }
+        ]}
+      />
       <CasinoReviewTemplate
         logo="/logos/betplay.png"
         casinoName="BETPLAY"

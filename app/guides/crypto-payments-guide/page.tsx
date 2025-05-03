@@ -2,6 +2,8 @@
 import React, { useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 const sections = [
   { id: "intro", label: "Intro" },
@@ -34,7 +36,24 @@ export default function CryptoPaymentsGuide() {
       <Head>
         <title>Crypto Payments at Online Casinos: Fast, Secure & Borderless 💸</title>
         <meta name="description" content="Discover why crypto payments are the fastest, safest, and most private way to play at online casinos. Learn how it works, which coins are accepted, and how to get started." />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Guides", href: "/guides" },
+              { name: "Crypto Payments Guide", href: "/guides/crypto-payments-guide" }
+            ], "https://www.yourdomain.com"))
+          }}
+        />
       </Head>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Guides", href: "/guides" },
+          { name: "Crypto Payments Guide", href: "/guides/crypto-payments-guide" }
+        ]}
+      />
       <div className="min-h-screen flex justify-center py-10 px-2">
         <div className="bg-black/65 backdrop-blur-lg rounded-2xl p-6 md:p-10 shadow-xl max-w-5xl mx-auto w-full text-white">
           {/* Sticky submenu */}

@@ -1,6 +1,7 @@
 import Head from "next/head";
-import { getReviewStructuredData } from "@/lib/structuredData";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default function GoldenBillyReview() {
   return (
@@ -23,7 +24,24 @@ export default function GoldenBillyReview() {
             }))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+              { name: "Golden Billy Casino", href: "/crypto-casino-reviews/goldenbilly" }
+            ], "https://www.yourdomain.com"))
+          }}
+        />
       </Head>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+          { name: "Golden Billy Casino", href: "/crypto-casino-reviews/goldenbilly" }
+        ]}
+      />
       <CasinoReviewTemplate
         logo="/logos/goldenbilly.png"
         casinoName="GOLDEN BILLY"

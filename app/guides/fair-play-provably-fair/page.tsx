@@ -2,6 +2,8 @@
 import React, { useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 const sections = [
   { id: "intro", label: "Intro" },
@@ -29,7 +31,24 @@ export default function ProvablyFairGuide() {
         <Head>
           <title>Provably Fair Explained – How Crypto Casinos Ensure Fair Play</title>
           <meta name="description" content="What does ‘provably fair’ mean at crypto casinos? Learn how blockchain-based games guarantee fairness with open algorithms and transparency." />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(getBreadcrumbListStructuredData([
+                { name: "Home", href: "/" },
+                { name: "Guides", href: "/guides" },
+                { name: "Provably Fair", href: "/guides/provably-fair" }
+              ], "https://www.yourdomain.com"))
+            }}
+          />
         </Head>
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Guides", href: "/guides" },
+            { name: "Provably Fair", href: "/guides/provably-fair" }
+          ]}
+        />
         {/* Sticky submenu */}
         <nav className="sticky top-4 z-30 mb-8 flex gap-2 flex-wrap justify-center md:justify-start">
           {sections.map((s) => (

@@ -3,6 +3,8 @@ import React, { useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 const sections = [
   { id: "intro", label: "Intro" },
@@ -44,9 +46,26 @@ export default function GettingStartedGuide() {
   return (
     <>
       <Head>
-        <title>How to Start Playing at a Crypto Casino (Getting Started Guide)</title>
-        <meta name="description" content="New to crypto casinos? This guide explains exactly how to create an account, deposit safely with crypto, and start playing — in minutes." />
+        <title>Getting Started – Beginnen met Crypto Casino’s</title>
+        <meta name="description" content="Een praktische gids voor beginners: zo start je veilig met crypto casino’s, wallets, coins en eerste stortingen." />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Gidsen", href: "/guides" },
+              { name: "Getting Started", href: "/guides/getting-started" }
+            ], "https://www.yourdomain.com"))
+          }}
+        />
       </Head>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Gidsen", href: "/guides" },
+          { name: "Getting Started", href: "/guides/getting-started" }
+        ]}
+      />
       <main className="min-h-screen flex items-center justify-center">
         <div className="bg-black/65 backdrop-blur-lg rounded-2xl p-6 md:p-10 shadow-xl max-w-5xl mx-auto w-full text-white">
           {/* VEGAS BACKGROUND + OVERLAY */}

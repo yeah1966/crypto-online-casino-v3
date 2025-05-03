@@ -1,6 +1,7 @@
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Head from "next/head";
-import { getReviewStructuredData } from "@/lib/structuredData";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 export default function CloudbetReview() {
   return (
@@ -23,7 +24,24 @@ export default function CloudbetReview() {
             }))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+              { name: "Cloudbet", href: "/crypto-casino-reviews/cloudbet" }
+            ], "https://www.yourdomain.com"))
+          }}
+        />
       </Head>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+          { name: "Cloudbet", href: "/crypto-casino-reviews/cloudbet" }
+        ]}
+      />
       <CasinoReviewTemplate
         logo="/logos/cloudbet.png"
         casinoName="CLOUDBET"

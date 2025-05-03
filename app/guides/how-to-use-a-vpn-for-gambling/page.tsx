@@ -2,6 +2,8 @@
 import React, { useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 const sections = [
   { id: "intro", label: "Intro" },
@@ -36,7 +38,24 @@ export default function VpnGamblingGuide() {
         <Head>
           <title>Using a VPN to Access Crypto Casinos – Is It Safe & Legal?</title>
           <meta name="description" content="Find out how VPNs let you access crypto casinos safely and privately. Step-by-step guide + top VPN tips for crypto gambling." />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(getBreadcrumbListStructuredData([
+                { name: "Home", href: "/" },
+                { name: "Guides", href: "/guides" },
+                { name: "How to Use a VPN for Gambling", href: "/guides/how-to-use-a-vpn-for-gambling" }
+              ], "https://www.yourdomain.com"))
+            }}
+          />
         </Head>
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Guides", href: "/guides" },
+            { name: "How to Use a VPN for Gambling", href: "/guides/how-to-use-a-vpn-for-gambling" }
+          ]}
+        />
         {/* Sticky submenu */}
         <nav className="sticky top-4 z-30 mb-8 flex gap-2 flex-wrap justify-center md:justify-start">
           {sections.map((s) => (

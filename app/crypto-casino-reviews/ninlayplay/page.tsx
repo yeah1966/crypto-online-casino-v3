@@ -1,6 +1,7 @@
 import Head from "next/head";
-import { getReviewStructuredData } from "@/lib/structuredData";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default function NinlayplayReview() {
   return (
@@ -23,7 +24,24 @@ export default function NinlayplayReview() {
             }))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+              { name: "Ninlayplay Casino", href: "/crypto-casino-reviews/ninlayplay" }
+            ], "https://www.yourdomain.com"))
+          }}
+        />
       </Head>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+          { name: "Ninlayplay Casino", href: "/crypto-casino-reviews/ninlayplay" }
+        ]}
+      />
       <CasinoReviewTemplate
         logo="/logos/ninlaycasino.png"
         casinoName="NINLAYPLAY CASINO"

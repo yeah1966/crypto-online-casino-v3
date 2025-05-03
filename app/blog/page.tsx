@@ -1,8 +1,31 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import Head from "next/head";
+
 export default function BlogPage() {
   return (
     <>
       <div className="min-h-screen fixed inset-0 -z-10 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-center bg-fixed" />
       <div className="relative z-10 flex items-center justify-center min-h-screen py-8 px-2">
+        <Head>
+          <title>Crypto Casino Blog – Nieuws, Tips & Trends</title>
+          <meta name="description" content="Lees het laatste nieuws, tips en trends over crypto casino’s. Blijf op de hoogte van blockchain gaming, nieuwe tokens en innovatieve casino’s." />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(getBreadcrumbListStructuredData([
+                { name: "Home", href: "/" },
+                { name: "Blog", href: "/blog" }
+              ], "https://www.yourdomain.com"))
+            }}
+          />
+        </Head>
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Blog", href: "/blog" }
+          ]}
+        />
         <div className="bg-black/65 backdrop-blur-lg rounded-2xl p-6 md:p-10 shadow-xl max-w-5xl mx-auto w-full">
           <section className="w-full px-4 py-12 md:py-20 lg:py-28 text-white">
             <div className="max-w-4xl mx-auto text-center mb-12">

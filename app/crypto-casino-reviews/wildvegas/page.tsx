@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
-import { getReviewStructuredData } from "@/lib/structuredData";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 
 export default function WildVegasReview() {
@@ -20,6 +21,16 @@ export default function WildVegasReview() {
               image: "https://www.yourdomain.com/logos/wildvegas.png",
               description: "Wild Vegas is een spannend crypto casino met snelle betalingen, royale bonussen en een breed spelaanbod. Lees onze volledige review!"
             }))
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+              { name: "Wild Vegas Casino", href: "/crypto-casino-reviews/wildvegas" }
+            ], "https://www.yourdomain.com"))
           }}
         />
         <meta name="robots" content="index, follow" />
@@ -57,6 +68,13 @@ export default function WildVegasReview() {
             }
           }),
         }}
+      />
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+          { name: "Wild Vegas Casino", href: "/crypto-casino-reviews/wildvegas" }
+        ]}
       />
       <CasinoReviewTemplate
         logo="/logos/wildvegas.png"

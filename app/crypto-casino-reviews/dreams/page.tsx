@@ -1,6 +1,7 @@
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Head from "next/head";
-import { getReviewStructuredData } from "@/lib/structuredData";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 export default function DreamsReview() {
   return (
@@ -23,7 +24,24 @@ export default function DreamsReview() {
             }))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+              { name: "Dreams Casino", href: "/crypto-casino-reviews/dreams" }
+            ], "https://www.yourdomain.com"))
+          }}
+        />
       </Head>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+          { name: "Dreams Casino", href: "/crypto-casino-reviews/dreams" }
+        ]}
+      />
       <CasinoReviewTemplate
         logo="/logos/dreamscasino.png"
         casinoName="DREAMS CASINO"

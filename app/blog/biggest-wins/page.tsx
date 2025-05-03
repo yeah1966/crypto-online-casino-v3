@@ -1,6 +1,7 @@
 import BlogPostLayout from "../BlogPostLayout";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Head from "next/head";
-import { getBlogStructuredData } from "@/lib/structuredData";
+import { getBlogStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 export default function BiggestWins() {
   return (
@@ -21,7 +22,24 @@ export default function BiggestWins() {
             }))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Blog", href: "/blog" },
+              { name: "Grootste Wins", href: "/blog/biggest-wins" }
+            ], "https://www.yourdomain.com"))
+          }}
+        />
       </Head>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Blog", href: "/blog" },
+          { name: "Grootste Wins", href: "/blog/biggest-wins" }
+        ]}
+      />
       <h2 className="text-2xl font-bold mb-4">Discover the wildest wins in crypto gambling history — from million-dollar spins to legendary streaks.</h2>
       <section className="mb-8">
         <h3 className="text-xl font-semibold mb-2">🤑 The Rise of Mega Wins in Crypto Casinos</h3>

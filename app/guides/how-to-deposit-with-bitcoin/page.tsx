@@ -3,6 +3,8 @@
 import React, { useRef, useMemo } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 const sections = [
   { id: "intro", label: "Intro" },
@@ -69,7 +71,24 @@ export default function DepositWithBitcoinGuide() {
         <Head>
           <title>How to Deposit with Bitcoin at a Crypto Casino</title>
           <meta name="description" content="Learn how to fund your crypto casino account with Bitcoin in just 5 minutes. Follow our step-by-step guide and discover the best wallets and tips!" />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(getBreadcrumbListStructuredData([
+                { name: "Home", href: "/" },
+                { name: "Guides", href: "/guides" },
+                { name: "How to Deposit with Bitcoin", href: "/guides/how-to-deposit-with-bitcoin" }
+              ], "https://www.yourdomain.com"))
+            }}
+          />
         </Head>
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Guides", href: "/guides" },
+            { name: "How to Deposit with Bitcoin", href: "/guides/how-to-deposit-with-bitcoin" }
+          ]}
+        />
         {/* Sticky submenu */}
         <nav className="sticky top-4 z-30 mb-8 flex gap-2 flex-wrap justify-center md:justify-start">
           {sections.map((s) => (

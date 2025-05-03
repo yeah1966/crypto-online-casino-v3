@@ -1,19 +1,20 @@
 import BlogPostLayout from "../BlogPostLayout";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Head from "next/head";
-import { getBlogStructuredData } from "@/lib/structuredData";
+import { getBlogStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 export default function ProvablyFair() {
   return (
     <BlogPostLayout title="🧪 How Crypto Casinos Stay Fair: Behind the Scenes" date="April 2025">
       <Head>
-        <title>Wat is Provably Fair? Uitleg voor Crypto Casino’s</title>
-        <meta name="description" content="Alles over Provably Fair in crypto casino’s: hoe werkt het, waarom is het veilig, en welke sites bieden het aan?" />
+        <title>Provably Fair Casino’s – Hoe Werkt Het?</title>
+        <meta name="description" content="Leer alles over provably fair casino’s. Hoe werkt het, waarom is het veilig en welke crypto casino’s bieden dit aan?" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(getBlogStructuredData({
-              title: "Wat is Provably Fair? Uitleg voor Crypto Casino’s",
-              description: "Alles over Provably Fair in crypto casino’s: hoe werkt het, waarom is het veilig, en welke sites bieden het aan?",
+              title: "Provably Fair Casino’s – Hoe Werkt Het?",
+              description: "Leer alles over provably fair casino’s. Hoe werkt het, waarom is het veilig en welke crypto casino’s bieden dit aan?",
               url: "https://www.yourdomain.com/blog/provably-fair",
               author: "Redactie Crypto Online Casino",
               datePublished: "2025-03-02",
@@ -21,7 +22,24 @@ export default function ProvablyFair() {
             }))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Blog", href: "/blog" },
+              { name: "Provably Fair", href: "/blog/provably-fair" }
+            ], "https://www.yourdomain.com"))
+          }}
+        />
       </Head>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Blog", href: "/blog" },
+          { name: "Provably Fair", href: "/blog/provably-fair" }
+        ]}
+      />
       <h2 className="text-2xl font-bold mb-4">We reveal how provably fair systems actually work — and how you can verify your own game outcomes.</h2>
       <section className="mb-8">
         <h3 className="text-xl font-semibold mb-2">🎯 Introduction</h3>

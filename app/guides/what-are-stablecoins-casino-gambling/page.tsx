@@ -2,6 +2,8 @@
 import React, { useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 const sections = [
   { id: "intro", label: "Intro" },
@@ -28,7 +30,24 @@ export default function StablecoinsGuide() {
       <Head>
         <title>What Are Stablecoins & Why Use Them in Crypto Casinos?</title>
         <meta name="description" content="Discover how stablecoins like USDT, USDC and DAI work in crypto gambling. Lower risk, fast payments, and greater control over your bankroll." />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Guides", href: "/guides" },
+              { name: "Stablecoins", href: "/guides/what-are-stablecoins-casino-gambling" }
+            ], "https://www.yourdomain.com"))
+          }}
+        />
       </Head>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Guides", href: "/guides" },
+          { name: "Stablecoins", href: "/guides/what-are-stablecoins-casino-gambling" }
+        ]}
+      />
       <main className="min-h-screen flex items-center justify-center">
         <div className="bg-black/65 backdrop-blur-lg rounded-2xl p-6 md:p-10 shadow-xl max-w-5xl mx-auto w-full text-white">
           {/* Sticky submenu */}

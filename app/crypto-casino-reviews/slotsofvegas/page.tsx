@@ -1,5 +1,7 @@
 import Head from "next/head";
 import { getReviewStructuredData } from "@/lib/structuredData";
+import { getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 
 export default function SlotsOfVegasReview() {
@@ -27,7 +29,24 @@ export default function SlotsOfVegasReview() {
             }))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+              { name: "Slots of Vegas", href: "/crypto-casino-reviews/slotsofvegas" }
+            ], "https://www.yourdomain.com"))
+          }}
+        />
       </Head>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+          { name: "Slots of Vegas", href: "/crypto-casino-reviews/slotsofvegas" }
+        ]}
+      />
       <CasinoReviewTemplate
         logo="/logos/slotsofvegas.png"
         casinoName="SLOTS OF VEGAS"

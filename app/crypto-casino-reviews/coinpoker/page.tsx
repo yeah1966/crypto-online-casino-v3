@@ -1,15 +1,16 @@
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Head from "next/head";
-import { getReviewStructuredData } from "@/lib/structuredData";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 export default function CoinPokerReview() {
   return (
     <>
       <Head>
-        <title>CoinPoker Casino Review (2025) – Play Blockchain Poker with Crypto</title>
-        <meta name="description" content="CoinPoker is the world’s most trusted blockchain poker site, offering a provably fair experience with fast crypto payouts and decentralized gameplay. If you’re searching for secure crypto poker powered by transparency, CoinPoker combines the thrill of classic poker with the power of blockchain technology." />
+        <title>Coinpoker Casino Review 2025 – Crypto Poker & Casino</title>
+        <meta name="description" content="Lees onze 2025 review van Coinpoker. Alles over poker, crypto betalingen, spellen en meer!" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="CoinPoker Casino Review (2025) – Play Blockchain Poker with Crypto" />
+        <meta property="og:title" content="Coinpoker Casino Review 2025 – Crypto Poker & Casino" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -23,7 +24,24 @@ export default function CoinPokerReview() {
             }))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+              { name: "Coinpoker Casino", href: "/crypto-casino-reviews/coinpoker" }
+            ], "https://www.yourdomain.com"))
+          }}
+        />
       </Head>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+          { name: "Coinpoker Casino", href: "/crypto-casino-reviews/coinpoker" }
+        ]}
+      />
       <CasinoReviewTemplate
         logo="/logos/coinpoker.png"
         casinoName="COINPOKER"

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Head from "next/head";
 import CasinoSuggestions from "@/components/CasinoSuggestions";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { getOgMetaForCasino } from "@/lib/ogMeta";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 export default function BitStarzReview() {
@@ -11,11 +12,21 @@ export default function BitStarzReview() {
         <title>BitStarz Casino Review (2025) – Claim Bonus & Play Instantly</title>
         <meta name="description" content="Read our 2025 BitStarz review. Award-winning crypto casino with 3,500+ games, instant payouts, and top-tier support. Claim your bonus now!" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="BitStarz Casino Review (2025) – Claim Bonus & Play Instantly" />
-        <meta property="og:description" content="Discover why BitStarz is the gold standard in crypto casinos. Full review, bonuses, and player experience." />
-        <meta property="og:image" content="/logos/bitstarz.png" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.yourdomain.com/crypto-casino-reviews/bitstarz" />
+        {/* Dynamische OG/Twitter meta-tags via centrale utility */}
+        {(() => {
+          const og = getOgMetaForCasino("bitstarz");
+          return <>
+            <meta property="og:title" content={og.title} />
+            <meta property="og:description" content={og.description} />
+            <meta property="og:image" content={og.image} />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://www.yourdomain.com/crypto-casino-reviews/bitstarz" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={og.title} />
+            <meta name="twitter:description" content={og.description} />
+            <meta name="twitter:image" content={og.image} />
+          </>;
+        })()}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
