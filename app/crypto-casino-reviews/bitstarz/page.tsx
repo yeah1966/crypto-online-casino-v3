@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 import CasinoSuggestions from "@/components/CasinoSuggestions";
+import { getReviewStructuredData } from "@/lib/structuredData";
 
 export default function BitStarzReview() {
   return (
@@ -18,30 +19,16 @@ export default function BitStarzReview() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Review",
-            "itemReviewed": {
-              "@type": "Organization",
-              "name": "BitStarz",
-              "url": "https://www.yourdomain.com/crypto-casino-reviews/bitstarz",
-              "logo": "https://www.yourdomain.com/logos/bitstarz.png"
-            },
-            "author": {
-              "@type": "Organization",
-              "name": "Crypto Vegas"
-            },
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5.0",
-              "bestRating": "5"
-            },
-            "reviewBody": "BitStarz is an award-winning crypto casino with over 3,500 games, instant payouts, and a reputation for excellence. The gold standard for crypto gambling.",
-            "publisher": {
-              "@type": "Organization",
-              "name": "Crypto Vegas"
-            }
-          }),
+          __html: JSON.stringify(
+            getReviewStructuredData({
+              name: "BitStarz",
+              reviewRating: 5.0,
+              reviewCount: 1242,
+              url: "https://www.yourdomain.com/crypto-casino-reviews/bitstarz",
+              image: "https://www.yourdomain.com/logos/bitstarz.png",
+              description: "BitStarz is an award-winning crypto casino with over 3,500 games, instant payouts, and a reputation for excellence. The gold standard for crypto gambling."
+            })
+          )
         }}
       />
       <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />

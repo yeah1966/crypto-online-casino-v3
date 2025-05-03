@@ -125,3 +125,39 @@ input:-webkit-autofill:active {
 .animate-spinSlow2 {
   animation: spinSlow2 2s linear infinite;
 }
+
+/* Neon glow & tik-animatie voor het roulette-pijltje */
+.react-custom-roulette-pointer {
+  filter: drop-shadow(0 0 8px #FFD600) drop-shadow(0 0 16px #FF4EB9);
+  animation: tik-pointer 0.22s cubic-bezier(0.4,2,0.6,1) infinite alternate;
+}
+
+@keyframes tik-pointer {
+  0% { transform: rotate(-9deg); }
+  100% { transform: rotate(9deg); }
+}
+
+/* Extra fallback voor mogelijke andere pointer classes */
+.pointer, .roulette-pointer {
+  filter: drop-shadow(0 0 8px #FFD600) drop-shadow(0 0 16px #FF4EB9);
+  animation: tik-pointer 0.22s cubic-bezier(0.4,2,0.6,1) infinite alternate;
+}
+
+/* VERWIJDERD: Neon-glow & tik-animatie fallback selectors voor roulette pointer */
+/* De volgende selectors zijn verwijderd omdat ze het hele wheel beïnvloeden in plaats van alleen het pijltje. */
+
+/* .relative.w-[320px].h-[320px] > div:not([class*='canvas']):not([class*='sc-eCssSg']):not([class*='roulette-center']):not([class*='pointer-events-none']) {
+  filter: drop-shadow(0 0 8px #FFD600) drop-shadow(0 0 16px #FF4EB9);
+  animation: tik-pointer 0.22s cubic-bezier(0.4,2,0.6,1) infinite alternate;
+}
+
+.relative.w-[320px].h-[320px] > svg {
+  filter: drop-shadow(0 0 8px #FFD600) drop-shadow(0 0 16px #FF4EB9);
+  animation: tik-pointer 0.22s cubic-bezier(0.4,2,0.6,1) infinite alternate;
+}
+
+.sc-gsTCUz > div, .sc-gsTCUz > svg {
+  filter: drop-shadow(0 0 8px #FFD600) drop-shadow(0 0 16px #FF4EB9) !important;
+  animation: tik-pointer 0.22s cubic-bezier(0.4,2,0.6,1) infinite alternate !important;
+}
+ */

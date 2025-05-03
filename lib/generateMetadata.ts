@@ -37,3 +37,27 @@ export function generate101Metadata(slug: string): Metadata {
   const description = `Alles over ${formatTitle(slug)} voor crypto gokken: uitleg, tips en veelgestelde vragen voor beginners (2025).`;
   return { title, description };
 }
+
+// --- SLOTS & GAMES ---
+export function generateSlotsMetadata(slug: string): Metadata {
+  const formatTitle = (s: string) => s.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  const title = `Slots & Games: ${formatTitle(slug)} – Beste Crypto Gokkasten 2025`;
+  const description = `Alles over ${formatTitle(slug)}: ontdek de populairste crypto slots, spelregels, RTP en waar je gratis kunt spelen in 2025.`;
+  return { title, description };
+}
+
+// --- SPORTS BETTING ---
+export function generateSportsMetadata(slug: string): Metadata {
+  const formatTitle = (s: string) => s.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  const title = `Sportsbetting: ${formatTitle(slug)} – Wedden met Crypto in 2025`;
+  const description = `Lees alles over ${formatTitle(slug)} in crypto sportsbetting: tips, strategieën, odds en de beste bookmakers van 2025.`;
+  return { title, description };
+}
+
+// --- BLOG ---
+export function generateBlogMetadata(slug: string): Metadata {
+  const formatTitle = (s: string) => s.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  const title = `Blog: ${formatTitle(slug)} – Crypto Casino Nieuws & Trends 2025`;
+  const description = `Lees het laatste nieuws, trends en tips over crypto casino’s: ${formatTitle(slug)}. Blijf up-to-date in 2025!`;
+  return { title, description };
+}
