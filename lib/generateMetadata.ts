@@ -16,3 +16,24 @@ export function generateCasinoMetadata(slug: string): Metadata {
     description: `Lees onze ${capitalized} ${label} review van 2025: ontdek snelle crypto-uitbetalingen, topbonussen, en veilig spelen met Bitcoin, Ethereum en meer.`,
   };
 }
+
+export function generateGuideMetadata(slug: string): Metadata {
+  const formatTitle = (s: string) => s.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  const title = `Crypto Guide: ${formatTitle(slug)} – Alles wat je moet weten in 2025`;
+  const description = `Ontdek alles over ${formatTitle(slug)} in onze crypto gids. Leer veilig gokken, betalingen doen, en crypto gebruiken bij online casino’s.`;
+  return { title, description };
+}
+
+export function generateBonusMetadata(slug: string): Metadata {
+  const formatTitle = (s: string) => s.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  const title = `Bonus: ${formatTitle(slug)} – Beste Crypto Casino Bonussen 2025`;
+  const description = `Bekijk de ${formatTitle(slug)} bonus: voorwaarden, hoogte, en hoe je deze claimt bij de beste crypto casino’s van 2025.`;
+  return { title, description };
+}
+
+export function generate101Metadata(slug: string): Metadata {
+  const formatTitle = (s: string) => s.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  const title = `Crypto Gambling 101: ${formatTitle(slug)} – Uitleg & Tips (2025)`;
+  const description = `Alles over ${formatTitle(slug)} voor crypto gokken: uitleg, tips en veelgestelde vragen voor beginners (2025).`;
+  return { title, description };
+}
