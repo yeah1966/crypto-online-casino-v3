@@ -11,9 +11,34 @@ export function generateCasinoMetadata(slug: string): Metadata {
   const label = isBookmaker ? "Sportsbook" : "Casino";
   const focus = isBookmaker ? "Betting Platform" : "Crypto Casino";
 
+  // OG & Twitter meta (custom per casino)
+  const ogImage = `https://www.crypto-online-casino.com/og/${slug}.png`;
+  const url = `https://www.crypto-online-casino.com/crypto-casino-reviews/${slug}`;
+  const siteName = "Crypto Casino Online";
+
   return {
     title: `${capitalized} ${label} Review 2025 – Top ${focus} with Bonuses`,
     description: `Lees onze ${capitalized} ${label} review van 2025: ontdek snelle crypto-uitbetalingen, topbonussen, en veilig spelen met Bitcoin, Ethereum en meer.`,
+    openGraph: {
+      title: `${capitalized} ${label} Review 2025 – Top ${focus} with Bonuses`,
+      description: `Lees onze ${capitalized} ${label} review van 2025: ontdek snelle crypto-uitbetalingen, topbonussen, en veilig spelen met Bitcoin, Ethereum en meer.`,
+      url,
+      siteName,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${capitalized} ${label} Review 2025 – Top ${focus} with Bonuses`,
+      description: `Lees onze ${capitalized} ${label} review van 2025: ontdek snelle crypto-uitbetalingen, topbonussen, en veilig spelen met Bitcoin, Ethereum en meer.`,
+      images: [ogImage],
+    },
   };
 }
 
