@@ -1,59 +1,35 @@
 import Link from "next/link";
-import Head from "next/head";
 import CasinoSuggestions from "@/components/CasinoSuggestions";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import { Metadata } from "next";
+
+export const generateMetadata = async (): Promise<Metadata> => {
+  const og = getOgMetaForCasino("bitstarz");
+  return {
+    title: og.title,
+    description: og.description,
+    openGraph: {
+      title: og.title,
+      description: og.description,
+      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/bitstarz",
+      images: [{ url: og.image }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: og.title,
+      description: og.description,
+      images: [og.image],
+    },
+    robots: "index, follow",
+  };
+};
 
 export default function BitStarzReview() {
   return (
     <>
-      <Head>
-        <title>BitStarz Casino Review (2025) – Claim Bonus & Play Instantly</title>
-        <meta name="description" content="Read our 2025 BitStarz review. Award-winning crypto casino with 3,500+ games, instant payouts, and top-tier support. Claim your bonus now!" />
-        <meta name="robots" content="index, follow" />
-        {/* Dynamische OG/Twitter meta-tags via centrale utility */}
-        {(() => {
-          const og = getOgMetaForCasino("bitstarz");
-          return <>
-            <meta property="og:title" content={og.title} />
-            <meta property="og:description" content={og.description} />
-            <meta property="og:image" content={og.image} />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.crypto-online-casino.com/crypto-casino-reviews/bitstarz" />
-            {/* Twitter Card tags */}
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={og.title} />
-            <meta name="twitter:description" content={og.description} />
-            <meta name="twitter:image" content={og.image} />
-          </>;
-        })()}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              getReviewStructuredData({
-                name: "BitStarz",
-                reviewRating: 5.0,
-                reviewCount: 1242,
-                url: "https://www.crypto-online-casino.com/crypto-casino-reviews/bitstarz",
-                image: "https://www.crypto-online-casino.com/logos/bitstarz.png",
-                description: "BitStarz is an award-winning crypto casino with over 3,500 games, instant payouts, and a reputation for excellence. The gold standard for crypto gambling."
-              })
-            )
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getBreadcrumbListStructuredData([
-              { name: "Home", href: "/" },
-              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-              { name: "BitStarz", href: "/crypto-casino-reviews/bitstarz" }
-            ], "https://www.crypto-online-casino.com"))
-          }}
-        />
-      </Head>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -67,6 +43,16 @@ export default function BitStarzReview() {
               description: "BitStarz is an award-winning crypto casino with over 3,500 games, instant payouts, and a reputation for excellence. The gold standard for crypto gambling."
             })
           )
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getBreadcrumbListStructuredData([
+            { name: "Home", href: "/" },
+            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+            { name: "BitStarz", href: "/crypto-casino-reviews/bitstarz" }
+          ], "https://www.crypto-online-casino.com"))
         }}
       />
       <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
