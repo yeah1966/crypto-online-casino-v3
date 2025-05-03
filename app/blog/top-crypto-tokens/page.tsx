@@ -1,8 +1,27 @@
 import BlogPostLayout from "../BlogPostLayout";
+import { getBlogStructuredData } from "@/lib/structuredData";
+import Head from "next/head";
 
 export default function TopCryptoTokens() {
   return (
     <BlogPostLayout title="🪙 Top Crypto Tokens for Gambling in 2025" date="April 2025">
+      <Head>
+        <title>Top Crypto Tokens voor Online Casino’s in 2025</title>
+        <meta name="description" content="Ontdek de beste crypto tokens voor gokken in online casino’s in 2025. Welke coins zijn snel, veilig en populair? Lees onze analyse!" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBlogStructuredData({
+              title: "Top Crypto Tokens voor Online Casino’s in 2025",
+              description: "Ontdek de beste crypto tokens voor gokken in online casino’s in 2025. Welke coins zijn snel, veilig en populair? Lees onze analyse!",
+              url: "https://www.yourdomain.com/blog/top-crypto-tokens",
+              author: "Redactie Crypto Online Casino",
+              datePublished: "2025-04-02",
+              image: "https://www.yourdomain.com/images/crypto-tokens-cover.png"
+            }))
+          }}
+        />
+      </Head>
       <h2 className="text-2xl font-bold mb-4">Which coins are fastest, cheapest, and most widely accepted in crypto casinos?</h2>
       <section className="mb-8">
         <h3 className="text-xl font-semibold mb-2">🎯 Introduction</h3>

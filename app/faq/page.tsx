@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Head from "next/head";
+import { getFAQStructuredData } from "@/lib/structuredData";
 
 export default function FAQPage() {
   return (
@@ -95,6 +97,20 @@ export default function FAQPage() {
           </section>
         </div>
       </div>
+      <Head>
+        <title>Veelgestelde Vragen over Crypto Casino’s – Alles wat je moet weten</title>
+        <meta name="description" content="Antwoorden op de meest gestelde vragen over crypto casino’s, veiligheid, betalingen, bonussen en meer. Vind snel wat je zoekt!" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getFAQStructuredData([
+              { question: "Wat is een crypto casino?", answer: "Een crypto casino is een online casino waar je kunt gokken met cryptocurrencies zoals Bitcoin, Ethereum of Litecoin." },
+              { question: "Zijn crypto casino’s legaal?", answer: "De legaliteit hangt af van je woonland. In veel landen zijn crypto casino’s toegestaan, maar controleer altijd de lokale wetgeving." },
+              { question: "Hoe snel zijn crypto uitbetalingen?", answer: "Uitbetalingen met crypto zijn doorgaans binnen enkele minuten tot uren verwerkt, afhankelijk van het netwerk." }
+            ]))
+          }}
+        />
+      </Head>
     </>
   );
 }
