@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://crypto-online-casino.com/sitemap.xml
