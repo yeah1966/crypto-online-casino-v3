@@ -1,5 +1,7 @@
 import BlogPostLayout from "../BlogPostLayout";
 import { getBlogStructuredData } from "@/lib/structuredData";
+import { getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Head from "next/head";
 
 export default function TopCryptoTokens() {
@@ -21,7 +23,24 @@ export default function TopCryptoTokens() {
             }))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Blog", href: "/blog" },
+              { name: "Top Crypto Tokens", href: "/blog/top-crypto-tokens" }
+            ], "https://www.yourdomain.com"))
+          }}
+        />
       </Head>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Blog", href: "/blog" },
+          { name: "Top Crypto Tokens", href: "/blog/top-crypto-tokens" }
+        ]}
+      />
       <h2 className="text-2xl font-bold mb-4">Which coins are fastest, cheapest, and most widely accepted in crypto casinos?</h2>
       <section className="mb-8">
         <h3 className="text-xl font-semibold mb-2">🎯 Introduction</h3>

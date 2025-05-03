@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Head from "next/head";
 import CasinoSuggestions from "@/components/CasinoSuggestions";
-import { getReviewStructuredData } from "@/lib/structuredData";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 export default function BitStarzReview() {
   return (
@@ -15,6 +16,31 @@ export default function BitStarzReview() {
         <meta property="og:image" content="/logos/bitstarz.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.yourdomain.com/crypto-casino-reviews/bitstarz" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              getReviewStructuredData({
+                name: "BitStarz",
+                reviewRating: 5.0,
+                reviewCount: 1242,
+                url: "https://www.yourdomain.com/crypto-casino-reviews/bitstarz",
+                image: "https://www.yourdomain.com/logos/bitstarz.png",
+                description: "BitStarz is an award-winning crypto casino with over 3,500 games, instant payouts, and a reputation for excellence. The gold standard for crypto gambling."
+              })
+            )
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getBreadcrumbListStructuredData([
+              { name: "Home", href: "/" },
+              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+              { name: "BitStarz", href: "/crypto-casino-reviews/bitstarz" }
+            ], "https://www.yourdomain.com"))
+          }}
+        />
       </Head>
       <script
         type="application/ld+json"
@@ -49,6 +75,13 @@ export default function BitStarzReview() {
                 <span className="text-yellow-300 text-2xl">★★★★★</span>
                 <span className="text-white/70 text-sm">5.0/5</span>
               </div>
+              <Breadcrumbs
+                items={[
+                  { name: "Home", href: "/" },
+                  { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+                  { name: "BitStarz", href: "/crypto-casino-reviews/bitstarz" }
+                ]}
+              />
               <h1 className="text-3xl font-extrabold text-yellow-300 drop-shadow mb-1 text-center md:text-left">BITSTARZ</h1>
               <a
                 href="https://bs5.direct/b2b7d0ed7"

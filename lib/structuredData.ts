@@ -72,3 +72,17 @@ export function getBlogStructuredData(post: {
     "image": post.image
   };
 }
+
+// 4. Breadcrumb structured data
+export function getBreadcrumbListStructuredData(items: { name: string; href: string }[], baseUrl: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "name": item.name,
+      "item": `${baseUrl}${item.href}`
+    }))
+  };
+}
