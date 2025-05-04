@@ -101,6 +101,17 @@ export default function Home() {
         <div className="relative z-10">
           {/* Nieuwe Las Vegas style header */}
           <div className="pt-10 pb-4">
+            {/* Mascot above the main heading with Vegas glow and custom wiggle */}
+            <div className="relative flex justify-center mb-6">
+              <div className="absolute w-36 h-36 md:w-52 md:h-52 rounded-full blur-2xl bg-[#38FF14]/40 z-0"></div>
+              <img
+                src="/logos/crypto-mascot.png"
+                alt="Crypto Casino Mascot"
+                className="relative w-32 h-32 md:w-48 md:h-48 drop-shadow-neon animate-[wiggle_1.5s_ease-in-out_infinite]"
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+            {/* Main heading */}
             <h1 className="text-5xl font-extrabold text-yellow-400 tracking-wide drop-shadow-neon text-center mb-8 animate-pulse">
               🏆 BEST CRYPTO CASINOS 2025
             </h1>

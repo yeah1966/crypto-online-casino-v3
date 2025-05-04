@@ -43,9 +43,11 @@ const navItems = [
   {
     label: "bonuses",
     submenu: [
-      { label: "all_bonuses", path: "/best-crypto-casino-bonuses" },
-      { label: "no_deposit", path: "/no-deposit" },
-      { label: "free_spins", path: "/free-spins" }
+      { label: "all_bonuses", path: "/best-crypto-casino-bonuses", icon: <span>⚡️</span> },
+      { label: "welcome_bonus", path: "/welcome-bonus", icon: <span>🔒</span> },
+      { label: "free_spins", path: "/free-spins", icon: <span>🎰</span> },
+      { label: "no_deposit", path: "/no-deposit", icon: <span>🎲</span> },
+      { label: "vip_deals", path: "/vip-deals", icon: <span>👑</span> },
     ]
   },
   {
@@ -106,15 +108,16 @@ export default function Navbar() {
                       {t(item.label)}
                     </button>
                     <div
-                      className={`absolute left-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg z-50 transition-opacity duration-200 ${activeSubmenu === item.label ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                      className={`absolute left-0 mt-2 w-56 rounded-lg shadow-lg bg-purple-700 py-2 z-50 transition-opacity duration-200 ${activeSubmenu === item.label ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
                     >
                       {item.submenu.map((subItem) => (
                         <Link
                           key={subItem.path}
                           href={subItem.path}
-                          className={`block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white rounded transition-colors ${router.pathname === subItem.path ? 'text-purple-400' : ''}`}
+                          className="flex items-center gap-2 px-4 py-2 hover:bg-purple-800 rounded-md transition-colors"
                         >
-                          {t(subItem.label)}
+                          {subItem.icon}
+                          <span>{t(subItem.label)}</span>
                         </Link>
                       ))}
                     </div>

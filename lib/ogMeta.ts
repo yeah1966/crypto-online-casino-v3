@@ -1,5 +1,18 @@
 // /lib/ogMeta.ts
 
+// Utility to resolve OG image path with aliasing and fallback
+type ImageMap = Record<string, string>;
+
+const imageMap: ImageMap = {
+  bitstarz: "bitstarz-2.png",
+  // Add more aliases here if needed
+};
+
+export function resolveOgImageForSlug(slug: string): string {
+  const filename = imageMap[slug] || `${slug}.png`;
+  return `https://www.crypto-online-casino.com/og/${filename}`;
+}
+
 export function getOgMetaForCasino(slug: string) {
   const titles: Record<string, string> = {
     bitstarz: "BitStarz – Crypto Casino Review 2025 | Bonuses, Games & Fast Payouts",
@@ -10,7 +23,7 @@ export function getOgMetaForCasino(slug: string) {
     betzard: "Betzard – Crypto Casino Review 2025 | Newest Crypto Casino",
     dreams: "Dreams – Crypto Casino Review 2025 | Big Jackpots & Live Dealers",
     coinpoker: "Coinpoker – Crypto Casino Review 2025 | Poker, Rakeback & Crypto",
-    "crypto-loko": "Crypto Loko – Crypto Casino Review 2025 | Unique Rewards & Fast Games",
+    cryptoloko: "Crypto Loko – Crypto Casino Review 2025 | Unique Rewards & Fast Games",
     slotsofvegas: "Slots of Vegas – Crypto Casino Review 2025 | Classic Vegas Slots Online",
     goldenbilly: "Golden Billy – Crypto Casino Review 2025 | Modern Crypto Casino",
     ninlayplay: "Ninlayplay – Crypto Casino Review 2025 | Adventure & Crypto Slots",
@@ -25,18 +38,14 @@ export function getOgMetaForCasino(slug: string) {
     betzard: "Betzard is the newest crypto casino of 2025. Discover top-tier slots, live casino, and sports betting.",
     dreams: "Dreams Casino: experience Vegas-style jackpots, live dealers, and big crypto bonuses in 2025.",
     coinpoker: "Play poker with crypto at Coinpoker. Enjoy rakeback, fast payouts, and unique promotions.",
-    "crypto-loko": "Crypto Loko: colorful new crypto casino with unique rewards, fast games, and LOKO token cashback.",
+    cryptoloko: "Crypto Loko: colorful new crypto casino with unique rewards, fast games, and LOKO token cashback.",
     slotsofvegas: "Spin the reels at Slots of Vegas. Classic Vegas-style crypto slots, exclusive bonuses, and fast payouts.",
     goldenbilly: "Golden Billy: brand-new modern crypto casino with fast payouts, big bonuses, and a sleek interface.",
     ninlayplay: "Ninlayplay: adventure-themed crypto casino with a wide range of games, fast crypto payments, and 24/7 support.",
   };
 
-  const images: Record<string, string> = {
-    bitstarz: "https://www.crypto-online-casino.com/og/bitstarz-2.png",
-  };
-
-  const imageUrl = images[slug] || `https://www.crypto-online-casino.com/og/${slug}.png`;
   const fallbackImage = "https://www.crypto-online-casino.com/og/default.png";
+  const imageUrl = resolveOgImageForSlug(slug);
 
   return {
     title: titles[slug] || "Crypto Casino Reviews 2025 | Best Bitcoin & Crypto Sites",

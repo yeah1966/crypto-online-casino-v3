@@ -9,6 +9,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/bonuses',
+        destination: '/best-crypto-casino-bonuses',
+        permanent: true,
+      },
+      {
         source: '/crypto-casino-reviews/wildevegas',
         destination: '/crypto-casino-reviews/wildvegas',
         permanent: true,
