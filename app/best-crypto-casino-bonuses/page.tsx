@@ -1,7 +1,7 @@
 import { BonusOverviewLayout } from "@/components/BonusOverviewLayout";
 import Image from "next/image";
 import Link from "next/link";
-import { casinos } from '../crypto-casino-reviews/casinosData';
+import { casinos } from '@/data/casinosData';
 
 export default function BestBonusesPage() {
   const sorted = [...casinos].sort((a, b) => b.rating - a.rating);
