@@ -5,6 +5,7 @@ export interface CasinoCard {
   logo: string;
   rating: number;
   description: string;
+  noDepositBonus?: boolean;
   noDepositNote?: string;
 }
 
