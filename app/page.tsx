@@ -6,7 +6,7 @@ import WheelOfFortune from '../components/WheelOfFortune';
 import SpinButton from '@/components/SpinButton';
 import CasinoGrid from '../components/CasinoGrid';
 import Head from 'next/head';
-import { casinos } from './crypto-casino-reviews/casinosData';
+import { casinos } from '@/data/casinosData';
 
 export default function Home() {
   const wheelRef = useRef<any>(null);

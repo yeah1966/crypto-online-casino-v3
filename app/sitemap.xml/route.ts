@@ -1,4 +1,4 @@
-import { casinos } from "@/app/crypto-casino-reviews/casinosData";
+import { casinos } from "@/data/casinosData";
 
 export async function GET() {
   const BASE_URL = "https://crypto-online-casino.com";

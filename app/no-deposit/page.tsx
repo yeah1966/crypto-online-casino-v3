@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { casinos } from '../crypto-casino-reviews/casinosData';
+import { casinos } from '@/data/casinosData';
 
 export default function NoDepositPage() {
   const filtered = casinos.filter(c => c.noDepositBonus !== undefined);

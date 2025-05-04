@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { casinos } from '../crypto-casino-reviews/casinosData';
+import { casinos } from '@/data/casinosData';
 
 export default function WelcomeBonusPage() {
   const sorted = [...casinos].sort((a, b) => b.rating - a.rating);

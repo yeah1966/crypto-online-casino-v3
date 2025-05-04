@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from 'react';
-import { casinos } from '../crypto-casino-reviews/casinosData';
+import { casinos } from '@/data/casinosData';
 import Link from "next/link";
 
 // Simple confetti function (no npm needed)
