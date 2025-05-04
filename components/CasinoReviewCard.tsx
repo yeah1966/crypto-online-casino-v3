@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -15,15 +17,19 @@ export default function CasinoReviewCard({ name, slug, stars = 5, image, tagline
   const halfStar = stars % 1 >= 0.5;
   const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
 
+  const logoSrc = image && image.startsWith('/logos/') ? image : (image ? `/logos/${image}` : '/logos/placeholder.png');
+  console.log('Rendering CasinoReviewCard logo for', name, '->', logoSrc);
+
   return (
     <div className="bg-purple-700/90 hover:bg-purple-800 transition rounded-2xl p-6 text-center border border-purple-500 shadow-lg group flex flex-col items-center h-full">
       <div className="flex justify-center">
         <Image
-          src={`/logos/${image}`}
+          src={logoSrc}
           alt={name}
           width={80}
           height={80}
-          className="mx-auto mb-4 rounded-full shadow-lg group-hover:scale-105 group-hover:shadow-yellow-400/80 transition"
+          onError={(e) => { e.currentTarget.src = '/logos/placeholder.png'; }}
+          className="mx-auto mb-4 rounded-full shadow-lg group-hover:scale-105 group-hover:shadow-yellow-400/80 transition rounded-md object-contain bg-black p-1"
         />
       </div>
       <h3 className="text-xl font-bold text-white drop-shadow mb-1 uppercase tracking-wide">{name}</h3>

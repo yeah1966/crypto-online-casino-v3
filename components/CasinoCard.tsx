@@ -21,7 +21,8 @@ export default function CasinoCard({
   description,
   badge,
 }: CasinoCardProps) {
-  const logoSrc = logo ? `/logos/${logo}` : "/logos/placeholder.png";
+  const logoSrc = logo && logo.startsWith('/logos/') ? logo : (logo ? `/logos/${logo}` : '/logos/placeholder.png');
+  console.log('Rendering CasinoCard logo for', name, '->', logoSrc);
 
   return (
     <div className="flex flex-row items-center justify-between bg-gradient-to-br from-[#1a1a2e] to-[#23234d] rounded-xl p-6 shadow-neon-lg border-2 border-yellow-300 mb-6 w-full max-w-3xl mx-auto transition-all duration-300 hover:shadow-neon-xl hover:scale-[1.025]">
@@ -29,11 +30,11 @@ export default function CasinoCard({
       <div className="flex-shrink-0 flex flex-col items-center justify-center w-28">
         <img
           src={logoSrc}
-          alt={`${name} logo`}
-          className="rounded-lg object-contain w-24 h-24 border-2 border-yellow-300 shadow-neon bg-black"
-          onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src = "/logos/placeholder.png";
-          }}
+          alt={name}
+          width={80}
+          height={80}
+          onError={(e) => { e.currentTarget.src = '/logos/placeholder.png'; }}
+          className="rounded-md object-contain bg-black p-1"
         />
         {badge && (
           <div className="mt-2 px-2 py-1 text-xs font-bold bg-pink-500 text-white rounded shadow-neon uppercase tracking-wide animate-pulse">
