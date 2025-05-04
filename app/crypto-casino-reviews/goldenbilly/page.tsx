@@ -12,8 +12,8 @@ export default function GoldenBillyReview() {
   return (
     <>
       <Head>
-        <title>Golden Billy Casino Review (2025) – Crypto Bonussen & Spellen</title>
-        <meta name="description" content="Lees onze 2025 Golden Billy review. Alles over crypto bonussen, games en unieke features." />
+        <title>Golden Billy Casino Review (2025) – Crypto Bonuses & Games</title>
+        <meta name="description" content="Read our 2025 Golden Billy review. All about crypto bonuses, games, and unique features at this new crypto casino." />
         <meta name="robots" content="index, follow" />
         {(() => {
           const og = getOgMetaForCasino("goldenbilly");
@@ -34,7 +34,7 @@ export default function GoldenBillyReview() {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(getReviewStructuredData({
               name: "Golden Billy Casino",
-              reviewRating: 4.3,
+              reviewRating: 4.0,
               reviewCount: 98,
               url: "https://www.yourdomain.com/crypto-casino-reviews/goldenbilly",
               image: "https://www.yourdomain.com/logos/goldenbilly.png",
@@ -63,21 +63,22 @@ export default function GoldenBillyReview() {
       <CasinoReviewTemplate
         logo="/logos/goldenbilly.png"
         casinoName="GOLDEN BILLY"
-        rating={4.3}
+        rating={4.0}
         ratingStars="★★★★☆"
         affiliateUrl="https://goldenbillylink.com/h62218aaa"
         affiliateLabel="Play at Golden Billy"
         introText="Golden Billy is a brand-new crypto casino with a colorful theme, generous bonuses, and lightning-fast crypto payouts. Discover why more and more players are switching to Golden Billy!"
-        reviewText={`Golden Billy combines a fresh look with a wide selection of games and attractive crypto bonuses.<br><br>The registration process is quick, and you can deposit instantly with Bitcoin, Ethereum, and more. Bonuses are transparent and payouts are usually processed within minutes.<br><br>The casino features a modern, user-friendly interface and a loyal VIP program for regular players. Customer support is available 24/7 via live chat.<br><br>Golden Billy is fully focused on crypto players and regularly offers exclusive promotions and tournaments. Highly recommended if you're looking for a new, trustworthy crypto casino!`}
+        reviewText={`Golden Billy combines a fresh look with a wide selection of games, attractive crypto bonuses, and fast payouts.<br><br>The registration process is quick, and you can deposit instantly with Bitcoin, Ethereum, and more. Bonuses are transparent and payouts are usually processed within minutes.<br><br>The casino features a modern, user-friendly interface and a rewarding loyalty program for regular players. Customer support is available 24/7 via live chat.<br><br><b>Pros:</b> Fast crypto withdrawals, attractive bonuses, jackpot slots, and a fun VIP program.<br><br><b>Cons:</b> Still relatively new, not many community reviews yet.`}
         pros={[
-          "Fast crypto payouts",
+          "Fast crypto withdrawals",
           "Attractive bonuses",
           "User-friendly interface",
+          "Jackpot slots",
           "VIP program and promotions"
         ]}
         cons={[
           "Still relatively new",
-          "No fiat deposits available"
+          "Not many player reviews yet"
         ]}
         highlights={[
           "Deposit with Bitcoin, Ethereum, Litecoin, USDT",
@@ -110,7 +111,7 @@ export default function GoldenBillyReview() {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          🎲 Claim your Golden Billy bonus!
+          🎲 Play at Golden Billy
         </a>
         <p className="text-center text-xs text-gray-200 mt-3">
           18+ | Play responsibly. Golden Billy may not be available in all jurisdictions.

@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Head from 'next/head';
 import { FaStar, FaBolt, FaGift, FaShieldAlt, FaTrophy, FaDice, FaCoins } from "react-icons/fa";
-import { casinos } from './casinosData';
+import { useState } from "react";
+import { casinos } from '@/data/casinosData';
 
 const getStars = (rating: number) => {
   const full = Math.floor(rating);
@@ -14,6 +17,8 @@ const getStars = (rating: number) => {
 }
 
 export default function ReviewsPage() {
+  const [showAll, setShowAll] = useState(false);
+  const visibleCasinos = showAll ? casinos : casinos.slice(0, 20);
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -103,6 +108,16 @@ export default function ReviewsPage() {
               </Link>
             ))}
           </div>
+          {casinos.length > 20 && !showAll && (
+            <div className="text-center mt-6">
+              <button
+                onClick={() => setShowAll(true)}
+                className="px-6 py-2 bg-yellow-300 text-black font-semibold rounded-lg hover:scale-105 transition"
+              >
+                Show More
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </main>

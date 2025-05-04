@@ -69,6 +69,26 @@ const featureBlocks = [
 ];
 
 export default function WildVegasPage() {
+  const sportsbettingMenu = (
+    <nav className="w-full mx-auto">
+      <div className="rounded-2xl border-2 border-yellow-400 bg-gradient-to-br from-yellow-400 via-purple-500 to-orange-400 p-1 shadow-xl flex">
+        <div className="flex-1 flex items-center justify-center gap-6 bg-purple-800/95 rounded-2xl p-4">
+          <a href="/sports" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
+            <span className="text-2xl">⚽</span> Sports Overview
+          </a>
+          <a href="/sports/bookmakers/1xbet" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
+            <span className="text-2xl">🏆</span> 1xBet
+          </a>
+          <a href="/sports/bookmakers/cloudbet" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
+            <span className="text-2xl">⚡</span> Cloudbet
+          </a>
+          <a href="/sports/bookmakers/wildvegas" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
+            <span className="text-2xl">🎲</span> Wild Vegas
+          </a>
+        </div>
+      </div>
+    </nav>
+  );
   return (
     <BookmakerTemplate
       logo="/logos/wildvegas.png"
@@ -79,6 +99,11 @@ export default function WildVegasPage() {
       mainBlocks={mainBlocks}
       featureBlocks={featureBlocks}
       cta={{ href: "https://www.wildvegaslinks.com/click/11/4315/15512/1", text: "Visit Wild Vegas Sportsbook" }}
-    />
+      sportsbettingMenu={sportsbettingMenu}
+    >
+      <div className="max-w-3xl mx-auto space-y-10 relative z-10">
+        {/* REST VAN DE PAGINA */}
+      </div>
+    </BookmakerTemplate>
   );
 }

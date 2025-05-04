@@ -49,159 +49,150 @@ export default function StablecoinsGuide() {
         ]}
       />
       <main className="min-h-screen flex items-center justify-center">
-        <div className="bg-black/65 backdrop-blur-lg rounded-2xl p-6 md:p-10 shadow-xl max-w-5xl mx-auto w-full text-white">
-          {/* Sticky submenu */}
-          <nav className="sticky top-4 z-30 mb-8 flex gap-2 flex-wrap justify-center md:justify-start">
+        <div className="relative rounded-3xl bg-black/65 shadow-2xl border-2 border-yellow-400 p-8 md:p-12 space-y-10 max-w-6xl mx-auto mt-6">
+          <nav className="flex flex-wrap gap-2 justify-center mb-8">
             {sections.map((s) => (
               <button
                 key={s.id}
                 onClick={() => scrollToSection(s.id)}
-                className="px-3 py-1 rounded-full bg-purple-100/80 text-purple-700 font-bold text-sm hover:bg-yellow-300 hover:text-pink-700 transition-all border-2 border-purple-300 shadow"
+                className="px-4 py-1 rounded-full bg-yellow-300/80 text-purple-900 font-bold text-sm hover:bg-yellow-400 transition-all border-2 border-yellow-400 shadow"
               >
                 {s.label}
               </button>
             ))}
           </nav>
-
-          {/* Intro */}
-          <div ref={refs.intro} className="flex flex-col items-center mb-8">
-            <h1 className="text-3xl md:text-5xl font-extrabold neon-text text-center mb-2 text-purple-700">
-              What Are Stablecoins in Crypto Gambling? 📀
-            </h1>
-            <p className="mb-4 text-white/90">
-              Stablecoins are digital currencies pegged to a stable asset (like the US dollar). They’re becoming increasingly popular in crypto casinos for their stability, speed, and simplicity—combining the benefits of crypto with the peace of mind of fiat.
-            </p>
+          <div className="w-full max-w-3xl mx-auto flex flex-col gap-8">
+            {/* Intro */}
+            <section ref={refs.intro} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col items-center gap-2">
+              <div className="flex flex-row items-center gap-4 mb-2">
+                <img src="/icons/USDT.svg" alt="USDT" width={60} height={60} className="drop-shadow-lg" />
+                <img src="/icons/USDC.svg" alt="USDC" width={60} height={60} className="drop-shadow-lg" />
+                <img src="/icons/DAI.svg" alt="DAI" width={60} height={60} className="drop-shadow-lg" />
+              </div>
+              <h1 className="text-3xl md:text-5xl font-extrabold neon-text text-center mb-2 text-purple-700">
+                What Are Stablecoins in Crypto Gambling? 📀
+              </h1>
+              <p className="mb-4 text-white/90 text-center max-w-2xl">
+                Stablecoins are digital currencies pegged to a stable asset (like the US dollar). They’re becoming increasingly popular in crypto casinos for their stability, speed, and simplicity—combining the benefits of crypto with the peace of mind of fiat.
+              </p>
+            </section>
+            {/* Section 1: What Is a Stablecoin? */}
+            <section ref={refs.what} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
+              <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-yellow-600">
+                <img src="/icons/USDT.svg" alt="Stablecoin" width={32} height={32} />
+                What Is a Stablecoin?
+              </h2>
+              <ul className="list-disc ml-6 text-white/90 mt-2">
+                <li className="flex items-center gap-2 mb-1"><img src="/icons/lock.svg" alt="Lock" width={18} height={18} />A stablecoin is a cryptocurrency designed to maintain a fixed value (usually 1 USD).</li>
+                <li className="flex items-center gap-2 mb-1"><img src="/icons/USDT.svg" alt="USDT" width={18} height={18} />Common examples: <b>USDT (Tether)</b>, <b>USDC (USD Coin)</b>, <b>DAI</b>.</li>
+                <li className="flex items-center gap-2 mb-1"><img src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />These coins are backed by real-world assets or algorithmic systems.</li>
+              </ul>
+            </section>
+            {/* Section 2: Why Use Stablecoins? */}
+            <section ref={refs.why} className="rounded-2xl border border-green-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
+              <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-green-600">
+                <img src="/icons/bolt.svg" alt="Why stablecoins" width={32} height={32} />
+                Why Use Stablecoins?
+              </h2>
+              <ul className="list-disc ml-6 text-white/90 mt-2">
+                <li className="flex items-center gap-2 mb-1"><img src="/icons/lock.svg" alt="Lock" width={18} height={18} />No value fluctuations (no wild swings like Bitcoin/Ethereum)</li>
+                <li className="flex items-center gap-2 mb-1"><img src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />Faster and cheaper than fiat bank transfers</li>
+                <li className="flex items-center gap-2 mb-1"><img src="/icons/shib.svg" alt="Privacy" width={18} height={18} />More privacy and control over your bankroll</li>
+              </ul>
+            </section>
+            {/* Section 3: How to Deposit */}
+            <section ref={refs.how} className="rounded-2xl border border-blue-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
+              <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-blue-600">
+                <img src="/icons/bolt.svg" alt="Deposit" width={32} height={32} />
+                How to Deposit with Stablecoins
+              </h2>
+              <ul className="list-disc ml-6 text-white/90 mt-2">
+                <li className="flex items-center gap-2 mb-1"><img src="/icons/USDT.svg" alt="USDT" width={18} height={18} />Choose a casino that supports stablecoins (USDT, USDC, DAI, etc.)</li>
+                <li className="flex items-center gap-2 mb-1"><img src="/icons/lock.svg" alt="Lock" width={18} height={18} />Send stablecoins from your wallet to the casino address</li>
+                <li className="flex items-center gap-2 mb-1"><img src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />Funds are credited instantly—ready to play!</li>
+              </ul>
+            </section>
+            {/* Section 4: Popular Stablecoins */}
+            <section ref={refs.popular} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
+              <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-yellow-600">
+                <img src="/icons/USDT.svg" alt="Popular stablecoins" width={32} height={32} />
+                Popular Stablecoins
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left rounded-xl overflow-hidden border border-purple-400">
+                  <thead className="bg-purple-700 text-white">
+                    <tr>
+                      <th className="px-4 py-2">Coin</th>
+                      <th className="px-4 py-2">Backing</th>
+                      <th className="px-4 py-2">Networks</th>
+                      <th className="px-4 py-2">Feature</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white/90 text-black">
+                    <tr>
+                      <td className="px-4 py-2 font-semibold">USDT</td>
+                      <td className="px-4 py-2">USD Reserves</td>
+                      <td className="px-4 py-2">Ethereum, Tron, BSC</td>
+                      <td className="px-4 py-2">Fast, widely accepted</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-2 font-semibold">USDC</td>
+                      <td className="px-4 py-2">USD Reserves</td>
+                      <td className="px-4 py-2">Ethereum, Solana</td>
+                      <td className="px-4 py-2">Transparency, regulated option</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-2 font-semibold">DAI</td>
+                      <td className="px-4 py-2">Crypto assets</td>
+                      <td className="px-4 py-2">Ethereum</td>
+                      <td className="px-4 py-2">Decentralized and non-custodial</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            {/* Section 5: Pros & Cons of Stablecoin Gambling */}
+            <section ref={refs.proscons} className="rounded-2xl border border-purple-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
+              <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-purple-600">
+                <img src="/icons/bolt.svg" alt="Pros & Cons" width={32} height={32} />
+                Pros & Cons of Stablecoin Gambling
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left rounded-xl overflow-hidden border border-purple-400">
+                  <thead className="bg-purple-700 text-white">
+                    <tr>
+                      <th className="px-4 py-2">✅ Pros</th>
+                      <th className="px-4 py-2">⚠️ Cons</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white/90 text-black">
+                    <tr>
+                      <td className="px-4 py-2">No value fluctuations</td>
+                      <td className="px-4 py-2">Still depends on stablecoin issuer</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-2">Faster than bank methods</td>
+                      <td className="px-4 py-2">Can be delisted or unsupported</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-2">Lower transaction fees</td>
+                      <td className="px-4 py-2">Some require KYC (depending on exchange)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            {/* Final Tip */}
+            <section ref={refs.final} className="rounded-2xl border border-green-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
+              <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-green-700">
+                <img src="/icons/bolt.svg" alt="Final Tip" width={32} height={32} />
+                Final Tip
+              </h2>
+              <div className="bg-yellow-300/90 border-l-4 border-yellow-600 p-4 rounded">
+                Use stablecoins if you want to avoid crypto volatility — perfect for casual players, budget-minded gamblers, or consistent staking strategies.
+              </div>
+            </section>
           </div>
-
-          {/* Section 1: What Is a Stablecoin? */}
-          <section ref={refs.what} className="mb-8">
-            <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-yellow-600">
-              <span className="text-2xl">🪙</span>
-              What Is a Stablecoin?
-            </h2>
-            <ul className="list-disc pl-5 mb-4 text-white/90">
-              <li className="mb-2 text-white/90">A stablecoin is a cryptocurrency designed to maintain a fixed value (usually 1 USD).</li>
-              <li className="mb-2 text-white/90">Common examples: <b>USDT (Tether)</b>, <b>USDC (USD Coin)</b>, <b>DAI</b>.</li>
-              <li className="mb-2 text-white/90">These coins are backed by real-world assets or algorithmic systems.</li>
-            </ul>
-          </section>
-
-          {/* Section 2: Why Use Stablecoins for Gambling? */}
-          <section ref={refs.why} className="mb-8">
-            <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-pink-600">
-              <span className="text-2xl">🎲</span>
-              Why Use Stablecoins for Gambling?
-            </h2>
-            <ul className="list-disc pl-5 mb-4 text-white/90">
-              <li className="mb-2 text-white/90">No price volatility like BTC/ETH — your balance stays stable.</li>
-              <li className="mb-2 text-white/90">Faster transactions than banks or credit cards.</li>
-              <li className="mb-2 text-white/90">Often lower fees than BTC or ETH.</li>
-              <li className="mb-2 text-white/90">Easier bankroll management (especially for budgeting).</li>
-            </ul>
-          </section>
-
-          {/* Section 3: How to Deposit with Stablecoins */}
-          <section ref={refs.how} className="mb-8">
-            <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-green-700">
-              <span className="text-2xl">💳</span>
-              How to Deposit with Stablecoins
-            </h2>
-            <ol className="list-decimal pl-5 mb-4 text-white/90">
-              <li className="mb-2 text-white/90">Buy USDT or USDC on a crypto exchange (Binance, Coinbase, etc.)</li>
-              <li className="mb-2 text-white/90">Transfer to your wallet (e.g., MetaMask, Trust, Ledger)</li>
-              <li className="mb-2 text-white/90">Go to the casino → choose USDT/USDC deposit</li>
-              <li className="mb-2 text-white/90">Copy wallet address or scan QR</li>
-              <li className="mb-2 text-white/90">Send → wait for confirmation (typically under 1 minute)</li>
-            </ol>
-            <p className="mb-2 text-white/90 flex items-center gap-2 text-sm">
-              <span className="text-xl">📌</span>
-              <span>Tip: Always double-check the address and network (ERC20, TRC20, etc.)</span>
-            </p>
-          </section>
-
-          {/* Section 4: Popular Stablecoins in Online Casinos */}
-          <section ref={refs.popular} className="mb-8">
-            <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-purple-700">
-              <span className="text-2xl">🧠</span>
-              Popular Stablecoins in Online Casinos
-            </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left rounded-xl overflow-hidden border border-purple-400">
-                <thead className="bg-purple-700 text-white">
-                  <tr>
-                    <th className="px-4 py-2">Coin</th>
-                    <th className="px-4 py-2">Backed By</th>
-                    <th className="px-4 py-2">Network(s)</th>
-                    <th className="px-4 py-2">Best For</th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white/90 text-black">
-                  <tr>
-                    <td className="px-4 py-2 font-semibold">USDT</td>
-                    <td className="px-4 py-2">USD Reserves</td>
-                    <td className="px-4 py-2">Ethereum, Tron</td>
-                    <td className="px-4 py-2">Fast, widely accepted</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-2 font-semibold">USDC</td>
-                    <td className="px-4 py-2">USD Reserves</td>
-                    <td className="px-4 py-2">Ethereum, Solana</td>
-                    <td className="px-4 py-2">Transparency, regulated option</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-2 font-semibold">DAI</td>
-                    <td className="px-4 py-2">Crypto assets</td>
-                    <td className="px-4 py-2">Ethereum</td>
-                    <td className="px-4 py-2">Decentralized and non-custodial</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          {/* Section 5: Pros & Cons of Stablecoin Gambling */}
-          <section ref={refs.proscons} className="mb-8">
-            <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-yellow-600">
-              <span className="text-2xl">⚖️</span>
-              Pros & Cons of Stablecoin Gambling
-            </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left rounded-xl overflow-hidden border border-purple-400">
-                <thead className="bg-purple-700 text-white">
-                  <tr>
-                    <th className="px-4 py-2">✅ Pros</th>
-                    <th className="px-4 py-2">⚠️ Cons</th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white/90 text-black">
-                  <tr>
-                    <td className="px-4 py-2">No value fluctuations</td>
-                    <td className="px-4 py-2">Still depends on stablecoin issuer</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-2">Faster than bank methods</td>
-                    <td className="px-4 py-2">Can be delisted or unsupported</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-2">Lower transaction fees</td>
-                    <td className="px-4 py-2">Some require KYC (depending on exchange)</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          {/* Final Tip */}
-          <section ref={refs.final} className="mb-8">
-            <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-green-700">
-              <span className="text-2xl">🎯</span>
-              Final Tip
-            </h2>
-            <div className="bg-yellow-300/90 border-l-4 border-yellow-600 p-4 rounded">
-              Use stablecoins if you want to avoid crypto volatility — perfect for casual players, budget-minded gamblers, or consistent staking strategies.
-            </div>
-          </section>
-
           {/* CTA Section */}
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-10 mb-4">
             <Link

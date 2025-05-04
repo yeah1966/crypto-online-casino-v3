@@ -55,23 +55,21 @@ export default function CryptoGambling101() {
           { name: "Crypto Gambling 101", href: "/guides/crypto-gambling-101" }
         ]}
       />
-      <div className="min-h-screen flex justify-center py-10 px-2">
-        <div className="backdrop-blur-lg rounded-2xl shadow-2xl max-w-3xl w-full mx-auto p-4 md:p-8 flex flex-col gap-8">
-          {/* Sticky submenu */}
-          <nav className="sticky top-4 z-30 mb-8 flex gap-2 flex-wrap justify-center md:justify-start">
-            {sections.map((s) => (
-              <button
-                key={s.id}
-                onClick={() => scrollToSection(s.id)}
-                className="px-3 py-1 rounded-full bg-purple-100/80 text-purple-700 font-bold text-sm hover:bg-yellow-300 hover:text-pink-700 transition-all border-2 border-purple-300 shadow"
-              >
-                {s.label}
-              </button>
-            ))}
-          </nav>
-
+      <div className="relative rounded-3xl bg-black/65 shadow-2xl border-2 border-yellow-400 p-8 md:p-12 space-y-10 max-w-6xl mx-auto mt-6">
+        <nav className="flex flex-wrap gap-2 justify-center mb-8">
+          {sections.map((s) => (
+            <button
+              key={s.id}
+              onClick={() => scrollToSection(s.id)}
+              className="px-4 py-1 rounded-full bg-yellow-300/80 text-purple-900 font-bold text-sm hover:bg-yellow-400 transition-all border-2 border-yellow-400 shadow"
+            >
+              {s.label}
+            </button>
+          ))}
+        </nav>
+        <div className="w-full max-w-3xl mx-auto flex flex-col gap-8">
           {/* Hero/Intro */}
-          <div ref={refs.intro} className="flex flex-col items-center mb-8">
+          <section ref={refs.intro} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col items-center gap-2">
             <img src="/fun/roulette.png" alt="Crypto roulette" width={90} height={90} className="mb-2 drop-shadow-lg animate-bounce" />
             <h1 className="text-3xl md:text-5xl font-extrabold neon-text text-center mb-2 text-purple-700">
               📊 Crypto Gambling 101: Everything You Need to Know to Play Smart
@@ -79,50 +77,32 @@ export default function CryptoGambling101() {
             <p className="text-lg text-center text-white/90 mb-4">
               🧠 New to crypto gambling? This guide gives you the basics — fast, fair, and crypto-ready.
             </p>
-          </div>
-
+          </section>
           {/* Section 1: What Is Crypto Gambling? */}
-          <section ref={refs.what} className="mb-8">
+          <section ref={refs.what} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-yellow-600">
               <img src="/fun/cards.png" alt="Casino cards" width={32} height={32} />
               What Is Crypto Gambling?
             </h2>
             <p className="text-white/90">
-              Crypto gambling means using cryptocurrencies like Bitcoin or Ethereum to play your favorite casino games online. You get:
-            </p>
-            <ul className="list-disc ml-6 text-white/90 mt-2">
-              <li>Faster deposits &amp; withdrawals</li>
-              <li>More privacy (no bank involved)</li>
-              <li>Access to global casinos</li>
-            </ul>
-            <p className="text-white/90 mt-2">
-              You can bet in Bitcoin, Ethereum, Litecoin, USDT, and more — all verified through the blockchain.
+              Crypto gambling means playing casino games with Bitcoin, Ethereum, or other cryptocurrencies instead of traditional money. Crypto casinos offer fast deposits, instant withdrawals, and provably fair games you can verify yourself.
             </p>
           </section>
-
-          {/* Section 2: How Do Crypto Bets Work? */}
-          <section ref={refs.how} className="mb-8">
-            <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-pink-600">
+          {/* Section 2: How Bets Work */}
+          <section ref={refs.how} className="rounded-2xl border border-purple-700/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
+            <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-purple-700">
               <img src="/fun/dice.png" alt="Dice" width={32} height={32} />
               How Do Crypto Bets Work?
             </h2>
             <p className="text-white/90">
-              You choose your crypto, place your bet, and… spin, deal, or roll.
+              You deposit crypto, place your bets, and get paid out in crypto. Most sites use blockchain tech for transparency. No banks, no KYC, just pure crypto action.
             </p>
-            <p className="text-white/90 mt-2">Popular crypto games include:</p>
-            <ul className="list-disc ml-6 text-white/90 mt-2">
-              <li>🎰 <b>Slots</b> — same games as fiat casinos, with crypto bets</li>
-              <li>🃏 <b>Blackjack</b> — play against the dealer with BTC</li>
-              <li>🎥 <b>Live Roulette</b> — real dealers, real tables, crypto in, crypto out</li>
-              <li>🎲 <b>Dice</b> — crypto-original, ultra-fast, and provably fair</li>
-            </ul>
           </section>
-
-          {/* Section 3: What Is Provably Fair? */}
-          <section ref={refs.provably} className="mb-8">
+          {/* Section 3: Provably Fair */}
+          <section ref={refs.provably} className="rounded-2xl border border-green-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-green-700">
               <img src="/fun/crypto-flames.png" alt="Provably fair" width={32} height={32} />
-              What Is Provably Fair?
+              Provably Fair Explained
             </h2>
             <p className="text-white/90">
               Provably fair means you can verify every game result using cryptographic hashes.
@@ -139,9 +119,8 @@ export default function CryptoGambling101() {
               <b>Result:</b> You don’t just trust the casino — you can check it.
             </p>
           </section>
-
           {/* Section 4: Understanding RNG */}
-          <section ref={refs.rng} className="mb-8">
+          <section ref={refs.rng} className="rounded-2xl border border-blue-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-purple-700">
               <img src="/fun/roulette.png" alt="RNG" width={32} height={32} />
               Understanding RNG (Random Number Generator)
@@ -158,9 +137,8 @@ export default function CryptoGambling101() {
               📌 <b>Tip:</b> Always check if the game provider is listed at the bottom of the site.
             </p>
           </section>
-
           {/* Section 5: Final Tips */}
-          <section ref={refs.tips} className="mb-8">
+          <section ref={refs.tips} className="rounded-2xl border border-purple-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-pink-700">
               <img src="/fun/tropic-palms.png" alt="Tips" width={32} height={32} />
               Final Tips for Smart Crypto Gamblers
@@ -172,9 +150,8 @@ export default function CryptoGambling101() {
               <li>🔐 Store winnings in your personal wallet</li>
             </ul>
           </section>
-
-          {/* Section 6: Game Types (was summary table) */}
-          <section ref={refs.advantages} className="mb-8">
+          {/* Section 6: Game Types */}
+          <section ref={refs.advantages} className="rounded-2xl border border-orange-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-purple-700">
               <img src="/fun/cards.png" alt="Game types" width={32} height={32} />
               Game Types & Advantages
@@ -189,7 +166,6 @@ export default function CryptoGambling101() {
               ))}
             </div>
           </section>
-
           {/* Section 7: CTA Button */}
           <div className="flex justify-center mt-8">
             <Link

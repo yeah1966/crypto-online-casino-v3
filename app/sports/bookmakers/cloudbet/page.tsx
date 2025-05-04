@@ -12,6 +12,25 @@ export default function CloudbetSportsbookPage() {
         <div className="w-full h-full bg-black/60 rounded-3xl backdrop-blur-sm" />
       </div>
       <div className="max-w-3xl mx-auto space-y-10 relative z-10">
+        {/* SPORTSBETTING MENU */}
+        <nav className="mb-10 w-full mx-auto">
+          <div className="rounded-2xl border-2 border-yellow-400 bg-gradient-to-br from-yellow-400 via-purple-500 to-orange-400 p-1 shadow-xl flex">
+            <div className="flex-1 flex items-center justify-center gap-6 bg-purple-800/95 rounded-2xl p-4">
+              <a href="/sports" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
+                <span className="text-2xl">⚽</span> Sports Overview
+              </a>
+              <a href="/sports/bookmakers/1xbet" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
+                <span className="text-2xl">🏆</span> 1xBet
+              </a>
+              <a href="/sports/bookmakers/cloudbet" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
+                <span className="text-2xl">⚡</span> Cloudbet
+              </a>
+              <a href="/sports/bookmakers/wildvegas" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
+                <span className="text-2xl">🎲</span> Wild Vegas
+              </a>
+            </div>
+          </div>
+        </nav>
         {/* Header - logo links van tekst */}
         <div className="flex items-center bg-transparent mb-2 gap-6">
           <Image

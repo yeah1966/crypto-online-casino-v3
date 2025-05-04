@@ -46,14 +46,14 @@ export default function GettingStartedGuide() {
   return (
     <>
       <Head>
-        <title>Getting Started – Beginnen met Crypto Casino’s</title>
-        <meta name="description" content="Een praktische gids voor beginners: zo start je veilig met crypto casino’s, wallets, coins en eerste stortingen." />
+        <title>Getting Started at Crypto Casinos</title>
+        <meta name="description" content="A practical beginner's guide: how to start safely with crypto casinos, wallets, coins and your first deposit." />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(getBreadcrumbListStructuredData([
               { name: "Home", href: "/" },
-              { name: "Gidsen", href: "/guides" },
+              { name: "Guides", href: "/guides" },
               { name: "Getting Started", href: "/guides/getting-started" }
             ], "https://www.yourdomain.com"))
           }}
@@ -62,98 +62,99 @@ export default function GettingStartedGuide() {
       <Breadcrumbs
         items={[
           { name: "Home", href: "/" },
-          { name: "Gidsen", href: "/guides" },
+          { name: "Guides", href: "/guides" },
           { name: "Getting Started", href: "/guides/getting-started" }
         ]}
       />
-      <main className="min-h-screen flex items-center justify-center">
-        <div className="bg-black/65 backdrop-blur-lg rounded-2xl p-6 md:p-10 shadow-xl max-w-5xl mx-auto w-full text-white">
-          {/* VEGAS BACKGROUND + OVERLAY */}
-          <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-center bg-no-repeat animate-pulse" aria-hidden="true" />
-          <div className="fixed inset-0 -z-10 backdrop-blur-[2px]" aria-hidden="true" />
-          {/* HERO SECTION */}
-          <section className="w-full pt-24 pb-10 flex flex-col items-center text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Image src="/casino-icons/Big Win.svg" alt="Big Win" width={48} height={48} className="mb-2 drop-shadow-lg animate-bounce" />
-              <Image src="/casino-icons/777.svg" alt="777" width={44} height={44} className="mb-2 drop-shadow-lg animate-spin-slow" />
-              <span className="text-yellow-300 text-3xl md:text-5xl font-black drop-shadow">Getting Started at Crypto Casinos</span>
-              <Image src="/casino-icons/Bonus.svg" alt="Bonus" width={44} height={44} className="mb-2 drop-shadow-lg animate-wiggle" />
-              <Image src="/casino-icons/Cherry.svg" alt="Cherry" width={40} height={40} className="mb-2 drop-shadow-lg animate-bounce" />
-            </div>
-            <p className="mb-4 text-white/90 max-w-2xl mx-auto">
-              New to crypto casinos? This guide explains exactly how to create an account, deposit safely with crypto, and start playing — in minutes.
-            </p>
-          </section>
-          {/* Sticky submenu */}
-          <nav className="sticky top-4 z-30 mb-8 flex gap-2 flex-wrap justify-center md:justify-start">
+      <main>
+        <div className="relative rounded-3xl bg-black/65 shadow-2xl border-2 border-yellow-400 p-8 md:p-12 space-y-10 max-w-6xl mx-auto mt-6">
+          <nav className="flex flex-wrap gap-2 justify-center mb-8">
             {sections.map((s) => (
               <button
                 key={s.id}
                 onClick={() => scrollToSection(s.id)}
-                className="px-3 py-1 rounded-full bg-purple-800/80 text-yellow-300 font-bold text-sm hover:bg-yellow-300 hover:text-pink-700 transition-all border-2 border-yellow-300 shadow"
+                className="px-4 py-1 rounded-full bg-yellow-300/80 text-purple-900 font-bold text-sm hover:bg-yellow-400 transition-all border-2 border-yellow-400 shadow"
               >
-                {s.label}
+                {s.label.replace('Stap', 'Step')}
               </button>
             ))}
           </nav>
-          {/* Content blocks */}
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Step 1: Account */}
-            <section ref={refs.step1} className="bg-purple-900/80 rounded-2xl shadow-2xl p-6 flex flex-col items-center border-4 border-yellow-400/60">
-              <Image src="/casino-icons/Ace of Spades Card.svg" alt="Ace of Spades" width={40} height={40} className="mb-2 animate-wiggle" />
-              <h2 className="text-yellow-300 font-extrabold text-xl mb-2 uppercase tracking-wide">Step 1: Account</h2>
-              <p className="text-white/90 text-center">Sign up with just an email — no KYC, no hassle. Choose a trusted crypto casino from onze <Link href="/crypto-casino-reviews" className="text-pink-400 underline hover:text-yellow-300">reviews</Link>.</p>
+          <div className="w-full max-w-3xl mx-auto flex flex-col gap-8">
+            <section className="w-full flex flex-col items-center text-center">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Image src="/casino-icons/Big Win.svg" alt="Big Win" width={48} height={48} className="mb-2" />
+                <Image src="/casino-icons/777.svg" alt="777" width={44} height={44} className="mb-2" />
+                <span className="text-yellow-300 text-3xl md:text-5xl font-black drop-shadow">Getting Started at Crypto Casinos</span>
+                <Image src="/casino-icons/Bonus.svg" alt="Bonus" width={44} height={44} className="mb-2" />
+                <Image src="/casino-icons/Cherry.svg" alt="Cherry" width={40} height={40} className="mb-2" />
+              </div>
+              <p className="text-white/80 text-lg max-w-2xl mx-auto">New to crypto casinos? This guide explains exactly how to create an account, deposit safely with crypto, and start playing — in minutes.</p>
             </section>
-            {/* Step 2: Deposit */}
-            <section ref={refs.step2} className="bg-purple-900/80 rounded-2xl shadow-2xl p-6 flex flex-col items-center border-4 border-pink-400/60">
-              <Image src="/casino-icons/Dices.svg" alt="Dices" width={40} height={40} className="mb-2 animate-bounce" />
-              <h2 className="text-yellow-300 font-extrabold text-xl mb-2 uppercase tracking-wide">Step 2: Deposit</h2>
-              <p className="text-white/90 text-center">Maak een storting in BTC, ETH of LTC. Blockchain-transacties zijn snel en veilig. Zie onze <Link href="/guides/crypto-payments-guide" className="text-pink-400 underline hover:text-yellow-300">crypto payments guide</Link>.</p>
+            <section ref={refs.step1} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
+              <h2 className="font-extrabold text-lg text-yellow-200">Step 1: Account</h2>
+              <p className="text-white/90">Sign up with just an email — no KYC, no hassle. Choose a trusted crypto casino from our <Link href="/crypto-casino-reviews" className="underline text-pink-400 hover:text-yellow-300">reviews</Link>.</p>
             </section>
-            {/* Safety */}
-            <section ref={refs.safety} className="bg-purple-900/80 rounded-2xl shadow-2xl p-6 flex flex-col items-center border-4 border-green-400/60">
-              <Image src="/casino-icons/Crown.svg" alt="Crown" width={40} height={40} className="mb-2 animate-spin-slow" />
-              <h2 className="text-yellow-300 font-extrabold text-xl mb-2 uppercase tracking-wide">Safety</h2>
-              <p className="text-white/90 text-center">Crypto casinos gebruiken end-to-end encryptie en blockchain-verificatie. Kies altijd voor een betrouwbare site en bewaar je seed phrase veilig.</p>
+            <section ref={refs.step2} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
+              <h2 className="font-extrabold text-lg text-yellow-200">Step 2: Deposit</h2>
+              <p className="text-white/90">Make a deposit in BTC, ETH or LTC. Blockchain transactions are fast and secure. See our <Link href="/crypto-payments-guide" className="underline text-pink-400 hover:text-yellow-300">crypto payments guide</Link>.</p>
             </section>
-            {/* Play */}
-            <section ref={refs.play} className="bg-purple-900/80 rounded-2xl shadow-2xl p-6 flex flex-col items-center border-4 border-blue-400/60">
-              <Image src="/casino-icons/Slot Machine.svg" alt="Slot Machine" width={40} height={40} className="mb-2 animate-bounce" />
-              <h2 className="text-yellow-300 font-extrabold text-xl mb-2 uppercase tracking-wide">Play</h2>
-              <p className="text-white/90 text-center">Speel direct na je storting. De meeste crypto casino’s bieden duizenden slots, live games en tafelspellen.</p>
+            <section ref={refs.safety} className="rounded-2xl border border-green-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
+              <h2 className="font-extrabold text-lg text-green-300">Safety</h2>
+              <p className="text-white/90">Crypto casinos use end-to-end encryption and blockchain verification. Always choose a trusted site and keep your seed phrase safe.</p>
             </section>
-            {/* Tips */}
-            <section ref={refs.tips} className="bg-purple-900/80 rounded-2xl shadow-2xl p-6 flex flex-col items-center border-4 border-purple-400/60 md:col-span-2">
-              <Image src="/casino-icons/Lucky Charm.svg" alt="Lucky Charm" width={40} height={40} className="mb-2 animate-wiggle" />
-              <h2 className="text-yellow-300 font-extrabold text-xl mb-2 uppercase tracking-wide">Tips</h2>
+            <section ref={refs.play} className="rounded-2xl border border-blue-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
+              <h2 className="font-extrabold text-lg text-blue-300">Play</h2>
+              <p className="text-white/90">Play instantly after your deposit. Most crypto casinos offer thousands of slots, live games and table games.</p>
+            </section>
+            <section ref={refs.tips} className="rounded-2xl border border-purple-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
+              <h2 className="font-extrabold text-lg text-purple-300">Tips</h2>
               <ul className="list-disc pl-5 mb-4 text-white/90">
-                <li className="mb-2 text-white/90">Kies een casino met een goede reputatie</li>
-                <li className="mb-2 text-white/90">Gebruik een hardware wallet voor grote bedragen</li>
-                <li className="mb-2 text-white/90">Lees de bonusvoorwaarden goed</li>
+                <li className="mb-2">Choose a casino with a good reputation</li>
+                <li className="mb-2">Use a hardware wallet for large amounts</li>
+                <li className="mb-2">Always read the bonus terms</li>
               </ul>
             </section>
-            {/* Advantages */}
-            <section ref={refs.advantages} className="bg-purple-900/80 rounded-2xl shadow-2xl p-6 flex flex-col items-center border-4 border-orange-400/60 md:col-span-2">
-              <Image src="/casino-icons/Diamond 1.svg" alt="Diamond" width={40} height={40} className="mb-2 animate-bounce" />
-              <h2 className="text-yellow-300 font-extrabold text-xl mb-2 uppercase tracking-wide">Advantages</h2>
+            <section ref={refs.advantages} className="rounded-2xl border border-orange-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
+              <h2 className="font-extrabold text-lg text-orange-300">Advantages</h2>
               <ul className="list-disc pl-5 mb-4 text-white/90">
                 {advantages.map((adv) => (
-                  <li key={adv.title} className="mb-2 text-white/90">{adv.title}: {adv.desc}</li>
+                  <li key={adv.title} className="mb-2">{adv.title}: {adv.desc}</li>
                 ))}
               </ul>
             </section>
-            {/* Wallets */}
-            <section ref={refs.wallets} className="bg-purple-900/80 rounded-2xl shadow-2xl p-6 flex flex-col items-center border-4 border-teal-400/60 md:col-span-2">
-              <Image src="/casino-icons/Credit Card.svg" alt="Credit Card" width={40} height={40} className="mb-2 animate-spin-slow" />
-              <h2 className="text-yellow-300 font-extrabold text-xl mb-2 uppercase tracking-wide">Wallets</h2>
+            <section ref={refs.wallets} className="rounded-2xl border border-teal-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
+              <h2 className="font-extrabold text-lg text-teal-300">Wallets</h2>
               <div className="flex flex-wrap gap-4 justify-center">
-                {wallets.map((w) => (
-                  <div key={w.name} className="flex flex-col items-center gap-1 bg-purple-800/60 rounded-lg p-3 shadow">
-                    <Image src={w.icon} alt={w.name} width={32} height={32} />
-                    <span className="font-bold text-yellow-300 mb-1">{w.name}</span>
-                    <span className="text-xs text-white/90 text-center">{w.desc}</span>
-                  </div>
-                ))}
+                <div className="flex flex-col items-center gap-1 bg-purple-800/60 rounded-lg p-3 shadow">
+                  <Image src="/icons/metamask.svg" alt="MetaMask" width={32} height={32} />
+                  <span className="font-bold text-yellow-300 mb-1">MetaMask</span>
+                  <span className="text-xs text-white/90 text-center">Browser wallet, easy for beginners</span>
+                  <Link href="https://metamask.io" target="_blank" rel="noopener" className="mt-2 px-3 py-1 bg-yellow-300 text-purple-900 text-xs font-bold rounded-full shadow hover:bg-yellow-400 transition">Visit MetaMask</Link>
+                </div>
+                <div className="flex flex-col items-center gap-1 bg-purple-800/60 rounded-lg p-3 shadow">
+                  <Image src="/icons/coinbase.svg" alt="Coinbase Wallet" width={32} height={32} />
+                  <span className="font-bold text-yellow-300 mb-1">Coinbase Wallet</span>
+                  <span className="text-xs text-white/90 text-center">Well-known and secure, works with many coins</span>
+                  <Link href="https://www.coinbase.com/" target="_blank" rel="noopener" className="mt-2 px-3 py-1 bg-yellow-300 text-purple-900 text-xs font-bold rounded-full shadow hover:bg-yellow-400 transition">Visit Coinbase</Link>
+                </div>
+                <div className="flex flex-col items-center gap-1 bg-purple-800/60 rounded-lg p-3 shadow">
+                  <Image src="/icons/trustwallet.svg" alt="Trust Wallet" width={32} height={32} />
+                  <span className="font-bold text-yellow-300 mb-1">Trust Wallet</span>
+                  <span className="text-xs text-white/90 text-center">Mobile, secure and user-friendly</span>
+                  <Link href="https://trustwallet.com/" target="_blank" rel="noopener" className="mt-2 px-3 py-1 bg-yellow-300 text-purple-900 text-xs font-bold rounded-full shadow hover:bg-yellow-400 transition">Visit Trust Wallet</Link>
+                </div>
+                <div className="flex flex-col items-center gap-1 bg-purple-800/60 rounded-lg p-3 shadow">
+                  <Image src="/icons/ledger.svg" alt="Ledger" width={32} height={32} />
+                  <span className="font-bold text-yellow-300 mb-1">Ledger</span>
+                  <span className="text-xs text-white/90 text-center">Hardware wallet for ultimate security</span>
+                  <Link href="https://shop.ledger.com/?r=215ab22dd019" target="_blank" rel="noopener" className="mt-2 px-3 py-1 bg-yellow-300 text-purple-900 text-xs font-bold rounded-full shadow hover:bg-yellow-400 transition">Visit Ledger (aff.)</Link>
+                </div>
+                <div className="flex flex-col items-center gap-1 bg-purple-800/60 rounded-lg p-3 shadow">
+                  <Image src="/icons/binance.svg" alt="Binance Wallet" width={32} height={32} />
+                  <span className="font-bold text-yellow-300 mb-1">Binance Wallet</span>
+                  <span className="text-xs text-white/90 text-center">Popular in EU/Asia, easy deposits</span>
+                  <Link href="https://www.binance.com/en/binancewallet" target="_blank" rel="noopener" className="mt-2 px-3 py-1 bg-yellow-300 text-purple-900 text-xs font-bold rounded-full shadow hover:bg-yellow-400 transition">Visit Binance Wallet</Link>
+                </div>
               </div>
             </section>
           </div>

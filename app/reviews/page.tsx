@@ -1,30 +1,29 @@
 import React from 'react';
+import CasinoReviewCard from '@/components/CasinoReviewCard';
+import { casinos } from '@/data/casinosData';
 
 export default function ReviewsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-900 to-purple-800 py-10 px-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-yellow-300 mb-4 text-center">💰 Crypto Casino Reviews 💰</h1>
-        <p className="text-lg md:text-xl text-purple-100 text-center mb-8">
-          Discover the best crypto casinos of 2025. All sites are independently reviewed for bonuses, fairness, crypto support, and player experience. Vegas vibes, instant payouts, and full transparency — only the top-rated make our list!
-        </p>
-        <div className="flex flex-wrap gap-6 justify-center">
-          {/* Hier kun je dynamisch review cards inladen, nu als voorbeeld cards */}
-          <div className="bg-purple-700 rounded-xl shadow-lg p-6 w-64 flex flex-col items-center">
-            <span className="text-2xl mb-2" role="img" aria-label="slots">🎲</span>
-            <span className="font-bold text-lg text-yellow-200 mb-1">SLOTS OF VEGAS</span>
-            <span className="text-sm text-purple-100 mb-2">⭐⭐⭐⭐⭐</span>
-            <a href="/crypto-casino-reviews/slotsofvegas" className="text-pink-200 hover:underline">Read the full review →</a>
-          </div>
-          <div className="bg-purple-700 rounded-xl shadow-lg p-6 w-64 flex flex-col items-center">
-            <span className="text-2xl mb-2" role="img" aria-label="slots">🎲</span>
-            <span className="font-bold text-lg text-yellow-200 mb-1">WILD VEGAS</span>
-            <span className="text-sm text-purple-100 mb-2">⭐⭐⭐⭐</span>
-            <a href="/crypto-casino-reviews/wildvegas" className="text-pink-200 hover:underline">Read the full review →</a>
-          </div>
-          {/* Voeg hier meer casino cards toe zoals gewenst */}
-        </div>
+    <main className="relative z-10 min-h-screen pt-20 pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <h1 className="text-yellow-400 text-center text-4xl md:text-5xl font-extrabold uppercase drop-shadow-neon mb-4">
+        💰 Crypto Casino Reviews 💰
+      </h1>
+      <p className="text-white/90 text-center text-lg max-w-3xl mx-auto mb-12">
+        Discover the best crypto casinos of 2025. All sites are independently reviewed for bonuses,
+        fairness, crypto support, and player experience. Vegas vibes, instant payouts, and full transparency — only the top-rated make our list!
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {casinos.map((casino) => (
+          <CasinoReviewCard
+            key={casino.slug}
+            name={casino.name}
+            slug={casino.slug}
+            image={casino.logo}
+            stars={casino.rating}
+            tagline={casino.description}
+          />
+        ))}
       </div>
-    </div>
+    </main>
   );
 }

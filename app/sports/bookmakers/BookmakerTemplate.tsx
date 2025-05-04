@@ -14,6 +14,7 @@ interface BookmakerTemplateProps {
   sports: { label: string; icon: string }[];
   mainBlocks: { title: string; icon: string; description: string }[];
   featureBlocks: FeatureBlock[];
+  sportsbettingMenu?: React.ReactNode;
   cta?: { href: string; text: string };
   children?: React.ReactNode;
 }
@@ -26,6 +27,7 @@ export default function BookmakerTemplate({
   sports,
   mainBlocks,
   featureBlocks,
+  sportsbettingMenu,
   cta,
   children,
 }: BookmakerTemplateProps) {
@@ -36,6 +38,10 @@ export default function BookmakerTemplate({
         <div className="w-full h-full bg-black/60 rounded-3xl backdrop-blur-sm" />
       </div>
       <div className="max-w-3xl mx-auto space-y-10 relative z-10">
+        {/* Render sportsbetting menu if provided */}
+        {sportsbettingMenu && (
+          <div className="mb-10">{sportsbettingMenu}</div>
+        )}
         {/* Header - logo links van tekst */}
         <div className="flex items-center bg-transparent mb-2 gap-6">
           <Image

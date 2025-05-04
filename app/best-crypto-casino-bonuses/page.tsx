@@ -68,13 +68,15 @@ export default function BestBonusesPage() {
   );
 
   return (
-    <BonusOverviewLayout
-      title="Best Crypto Casino Bonuses 2025"
-      description="Discover the biggest and most exclusive bonuses at the best crypto casinos. Choose from welcome bonuses, free spins and no deposit deals."
-      bonusCards={bonusCards}
-      casinoList={casinoList}
-      footerGlow={true}
-      mascot={true}
-    />
+    <div className="relative rounded-3xl bg-black/65 shadow-2xl border-2 border-yellow-400 p-8 md:p-12 space-y-10 max-w-6xl mx-auto mt-6">
+      <BonusOverviewLayout
+        title="Best Crypto Casino Bonuses 2025"
+        description="Discover the biggest and most exclusive bonuses at the best crypto casinos. Choose from welcome bonuses, free spins and no deposit deals."
+        bonusCards={bonusCards}
+        casinoList={casinoList}
+        footerGlow={true}
+        mascot={true}
+      />
+    </div>
   );
 }

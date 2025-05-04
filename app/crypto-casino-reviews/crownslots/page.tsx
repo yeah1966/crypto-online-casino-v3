@@ -5,26 +5,26 @@ import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const generateMetadata = async () => {
-  return getOgMetaForCasino("ninlayplay");
+  return getOgMetaForCasino("crownslots");
 };
 
-export default function NinlayplayReview() {
+export default function CrownslotsReview() {
   return (
     <>
       <Head>
-        <title>Ninlay Casino Review (2025) – Adventurous Slots & Crypto Rewards</title>
-        <meta name="description" content="Read our 2025 Ninlay Casino review. Discover adventurous slots, crypto bonuses, and all the pros and cons of this new crypto casino." />
+        <title>Crownslots Casino Review (2025) – Simple UK Crypto Casino</title>
+        <meta name="description" content="Read our 2025 Crownslots Casino review. Discover the pros and cons, crypto payment options, and who this British-style casino is best for." />
         <meta name="robots" content="index, follow" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(getReviewStructuredData({
-              name: "Ninlay Casino",
+              name: "Crownslots Casino",
               reviewRating: 3.5,
-              reviewCount: 57,
-              url: "https://www.yourdomain.com/crypto-casino-reviews/ninlayplay",
-              image: "https://www.yourdomain.com/logos/ninlaycasino.png",
-              description: "Ninlay is a new crypto casino with a colorful, gamified interface, adventurous slots, and crypto rewards. Honest review for 2025."
+              reviewCount: 41,
+              url: "https://www.yourdomain.com/crypto-casino-reviews/crownslots",
+              image: "https://www.yourdomain.com/logos/crownslots.png",
+              description: "Crownslots is a simple, UK-style crypto casino with fast registration and basic crypto support. Honest review for 2025."
             }))
           }}
         />
@@ -34,7 +34,7 @@ export default function NinlayplayReview() {
             __html: JSON.stringify(getBreadcrumbListStructuredData([
               { name: "Home", href: "/" },
               { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-              { name: "Ninlay Casino", href: "/crypto-casino-reviews/ninlayplay" }
+              { name: "Crownslots Casino", href: "/crypto-casino-reviews/crownslots" }
             ], "https://www.yourdomain.com"))
           }}
         />
@@ -43,33 +43,32 @@ export default function NinlayplayReview() {
         items={[
           { name: "Home", href: "/" },
           { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-          { name: "Ninlay Casino", href: "/crypto-casino-reviews/ninlayplay" }
+          { name: "Crownslots Casino", href: "/crypto-casino-reviews/crownslots" }
         ]}
       />
       <CasinoReviewTemplate
-        logo="/logos/ninlaycasino.png"
-        casinoName="NINLAY CASINO"
+        logo="/logos/crownslots.png"
+        casinoName="CROWNSLOTS CASINO"
         rating={3.5}
         ratingStars="★★★½☆"
-        affiliateUrl="https://ninlayplay.com/hecd2573b"
-        affiliateLabel="Play at Ninlay"
-        introText="Ninlay Casino is a colorful new crypto casino with a gamified experience, adventurous slots, and unique crypto rewards. Is it worth a spin? Find out in our honest review."
-        reviewText={`Ninlay Casino stands out for its playful, gamified interface and adventurous slot selection. Players can enjoy a variety of crypto bonuses and a unique experience with every visit.<br><br>Navigation is not always perfect and the casino is still building its reputation, with fewer community reviews available.<br><br>Ninlay supports deposits and withdrawals in Bitcoin, Ethereum, Litecoin, and USDT. Bonuses are frequent, but high rollers may find the limits a bit low.<br><br>Conclusion: Great for players seeking adventure and crypto rewards, but less suited for high rollers or those wanting a huge game selection.`}
+        affiliateUrl="https://crownslotslink.com/hfb84c81c"
+        affiliateLabel="Play at Crownslots"
+        introText="Crownslots Casino is a simple, British-style crypto casino with fast signup, easy navigation, and support for major cryptocurrencies. Find out if it's right for you!"
+        reviewText={`Crownslots Casino offers a straightforward experience for crypto gamblers. The interface is intuitive and registration is quick, making it easy for new players to get started.<br><br>While the game selection is somewhat limited compared to larger casinos, Crownslots makes up for it with speedy crypto deposits and withdrawals, and a no-nonsense approach.<br><br>There are fewer game providers and the site is best suited to casual players who want a hassle-free crypto gambling experience.<br><br>Conclusion: A good pick for casual crypto gamblers who value simplicity and fast access, but not ideal for those seeking a huge game library or lots of bonuses.`}
         pros={[
-          "Colorful, gamified interface",
-          "Crypto bonuses & rewards",
-          "Fast crypto withdrawals",
-          "24/7 support"
+          "Fast registration",
+          "Simple, intuitive interface",
+          "Accepts crypto payments",
+          "Good for UK players"
         ]}
         cons={[
-          "Navigation not always perfect",
-          "Still building reputation (few reviews)",
-          "Limited for high rollers"
+          "Limited game providers",
+          "Relatively small game selection",
+          "Few bonus offers"
         ]}
         highlights={[
           "Deposit with Bitcoin, Ethereum, Litecoin, USDT",
-          "Quick payouts (usually within 10 min)",
-          "Gamification & adventure quests",
+          "Quick registration process",
           "Mobile-friendly design"
         ]}
       >
@@ -87,20 +86,20 @@ export default function NinlayplayReview() {
               <span className="font-bold">Payouts:</span> Usually processed within 10 minutes
             </li>
             <li>
-              <span className="font-bold">No extra fees:</span> Ninlay charges no transaction fees for crypto payments
+              <span className="font-bold">No extra fees:</span> Crownslots charges no transaction fees for crypto payments
             </li>
           </ul>
         </div>
         <a
-          href="https://ninlayplay.com/hecd2573b"
+          href="https://crownslotslink.com/hfb84c81c"
           className="mt-8 block bg-yellow-400 hover:bg-yellow-300 text-center text-purple-900 font-bold py-3 rounded-lg shadow-lg transition-all duration-300 text-lg"
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          🎲 Play at Ninlay
+          🎲 Play at Crownslots
         </a>
         <p className="text-center text-xs text-gray-200 mt-3">
-          18+ | Play responsibly. Ninlay may not be available in all jurisdictions.
+          18+ | Play responsibly. Crownslots may not be available in all jurisdictions.
         </p>
       </CasinoReviewTemplate>
     </>
