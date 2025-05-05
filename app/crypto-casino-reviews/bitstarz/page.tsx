@@ -3,7 +3,7 @@ import CasinoSuggestions from "@/components/CasinoSuggestions";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const og = getOgMetaForCasino("bitstarz");

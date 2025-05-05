@@ -1,8 +1,9 @@
-import Head from "next/head";
-import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
-import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
+import type { Metadata } from "next";
+import Head from "next/head";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const og = getOgMetaForCasino("goldenbilly");

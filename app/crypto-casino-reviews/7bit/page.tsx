@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Head from "next/head";
+import type { Metadata } from "next";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const og = getOgMetaForCasino("7bit");

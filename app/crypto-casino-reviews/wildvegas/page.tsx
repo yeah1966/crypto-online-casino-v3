@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import Head from "next/head";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
+import Link from "next/link";
+import Head from "next/head";
+import type { Metadata } from "next";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const og = getOgMetaForCasino("wildvegas");
