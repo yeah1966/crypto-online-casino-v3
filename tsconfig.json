@@ -47,6 +47,7 @@
   ],
   "exclude": [
     "node_modules",
-    "pages_backup"
+    "pages_backup",
+    "_pages_backup_do_not_build"
   ]
 }
