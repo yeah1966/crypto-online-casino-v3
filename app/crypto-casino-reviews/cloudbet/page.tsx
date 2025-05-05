@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Head from "next/head";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
+import type { Metadata } from "next";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const og = getOgMetaForCasino("cloudbet");
