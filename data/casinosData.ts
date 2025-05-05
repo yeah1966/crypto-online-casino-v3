@@ -16,6 +16,9 @@ export interface CasinoCard {
   tags?: string[];
   highlight?: string;
   affiliateUrl?: string;
+  reviewUrl?: string;
+  bonusText?: string;
+  depositType?: string;
   [key: string]: any;
 }
 
@@ -41,7 +44,7 @@ export const casinos: CasinoCard[] = [
     ],
     tags: ['no-deposit', 'free-spins', 'match'],
     highlight: '🎁',
-    affiliateUrl: 'https://www.bitstarz.com/?ref=YOUR_ID'
+    affiliateUrl: 'https://b1t5t4rz.com/b2b7d0ed7'
   },
   {
     slug: 'goldenbilly',
@@ -58,7 +61,7 @@ export const casinos: CasinoCard[] = [
     perks: [],
     tags: [],
     highlight: '',
-    affiliateUrl: ''
+    affiliateUrl: 'https://goldenbillylink.com/h62218aaa'
   },
   {
     slug: 'ninlayplay',
@@ -75,7 +78,7 @@ export const casinos: CasinoCard[] = [
     perks: [],
     tags: [],
     highlight: '',
-    affiliateUrl: ''
+    affiliateUrl: 'https://ninlayplay.com/hecd2573b'
   },
   {
     slug: 'crownslots',
@@ -83,6 +86,10 @@ export const casinos: CasinoCard[] = [
     logo: '/logos/crownslots.png',
     rating: 3.5,
     description: 'Eenvoudige crypto casino met Britse flair.',
+    affiliateUrl: 'https://crownslotslink.com/hfb84c81c',
+    reviewUrl: '/crypto-casino-reviews/crownslots',
+    bonusText: '',
+    depositType: 'Deposit Only',
     welcomeBonus: true,
     noDepositBonus: false,
     noDepositNote: '',
@@ -91,15 +98,18 @@ export const casinos: CasinoCard[] = [
     freeSpinsNote: '',
     perks: [],
     tags: [],
-    highlight: '',
-    affiliateUrl: ''
+    highlight: ''
   },
   {
     slug: 'lokicasino',
     name: 'Loki Casino',
-    logo: '/logos/lokicasino.png',
-    rating: 4,
-    description: 'Internationaal crypto casino met duizenden games.',
+    logo: '/logos/loki.png',
+    rating: 4.2,
+    description: 'International crypto slot destination.',
+    affiliateUrl: 'https://lokicasinolink.com/hd8471080',
+    reviewUrl: '/crypto-casino-reviews/lokicasino',
+    bonusText: 'Try without registration',
+    depositType: 'Deposit Only',
     welcomeBonus: true,
     freeSpinsBonus: true,
     noDepositBonus: true,
@@ -108,8 +118,7 @@ export const casinos: CasinoCard[] = [
     freeSpinsNote: '',
     perks: [],
     tags: [],
-    highlight: '',
-    affiliateUrl: ''
+    highlight: ''
   },
   {
     slug: 'slotsofvegas',
@@ -126,7 +135,7 @@ export const casinos: CasinoCard[] = [
     perks: [],
     tags: [],
     highlight: '',
-    affiliateUrl: ''
+    affiliateUrl: 'https://www.slotsofvegaslinks.com/click/15/4298/15512/1'
   },
   {
     slug: 'wildvegas',
@@ -143,7 +152,7 @@ export const casinos: CasinoCard[] = [
     perks: [],
     tags: [],
     highlight: '',
-    affiliateUrl: ''
+    affiliateUrl: 'https://www.wildvegaslinks.com/click/11/4315/15512/1'
   },
   {
     slug: 'cloudbet',
@@ -160,7 +169,7 @@ export const casinos: CasinoCard[] = [
     perks: [],
     tags: [],
     highlight: '',
-    affiliateUrl: ''
+    affiliateUrl: 'https://cldbt.cloud/go/en/landing/bitcoin-casino?af_token=&aftm_campaign=CryptoCasino&aftm_source=GEO&aftm_medium=link&aftm_content=cryptoinfo'
   },
   {
     slug: '7bit',
@@ -177,7 +186,7 @@ export const casinos: CasinoCard[] = [
     perks: [],
     tags: [],
     highlight: '',
-    affiliateUrl: ''
+    affiliateUrl: 'https://www.7bitcasino.com/a/b8c1d2e3f4'
   },
   {
     slug: 'betplay',
@@ -194,7 +203,7 @@ export const casinos: CasinoCard[] = [
     ],
     tags: ['match', 'cashback'],
     highlight: '🔥',
-    affiliateUrl: 'https://www.betplay.io/?ref=YOUR_ID'
+    affiliateUrl: 'https://betplay.io?ref=b417df55cd18'
   },
   {
     slug: 'betzard',
@@ -211,7 +220,7 @@ export const casinos: CasinoCard[] = [
     perks: [],
     tags: [],
     highlight: '',
-    affiliateUrl: ''
+    affiliateUrl: 'https://7bit.partners/pe27a3a44'
   },
   {
     slug: 'dreams',
@@ -230,7 +239,7 @@ export const casinos: CasinoCard[] = [
     ],
     tags: ['match', 'free-spins'],
     highlight: '⭐',
-    affiliateUrl: 'https://www.dreamscasino.com/?ref=YOUR_ID'
+    affiliateUrl: 'https://www.dreamslinks.com/click/64/305/15512/1'
   },
   {
     slug: 'coinpoker',
@@ -247,7 +256,7 @@ export const casinos: CasinoCard[] = [
     perks: [],
     tags: [],
     highlight: '',
-    affiliateUrl: ''
+    affiliateUrl: 'https://record.coinpokeraffiliates.com/_BPlLejNitgfUOsjNOfgKeWNd7ZgqdRLk/1/'
   },
   {
     slug: 'crypto-loko',
@@ -267,7 +276,7 @@ export const casinos: CasinoCard[] = [
     ],
     tags: ['match', 'free-spins'],
     highlight: '🎉',
-    affiliateUrl: 'https://cryptoloko.com/aff/yourid'
+    affiliateUrl: 'https://cryptolokolink.com/click/77/441/6060/1'
   },
   {
     slug: '1xbet',
@@ -275,6 +284,10 @@ export const casinos: CasinoCard[] = [
     logo: '/logos/1xbet.png',
     rating: 3.5,
     description: 'Breed aanbod, snelle uitbetalingen, maar controversieel verleden.',
+    affiliateUrl: 'https://refpa3740576.top/L?tag=d_3915280m_1599c_&site=3915280&ad=1599',
+    reviewUrl: '/crypto-casino-reviews/1xbet',
+    bonusText: '',
+    depositType: 'Deposit Only',
     welcomeBonus: true,
     freeSpinsBonus: false,
     noDepositBonus: false,
@@ -283,15 +296,18 @@ export const casinos: CasinoCard[] = [
     freeSpinsNote: '',
     perks: [],
     tags: [],
-    highlight: '',
-    affiliateUrl: ''
+    highlight: ''
   },
   {
     slug: 'coolcatcasino',
     name: 'Cool Cat Casino',
-    logo: '/logos/coolcatcasino.png',
+    logo: '/logos/coolcat.png',
     rating: 3.8,
     description: 'Amerikaanse klassieker met veel bonussen.',
+    affiliateUrl: 'https://www.coolcatlinks.com/click/7/3936/15512/1',
+    reviewUrl: '/crypto-casino-reviews/coolcatcasino',
+    bonusText: '',
+    depositType: 'Deposit Only',
     welcomeBonus: true,
     freeSpinsBonus: true,
     noDepositBonus: false,
@@ -300,8 +316,7 @@ export const casinos: CasinoCard[] = [
     freeSpinsNote: '',
     perks: [],
     tags: [],
-    highlight: '',
-    affiliateUrl: ''
+    highlight: ''
   },
   {
     slug: 'prismcasino',
@@ -318,6 +333,6 @@ export const casinos: CasinoCard[] = [
     perks: [],
     tags: [],
     highlight: '',
-    affiliateUrl: ''
+    affiliateUrl: 'https://www.prismlinks.com/click/6/4305/15512/1'
   }
 ];

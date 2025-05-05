@@ -154,7 +154,10 @@ export default function Home() {
               tags: [
                 casino.noDepositBonus ? 'No Deposit' : 'Deposit Only',
                 `⭐ ${casino.rating}`,
-              ].concat(casino.noDepositNote ? [casino.noDepositNote] : []),
+                ...(casino.noDepositNote ? [casino.noDepositNote] : []),
+              ],
+              claimLink: casino.affiliateUrl,
+              reviewLink: `/crypto-casino-reviews/${casino.slug}`,
             }))} />
           </div>
           {/* SEO Content Block - English, styled with brand neon colors */}
