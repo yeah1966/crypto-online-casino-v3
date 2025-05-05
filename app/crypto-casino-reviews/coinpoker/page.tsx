@@ -1,11 +1,30 @@
-import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import Head from "next/head";
-import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import type { Metadata } from "next";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
+import Head from "next/head";
 
-export const generateMetadata = async () => {
-  return getOgMetaForCasino("coinpoker");
+export const generateMetadata = async (): Promise<Metadata> => {
+  const og = getOgMetaForCasino("coinpoker");
+  return {
+    title: og.title,
+    description: og.description,
+    openGraph: {
+      title: og.title,
+      description: og.description,
+      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/coinpoker",
+      images: [{ url: og.image }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: og.title,
+      description: og.description,
+      images: [og.image],
+    },
+    robots: "index, follow",
+  };
 };
 
 export default function CoinPokerReview() {
@@ -13,8 +32,6 @@ export default function CoinPokerReview() {
     <>
       <Head>
         <title>Coinpoker Casino Review (2025) – Crypto Bonussen & Spellen</title>
-        <meta name="description" content="Lees onze 2025 Coinpoker review. Alles over crypto poker, bonussen en unieke features." />
-        <meta name="robots" content="index, follow" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -22,8 +39,8 @@ export default function CoinPokerReview() {
               name: "CoinPoker",
               reviewRating: 4.4,
               reviewCount: 312,
-              url: "https://www.yourdomain.com/crypto-casino-reviews/coinpoker",
-              image: "https://www.yourdomain.com/logos/coinpoker.png",
+              url: "https://www.crypto-online-casino.com/crypto-casino-reviews/coinpoker",
+              image: "https://www.crypto-online-casino.com/logos/coinpoker.png",
               description: "CoinPoker is the world’s most trusted blockchain poker site, offering a provably fair experience with fast crypto payouts and decentralized gameplay."
             }))
           }}
@@ -35,7 +52,7 @@ export default function CoinPokerReview() {
               { name: "Home", href: "/" },
               { name: "Casino Reviews", href: "/crypto-casino-reviews" },
               { name: "Coinpoker Casino", href: "/crypto-casino-reviews/coinpoker" }
-            ], "https://www.yourdomain.com"))
+            ], "https://www.crypto-online-casino.com"))
           }}
         />
       </Head>

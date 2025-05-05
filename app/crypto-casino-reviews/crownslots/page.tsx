@@ -4,17 +4,32 @@ import { getOgMetaForCasino } from "@/lib/ogMeta";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-export const generateMetadata = async () => {
-  return getOgMetaForCasino("crownslots");
+export const generateMetadata = async (): Promise<Metadata> => {
+  const og = getOgMetaForCasino("crownslots");
+  return {
+    title: og.title,
+    description: og.description,
+    openGraph: {
+      title: og.title,
+      description: og.description,
+      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/crownslots",
+      images: [{ url: og.image }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: og.title,
+      description: og.description,
+      images: [og.image],
+    },
+    robots: "index, follow",
+  };
 };
 
 export default function CrownslotsReview() {
   return (
     <>
       <Head>
-        <title>Crownslots Casino Review (2025) – Simple UK Crypto Casino</title>
-        <meta name="description" content="Read our 2025 Crownslots Casino review. Discover the pros and cons, crypto payment options, and who this British-style casino is best for." />
-        <meta name="robots" content="index, follow" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -22,8 +37,8 @@ export default function CrownslotsReview() {
               name: "Crownslots Casino",
               reviewRating: 3.5,
               reviewCount: 41,
-              url: "https://www.yourdomain.com/crypto-casino-reviews/crownslots",
-              image: "https://www.yourdomain.com/logos/crownslots.png",
+              url: "https://www.crypto-online-casino.com/crypto-casino-reviews/crownslots",
+              image: "https://www.crypto-online-casino.com/logos/crownslots.png",
               description: "Crownslots is a simple, UK-style crypto casino with fast registration and basic crypto support. Honest review for 2025."
             }))
           }}
@@ -35,7 +50,7 @@ export default function CrownslotsReview() {
               { name: "Home", href: "/" },
               { name: "Casino Reviews", href: "/crypto-casino-reviews" },
               { name: "Crownslots Casino", href: "/crypto-casino-reviews/crownslots" }
-            ], "https://www.yourdomain.com"))
+            ], "https://www.crypto-online-casino.com"))
           }}
         />
       </Head>

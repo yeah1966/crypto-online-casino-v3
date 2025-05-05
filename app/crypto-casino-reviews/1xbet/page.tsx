@@ -2,11 +2,30 @@ import Head from "next/head";
 import { getReviewStructuredData } from "@/lib/structuredData";
 import { getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
+import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 
-export const generateMetadata = async () => {
-  return getOgMetaForCasino("1xbet");
+export const generateMetadata = async (): Promise<Metadata> => {
+  const og = getOgMetaForCasino("1xbet");
+  return {
+    title: og.title,
+    description: og.description,
+    openGraph: {
+      title: og.title,
+      description: og.description,
+      url: "https://www.crypto-online-casino.com/sports/bookmakers/1xbet",
+      images: [{ url: og.image }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: og.title,
+      description: og.description,
+      images: [og.image],
+    },
+    robots: "index, follow",
+  };
 };
 
 export default function OneXBetReview() {
@@ -15,44 +34,6 @@ export default function OneXBetReview() {
       <Head>
         <title>1xBet Casino Review (2025) – Internationale sportsbook & crypto</title>
         <meta name="description" content="Lees onze 2025 1xBet review. Alles over het brede sportsbook, crypto-ondersteuning, mobiele ervaring en belangrijke aandachtspunten." />
-        <meta name="robots" content="index, follow" />
-        {(() => {
-          const og = getOgMetaForCasino("1xbet");
-          return <>
-            <meta property="og:title" content={og.title} />
-            <meta property="og:description" content={og.description} />
-            <meta property="og:image" content={og.image} />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.crypto-online-casino.com/sports/bookmakers/1xbet" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={og.title} />
-            <meta name="twitter:description" content={og.description} />
-            <meta name="twitter:image" content={og.image} />
-          </>;
-        })()}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getReviewStructuredData({
-              name: "1xBet",
-              reviewRating: 3.5,
-              reviewCount: 320,
-              url: "https://www.crypto-online-casino.com/sports/bookmakers/1xbet",
-              image: "https://www.crypto-online-casino.com/logos/1xbet.png",
-              description: "1xBet is een internationaal sportsbook met een enorm spelaanbod, snelle uitbetalingen en crypto-ondersteuning. Lees onze volledige review, inclusief belangrijke aandachtspunten!"
-            }))
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getBreadcrumbListStructuredData([
-              { name: "Home", href: "/" },
-              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-              { name: "1xBet", href: "/sports/bookmakers/1xbet" }
-            ], "https://www.crypto-online-casino.com"))
-          }}
-        />
       </Head>
       <Breadcrumbs
         items={[
@@ -118,6 +99,29 @@ export default function OneXBetReview() {
           18+ | Gamble responsibly. 1xBet may not be available in all jurisdictions.
         </p>
       </CasinoReviewTemplate>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getReviewStructuredData({
+            name: "1xBet",
+            reviewRating: 3.5,
+            reviewCount: 320,
+            url: "https://www.crypto-online-casino.com/sports/bookmakers/1xbet",
+            image: "https://www.crypto-online-casino.com/logos/1xbet.png",
+            description: "1xBet is een internationaal sportsbook met een enorm spelaanbod, snelle uitbetalingen en crypto-ondersteuning. Lees onze volledige review, inclusief belangrijke aandachtspunten!"
+          }))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getBreadcrumbListStructuredData([
+            { name: "Home", href: "/" },
+            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+            { name: "1xBet", href: "/sports/bookmakers/1xbet" }
+          ], "https://www.crypto-online-casino.com"))
+        }}
+      />
     </>
   );
 }

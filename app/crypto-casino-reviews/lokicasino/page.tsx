@@ -4,17 +4,32 @@ import { getOgMetaForCasino } from "@/lib/ogMeta";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-export const generateMetadata = async () => {
-  return getOgMetaForCasino("lokicasino");
+export const generateMetadata = async (): Promise<Metadata> => {
+  const og = getOgMetaForCasino("lokicasino");
+  return {
+    title: og.title,
+    description: og.description,
+    openGraph: {
+      title: og.title,
+      description: og.description,
+      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/lokicasino",
+      images: [{ url: og.image }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: og.title,
+      description: og.description,
+      images: [og.image],
+    },
+    robots: "index, follow",
+  };
 };
 
 export default function LokiCasinoReview() {
   return (
     <>
       <Head>
-        <title>Loki Casino Review (2025) – International Crypto Casino</title>
-        <meta name="description" content="Read our 2025 Loki Casino review. Discover thousands of games, international support, crypto payments, and honest pros & cons." />
-        <meta name="robots" content="index, follow" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -22,8 +37,8 @@ export default function LokiCasinoReview() {
               name: "Loki Casino",
               reviewRating: 4.0,
               reviewCount: 67,
-              url: "https://www.yourdomain.com/crypto-casino-reviews/lokicasino",
-              image: "https://www.yourdomain.com/logos/lokicasino.png",
+              url: "https://www.crypto-online-casino.com/crypto-casino-reviews/lokicasino",
+              image: "https://www.crypto-online-casino.com/logos/lokicasino.png",
               description: "Loki Casino is an international crypto casino with thousands of games, VIP club, and fast crypto payments. Honest review for 2025."
             }))
           }}
@@ -35,7 +50,7 @@ export default function LokiCasinoReview() {
               { name: "Home", href: "/" },
               { name: "Casino Reviews", href: "/crypto-casino-reviews" },
               { name: "Loki Casino", href: "/crypto-casino-reviews/lokicasino" }
-            ], "https://www.yourdomain.com"))
+            ], "https://www.crypto-online-casino.com"))
           }}
         />
       </Head>

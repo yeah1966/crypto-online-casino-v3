@@ -4,8 +4,26 @@ import { getOgMetaForCasino } from "@/lib/ogMeta";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-export const generateMetadata = async () => {
-  return getOgMetaForCasino("ninlayplay");
+export const generateMetadata = async (): Promise<Metadata> => {
+  const og = getOgMetaForCasino("ninlayplay");
+  return {
+    title: og.title,
+    description: og.description,
+    openGraph: {
+      title: og.title,
+      description: og.description,
+      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/ninlayplay",
+      images: [{ url: og.image }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: og.title,
+      description: og.description,
+      images: [og.image],
+    },
+    robots: "index, follow",
+  };
 };
 
 export default function NinlayplayReview() {
@@ -13,8 +31,6 @@ export default function NinlayplayReview() {
     <>
       <Head>
         <title>Ninlay Casino Review (2025) – Adventurous Slots & Crypto Rewards</title>
-        <meta name="description" content="Read our 2025 Ninlay Casino review. Discover adventurous slots, crypto bonuses, and all the pros and cons of this new crypto casino." />
-        <meta name="robots" content="index, follow" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

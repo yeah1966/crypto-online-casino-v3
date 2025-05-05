@@ -2,11 +2,30 @@ import Head from "next/head";
 import { getReviewStructuredData } from "@/lib/structuredData";
 import { getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
+import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 
-export const generateMetadata = async () => {
-  return getOgMetaForCasino("slotsofvegas");
+export const generateMetadata = async (): Promise<Metadata> => {
+  const og = getOgMetaForCasino("slotsofvegas");
+  return {
+    title: og.title,
+    description: og.description,
+    openGraph: {
+      title: og.title,
+      description: og.description,
+      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/slotsofvegas",
+      images: [{ url: og.image }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: og.title,
+      description: og.description,
+      images: [og.image],
+    },
+    robots: "index, follow",
+  };
 };
 
 export default function SlotsOfVegasReview() {
@@ -15,44 +34,6 @@ export default function SlotsOfVegasReview() {
       <Head>
         <title>Slots of Vegas Casino Review (2025) – Crypto Bonussen & Spellen</title>
         <meta name="description" content="Lees onze 2025 Slots of Vegas review. Alles over crypto gokkasten, bonussen en unieke features." />
-        <meta name="robots" content="index, follow" />
-        {(() => {
-          const og = getOgMetaForCasino("slotsofvegas");
-          return <>
-            <meta property="og:title" content={og.title} />
-            <meta property="og:description" content={og.description} />
-            <meta property="og:image" content={og.image} />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.crypto-online-casino.com/crypto-casino-reviews/slotsofvegas" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={og.title} />
-            <meta name="twitter:description" content={og.description} />
-            <meta name="twitter:image" content={og.image} />
-          </>;
-        })()}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getReviewStructuredData({
-              name: "Slots of Vegas",
-              reviewRating: 4.0,
-              reviewCount: 122,
-              url: "https://www.crypto-online-casino.com/crypto-casino-reviews/slotsofvegas",
-              image: "https://www.crypto-online-casino.com/logos/slotsofvegas.png",
-              description: "Slots of Vegas is een klassiek crypto casino met snelle betalingen, royale bonussen en een breed spelaanbod. Lees onze volledige review!"
-            }))
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getBreadcrumbListStructuredData([
-              { name: "Home", href: "/" },
-              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-              { name: "Slots of Vegas", href: "/crypto-casino-reviews/slotsofvegas" }
-            ], "https://www.crypto-online-casino.com"))
-          }}
-        />
       </Head>
       <Breadcrumbs
         items={[
@@ -114,6 +95,29 @@ export default function SlotsOfVegasReview() {
           18+ | Gamble responsibly. Slots of Vegas may not be available in all jurisdictions.
         </p>
       </CasinoReviewTemplate>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getReviewStructuredData({
+            name: "Slots of Vegas",
+            reviewRating: 4.0,
+            reviewCount: 122,
+            url: "https://www.crypto-online-casino.com/crypto-casino-reviews/slotsofvegas",
+            image: "https://www.crypto-online-casino.com/logos/slotsofvegas.png",
+            description: "Slots of Vegas is een klassiek crypto casino met snelle betalingen, royale bonussen en een breed spelaanbod. Lees onze volledige review!"
+          }))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getBreadcrumbListStructuredData([
+            { name: "Home", href: "/" },
+            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+            { name: "Slots of Vegas", href: "/crypto-casino-reviews/slotsofvegas" }
+          ], "https://www.crypto-online-casino.com"))
+        }}
+      />
     </>
   );
 }

@@ -1,12 +1,31 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Head from "next/head";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 
-export const generateMetadata = async () => {
-  return getOgMetaForCasino("wildvegas");
+export const generateMetadata = async (): Promise<Metadata> => {
+  const og = getOgMetaForCasino("wildvegas");
+  return {
+    title: og.title,
+    description: og.description,
+    openGraph: {
+      title: og.title,
+      description: og.description,
+      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/wildvegas",
+      images: [{ url: og.image }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: og.title,
+      description: og.description,
+      images: [og.image],
+    },
+    robots: "index, follow",
+  };
 };
 
 export default function WildVegasReview() {
@@ -15,74 +34,7 @@ export default function WildVegasReview() {
       <Head>
         <title>Wild Vegas Casino Review (2025) – Crypto Bonussen & Spellen</title>
         <meta name="description" content="Lees onze 2025 Wild Vegas review. Alles over crypto bonussen, games en unieke features." />
-        <meta name="robots" content="index, follow" />
-        {(() => {
-          const og = getOgMetaForCasino("wildvegas");
-          return <>
-            <meta property="og:title" content={og.title} />
-            <meta property="og:description" content={og.description} />
-            <meta property="og:image" content={og.image} />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.crypto-online-casino.com/crypto-casino-reviews/wildvegas" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={og.title} />
-            <meta name="twitter:description" content={og.description} />
-            <meta name="twitter:image" content={og.image} />
-          </>;
-        })()}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getReviewStructuredData({
-              name: "Wild Vegas Casino",
-              reviewRating: 4.3,
-              reviewCount: 211,
-              url: "https://www.yourdomain.com/crypto-casino-reviews/wildvegas",
-              image: "https://www.yourdomain.com/logos/wildvegas.png",
-              description: "Wild Vegas is een spannend crypto casino met snelle betalingen, royale bonussen en een breed spelaanbod. Lees onze volledige review!"
-            }))
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getBreadcrumbListStructuredData([
-              { name: "Home", href: "/" },
-              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-              { name: "Wild Vegas Casino", href: "/crypto-casino-reviews/wildvegas" }
-            ], "https://www.yourdomain.com"))
-          }}
-        />
       </Head>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Review",
-            "itemReviewed": {
-              "@type": "Organization",
-              "name": "Wild Vegas",
-              "url": "https://www.yourdomain.com/crypto-casino-reviews/wildvegas",
-              "logo": "https://www.yourdomain.com/logos/wildvegas.png"
-            },
-            "author": {
-              "@type": "Organization",
-              "name": "Crypto Vegas"
-            },
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "4.0",
-              "bestRating": "5"
-            },
-            "reviewBody": "Wild Vegas delivers a high-energy, neon-lit slots experience with fast crypto payouts, big bonuses, and a loyalty program for active players. Great for slot fans seeking a wild Vegas adventure.",
-            "publisher": {
-              "@type": "Organization",
-              "name": "Crypto Vegas"
-            }
-          }),
-        }}
-      />
       <Breadcrumbs
         items={[
           { name: "Home", href: "/" },
@@ -146,6 +98,29 @@ export default function WildVegasReview() {
           18+ | Gamble responsibly. Wild Vegas may not be available in all jurisdictions.
         </p>
       </CasinoReviewTemplate>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getReviewStructuredData({
+            name: "Wild Vegas Casino",
+            reviewRating: 4.3,
+            reviewCount: 211,
+            url: "https://www.crypto-online-casino.com/crypto-casino-reviews/wildvegas",
+            image: "https://www.crypto-online-casino.com/logos/wildvegas.png",
+            description: "Wild Vegas is een spannend crypto casino met snelle betalingen, royale bonussen en een breed spelaanbod. Lees onze volledige review!"
+          }))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getBreadcrumbListStructuredData([
+            { name: "Home", href: "/" },
+            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+            { name: "Wild Vegas Casino", href: "/crypto-casino-reviews/wildvegas" }
+          ], "https://www.crypto-online-casino.com"))
+        }}
+      />
     </>
   );
 }

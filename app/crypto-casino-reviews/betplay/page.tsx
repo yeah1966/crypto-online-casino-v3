@@ -1,9 +1,9 @@
-import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import Head from "next/head";
-import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
-import { getOgMetaForCasino } from "@/lib/ogMeta";
 import type { Metadata } from "next";
+import { getOgMetaForCasino } from "@/lib/ogMeta";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
+import Head from "next/head";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const og = getOgMetaForCasino("betplay");
@@ -36,11 +36,11 @@ export default function BetplayReview() {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(getReviewStructuredData({
               name: "Betplay",
-              reviewRating: 4.6,
-              reviewCount: 562,
+              reviewRating: 4.5,
+              reviewCount: 320,
               url: "https://www.crypto-online-casino.com/crypto-casino-reviews/betplay",
               image: "https://www.crypto-online-casino.com/logos/betplay.png",
-              description: "Betplay is een veelzijdig crypto casino en sportsbook met snelle uitbetalingen en aantrekkelijke bonussen. Lees onze volledige review!"
+              description: "Betplay is een top crypto casino met snelle uitbetalingen en unieke bonussen. Lees onze volledige review!"
             }))
           }}
         />
@@ -50,7 +50,7 @@ export default function BetplayReview() {
             __html: JSON.stringify(getBreadcrumbListStructuredData([
               { name: "Home", href: "/" },
               { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-              { name: "Betplay Casino", href: "/crypto-casino-reviews/betplay" }
+              { name: "Betplay", href: "/crypto-casino-reviews/betplay" }
             ], "https://www.crypto-online-casino.com"))
           }}
         />
@@ -59,7 +59,7 @@ export default function BetplayReview() {
         items={[
           { name: "Home", href: "/" },
           { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-          { name: "Betplay Casino", href: "/crypto-casino-reviews/betplay" }
+          { name: "Betplay", href: "/crypto-casino-reviews/betplay" }
         ]}
       />
       <CasinoReviewTemplate

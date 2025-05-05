@@ -4,8 +4,26 @@ import { getOgMetaForCasino } from "@/lib/ogMeta";
 import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-export const generateMetadata = async () => {
-  return getOgMetaForCasino("goldenbilly");
+export const generateMetadata = async (): Promise<Metadata> => {
+  const og = getOgMetaForCasino("goldenbilly");
+  return {
+    title: og.title,
+    description: og.description,
+    openGraph: {
+      title: og.title,
+      description: og.description,
+      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/goldenbilly",
+      images: [{ url: og.image }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: og.title,
+      description: og.description,
+      images: [og.image],
+    },
+    robots: "index, follow",
+  };
 };
 
 export default function GoldenBillyReview() {
@@ -14,44 +32,6 @@ export default function GoldenBillyReview() {
       <Head>
         <title>Golden Billy Casino Review (2025) – Crypto Bonuses & Games</title>
         <meta name="description" content="Read our 2025 Golden Billy review. All about crypto bonuses, games, and unique features at this new crypto casino." />
-        <meta name="robots" content="index, follow" />
-        {(() => {
-          const og = getOgMetaForCasino("goldenbilly");
-          return <>
-            <meta property="og:title" content={og.title} />
-            <meta property="og:description" content={og.description} />
-            <meta property="og:image" content={og.image} />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.crypto-online-casino.com/crypto-casino-reviews/goldenbilly" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={og.title} />
-            <meta name="twitter:description" content={og.description} />
-            <meta name="twitter:image" content={og.image} />
-          </>;
-        })()}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getReviewStructuredData({
-              name: "Golden Billy Casino",
-              reviewRating: 4.0,
-              reviewCount: 98,
-              url: "https://www.yourdomain.com/crypto-casino-reviews/goldenbilly",
-              image: "https://www.yourdomain.com/logos/goldenbilly.png",
-              description: "Golden Billy is a brand-new crypto casino with a colorful theme, generous bonuses, and lightning-fast crypto payouts. Discover why more and more players are switching to Golden Billy!"
-            }))
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getBreadcrumbListStructuredData([
-              { name: "Home", href: "/" },
-              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-              { name: "Golden Billy Casino", href: "/crypto-casino-reviews/goldenbilly" }
-            ], "https://www.yourdomain.com"))
-          }}
-        />
       </Head>
       <Breadcrumbs
         items={[
@@ -117,6 +97,29 @@ export default function GoldenBillyReview() {
           18+ | Play responsibly. Golden Billy may not be available in all jurisdictions.
         </p>
       </CasinoReviewTemplate>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getReviewStructuredData({
+            name: "Golden Billy Casino",
+            reviewRating: 4.0,
+            reviewCount: 98,
+            url: "https://www.crypto-online-casino.com/crypto-casino-reviews/goldenbilly",
+            image: "https://www.crypto-online-casino.com/logos/goldenbilly.png",
+            description: "Golden Billy is a brand-new crypto casino with a colorful theme, generous bonuses, and lightning-fast crypto payouts. Discover why more and more players are switching to Golden Billy!"
+          }))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getBreadcrumbListStructuredData([
+            { name: "Home", href: "/" },
+            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+            { name: "Golden Billy Casino", href: "/crypto-casino-reviews/goldenbilly" }
+          ], "https://www.crypto-online-casino.com"))
+        }}
+      />
     </>
   );
 }

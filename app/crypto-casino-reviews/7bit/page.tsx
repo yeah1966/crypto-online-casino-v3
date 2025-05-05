@@ -1,11 +1,30 @@
-import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import Head from "next/head";
+import type { Metadata } from "next";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
+import Head from "next/head";
 
-export const generateMetadata = async () => {
-  return getOgMetaForCasino("7bit");
+export const generateMetadata = async (): Promise<Metadata> => {
+  const og = getOgMetaForCasino("7bit");
+  return {
+    title: og.title,
+    description: og.description,
+    openGraph: {
+      title: og.title,
+      description: og.description,
+      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/7bit",
+      images: [{ url: og.image }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: og.title,
+      description: og.description,
+      images: [og.image],
+    },
+    robots: "index, follow",
+  };
 };
 
 export default function SevenBitReview() {
@@ -14,44 +33,6 @@ export default function SevenBitReview() {
       <Head>
         <title>7Bit Casino Review (2025) – Crypto Bonussen & Spellen</title>
         <meta name="description" content="Lees onze 2025 7Bit Casino review. Alles over bonussen, crypto games, uitbetalingen en unieke features." />
-        <meta name="robots" content="index, follow" />
-        {(() => {
-          const og = getOgMetaForCasino("7bit");
-          return <>
-            <meta property="og:title" content={og.title} />
-            <meta property="og:description" content={og.description} />
-            <meta property="og:image" content={og.image} />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.crypto-online-casino.com/crypto-casino-reviews/7bit" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={og.title} />
-            <meta name="twitter:description" content={og.description} />
-            <meta name="twitter:image" content={og.image} />
-          </>;
-        })()}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getReviewStructuredData({
-              name: "7Bit Casino",
-              reviewRating: 4.7,
-              reviewCount: 801,
-              url: "https://www.yourdomain.com/crypto-casino-reviews/7bit",
-              image: "https://www.yourdomain.com/logos/7bit.png",
-              description: "7Bit Casino is een populair crypto casino met snelle betalingen, duizenden spellen en royale bonussen. Lees onze volledige review!"
-            }))
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getBreadcrumbListStructuredData([
-              { name: "Home", href: "/" },
-              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-              { name: "7Bit Casino", href: "/crypto-casino-reviews/7bit" }
-            ], "https://www.yourdomain.com"))
-          }}
-        />
       </Head>
       <Breadcrumbs
         items={[
@@ -116,6 +97,29 @@ export default function SevenBitReview() {
           18+ | Gamble responsibly. 7Bit Casino may not be available in all jurisdictions.
         </p>
       </CasinoReviewTemplate>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getReviewStructuredData({
+            name: "7Bit Casino",
+            reviewRating: 4.7,
+            reviewCount: 801,
+            url: "https://www.crypto-online-casino.com/crypto-casino-reviews/7bit",
+            image: "https://www.crypto-online-casino.com/logos/7bit.png",
+            description: "7Bit Casino is een populair crypto casino met snelle betalingen, duizenden spellen en royale bonussen. Lees onze volledige review!"
+          }))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getBreadcrumbListStructuredData([
+            { name: "Home", href: "/" },
+            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+            { name: "7Bit Casino", href: "/crypto-casino-reviews/7bit" }
+          ], "https://www.crypto-online-casino.com"))
+        }}
+      />
     </>
   );
 }

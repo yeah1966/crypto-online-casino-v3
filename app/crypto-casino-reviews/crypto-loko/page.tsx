@@ -1,11 +1,30 @@
-import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import Head from "next/head";
-import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import type { Metadata } from "next";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
+import Head from "next/head";
 
-export const generateMetadata = async () => {
-  return getOgMetaForCasino("cryptoloko");
+export const generateMetadata = async (): Promise<Metadata> => {
+  const og = getOgMetaForCasino("crypto-loko");
+  return {
+    title: og.title,
+    description: og.description,
+    openGraph: {
+      title: og.title,
+      description: og.description,
+      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/crypto-loko",
+      images: [{ url: og.image }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: og.title,
+      description: og.description,
+      images: [og.image],
+    },
+    robots: "index, follow",
+  };
 };
 
 export default function CryptoLokoReview() {
@@ -14,44 +33,6 @@ export default function CryptoLokoReview() {
       <Head>
         <title>Crypto Loko Casino Review (2025) – Crypto Bonussen & Spellen</title>
         <meta name="description" content="Lees onze 2025 Crypto Loko review. Alles over crypto bonussen, games en unieke features." />
-        <meta name="robots" content="index, follow" />
-        {(() => {
-          const og = getOgMetaForCasino("crypto-loko");
-          return <>
-            <meta property="og:title" content={og.title} />
-            <meta property="og:description" content={og.description} />
-            <meta property="og:image" content={og.image} />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.crypto-online-casino.com/crypto-casino-reviews/crypto-loko" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={og.title} />
-            <meta name="twitter:description" content={og.description} />
-            <meta name="twitter:image" content={og.image} />
-          </>;
-        })()}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getReviewStructuredData({
-              name: "Crypto Loko",
-              reviewRating: 4.1,
-              reviewCount: 205,
-              url: "https://www.yourdomain.com/crypto-casino-reviews/crypto-loko",
-              image: "https://www.yourdomain.com/logos/crypto-loko.png",
-              description: "Crypto Loko is een kleurrijk crypto casino met snelle betalingen, leuke bonussen en een uniek spelaanbod. Lees onze volledige review!"
-            }))
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getBreadcrumbListStructuredData([
-              { name: "Home", href: "/" },
-              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-              { name: "Crypto Loko Casino", href: "/crypto-casino-reviews/crypto-loko" }
-            ], "https://www.yourdomain.com"))
-          }}
-        />
       </Head>
       <Breadcrumbs
         items={[
@@ -116,6 +97,29 @@ export default function CryptoLokoReview() {
           18+ | Gamble responsibly. Crypto Loko may not be available in all jurisdictions.
         </p>
       </CasinoReviewTemplate>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getReviewStructuredData({
+            name: "Crypto Loko",
+            reviewRating: 4.1,
+            reviewCount: 205,
+            url: "https://www.crypto-online-casino.com/crypto-casino-reviews/crypto-loko",
+            image: "https://www.crypto-online-casino.com/logos/crypto-loko.png",
+            description: "Crypto Loko is een kleurrijk crypto casino met snelle betalingen, leuke bonussen en een uniek spelaanbod. Lees onze volledige review!"
+          }))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getBreadcrumbListStructuredData([
+            { name: "Home", href: "/" },
+            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+            { name: "Crypto Loko Casino", href: "/crypto-casino-reviews/crypto-loko" }
+          ], "https://www.crypto-online-casino.com"))
+        }}
+      />
     </>
   );
 }

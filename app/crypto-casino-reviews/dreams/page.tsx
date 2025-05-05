@@ -1,20 +1,36 @@
-import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import Head from "next/head";
-import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import type { Metadata } from "next";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
+import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
+import Head from "next/head";
 
-export const generateMetadata = async () => {
-  return getOgMetaForCasino("dreams");
+export const generateMetadata = async (): Promise<Metadata> => {
+  const og = getOgMetaForCasino("dreams");
+  return {
+    title: og.title,
+    description: og.description,
+    openGraph: {
+      title: og.title,
+      description: og.description,
+      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/dreams",
+      images: [{ url: og.image }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: og.title,
+      description: og.description,
+      images: [og.image],
+    },
+    robots: "index, follow",
+  };
 };
 
 export default function DreamsReview() {
   return (
     <>
       <Head>
-        <title>Dreams Casino Review (2025) – Claim Bonus & Play Crypto Slots</title>
-        <meta name="description" content="Dreams Casino offers a wide range of crypto slots and table games, combined with generous bonuses and fast payouts for Bitcoin users. Whether you're chasing jackpots or just looking for a safe crypto gambling site, Dreams Casino delivers a smooth and rewarding experience." />
-        <meta name="robots" content="index, follow" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -22,8 +38,8 @@ export default function DreamsReview() {
               name: "Dreams Casino",
               reviewRating: 4.1,
               reviewCount: 0,
-              url: "https://www.yourdomain.com/crypto-casino-reviews/dreams",
-              image: "/logos/dreamscasino.png",
+              url: "https://www.crypto-online-casino.com/crypto-casino-reviews/dreams",
+              image: "https://www.crypto-online-casino.com/logos/dreamscasino.png",
               description: "Dreams Casino offers a wide range of crypto slots and table games, combined with generous bonuses and fast payouts for Bitcoin users."
             }))
           }}
@@ -35,7 +51,7 @@ export default function DreamsReview() {
               { name: "Home", href: "/" },
               { name: "Casino Reviews", href: "/crypto-casino-reviews" },
               { name: "Dreams Casino", href: "/crypto-casino-reviews/dreams" }
-            ], "https://www.yourdomain.com"))
+            ], "https://www.crypto-online-casino.com"))
           }}
         />
       </Head>

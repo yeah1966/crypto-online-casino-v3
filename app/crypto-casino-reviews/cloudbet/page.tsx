@@ -4,8 +4,26 @@ import Head from "next/head";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
 
-export const generateMetadata = async () => {
-  return getOgMetaForCasino("cloudbet");
+export const generateMetadata = async (): Promise<Metadata> => {
+  const og = getOgMetaForCasino("cloudbet");
+  return {
+    title: og.title,
+    description: og.description,
+    openGraph: {
+      title: og.title,
+      description: og.description,
+      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/cloudbet",
+      images: [{ url: og.image }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: og.title,
+      description: og.description,
+      images: [og.image],
+    },
+    robots: "index, follow",
+  };
 };
 
 export default function CloudbetReview() {
@@ -14,44 +32,6 @@ export default function CloudbetReview() {
       <Head>
         <title>Cloudbet Review (2025) – Claim Bonus & Bet Instantly</title>
         <meta name="description" content="Read our 2025 Cloudbet review. Trusted crypto sportsbook & casino with fast payouts, high limits, and huge bonuses. Claim your bonus now!" />
-        <meta name="robots" content="index, follow" />
-        {(() => {
-          const og = getOgMetaForCasino("cloudbet");
-          return <>
-            <meta property="og:title" content={og.title} />
-            <meta property="og:description" content={og.description} />
-            <meta property="og:image" content={og.image} />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.yourdomain.com/crypto-casino-reviews/cloudbet" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={og.title} />
-            <meta name="twitter:description" content={og.description} />
-            <meta name="twitter:image" content={og.image} />
-          </>;
-        })()}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getReviewStructuredData({
-              name: "Cloudbet",
-              reviewRating: 4.5,
-              reviewCount: 1123,
-              url: "https://www.yourdomain.com/crypto-casino-reviews/cloudbet",
-              image: "https://www.yourdomain.com/logos/cloudbet.png",
-              description: "Cloudbet is a trusted crypto casino and sportsbook with high bonuses, fast payouts, and a large game selection. Read our full review!"
-            }))
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getBreadcrumbListStructuredData([
-              { name: "Home", href: "/" },
-              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-              { name: "Cloudbet", href: "/crypto-casino-reviews/cloudbet" }
-            ], "https://www.yourdomain.com"))
-          }}
-        />
       </Head>
       <Breadcrumbs
         items={[
@@ -119,6 +99,29 @@ export default function CloudbetReview() {
           18+ | Gamble responsibly. Cloudbet may not be available in all jurisdictions.
         </p>
       </CasinoReviewTemplate>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getReviewStructuredData({
+            name: "Cloudbet",
+            reviewRating: 4.5,
+            reviewCount: 1123,
+            url: "https://www.crypto-online-casino.com/crypto-casino-reviews/cloudbet",
+            image: "https://www.crypto-online-casino.com/logos/cloudbet.png",
+            description: "Cloudbet is a trusted crypto casino and sportsbook with high bonuses, fast payouts, and a large game selection. Read our full review!"
+          }))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getBreadcrumbListStructuredData([
+            { name: "Home", href: "/" },
+            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+            { name: "Cloudbet", href: "/crypto-casino-reviews/cloudbet" }
+          ], "https://www.crypto-online-casino.com"))
+        }}
+      />
     </>
   );
 }

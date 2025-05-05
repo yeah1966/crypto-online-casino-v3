@@ -1,11 +1,30 @@
-import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import Head from "next/head";
+import type { Metadata } from "next";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
+import Head from "next/head";
 
-export const generateMetadata = async () => {
-  return getOgMetaForCasino("betzard");
+export const generateMetadata = async (): Promise<Metadata> => {
+  const og = getOgMetaForCasino("betzard");
+  return {
+    title: og.title,
+    description: og.description,
+    openGraph: {
+      title: og.title,
+      description: og.description,
+      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/betzard",
+      images: [{ url: og.image }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: og.title,
+      description: og.description,
+      images: [og.image],
+    },
+    robots: "index, follow",
+  };
 };
 
 export default function BetzardReview() {
@@ -14,44 +33,6 @@ export default function BetzardReview() {
       <Head>
         <title>Betzard Casino Review (2025) – Crypto Bonussen & Spellen</title>
         <meta name="description" content="Lees onze 2025 Betzard review. Alles over crypto bonussen, games en unieke features." />
-        <meta name="robots" content="index, follow" />
-        {(() => {
-          const og = getOgMetaForCasino("betzard");
-          return <>
-            <meta property="og:title" content={og.title} />
-            <meta property="og:description" content={og.description} />
-            <meta property="og:image" content={og.image} />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.crypto-online-casino.com/crypto-casino-reviews/betzard" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={og.title} />
-            <meta name="twitter:description" content={og.description} />
-            <meta name="twitter:image" content={og.image} />
-          </>;
-        })()}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getReviewStructuredData({
-              name: "Betzard Casino",
-              reviewRating: 4.0,
-              reviewCount: 389,
-              url: "https://www.yourdomain.com/crypto-casino-reviews/betzard",
-              image: "https://www.yourdomain.com/logos/betzard.png",
-              description: "Betzard Casino is een opkomend crypto casino met ruime bonussen, veel spellen en snelle betalingen. Lees onze volledige review!"
-            }))
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getBreadcrumbListStructuredData([
-              { name: "Home", href: "/" },
-              { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-              { name: "Betzard Casino", href: "/crypto-casino-reviews/betzard" }
-            ], "https://www.yourdomain.com"))
-          }}
-        />
       </Head>
       <Breadcrumbs
         items={[
@@ -116,6 +97,29 @@ export default function BetzardReview() {
           18+ | Gamble responsibly. Betzard Casino may not be available in all jurisdictions.
         </p>
       </CasinoReviewTemplate>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getReviewStructuredData({
+            name: "Betzard Casino",
+            reviewRating: 4.0,
+            reviewCount: 389,
+            url: "https://www.crypto-online-casino.com/crypto-casino-reviews/betzard",
+            image: "https://www.crypto-online-casino.com/logos/betzard.png",
+            description: "Betzard Casino is een opkomend crypto casino met ruime bonussen, veel spellen en snelle betalingen. Lees onze volledige review!"
+          }))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getBreadcrumbListStructuredData([
+            { name: "Home", href: "/" },
+            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+            { name: "Betzard Casino", href: "/crypto-casino-reviews/betzard" }
+          ], "https://www.crypto-online-casino.com"))
+        }}
+      />
     </>
   );
 }
