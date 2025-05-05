@@ -1,13 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-
-const filePath = path.join(process.cwd(), 'data', 'affiliateLinks.json');
-
-module.exports = (req, res) => {
-  fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-      return res.status(500).json({ error: 'Failed to load links' });
-    }
-    res.status(200).json(JSON.parse(data));
+// DEZE API-ROUTE IS VERVALLEN
+// Gebruik voortaan alleen de centrale bron: /data/casinosData.ts
+export default function handler(req, res) {
+  res.status(410).json({
+    message:
+      'Deze route is verwijderd. Gebruik /data/casinosData.ts als centrale bron voor affiliate links.',
   });
-};
+}

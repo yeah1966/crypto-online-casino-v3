@@ -1,8 +1,11 @@
-import path from "path";
-import fs from "fs/promises";
+// DEZE FILE IS VERVANGEN
+// Gebruik voortaan alleen `casinosData.ts` in /data/ voor affiliate info.
 
-export async function getAffiliateLinks() {
-  const filePath = path.join(process.cwd(), "data", "affiliateLinks.json");
-  const raw = await fs.readFile(filePath, "utf-8");
-  return JSON.parse(raw);
+import { casinos } from '@/data/casinosData';
+
+export function getAffiliateLinks() {
+  return casinos.map(({ slug, affiliateUrl }) => ({
+    slug,
+    affiliateUrl,
+  }));
 }
