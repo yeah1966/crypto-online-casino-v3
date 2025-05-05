@@ -2,12 +2,13 @@
 
 import React, { useEffect } from "react";
 import { useParams } from "next/navigation";
-import affiliateLinks from "@/data/affiliateLinks.json";
+import { casinos } from "@/data/casinosData";
 
 export default function OutPageClient() {
   const params = useParams();
   const slug = Array.isArray(params?.slug) ? params.slug[0] : params?.slug ?? "";
-  const url = affiliateLinks[slug];
+  const casino = casinos.find(c => c.slug === slug);
+  const url = casino ? casino.affiliateUrl : undefined;
 
   useEffect(() => {
     if (url) {
