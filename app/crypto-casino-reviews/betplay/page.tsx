@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Head from "next/head";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
+import type { Metadata } from "next";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const og = getOgMetaForCasino("betplay");
@@ -12,7 +13,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
     openGraph: {
       title: og.title,
       description: og.description,
-      url: "https://crypto-online-casino.com/crypto-casino-reviews/betplay",
+      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/betplay",
       images: [{ url: og.image }],
       type: "website",
     },
@@ -37,8 +38,8 @@ export default function BetplayReview() {
               name: "Betplay",
               reviewRating: 4.6,
               reviewCount: 562,
-              url: "https://crypto-online-casino.com/crypto-casino-reviews/betplay",
-              image: "https://crypto-online-casino.com/logos/betplay.png",
+              url: "https://www.crypto-online-casino.com/crypto-casino-reviews/betplay",
+              image: "https://www.crypto-online-casino.com/logos/betplay.png",
               description: "Betplay is een veelzijdig crypto casino en sportsbook met snelle uitbetalingen en aantrekkelijke bonussen. Lees onze volledige review!"
             }))
           }}
@@ -50,7 +51,7 @@ export default function BetplayReview() {
               { name: "Home", href: "/" },
               { name: "Casino Reviews", href: "/crypto-casino-reviews" },
               { name: "Betplay Casino", href: "/crypto-casino-reviews/betplay" }
-            ], "https://crypto-online-casino.com"))
+            ], "https://www.crypto-online-casino.com"))
           }}
         />
       </Head>
