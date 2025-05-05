@@ -95,4 +95,20 @@ export const topCasinos = [
     details: "Wide range of games, fast crypto payments, and 24/7 support.",
     slug: "ninlayplay",
   },
+  {
+    name: "Cool Cat Casino",
+    image: "coolcatcasino.png",
+    bonus: "Massive welcome bonus!",
+    description: "Amerikaanse klassieker met veel bonussen.",
+    details: "Claim je bonus bij Cool Cat Casino, bekend om zijn royale promoties.",
+    slug: "coolcatcasino",
+  },
+  {
+    name: "Loki Casino",
+    image: "lokicasino.png",
+    bonus: "Crypto welcome bonus!",
+    description: "International crypto slot destination.",
+    details: "Speel slots en tafelspellen bij Loki Casino met snelle crypto uitbetalingen.",
+    slug: "lokicasino",
+  },
 ];

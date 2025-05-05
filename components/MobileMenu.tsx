@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 // Alleen de belangrijkste menu-items voor mobiel
 const mobileMainItems = menuItems.filter(item =>
-  ['Home', 'Bonuses', 'Sportsbetting', 'Reviews', 'FAQ', 'About'].includes(item.label)
+  ['Home', 'Bonuses', 'Sportsbetting', 'Casino Reviews', 'Guides', 'Slots & Games', 'Blog', 'FAQ', 'About'].includes(item.label)
 );
 
 export default function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {

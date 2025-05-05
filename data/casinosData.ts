@@ -103,7 +103,7 @@ export const casinos: CasinoCard[] = [
   {
     slug: 'lokicasino',
     name: 'Loki Casino',
-    logo: '/logos/loki.png',
+    logo: '/logos/lokicasino.png',
     rating: 4.2,
     description: 'International crypto slot destination.',
     affiliateUrl: 'https://lokicasinolink.com/hd8471080',
@@ -301,7 +301,7 @@ export const casinos: CasinoCard[] = [
   {
     slug: 'coolcatcasino',
     name: 'Cool Cat Casino',
-    logo: '/logos/coolcat.png',
+    logo: '/logos/coolcatcasino.png',
     rating: 3.8,
     description: 'Amerikaanse klassieker met veel bonussen.',
     affiliateUrl: 'https://www.coolcatlinks.com/click/7/3936/15512/1',
