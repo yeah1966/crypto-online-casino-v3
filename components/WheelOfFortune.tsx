@@ -3,7 +3,7 @@
 import React, { useRef, useState, forwardRef, useImperativeHandle } from 'react';
 import dynamic from 'next/dynamic';
 const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Wheel), { ssr: false });
-import { casinoLinks } from "./casinoLinks";
+import { casinos } from "../data/casinosData";
 
 type CasinoOption = { option: string; style: { backgroundColor: string } };
 
@@ -19,6 +19,11 @@ const data: CasinoOption[] = [
   { option: 'Betzard', style: { backgroundColor: '#FF6B6B' } },
   { option: 'CoinPoker', style: { backgroundColor: '#FFD93D' } },
 ];
+
+function getAffiliateUrl(slug: string) {
+  const found = casinos.find(c => c.slug === slug);
+  return found?.affiliateUrl || '';
+}
 
 const WheelOfFortune = forwardRef((props, ref) => {
   const [mustSpin, setMustSpin] = useState(false);
@@ -99,13 +104,10 @@ const WheelOfFortune = forwardRef((props, ref) => {
 
       {/* Winner Button - robuuste matching */}
       {winner && (() => {
-        const matchedWinnerLinkKey = Object.keys(casinoLinks).find(
-          (key) => key.replace(/\s+/g, '').toLowerCase() === winner.option.replace(/\s+/g, '').toLowerCase()
-        );
-        const matchedWinnerLink = matchedWinnerLinkKey ? casinoLinks[matchedWinnerLinkKey] : null;
-        return matchedWinnerLink ? (
+        const affiliateLink = getAffiliateUrl(winner.option.replace(/\s+/g, '').toLowerCase());
+        return affiliateLink ? (
           <a
-            href={matchedWinnerLink}
+            href={affiliateLink}
             target="_blank"
             rel="noopener noreferrer"
             className="btn bg-gradient-to-r from-orange-400 via-pink-500 to-yellow-400 text-white font-extrabold rounded-full py-4 px-10 shadow-xl drop-shadow-[0_0_18px_gold] border-4 border-pink-300 animate-pulse hover:scale-110 hover:brightness-110 transition-all duration-300"

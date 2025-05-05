@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { topCasinos } from "../lib/topCasinos";
-import affiliateLinks from "../data/affiliateLinks.json";
-import { casinoLinks } from "./casinoLinks";
+import { casinos } from "../data/casinosData";
+
+function getAffiliateUrl(slug: string) {
+  const found = casinos.find(c => c.slug === slug);
+  return found?.affiliateUrl || '';
+}
 
 export default function Top10List() {
   const badges = [
@@ -50,13 +54,10 @@ export default function Top10List() {
           {/* Play Now Button */}
           <div className="mt-4 md:mt-0">
             {(() => {
-              const matchedLinkKey = Object.keys(casinoLinks).find(
-                (key) => key.replace(/\s+/g, '').toLowerCase() === casino.name.replace(/\s+/g, '').toLowerCase()
-              );
-              const matchedLink = matchedLinkKey ? casinoLinks[matchedLinkKey] : null;
-              return matchedLink ? (
+              const affiliateLink = getAffiliateUrl(casino.slug);
+              return affiliateLink ? (
                 <a
-                  href={matchedLink}
+                  href={affiliateLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`inline-block font-extrabold py-3 px-6 rounded-full transition-all duration-300 shadow-lg border-2 ${
@@ -71,9 +72,7 @@ export default function Top10List() {
                 >
                   Play Now
                 </a>
-              ) : (
-                <span className="inline-block font-extrabold py-3 px-6 rounded-full bg-gray-600 text-white opacity-60 cursor-not-allowed border-2 border-gray-500">Link not available</span>
-              );
+              ) : null;
             })()}
           </div>
         </div>
