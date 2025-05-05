@@ -4,31 +4,32 @@ import Head from "next/head";
 import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import { getOgMetaForCasino } from "@/lib/ogMeta";
 
-export const generateMetadata = async () => {
-  return getOgMetaForCasino("betplay");
+export const generateMetadata = async (): Promise<Metadata> => {
+  const og = getOgMetaForCasino("betplay");
+  return {
+    title: og.title,
+    description: og.description,
+    openGraph: {
+      title: og.title,
+      description: og.description,
+      url: "https://crypto-online-casino.com/crypto-casino-reviews/betplay",
+      images: [{ url: og.image }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: og.title,
+      description: og.description,
+      images: [og.image],
+    },
+    robots: "index, follow",
+  };
 };
 
 export default function BetplayReview() {
   return (
     <>
       <Head>
-        <title>Betplay Casino Review 2025 – Crypto Bonussen & Snel Uitbetalen</title>
-        <meta name="description" content="Lees onze 2025 review van Betplay Casino. Alles over bonussen, crypto betalingen, spellen en meer!" />
-        <meta name="robots" content="index, follow" />
-        {(() => {
-          const og = getOgMetaForCasino("betplay");
-          return <>
-            <meta property="og:title" content={og.title} />
-            <meta property="og:description" content={og.description} />
-            <meta property="og:image" content={og.image} />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.yourdomain.com/crypto-casino-reviews/betplay" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={og.title} />
-            <meta name="twitter:description" content={og.description} />
-            <meta name="twitter:image" content={og.image} />
-          </>;
-        })()}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -36,8 +37,8 @@ export default function BetplayReview() {
               name: "Betplay",
               reviewRating: 4.6,
               reviewCount: 562,
-              url: "https://www.yourdomain.com/crypto-casino-reviews/betplay",
-              image: "https://www.yourdomain.com/logos/betplay.png",
+              url: "https://crypto-online-casino.com/crypto-casino-reviews/betplay",
+              image: "https://crypto-online-casino.com/logos/betplay.png",
               description: "Betplay is een veelzijdig crypto casino en sportsbook met snelle uitbetalingen en aantrekkelijke bonussen. Lees onze volledige review!"
             }))
           }}
@@ -49,7 +50,7 @@ export default function BetplayReview() {
               { name: "Home", href: "/" },
               { name: "Casino Reviews", href: "/crypto-casino-reviews" },
               { name: "Betplay Casino", href: "/crypto-casino-reviews/betplay" }
-            ], "https://www.yourdomain.com"))
+            ], "https://crypto-online-casino.com"))
           }}
         />
       </Head>
