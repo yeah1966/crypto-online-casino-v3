@@ -20,6 +20,29 @@ export interface CasinoCard {
 }
 
 export const casinos: CasinoCard[] = [
+  // Zet BitStarz als eerste in de array
+  {
+    slug: 'bitstarz',
+    name: 'BitStarz',
+    logo: '/logos/bitstarz.png',
+    rating: 4.5,
+    description: 'Bekroond crypto casino met snelle uitbetalingen.',
+    welcomeBonus: true,
+    welcomeBonusNote: 'Up to 5 BTC + 200 Free Spins',
+    freeSpinsBonus: true,
+    freeSpinsNote: 'No deposit bonus: 20 free spins',
+    noDepositBonus: true,
+    noDepositNote: 'Exclusive: €20 no deposit!',
+    exclusive: true,
+    perks: [
+      'No deposit bonus: 20 free spins',
+      'Welcome package over 4 deposits',
+      'Fast payouts under 10 minutes'
+    ],
+    tags: ['no-deposit', 'free-spins', 'match'],
+    highlight: '🎁',
+    affiliateUrl: 'https://www.bitstarz.com/?ref=YOUR_ID'
+  },
   {
     slug: 'goldenbilly',
     name: 'Golden Billy',
@@ -121,28 +144,6 @@ export const casinos: CasinoCard[] = [
     tags: [],
     highlight: '',
     affiliateUrl: ''
-  },
-  {
-    slug: 'bitstarz',
-    name: 'BitStarz',
-    logo: '/logos/bitstarz.png',
-    rating: 4.5,
-    description: 'Bekroond crypto casino met snelle uitbetalingen.',
-    welcomeBonus: true,
-    welcomeBonusNote: 'Up to 5 BTC + 200 Free Spins',
-    freeSpinsBonus: true,
-    freeSpinsNote: 'No deposit bonus: 20 free spins',
-    noDepositBonus: true,
-    noDepositNote: 'Exclusive: €20 no deposit!',
-    exclusive: true,
-    perks: [
-      'No deposit bonus: 20 free spins',
-      'Welcome package over 4 deposits',
-      'Fast payouts under 10 minutes'
-    ],
-    tags: ['no-deposit', 'free-spins', 'match'],
-    highlight: '🎁',
-    affiliateUrl: 'https://www.bitstarz.com/?ref=YOUR_ID'
   },
   {
     slug: 'cloudbet',

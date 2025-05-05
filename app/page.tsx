@@ -66,7 +66,7 @@ export default function Home() {
         {/* Review schema for all casino cards shown on the homepage grid */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           '@context': 'https://schema.org',
-          '@graph': casinos.slice(0,12).map(casino => ({
+          '@graph': casinos.slice(0, 20).map(casino => ({
             '@type': 'Review',
             'itemReviewed': {
               '@type': 'Organization',
@@ -146,7 +146,7 @@ export default function Home() {
           </div>
           {/* Neon Casino Grid hieronder, vervangt de oude lijst */}
           <div className="max-w-6xl mx-auto px-4 py-12">
-            <CasinoGrid casinos={casinos.map(casino => ({
+            <CasinoGrid casinos={casinos.slice(0, 20).map(casino => ({
               name: casino.name,
               logo: casino.logo,
               bonus: casino.noDepositBonus ? 'No Deposit Bonus!' : 'Deposit Bonus',
