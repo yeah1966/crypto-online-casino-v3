@@ -1,3 +1,7 @@
+// 🔁 Legacy component – gebruikt verouderde affiliateLinks.json
+// Deze component is gearchiveerd. Gebruik casinosData.ts in /data als centrale bron.
+// Bestanden in deze map worden niet meer actief onderhouden.
+
 import React, { useEffect, useState } from "react";
 
 interface AffiliateLinks {

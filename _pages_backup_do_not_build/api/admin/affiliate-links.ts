@@ -1,3 +1,7 @@
+// 🔁 Legacy component – gebruikt verouderde affiliateLinks.json
+// Deze component is gearchiveerd. Gebruik casinosData.ts in /data als centrale bron.
+// Bestanden in deze map worden niet meer actief onderhouden.
+
 import type { NextApiRequest, NextApiResponse } from "next";
 import path from "path";
 import fs from "fs/promises";
