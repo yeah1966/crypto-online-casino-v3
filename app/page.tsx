@@ -94,7 +94,25 @@ export default function Home() {
           className="pointer-events-none fixed inset-0 z-0"
           aria-hidden="true"
         >
-          <div className="absolute inset-0 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-center bg-no-repeat opacity-65" />
+          <picture>
+            <source
+              srcSet="/images/crypto-casino-online-mobile.webp"
+              type="image/webp"
+              media="(max-width: 600px)"
+            />
+            <source
+              srcSet="/images/crypto-casino-online-mobile.jpg"
+              type="image/jpeg"
+              media="(max-width: 600px)"
+            />
+            <img
+              src="/images/crypto-casino-online.png"
+              alt="Best Crypto Casinos 2025"
+              width="1200"
+              height="630"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.65, position: 'absolute', inset: 0 }}
+            />
+          </picture>
           <div className="absolute inset-0 bg-black/20" style={{backgroundColor: 'transparent'}} />
         </div>
         {/* Main content stays above */}
