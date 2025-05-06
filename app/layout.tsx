@@ -1,4 +1,4 @@
-"use client"
+// "use client" // <-- Verwijderd voor Next.js metadata support
 import '../styles/globals.css';
 // import VegasHeader from "@/components/VegasHeader";
 import { FooterBrandingStrip } from "@/components/BrandingElements";
