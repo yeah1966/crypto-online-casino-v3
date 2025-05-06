@@ -1,4 +1,4 @@
-// "use client" // <-- Verwijderd voor Next.js metadata support
+import "../styles/globals.css";
 import ClientLayout from "@/components/ClientLayout";
 
 export const metadata = {
@@ -24,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-black text-white font-sans">
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
