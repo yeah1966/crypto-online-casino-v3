@@ -55,6 +55,8 @@ export default function DreamsReview() {
           }}
         />
       </Head>
+      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
+      <div className="fixed inset-0 -z-10 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
       <Breadcrumbs
         items={[
           { name: "Home", href: "/" },

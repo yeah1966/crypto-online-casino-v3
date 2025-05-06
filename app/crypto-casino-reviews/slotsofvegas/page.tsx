@@ -35,6 +35,8 @@ export default function SlotsOfVegasReview() {
         <title>Slots of Vegas Casino Review (2025) – Crypto Bonussen & Spellen</title>
         <meta name="description" content="Lees onze 2025 Slots of Vegas review. Alles over crypto gokkasten, bonussen en unieke features." />
       </Head>
+      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
       <Breadcrumbs
         items={[
           { name: "Home", href: "/" },

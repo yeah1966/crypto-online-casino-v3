@@ -8,6 +8,8 @@ export default function CloudbetSportsbookPage() {
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 relative">
       {/* Transparant groot vlak achter de content voor verduistering */}
+      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="w-full h-full bg-black/60 rounded-3xl backdrop-blur-sm" />
       </div>

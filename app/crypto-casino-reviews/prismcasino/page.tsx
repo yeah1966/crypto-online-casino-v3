@@ -75,7 +75,8 @@ export default function PrismCasinoReview() {
           }}
         />
       </Head>
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-[#0e0e2c] via-[#1e1e40] to-[#502664] opacity-80" />
+      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
+      <div className="fixed inset-0 -z-10 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
       <Breadcrumbs
         items={[
           { name: "Home", href: "/" },

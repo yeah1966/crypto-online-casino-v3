@@ -35,6 +35,8 @@ export default function WildVegasReview() {
         <title>Wild Vegas Casino Review (2025) – Crypto Bonussen & Spellen</title>
         <meta name="description" content="Lees onze 2025 Wild Vegas review. Alles over crypto bonussen, games en unieke features." />
       </Head>
+      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
       <Breadcrumbs
         items={[
           { name: "Home", href: "/" },

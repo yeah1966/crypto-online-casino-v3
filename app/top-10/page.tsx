@@ -189,6 +189,8 @@ export default function Top10Page() {
 
   return (
     <main className="min-h-screen flex items-center justify-center">
+      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
       <div className="relative rounded-3xl bg-black/65 shadow-2xl border-2 border-yellow-400 p-8 md:p-12 space-y-10 max-w-6xl mx-auto mt-6">
         <h1 className="text-4xl md:text-5xl font-extrabold neon-text text-center mb-2 text-purple-700 flex items-center justify-center gap-3">
           <img src="/casino-icons/Diamond 1.svg" alt="Diamond" width={48} height={48} className="drop-shadow-lg" />

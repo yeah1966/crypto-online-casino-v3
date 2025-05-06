@@ -88,6 +88,8 @@ export default function BetplayReview() {
           "BTC, ETH, LTC, Nano & more"
         ]}
       >
+        <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
+        <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
         {/* CRYPTO & PAYMENT OPTIONS */}
         <div className="mt-8 bg-purple-900/80 rounded-xl p-6 shadow-lg">
           <div className="flex items-center gap-2 mb-2">

@@ -7,6 +7,8 @@ export default function WelcomeBonusPage() {
 
   return (
     <div className="relative rounded-3xl bg-black/65 shadow-2xl border-2 border-yellow-400 p-8 md:p-12 space-y-10 max-w-6xl mx-auto mt-6">
+      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
       {/* HERO SECTION */}
       <section className="animate-fade-in-up">
         <div className="flex items-center justify-center gap-4 mb-3">

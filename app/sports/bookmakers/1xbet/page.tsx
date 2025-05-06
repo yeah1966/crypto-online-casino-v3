@@ -91,6 +91,8 @@ export default function OneXBetBookmaker() {
       featureBlocks={featureBlocks}
       sportsbettingMenu={sportsbettingMenu}
     >
+      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
       <div className="max-w-3xl mx-auto space-y-10 relative z-10">
         {/* OUR REVIEW */}
         <div className="mt-8 bg-black/70 rounded-xl p-6 shadow-lg">

@@ -69,6 +69,8 @@ export default function BestBonusesPage() {
 
   return (
     <div className="relative rounded-3xl bg-black/65 shadow-2xl border-2 border-yellow-400 p-8 md:p-12 space-y-10 max-w-6xl mx-auto mt-6">
+      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
       <BonusOverviewLayout
         title="Best Crypto Casino Bonuses 2025"
         description="Discover the biggest and most exclusive bonuses at the best crypto casinos. Choose from welcome bonuses, free spins and no deposit deals."

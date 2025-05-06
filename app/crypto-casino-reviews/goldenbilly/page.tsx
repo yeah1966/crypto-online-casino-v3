@@ -34,6 +34,8 @@ export default function GoldenBillyReview() {
         <title>Golden Billy Casino Review (2025) – Crypto Bonuses & Games</title>
         <meta name="description" content="Read our 2025 Golden Billy review. All about crypto bonuses, games, and unique features at this new crypto casino." />
       </Head>
+      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
       <Breadcrumbs
         items={[
           { name: "Home", href: "/" },
