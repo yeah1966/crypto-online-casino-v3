@@ -89,25 +89,7 @@ export default function Home() {
           }))
         }) }} />
       </Head>
-      {/* HERO BANNER */}
-      <section className="relative w-full bg-gradient-to-br from-[#0e0e2c] to-[#1e1e40] px-4 py-12 md:py-20 flex justify-center">
-        <Image
-          src="/og/crypto-online-casino.png"
-          alt="Crypto Online Casino – The thrill of Vegas with crypto rewards"
-          width={1200}
-          height={628}
-          className="rounded-2xl shadow-2xl"
-          priority
-        />
-      </section>
-      <div className="text-center mt-6">
-        <Link href="/casino-reviews">
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-full text-lg shadow-md transition">
-            Explore Top Casinos
-          </button>
-        </Link>
-      </div>
-      {/* BG image + overlay only on homepage */}
+      {/* HERO BANNER VERWIJDERD */}
       <div className="relative min-h-screen w-full pt-32">
         {/* Background image with dark overlay */}
         <div
