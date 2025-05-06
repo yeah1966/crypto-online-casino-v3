@@ -58,6 +58,13 @@ export default function CoolCatCasinoReview() {
       <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
       <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
       <main className="relative z-10 min-h-screen pt-1 pb-16 px-4 text-white">
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+            { name: "Cool Cat Casino", href: "/crypto-casino-reviews/coolcatcasino" }
+          ]}
+        />
         <div className="max-w-3xl mx-auto bg-black/60 rounded-2xl shadow-2xl p-8 relative border-2 border-transparent bg-gradient-to-br from-[#241f6b]/90 via-black/70 to-pink-900/60 before:content-[''] before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none before:z-10 before:bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,0,0.07)_0,transparent_60%),radial-gradient(circle_at_80%_80%,rgba(255,0,200,0.09)_0,transparent_70%)]" style={{boxShadow: '0 0 32px 0 rgba(255, 0, 200, 0.18), 0 0 8px 0 #fff2'}}>
           {/* HEADER */}
           <div className="flex flex-col md:flex-row items-center md:items-start mb-6 gap-6">
@@ -68,13 +75,6 @@ export default function CoolCatCasinoReview() {
                 <span className="text-yellow-300 text-2xl">★★★★☆</span>
                 <span className="text-white/70 text-sm">3.8/5</span>
               </div>
-              <Breadcrumbs
-                items={[
-                  { name: "Home", href: "/" },
-                  { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-                  { name: "Cool Cat Casino", href: "/crypto-casino-reviews/coolcatcasino" }
-                ]}
-              />
               <h1 className="text-3xl font-extrabold text-yellow-300 drop-shadow mb-1 text-center md:text-left">COOL CAT CASINO</h1>
               <a
                 href="https://www.coolcatlinks.com/click/7/3936/15512/1"

@@ -58,6 +58,13 @@ export default function BitStarzReview() {
       <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
       <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
       <main className="relative z-10 min-h-screen pt-1 pb-16 px-4 text-white">
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
+            { name: "BitStarz", href: "/crypto-casino-reviews/bitstarz" }
+          ]}
+        />
         <div className="max-w-3xl mx-auto bg-black/60 rounded-2xl shadow-2xl p-8 relative
           border-2 border-transparent
           bg-gradient-to-br from-[#241f6b]/90 via-black/70 to-pink-900/60

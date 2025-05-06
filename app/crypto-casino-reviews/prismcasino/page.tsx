@@ -75,6 +75,7 @@ export default function PrismCasinoReview() {
           }}
         />
       </Head>
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-[#0e0e2c] via-[#1e1e40] to-[#502664] opacity-80" />
       <Breadcrumbs
         items={[
           { name: "Home", href: "/" },
@@ -89,7 +90,7 @@ export default function PrismCasinoReview() {
         ratingStars="★★★★☆"
         affiliateUrl="https://www.prismlinks.com/click/6/4305/15512/1"
         affiliateLabel="Play at Prism Casino"
-        introText="A bright, bonus-packed crypto casino experience"
+        introText="A bright, bonus-packed crypto casino experience. Prism Casino stands out with generous no deposit bonuses, a huge collection of RTG slots, and fast Bitcoin payouts. Enjoy a classic Vegas vibe, 24/7 support, and crypto-friendly rewards — perfect for both new and experienced players."
         reviewText={`Prism Casino Review 2025\nA bright, bonus-packed crypto casino experience\n\nPrism Casino delivers flashy rewards and a wide variety of classic slots — perfect for players seeking high bonuses, crypto support, and simple gameplay. With decades of presence in the online casino world, it keeps things straightforward but still appealing for crypto users.`}
         pros={[
           "No deposit codes often available",
