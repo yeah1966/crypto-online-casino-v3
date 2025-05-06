@@ -57,7 +57,7 @@ export default function VipDealsPage() {
             </div>
             {/* Dreams Casino VIP */}
             <div className="rounded-xl border-2 border-purple-400 bg-[#2e0f3a] text-white p-5 shadow-xl flex flex-col items-center hover:scale-[1.03] hover:shadow-[0_0_20px_#a78bfa] transition-all duration-300">
-              <Image src="/logos/dreams.png" alt="Dreams Casino logo" width={60} height={60} className="rounded-lg bg-white mb-2" />
+              <Image src="/logos/dreamscasino.png" alt="Dreams Casino logo" width={60} height={60} className="rounded-lg bg-white mb-2" />
               <div className="font-bold text-lg text-purple-300">Dreams Casino VIP</div>
               <div className="text-white/80 text-center mb-2">High Roller Cashback & VIP Events</div>
               <Link href="/crypto-casino-reviews/dreams" className="bg-purple-400 text-white font-bold px-4 py-2 rounded-full shadow-md hover:bg-yellow-300 hover:text-pink-700 transition hover:scale-105 flex items-center gap-2 mt-2">

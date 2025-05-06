@@ -70,6 +70,28 @@ export async function GET() {
     "/reviews",
   ];
 
+  // Extra publieke pagina's die ontbreken in de sitemap
+  const extraPages = [
+    "/about",
+    "/vip-deals",
+    "/free-spins",
+    "/no-deposit",
+    "/welcome-bonus",
+    "/spin-to-win",
+    "/wheel",
+    "/sports",
+    "/best-crypto-casino-bonuses",
+    "/best-litecoin-casinos",
+    "/top-5-slots-with-highest-rtp",
+    "/how-to-deposit-with-bitcoin",
+    "/how-to-use-a-vpn-for-gambling",
+    "/fair-play-provably-fair",
+    "/getting-started",
+    "/what-are-stablecoins-casino-gambling",
+    "/blog",
+    "/crypto-payments-guide"
+  ];
+
   const allPages = [
     ...staticPages,
     ...casinoPages,
@@ -80,6 +102,7 @@ export async function GET() {
     ...sportsPages,
     ...slotsPages,
     ...infoPages,
+    ...extraPages,
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
