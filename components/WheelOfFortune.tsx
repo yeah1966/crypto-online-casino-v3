@@ -4,20 +4,21 @@ import React, { useRef, useState, forwardRef, useImperativeHandle } from 'react'
 import dynamic from 'next/dynamic';
 const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Wheel), { ssr: false });
 import { casinos } from "../data/casinosData";
+import Image from 'next/image';
 
-type CasinoOption = { option: string; style: { backgroundColor: string } };
+type CasinoOption = { option: string; style: { backgroundColor: string }; logo: string };
 
 const data: CasinoOption[] = [
-  { option: 'BitStarz', style: { backgroundColor: '#FF6B6B' } },
-  { option: 'Wild Vegas', style: { backgroundColor: '#FFD93D' } },
-  { option: 'Dreams', style: { backgroundColor: '#6BCB77' } },
-  { option: 'Slots of Vegas', style: { backgroundColor: '#4D96FF' } },
-  { option: '7Bit', style: { backgroundColor: '#FF6B6B' } },
-  { option: 'Cloudbet', style: { backgroundColor: '#FFD93D' } },
-  { option: 'Crypto Loko', style: { backgroundColor: '#6BCB77' } },
-  { option: 'Prism Casino', style: { backgroundColor: '#4D96FF' } },
-  { option: 'Betzard', style: { backgroundColor: '#FF6B6B' } },
-  { option: 'CoinPoker', style: { backgroundColor: '#FFD93D' } },
+  { option: 'BitStarz', style: { backgroundColor: '#FF6B6B' }, logo: '/logos/bitstarz.png' },
+  { option: 'Wild Vegas', style: { backgroundColor: '#FFD93D' }, logo: '/logos/wildvegas.png' },
+  { option: 'Dreams', style: { backgroundColor: '#6BCB77' }, logo: '/logos/dreams.png' },
+  { option: 'Slots of Vegas', style: { backgroundColor: '#4D96FF' }, logo: '/logos/slotsofvegas.png' },
+  { option: '7Bit', style: { backgroundColor: '#FF6B6B' }, logo: '/logos/7bit.png' },
+  { option: 'Cloudbet', style: { backgroundColor: '#FFD93D' }, logo: '/logos/cloudbet.png' },
+  { option: 'Crypto Loko', style: { backgroundColor: '#6BCB77' }, logo: '/logos/cryptoloko.png' },
+  { option: 'Prism Casino', style: { backgroundColor: '#4D96FF' }, logo: '/logos/prismcasino.png' },
+  { option: 'Betzard', style: { backgroundColor: '#FF6B6B' }, logo: '/logos/betzard.png' },
+  { option: 'CoinPoker', style: { backgroundColor: '#FFD93D' }, logo: '/logos/coinpoker.png' },
 ];
 
 function getAffiliateUrl(slug: string) {
@@ -29,6 +30,7 @@ const WheelOfFortune = forwardRef((props, ref) => {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [winner, setWinner] = useState<CasinoOption | null>(null); 
+  const isSpinning = mustSpin;
   const audioRefSpin = useRef<HTMLAudioElement>(null);
   const audioRefWin = useRef<HTMLAudioElement>(null);
 
@@ -64,6 +66,8 @@ const WheelOfFortune = forwardRef((props, ref) => {
       <audio ref={audioRefWin} src="/sounds/win.mp3" preload="auto" />
 
       <div className="relative w-[320px] h-[320px] md:w-[420px] md:h-[420px] flex justify-center items-center shadow-[0_0_32px_8px_gold] bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full px-2 md:px-0">
+        {/* Pointer wijzer boven het wheel */}
+        <div className="pointer"></div>
         <Wheel
           mustStartSpinning={mustSpin}
           prizeNumber={prizeNumber}
@@ -116,6 +120,7 @@ const WheelOfFortune = forwardRef((props, ref) => {
               textShadow: '2px 2px 8px #000, 0 0 8px #FF6E00',
             }}
           >
+            <img src={winner.logo} alt={`${winner.option} logo`} width={40} height={40} className="inline-block mr-2 align-middle rounded bg-black p-1" />
             Go to {winner.option}
           </a>
         ) : (

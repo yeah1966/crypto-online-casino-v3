@@ -21,15 +21,14 @@ export default function CasinoCard({
   description,
   badge,
 }: CasinoCardProps) {
-  const logoSrc = logo && logo.startsWith('/logos/') ? logo : (logo ? `/logos/${logo}` : '/logos/placeholder.png');
-  console.log('Rendering CasinoCard logo for', name, '->', logoSrc);
+  console.log('Rendering CasinoCard logo for', name, '->', logo);
 
   return (
     <div className="flex flex-row items-center justify-between bg-gradient-to-br from-[#1a1a2e] to-[#23234d] rounded-xl p-6 shadow-neon-lg border-2 border-yellow-300 mb-6 w-full max-w-3xl mx-auto transition-all duration-300 hover:shadow-neon-xl hover:scale-[1.025]">
       {/* Links: Logo */}
       <div className="flex-shrink-0 flex flex-col items-center justify-center w-28">
         <img
-          src={logoSrc}
+          src={logo}
           alt={name}
           width={80}
           height={80}

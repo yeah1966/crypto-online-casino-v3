@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { topCasinos } from "../lib/topCasinos";
-import { casinos } from "../data/casinosData";
+import { casinos, CasinoCard } from "../data/casinosData";
 
 function getAffiliateUrl(slug: string) {
   const found = casinos.find(c => c.slug === slug);
@@ -16,7 +16,7 @@ export default function Top10List() {
 
   return (
     <section className="space-y-8 px-4">
-      {topCasinos.map((casino, index) => (
+      {(topCasinos as CasinoCard[]).map((casino, index) => (
         <div
           key={casino.slug}
           className={`flex flex-col md:flex-row items-center gap-6 p-6 rounded-2xl shadow-lg border-2 transition-all duration-300 ${
@@ -31,7 +31,7 @@ export default function Top10List() {
         >
           {/* Logo */}
           <img
-            src={`/logos/${casino.image}`}
+            src={casino.logo}
             alt={`${casino.name} crypto casino logo`}
             width={90}
             height={90}

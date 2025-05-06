@@ -8,6 +8,26 @@ import { Toaster } from 'react-hot-toast';
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
+export const metadata = {
+  title: "Crypto Online Casino | Vegas-style gambling meets crypto rewards",
+  description: "Explore top-rated crypto casinos with thrilling bonuses, fast payouts, and a Las Vegas vibe. Welcome to Crypto Online Casino!",
+  openGraph: {
+    title: "Crypto Online Casino",
+    description: "Experience Vegas thrills with crypto rewards. Discover top casinos, bonuses, and more.",
+    url: "https://crypto-online-casino.com",
+    siteName: "Crypto Online Casino",
+    images: [
+      {
+        url: "https://crypto-online-casino.com/og/crypto-online-casino.png",
+        width: 1200,
+        height: 628,
+        alt: "Crypto Online Casino homepage card",
+      },
+    ],
+    type: "website",
+  },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // Mobiel menu state
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -29,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Toaster position="top-right" />
         {/* Zwarte infobalk boven menu, altijd zwart */}
         <div className="w-full text-yellow-400 text-center font-bold py-2 text-lg tracking-wide z-50" style={{backgroundColor: '#000', opacity: 1, boxShadow: '0 2px 8px 0 rgba(0,0,0,0.7)'}}>
-          Welcome to Crypto Online Casino – The #1 Vegas-Style Crypto Guide 🎰
+          Welcome to Crypto Online Casino – The #1 Vegas-Style Crypto Guide 
         </div>
         {/* Desktop menu - sticky direct onder de infobalk, zonder extra ruimte */}
         <nav className="sticky top-0 left-0 w-full hidden md:flex justify-center items-center gap-2 py-4 bg-purple-800 z-40 border-b-2 border-purple-900">
@@ -37,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </nav>
         {/* Mobiel menu toggle */}
         <div className="md:hidden flex justify-between items-center px-4 py-4 bg-purple-800 shadow-xl z-40">
-          <button onClick={() => setMobileOpen(true)} className="text-white text-2xl font-bold">☰ Menu</button>
+          <button onClick={() => setMobileOpen(true)} className="text-white text-2xl font-bold"> Menu</button>
         </div>
         {/* Mobiel menu overlay */}
         <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />

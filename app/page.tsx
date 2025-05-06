@@ -6,6 +6,8 @@ import WheelOfFortune from '../components/WheelOfFortune';
 import SpinButton from '@/components/SpinButton';
 import CasinoGrid from '../components/CasinoGrid';
 import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 import { casinos } from '@/data/casinosData';
 
 export default function Home() {
@@ -23,7 +25,7 @@ export default function Home() {
         <title>Best Crypto Online Casinos 2025 | Play & Win with Bitcoin & Crypto</title>
         <meta name="description" content="Compare the top crypto casinos online for 2025. Get exclusive bonuses, fast payouts, and play safely with Bitcoin, Ethereum, and more!" />
         <meta name="keywords" content="crypto casino, crypto online casino, bitcoin casino, ethereum casino, best crypto casinos, crypto gambling" />
-        <link rel="canonical" href="https://www.crypto-casino-online.com/" />
+        <link rel="canonical" href="https://crypto-online-casino.com/" />
         {/* FAQPage Structured Data for Google Rich Results */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           '@context': 'https://schema.org',
@@ -87,6 +89,24 @@ export default function Home() {
           }))
         }) }} />
       </Head>
+      {/* HERO BANNER */}
+      <section className="relative w-full bg-gradient-to-br from-[#0e0e2c] to-[#1e1e40] px-4 py-12 md:py-20 flex justify-center">
+        <Image
+          src="/og/crypto-online-casino.png"
+          alt="Crypto Online Casino – The thrill of Vegas with crypto rewards"
+          width={1200}
+          height={628}
+          className="rounded-2xl shadow-2xl"
+          priority
+        />
+      </section>
+      <div className="text-center mt-6">
+        <Link href="/casino-reviews">
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-full text-lg shadow-md transition">
+            Explore Top Casinos
+          </button>
+        </Link>
+      </div>
       {/* BG image + overlay only on homepage */}
       <div className="relative min-h-screen w-full pt-32">
         {/* Background image with dark overlay */}

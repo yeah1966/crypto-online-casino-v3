@@ -38,11 +38,17 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(0deg)' },
+          '25%': { transform: 'rotate(4deg)' },
+          '75%': { transform: 'rotate(-4deg)' },
+        },
       },
       animation: {
         spinwheel: 'spinwheel 5s ease-out forwards',
         fall: 'fall linear forwards',
         'slow-float': 'float 12s ease-in-out infinite',
+        wiggle: 'wiggle 1.6s ease-in-out infinite',
       },
     },
   },

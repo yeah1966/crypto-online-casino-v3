@@ -2,6 +2,8 @@ export const topCasinos = [
   {
     name: "BitStarz",
     image: "bitstarz.png",
+    logo: "/logos/bitstarz.png",
+    rating: 5,
     bonus: "Get up to 5 BTC Bonus!",
     description: "Award-winning crypto casino",
     details: "Play at the most awarded crypto casino with fast payouts and thousands of games.",
@@ -10,6 +12,8 @@ export const topCasinos = [
   {
     name: "Wild Vegas",
     image: "wildvegas.png",
+    logo: "/logos/wildvegas.png",
+    rating: 4.5,
     bonus: "100% bonus + Free Spins",
     description: "Get your wild bonus action here!",
     details: "Claim your exclusive Wild Vegas bonus and enjoy top slots and live games.",
@@ -18,6 +22,8 @@ export const topCasinos = [
   {
     name: "7Bit",
     image: "7bit.png",
+    logo: "/logos/7bit.png",
+    rating: 4.5,
     bonus: "Up to 1.5 BTC + 100 Free Spins!",
     description: "Classic slots & crypto games",
     details: "A classic crypto casino with a wide game selection and fast payouts.",
@@ -26,6 +32,8 @@ export const topCasinos = [
   {
     name: "Cloudbet",
     image: "cloudbet.png",
+    logo: "/logos/cloudbet.png",
+    rating: 4.5,
     bonus: "100% up to 5 BTC!",
     description: "Crypto sportsbook & high bonuses",
     details: "Bet on sports and play 2000+ casino games with instant crypto payouts.",
@@ -34,6 +42,8 @@ export const topCasinos = [
   {
     name: "Crypto Loko",
     image: "cryptoloko.png",
+    logo: "/logos/cryptoloko.png",
+    rating: 4.2,
     bonus: "Unlock LOKO rewards!",
     description: "Colorful & fast crypto casino",
     details: "Play unique games and win big with the LOKO crypto token.",
@@ -42,6 +52,8 @@ export const topCasinos = [
   {
     name: "Dreams",
     image: "dreamscasino.png",
+    logo: "/logos/dreamscasino.png",
+    rating: 4.2,
     bonus: "200% Welcome Bonus!",
     description: "Immersive Vegas-style experience",
     details: "Streamed live casino games and massive jackpots await you.",
@@ -50,6 +62,8 @@ export const topCasinos = [
   {
     name: "Betzard",
     image: "betzard.png",
+    logo: "/logos/betzard.png",
+    rating: 4.1,
     bonus: "100% up to 1 BTC + 100 FS!",
     description: "Top crypto casino",
     details: "Enjoy top-tier slots, live casino, and sports betting with crypto.",
@@ -58,6 +72,8 @@ export const topCasinos = [
   {
     name: "PrismCasino",
     image: "prismcasino.png",
+    logo: "/logos/prismcasino.png",
+    rating: 4.0,
     bonus: "Exclusive crypto deals",
     description: "Bright, bold, and fast",
     details: "Enjoy a colorful interface with generous bonuses.",
@@ -66,6 +82,8 @@ export const topCasinos = [
   {
     name: "Slots of Vegas",
     image: "slotsofvegas.png",
+    logo: "/logos/slotsofvegas.png",
+    rating: 4.0,
     bonus: "Claim jouw welkomstbonus!",
     description: "Classic Vegas-style crypto casino",
     details: "Spin the reels at Slots of Vegas and grab your exclusive welcome bonus.",
@@ -74,6 +92,8 @@ export const topCasinos = [
   {
     name: "Coinpoker",
     image: "coinpoker.png",
+    logo: "/logos/coinpoker.png",
+    rating: 4.0,
     bonus: "Exclusive poker bonuses!",
     description: "Crypto poker room",
     details: "Play poker with crypto and take advantage of unique promotions.",
@@ -82,6 +102,8 @@ export const topCasinos = [
   {
     name: "Golden Billy",
     image: "goldenbilly.png",
+    logo: "/logos/goldenbilly.png",
+    rating: 4.0,
     bonus: "Exclusive crypto bonus!",
     description: "Brand-new crypto casino",
     details: "Enjoy fast payouts, big bonuses, and a modern interface at Golden Billy.",
@@ -90,6 +112,8 @@ export const topCasinos = [
   {
     name: "Ninlayplay Casino",
     image: "ninlaycasino.png",
+    logo: "/logos/ninlaycasino.png",
+    rating: 4.0,
     bonus: "Crypto welcome bonus!",
     description: "Fresh crypto casino experience",
     details: "Wide range of games, fast crypto payments, and 24/7 support.",
@@ -98,6 +122,8 @@ export const topCasinos = [
   {
     name: "Cool Cat Casino",
     image: "coolcatcasino.png",
+    logo: "/logos/coolcatcasino.png",
+    rating: 4.0,
     bonus: "Massive welcome bonus!",
     description: "Amerikaanse klassieker met veel bonussen.",
     details: "Claim je bonus bij Cool Cat Casino, bekend om zijn royale promoties.",
@@ -106,6 +132,8 @@ export const topCasinos = [
   {
     name: "Loki Casino",
     image: "lokicasino.png",
+    logo: "/logos/lokicasino.png",
+    rating: 4.0,
     bonus: "Crypto welcome bonus!",
     description: "International crypto slot destination.",
     details: "Speel slots en tafelspellen bij Loki Casino met snelle crypto uitbetalingen.",
