@@ -41,7 +41,7 @@ export default function BitStarzReview() {
               reviewCount: 1242,
               url: "https://www.crypto-online-casino.com/crypto-casino-reviews/bitstarz",
               image: "https://www.crypto-online-casino.com/logos/bitstarz.png",
-              description: "BitStarz is een bekroond crypto casino met snelle uitbetalingen, duizenden games en een ijzersterke reputatie. Lees onze volledige review!"
+              description: "BitStarz is an award-winning crypto casino with over 3,500 games, instant payouts, and a reputation for excellence. The gold standard for crypto gambling."
             })
           )
         }}
@@ -67,26 +67,26 @@ export default function BitStarzReview() {
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "Is BitStarz betrouwbaar?",
+                "name": "Is BitStarz trustworthy?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Ja, BitStarz is een van de meest betrouwbare crypto casino’s met een officiële licentie, snelle uitbetalingen en duizenden positieve spelerservaringen."
+                  "text": "Yes, BitStarz is one of the most trustworthy crypto casinos with a valid license, fast payouts, and thousands of positive player reviews."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Welke cryptomunten accepteert BitStarz?",
+                "name": "Which cryptocurrencies does BitStarz accept?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Je kunt bij BitStarz o.a. betalen met Bitcoin, Ethereum, Litecoin en meer."
+                  "text": "You can deposit and withdraw using Bitcoin, Ethereum, Litecoin, and more."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Wat is de BitStarz bonus voor nieuwe spelers?",
+                "name": "What is the BitStarz bonus for new players?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Nieuwe spelers ontvangen tot 5 BTC + 200 gratis spins als welkomstbonus."
+                  "text": "New players receive up to 5 BTC + 200 free spins as a welcome bonus."
                 }
               }
             ]
