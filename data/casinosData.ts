@@ -334,5 +334,30 @@ export const casinos: CasinoCard[] = [
     tags: [],
     highlight: '',
     affiliateUrl: 'https://www.prismlinks.com/click/6/4305/15512/1'
+  },
+  {
+    slug: 'rakoocasino',
+    name: 'Rakoocasino',
+    logo: '/logos/rakoocasino.png',
+    rating: 4.7,
+    description: 'A new crypto casino with fast payouts, unique design, and daily bonuses.',
+    affiliateUrl: 'https://rakoolink.com/ha03e587d',
+    reviewUrl: '/crypto-casino-reviews/rakoocasino',
+    bonusText: 'Claim your Rakoocasino bonus now!',
+    depositType: 'Deposit Only',
+    welcomeBonus: true,
+    freeSpinsBonus: true,
+    noDepositBonus: false,
+    noDepositNote: '',
+    welcomeBonusNote: 'Daily bonuses & promotions',
+    freeSpinsNote: '',
+    perks: [
+      'Fast crypto payouts',
+      'Unique interface and colorful design',
+      'Instant deposits with Bitcoin, Ethereum, Litecoin',
+      'Daily bonuses & promotions'
+    ],
+    tags: ['fast-payouts', 'unique-design', 'crypto'],
+    highlight: '🚀'
   }
 ];
