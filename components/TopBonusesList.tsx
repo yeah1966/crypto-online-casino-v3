@@ -16,10 +16,7 @@ export default function TopBonusesList() {
             width={80}
             height={80}
             className="rounded-md object-contain bg-black p-1"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = "/logos/placeholder.png";
-            }}
+            
           />
           <div className="flex-1 w-full">
             <div className="text-yellow-400 font-bold text-lg">

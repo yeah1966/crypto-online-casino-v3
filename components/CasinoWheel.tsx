@@ -19,7 +19,6 @@ export default function CasinoWheel() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [spinning, setSpinning] = useState(false);
   const [winner, setWinner] = useState<string | null>(null);
-  const [winnerSlug, setWinnerSlug] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
 
   const spinWheel = () => {
@@ -48,7 +47,6 @@ export default function CasinoWheel() {
     // Delay showing result until after spin animation
     setTimeout(() => {
       setWinner(chosen.name);
-      setWinnerSlug(chosen.slug);
       setShowResult(true);
       // Open redirect in nieuw tabblad na 2s
       setTimeout(() => {
@@ -61,9 +59,7 @@ export default function CasinoWheel() {
   };
 
   const resetWheel = () => {
-    setSpinning(false);
     setWinner(null);
-    setWinnerSlug(null);
     setShowResult(false);
     if (wheelRef.current) {
       wheelRef.current.style.transition = "none";

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const casinos = [
   {
@@ -49,7 +50,7 @@ export default function CasinoSuggestions() {
         {casinos.map((casino) => (
           <Link href={`/crypto-casino-reviews/${casino.slug}`} key={casino.slug}>
             <div className="bg-purple-900 p-4 rounded-lg hover:bg-purple-800 transition cursor-pointer h-full flex items-center gap-4">
-              <img src={casino.logo} alt={`${casino.name} logo`} width={56} height={56} className="rounded-xl bg-white shadow-md flex-shrink-0" />
+              <Image src={casino.logo} alt={`${casino.name} logo`} width={56} height={56} className="rounded-xl bg-white shadow-md flex-shrink-0" />
               <div>
                 <p className="font-bold text-white text-lg">{casino.name}</p>
                 <p className="text-sm text-gray-300">{casino.tagline}</p>

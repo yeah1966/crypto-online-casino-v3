@@ -48,7 +48,7 @@ export const BonusOverviewLayout: React.FC<BonusOverviewLayoutProps> = ({
         {/* BONUS CARDS GRID */}
         <section className="mb-14">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-            {bonusCards.map((card, idx) => (
+            {bonusCards.map((card) => (
               <div
                 key={card.title}
                 className={`relative rounded-2xl border-2 bg-black/80 text-white p-7 shadow-xl hover:scale-[1.03] transition-all duration-300 ${card.borderColorClass || "border-yellow-400 hover:shadow-yellow-300/50"}`}

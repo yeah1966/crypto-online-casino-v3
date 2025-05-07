@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 
 interface CasinoCardProps {
   rank: number;
@@ -10,6 +10,8 @@ interface CasinoCardProps {
   description?: string;
   badge?: string;
 }
+
+import Image from "next/image";
 
 export default function CasinoCard({
   rank,
@@ -27,13 +29,13 @@ export default function CasinoCard({
     <div className="flex flex-row items-center justify-between bg-gradient-to-br from-[#1a1a2e] to-[#23234d] rounded-xl p-6 shadow-neon-lg border-2 border-yellow-300 mb-6 w-full max-w-3xl mx-auto transition-all duration-300 hover:shadow-neon-xl hover:scale-[1.025]">
       {/* Links: Logo */}
       <div className="flex-shrink-0 flex flex-col items-center justify-center w-28">
-        <img
+        <Image
           src={logo}
           alt={name}
           width={80}
           height={80}
-          onError={(e) => { e.currentTarget.src = '/logos/placeholder.png'; }}
           className="rounded-md object-contain bg-black p-1"
+          onError={(e) => { (e.target as HTMLImageElement).src = '/logos/placeholder.png'; }}
         />
         {badge && (
           <div className="mt-2 px-2 py-1 text-xs font-bold bg-pink-500 text-white rounded shadow-neon uppercase tracking-wide animate-pulse">

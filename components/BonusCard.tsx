@@ -30,7 +30,7 @@ export default function BonusCard({ casino, slug, offer, perks, highlight, tags 
       {/* Perks (compact mode hides this) */}
       {!compact && (
         <ul className="list-disc pl-6 mb-4">
-          {perks.map((perk, i) => <li key={i}>{perk}</li>)}
+          {perks.map((perk) => <li key={perk}>{perk}</li>)}
         </ul>
       )}
       <a href={`/crypto-casino-reviews/${slug}`} className="text-purple-400 underline">

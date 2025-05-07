@@ -15,8 +15,8 @@ const BonusTable: React.FC<BonusTableProps> = ({ bonuses }) => (
       </tr>
     </thead>
     <tbody>
-      {bonuses.map((b, i) => (
-        <tr key={i} className="border-t">
+      {bonuses.map((b) => (
+        <tr key={b.casino + b.bonus} className="border-t">
           <td className="py-2 px-4 font-medium">{b.casino}</td>
           <td className="py-2 px-4">{b.bonus}</td>
           <td className="py-2 px-4">{b.code || '-'}</td>

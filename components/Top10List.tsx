@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import { topCasinos } from "../lib/topCasinos";
 import { casinos, CasinoCard } from "../data/casinosData";
 
@@ -16,7 +16,7 @@ export default function Top10List() {
 
   return (
     <section className="space-y-8 px-4">
-      {(topCasinos as CasinoCard[]).map((casino, index) => (
+      {(topCasinos as CasinoCard[]).map((casino) => (
         <div
           key={casino.slug}
           className={`flex flex-col md:flex-row items-center gap-6 p-6 rounded-2xl shadow-lg border-2 transition-all duration-300 ${

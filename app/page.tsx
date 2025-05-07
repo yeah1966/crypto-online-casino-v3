@@ -6,8 +6,8 @@ import WheelOfFortune from '../components/WheelOfFortune';
 import SpinButton from '@/components/SpinButton';
 import CasinoGrid from '../components/CasinoGrid';
 import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 import { casinos } from '@/data/casinosData';
 
 export default function Home() {
@@ -186,10 +186,10 @@ export default function Home() {
             </p>
             {/* Internal links for SEO */}
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <a href="/reviews" className="text-[#38FF14] underline font-bold hover:text-yellow-400">Crypto Casino Reviews</a>
-              <a href="/guides" className="text-[#A855F7] underline font-bold hover:text-yellow-400">Guides</a>
-              <a href="/best-crypto-casino-bonuses" className="text-yellow-400 underline font-bold hover:text-[#38FF14]">Best Bonuses</a>
-              <a href="/crypto-gambling-101" className="text-pink-400 underline font-bold hover:text-[#A855F7]">Crypto Gambling 101</a>
+              <Link href="/reviews" className="text-[#38FF14] underline font-bold hover:text-yellow-400">Crypto Casino Reviews</Link>
+              <Link href="/guides" className="text-[#A855F7] underline font-bold hover:text-yellow-400">Guides</Link>
+              <Link href="/best-crypto-casino-bonuses" className="text-yellow-400 underline font-bold hover:text-[#38FF14]">Best Bonuses</Link>
+              <Link href="/crypto-gambling-101" className="text-pink-400 underline font-bold hover:text-[#A855F7]">Crypto Gambling 101</Link>
             </div>
           </section>
           {/* FAQ Block for SEO - styled with brand purple */}

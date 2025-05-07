@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 export interface BreadcrumbItem {
   name: string;
@@ -19,7 +18,7 @@ export function getBreadcrumbList(items: BreadcrumbItem[], baseUrl: string) {
   };
 }
 
-const Breadcrumbs = ({ items, baseUrl = "https://www.yourdomain.com" }: { items: BreadcrumbItem[]; baseUrl?: string }) => {
+const Breadcrumbs = ({ items }: { items: BreadcrumbItem[] }) => {
   return (
     <nav aria-label="Breadcrumb" className="mb-4">
       <ol className="flex flex-wrap text-sm text-gray-400 gap-1">

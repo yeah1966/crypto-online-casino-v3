@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface CasinoCardNeonProps {
   name: string;
@@ -26,7 +27,7 @@ const CasinoCardNeon: React.FC<CasinoCardNeonProps> = ({
     >
       {/* Logo */}
       <div className="relative h-16 mb-4 flex items-center justify-center bg-black/40 rounded-xl overflow-hidden">
-        <img src={logo} alt={`${name} crypto casino logo`} className="h-12 object-contain drop-shadow-neon" />
+        <Image src={logo} alt={`${name} crypto casino logo`} width={48} height={48} className="h-12 object-contain drop-shadow-neon" />
       </div>
       {/* Naam & Bonus */}
       <div className="flex flex-col items-center mb-2">

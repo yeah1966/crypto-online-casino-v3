@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const Hero: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const Hero: React.FC = () => {
       <div className="relative z-10 flex flex-col items-center text-center w-full max-w-3xl">
         {/* Mascotte */}
         <div className="mb-6 flex justify-center">
-          <img src="/images/mascot-coin-sunglasses.png" alt="Crypto Mascot" className="w-24 h-24 md:w-32 md:h-32 drop-shadow-neon" />
+          <Image src="/images/mascot-coin-sunglasses.png" alt="Crypto Mascot" width={128} height={128} className="w-24 h-24 md:w-32 md:h-32 drop-shadow-neon" priority />
         </div>
         <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg animate-pulse" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.7)' }}>
           Play Smarter. Win in Crypto.
@@ -36,11 +37,11 @@ const Hero: React.FC = () => {
         </div>
         {/* Crypto Icons */}
         <div className="flex flex-row gap-3 justify-center mt-2">
-          <img src="/icons/btc.svg" alt="Bitcoin" className="w-8 h-8" />
-          <img src="/icons/eth.svg" alt="Ethereum" className="w-8 h-8" />
-          <img src="/icons/ltc.svg" alt="Litecoin" className="w-8 h-8" />
-          <img src="/icons/usdt.svg" alt="USDT" className="w-8 h-8" />
-          <img src="/icons/doge.svg" alt="Dogecoin" className="w-8 h-8" />
+          <Image src="/icons/btc.svg" alt="Bitcoin" width={32} height={32} className="w-8 h-8" />
+          <Image src="/icons/eth.svg" alt="Ethereum" width={32} height={32} className="w-8 h-8" />
+          <Image src="/icons/ltc.svg" alt="Litecoin" width={32} height={32} className="w-8 h-8" />
+          <Image src="/icons/usdt.svg" alt="USDT" width={32} height={32} className="w-8 h-8" />
+          <Image src="/icons/doge.svg" alt="Dogecoin" width={32} height={32} className="w-8 h-8" />
         </div>
       </div>
     </section>

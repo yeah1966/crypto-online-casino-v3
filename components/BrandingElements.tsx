@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from "react";
 
 export function StickyBrandingHeader() {
@@ -24,12 +25,12 @@ export function FooterBrandingStrip() {
     <footer className="mt-16 py-4 bg-black text-center text-sm text-white/70 border-t border-white/10">
       🎲 You’re on <span className="text-yellow-400 font-semibold">Crypto Online Casino</span> — spin smart, win big!
       <div className="mt-2">
-        <a
+        <Link
           href="/guides/getting-started"
           className="inline-block px-4 py-2 bg-yellow-400 text-black font-semibold rounded hover:bg-yellow-300 transition"
         >
           Start Playing
-        </a>
+        </Link>
       </div>
     </footer>
   );

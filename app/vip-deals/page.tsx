@@ -17,7 +17,7 @@ export default function VipDealsPage() {
           </h1>
           <p className="text-lg text-white mb-4 max-w-2xl mx-auto">
             Want more perks while playing? VIP crypto casino deals offer exclusive bonuses, faster withdrawals, personal support, and cashback on every bet.<br />
-            Whether you're a high roller or just love VIP treatment, these deals bring next-level rewards for loyal players. 🚀
+            Whether you&apos;re a high roller or just love VIP treatment, these deals bring next-level rewards for loyal players. 🚀
           </p>
           <div className="flex justify-center gap-2 mt-2">
             <Image src="/icons/btc.svg" alt="BTC" width={28} height={28} />

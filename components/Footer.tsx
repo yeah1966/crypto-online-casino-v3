@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { useTranslation } from "next-i18next";
 
 const Footer: React.FC = () => {
@@ -8,7 +9,7 @@ const Footer: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4">
         <p>&copy; {new Date().getFullYear()} crypto-online-casino.com. {t("footerCopyright")}</p>
         <p className="mt-2">
-          {t("footerDisclaimer")} <a href="/disclaimer" className="underline hover:text-blue-700">{t("disclaimer")}</a>.
+          {t("footerDisclaimer")} <Link href="/disclaimer" className="underline hover:text-blue-700">{t("disclaimer")}</Link>.
         </p>
       </div>
     </footer>

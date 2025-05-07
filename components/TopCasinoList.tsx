@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 // Hardcoded Top 10 mapping volgens instructie
 const top10 = [
@@ -104,7 +105,7 @@ const TopCasinoList: React.FC = () => {
         <div className="flex flex-col gap-6">
           {top10.map((casino) => (
             <div key={casino.rank} className="casino-card flex items-center bg-[#18182f] rounded-xl shadow-lg p-4 md:p-6 border border-yellow-900/30">
-              <img src={`/logos/${casino.logo}`} alt={`${casino.name} logo`} className="w-16 h-16 object-contain rounded bg-[#222244] mr-4 md:mr-8" />
+              <Image src={`/logos/${casino.logo}`} alt={`${casino.name} logo`} width={64} height={64} className="w-16 h-16 object-contain rounded bg-[#222244] mr-4 md:mr-8" />
               <div className="flex-1 flex flex-col gap-1">
                 <h3 className="text-xl md:text-2xl font-bold text-yellow-300">#{casino.rank} {casino.name.toUpperCase()}</h3>
                 <p className="subtitle text-pink-400 font-semibold">{casino.tagline}</p>
