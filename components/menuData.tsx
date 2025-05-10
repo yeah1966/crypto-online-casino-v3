@@ -28,7 +28,7 @@ export const menuItems: MenuItem[] = [
       { label: "USDC Casinos", href: "/guides/usdc-casino-guide", icon: <img src='/icons/usdc.svg' alt='USDC' style={{width:18,height:18,display:'inline',verticalAlign:'middle'}} /> },
       { label: "Best Litecoin Casinos", href: "/guides/best-litecoin-casinos", icon: <img src='/icons/ltc.svg' alt='LTC' style={{width:18,height:18,display:'inline',verticalAlign:'middle'}} /> },
       { label: "Tether Casinos", href: "/guides/tether-casino-guide", icon: <img src='/icons/usdt.svg' alt='USDT' style={{width:18,height:18,display:'inline',verticalAlign:'middle'}} /> },
-      { label: "Anonymous Gambling", href: "/guides/anonymous-gambling", icon: <FaUserSecret /> },
+      
       { label: "No KYC Casinos", href: "/guides/no-kyc-crypto-casinos", icon: <FaAddressCard /> }
     ]
   },
