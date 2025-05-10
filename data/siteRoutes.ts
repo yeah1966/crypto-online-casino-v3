@@ -23,7 +23,8 @@ export const guidePages = [
   "/guides/getting-started",
   "/guides/how-to-deposit-with-bitcoin",
   "/guides/how-to-use-a-vpn-for-gambling",
-  "/guides/what-are-stablecoins-casino-gambling"
+  "/guides/what-are-stablecoins-casino-gambling",
+  "/guides/no-kyc-crypto-casinos"
 ];
 
 export const blogPages = [
