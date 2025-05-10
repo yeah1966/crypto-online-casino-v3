@@ -40,6 +40,8 @@ export const menuItems: MenuItem[] = [
       { label: 'VPN Guide', icon: <FaUserSecret />, href: '/guides/how-to-use-a-vpn-for-gambling' },
       { label: 'Provably Fair', icon: <FaTrophy />, href: '/guides/fair-play-provably-fair' },
       { label: 'Stablecoins', icon: <FaBalanceScale />, href: '/guides/what-are-stablecoins-casino-gambling' },
+      // No KYC Crypto Casinos is already present, no duplicate added.
+
     ]
   },
   {
