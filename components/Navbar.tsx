@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import { FaUserSecret } from "react-icons/fa";
 
 const LanguageSwitcher = () => {
   const router = useRouter();
@@ -54,7 +55,7 @@ const navItems = [
     label: "guides",
     submenu: [
       { label: "getting_started", path: "/getting-started" },
-      { label: "no_kyc_crypto_casinos", path: "/guides/no-kyc-crypto-casinos" },
+      { label: "no_kyc_crypto_casinos", path: "/guides/no-kyc-crypto-casinos", icon: <FaUserSecret /> },
       { label: "faq", path: "/faq" },
       { label: "blog", path: "/blog" }
     ]

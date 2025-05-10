@@ -17,6 +17,12 @@ export async function GET() {
   // Dynamische casino review pagina's
   const casinoPages = casinos.map((casino) => `/crypto-casino-reviews/${casino.slug}`);
 
+// Handmatige toevoeging van ontbrekende casino review pagina's
+const manualCasinoPages = [
+  // Alleen prismcasino, coolcatcasino wordt al via de casinoPages meegenomen
+  "/crypto-casino-reviews/prismcasino",
+];
+
   // Dynamische bonus subpagina's
   const bonusPages = [
     "/bonuses/best-bonuses",
@@ -95,6 +101,7 @@ export async function GET() {
   const allPages = [
     ...staticPages,
     ...casinoPages,
+    ...manualCasinoPages,
     ...bonusPages,
     ...guidePages,
     ...oneOOnePages,

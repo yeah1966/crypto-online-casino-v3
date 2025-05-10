@@ -40,6 +40,11 @@ export default function GuidesPage() {
             <h2 className="text-xl font-bold">How to Use a VPN for Gambling</h2>
             <p>Stay safe and access casinos worldwide with a VPN.</p>
           </li>
+          <li className="bg-purple-700 rounded-xl p-5 shadow-lg border-l-4 border-blue-400 hover:scale-[1.02] transition">
+            <h2 className="text-xl font-bold">No KYC Crypto Casino</h2>
+            <p>Play anonymously at crypto casinos with no ID verification required.</p>
+            <a href="/guides/no-kyc-crypto-casino" className="text-yellow-300 underline hover:text-yellow-400 font-semibold mt-2 inline-block">Read this guide</a>
+          </li>
         </ul>
       </div>
     </main>

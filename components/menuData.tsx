@@ -1,5 +1,5 @@
 // Centrale menu data-structuur voor DesktopMenu en MobileMenu
-import { FaGift, FaBolt, FaLock, FaCoins, FaDice, FaHome, FaStar, FaQuestionCircle, FaInfoCircle, FaBook, FaFutbol, FaTrophy, FaBookOpen, FaBitcoin, FaCreditCard, FaUserSecret, FaBalanceScale, FaGem, FaUsers, FaRocket, FaBullseye, FaPenNib } from 'react-icons/fa';
+import { FaGift, FaBolt, FaLock, FaCoins, FaDice, FaHome, FaStar, FaQuestionCircle, FaInfoCircle, FaBook, FaFutbol, FaTrophy, FaBookOpen, FaBitcoin, FaCreditCard, FaUserSecret, FaBalanceScale, FaGem, FaUsers, FaRocket, FaBullseye, FaPenNib, FaAddressCard } from 'react-icons/fa';
 import { ReactNode } from 'react';
 
 export type MenuItem = {
@@ -40,6 +40,7 @@ export const menuItems: MenuItem[] = [
       { label: 'VPN Guide', icon: <FaUserSecret />, href: '/guides/how-to-use-a-vpn-for-gambling' },
       { label: 'Provably Fair', icon: <FaTrophy />, href: '/guides/fair-play-provably-fair' },
       { label: 'Stablecoins', icon: <FaBalanceScale />, href: '/guides/what-are-stablecoins-casino-gambling' },
+      { label: 'No KYC Casino', icon: <FaAddressCard />, href: '/guides/no-kyc-crypto-casinos' },
       // No KYC Crypto Casinos is already present, no duplicate added.
 
     ]
