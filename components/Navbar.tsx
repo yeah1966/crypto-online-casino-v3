@@ -54,7 +54,13 @@ const navItems = [
     label: "guides",
     submenu: [
       { label: "getting_started", path: "/getting-started" },
+      { label: "crypto_gambling_101", path: "/guides/crypto-gambling-101" },
+      { label: "deposit_with_bitcoin", path: "/guides/how-to-deposit-with-bitcoin" },
+      { label: "crypto_payments", path: "/guides/crypto-payments-guide" },
+      { label: "vpn_guide", path: "/guides/how-to-use-a-vpn-for-gambling" },
       { label: "no_kyc_crypto_casinos", path: "/guides/no-kyc-crypto-casinos" },
+      { label: "provably_fair", path: "/guides/fair-play-provably-fair" },
+      { label: "stablecoins", path: "/guides/what-are-stablecoins-casino-gambling" },
       { label: "faq", path: "/faq" },
       { label: "blog", path: "/blog" }
     ]
