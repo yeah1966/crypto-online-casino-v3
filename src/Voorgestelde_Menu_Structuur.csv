@@ -1,0 +1,11 @@
+Label,Href,Icon,Type
+Home,/,FaHome,Top Level
+Crypto Guides,,FaBookOpen,Top Level
+Bitcoin Casinos,/guides/bitcoin-casinos,FaBtc,Subitem of Crypto Guides
+Ethereum Casinos,/guides/best-ethereum-casinos,SiEthereum,Subitem of Crypto Guides
+Litecoin Casinos,/guides/litecoin-casinos,SiLitecoin,Subitem of Crypto Guides
+Anonymous Gambling,/guides/anonymous-gambling,FaUserSecret,Subitem of Crypto Guides
+No KYC Casinos,/guides/no-kyc-crypto-casinos,FaAddressCard,Subitem of Crypto Guides
+Casino Reviews,/crypto-casino-reviews,FaSearch,Top Level
+Blog,/blog,FaFeatherAlt,Top Level
+FAQ,/faq,FaQuestion,Top Level

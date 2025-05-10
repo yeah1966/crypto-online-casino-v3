@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import ClientLayout from "@/components/ClientLayout";
 
 export const metadata = {
+  metadataBase: new URL('https://www.crypto-online-casino.com'),
   title: "Crypto Online Casino | Vegas-style gambling meets crypto rewards",
   description: "Explore top-rated crypto casinos with thrilling bonuses, fast payouts, and a Las Vegas vibe. Welcome to Crypto Online Casino!",
   openGraph: {
