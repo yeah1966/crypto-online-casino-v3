@@ -41,7 +41,7 @@ export default function DogCasinoGuide() {
       <main className="max-w-3xl mx-auto px-4">
         <h1 className="text-4xl font-extrabold text-yellow-400 mb-4 flex flex-col md:flex-row md:justify-between items-center gap-2">
           <span className="flex-1 text-center md:text-left">🐶 BEST $DOG CASINOS – WAIT… THEY DON’T EXIST (YET)</span>
-          <Image src="/icons/dog.svg" alt="$DOG SVG icon" width={44} height={44} className="inline-block mx-auto md:mx-0" />
+          <Image src="/icons/dog.png" alt="$DOG PNG icon" width={44} height={44} className="inline-block mx-auto md:mx-0" />
         </h1>
         <section className="mb-8">
           <h2 className="text-2xl font-bold text-yellow-400 mb-2 uppercase tracking-wide">Why $DOG Casinos Should Exist</h2>
