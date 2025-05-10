@@ -46,7 +46,32 @@ export function generateGuideMetadata(slug: string): Metadata {
   const formatTitle = (s: string) => s.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
   const title = `Crypto Guide: ${formatTitle(slug)} – Alles wat je moet weten in 2025`;
   const description = `Ontdek alles over ${formatTitle(slug)} in onze crypto gids. Leer veilig gokken, betalingen doen, en crypto gebruiken bij online casino’s.`;
-  return { title, description };
+  const ogImage = `https://www.crypto-online-casino.com/og/${slug}.png`;
+  const url = `https://www.crypto-online-casino.com/guides/${slug}`;
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "Crypto Casino Online",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
+  };
 }
 
 export function generateBonusMetadata(slug: string): Metadata {
