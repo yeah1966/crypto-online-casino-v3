@@ -54,6 +54,7 @@ const navItems = [
     label: "guides",
     submenu: [
       { label: "getting_started", path: "/getting-started" },
+      { label: "no_kyc_crypto_casinos", path: "/guides/no-kyc-crypto-casinos" },
       { label: "faq", path: "/faq" },
       { label: "blog", path: "/blog" }
     ]
