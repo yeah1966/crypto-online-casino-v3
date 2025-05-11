@@ -1,5 +1,7 @@
 import React from "react";
 
+export const metadata = {};
+
 export default function GuidesLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
