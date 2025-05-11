@@ -18,10 +18,10 @@ export function generateCasinoMetadata(slug: string): Metadata {
 
   return {
     title: `${capitalized} ${label} Review 2025 – Top ${focus} with Bonuses`,
-    description: `Lees onze ${capitalized} ${label} review van 2025: ontdek snelle crypto-uitbetalingen, topbonussen, en veilig spelen met Bitcoin, Ethereum en meer.`,
+    description: `Read our ${capitalized} ${label} review for 2025: discover fast crypto payouts, top bonuses, and safe play with Bitcoin, Ethereum, and more.`,
     openGraph: {
       title: `${capitalized} ${label} Review 2025 – Top ${focus} with Bonuses`,
-      description: `Lees onze ${capitalized} ${label} review van 2025: ontdek snelle crypto-uitbetalingen, topbonussen, en veilig spelen met Bitcoin, Ethereum en meer.`,
+      description: `Read our ${capitalized} ${label} review for 2025: discover fast crypto payouts, top bonuses, and safe play with Bitcoin, Ethereum, and more.`,
       url,
       siteName,
       images: [
@@ -36,16 +36,17 @@ export function generateCasinoMetadata(slug: string): Metadata {
     twitter: {
       card: "summary_large_image",
       title: `${capitalized} ${label} Review 2025 – Top ${focus} with Bonuses`,
-      description: `Lees onze ${capitalized} ${label} review van 2025: ontdek snelle crypto-uitbetalingen, topbonussen, en veilig spelen met Bitcoin, Ethereum en meer.`,
+      description: `Read our ${capitalized} ${label} review for 2025: discover fast crypto payouts, top bonuses, and safe play with Bitcoin, Ethereum, and more.`,
       images: [ogImage],
     },
   };
 }
 
 export function generateGuideMetadata(slug: string): Metadata {
+  console.log(">>> generateGuideMetadata() CALLED with slug:", slug);
   const formatTitle = (s: string) => s.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-  const title = `Crypto Guide: ${formatTitle(slug)} – Alles wat je moet weten in 2025`;
-  const description = `Ontdek alles over ${formatTitle(slug)} in onze crypto gids. Leer veilig gokken, betalingen doen, en crypto gebruiken bij online casino’s.`;
+  const title = `Crypto Guide: ${formatTitle(slug)} – Everything You Need to Know in 2025`;
+  const description = `Discover everything about ${formatTitle(slug)} in our crypto guide. Learn safe gambling, payments, and how to use crypto at online casinos.`;
   const ogImage = `https://www.crypto-online-casino.com/og/${slug}.png`;
   const url = `https://www.crypto-online-casino.com/guides/${slug}`;
   return {
