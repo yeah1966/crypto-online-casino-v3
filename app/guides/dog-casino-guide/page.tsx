@@ -12,7 +12,7 @@ export const generateMetadata = (): Metadata => ({
     url: "https://crypto-online-casino.com/guides/dog-casino-guide",
     images: [
       {
-        url: "https://crypto-online-casino.com/og-images/dog-casino-guide.png",
+        url: "https://crypto-online-casino.com/og/dog-casino-guide.png",
         width: 1200,
         height: 630,
         alt: "$DOG Casino Guide OG Image",
@@ -25,7 +25,7 @@ export const generateMetadata = (): Metadata => ({
     card: "summary_large_image",
     title: "$DOG Casino Guide | Why Dog Memecoin Casinos Should Exist",
     description: "Discover why $DOG (the Bitcoin memecoin) deserves its own crypto casinos. Meme power, no VCs, pure community. The ultimate $DOG gambling guide.",
-    images: ["https://crypto-online-casino.com/og-images/dog-casino-guide.png"],
+    images: ["https://crypto-online-casino.com/og/dog-casino-guide.png"],
     creator: "@CryptoCasinoSite",
   },
   alternates: {
