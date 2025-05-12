@@ -16,7 +16,7 @@ export const guideMeta = {
   "best-litecoin-casinos": {
     title: "Best Litecoin Casinos 2025 | Top LTC Gambling Sites & Bonuses",
     description: "Explore the best Litecoin casinos for 2025. Get LTC casino bonuses, fast payouts, and top games. Your guide to Litecoin gambling.",
-    ogImage: "https://crypto-online-casino.com/og/best-litecoin-casinos.png",
+    ogImage: "https://crypto-online-casino.com/og/litecoin-casino-guide.png",
     canonical: "https://crypto-online-casino.com/guides/best-litecoin-casinos",
     keywords: ["litecoin casino", "LTC gambling", "crypto casino", "litecoin slots", "LTC bonus", "litecoin gambling guide"],
   },
