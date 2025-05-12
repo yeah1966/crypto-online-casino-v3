@@ -1,0 +1,51 @@
+export const guideMeta = {
+  "bitcoin-casinos": {
+    title: "Best Bitcoin Casinos 2025 | Top BTC Gambling Sites & Bonuses",
+    description: "Discover the best Bitcoin casinos for 2025. Compare BTC casino bonuses, game selection, and instant payouts. Your guide to safe, fun crypto gambling.",
+    ogImage: "https://crypto-online-casino.com/og/bitcoin-casino-guide.png",
+    canonical: "https://crypto-online-casino.com/guides/bitcoin-casinos",
+    keywords: ["bitcoin casino", "BTC gambling", "crypto casino", "bitcoin slots", "BTC bonus", "bitcoin gambling guide"],
+  },
+  "best-ethereum-casinos": {
+    title: "Best Ethereum Casinos 2025 | Top ETH Gambling Sites & Bonuses",
+    description: "Find the best Ethereum casinos for 2025. Compare ETH casino bonuses, games, and instant payouts. Your essential ETH gambling guide.",
+    ogImage: "https://crypto-online-casino.com/og/best-ethereum-casinos.png",
+    canonical: "https://crypto-online-casino.com/guides/best-ethereum-casinos",
+    keywords: ["ethereum casino", "ETH gambling", "crypto casino", "ethereum slots", "ETH bonus", "ethereum gambling guide"],
+  },
+  "best-litecoin-casinos": {
+    title: "Best Litecoin Casinos 2025 | Top LTC Gambling Sites & Bonuses",
+    description: "Explore the best Litecoin casinos for 2025. Get LTC casino bonuses, fast payouts, and top games. Your guide to Litecoin gambling.",
+    ogImage: "https://crypto-online-casino.com/og/best-litecoin-casinos.png",
+    canonical: "https://crypto-online-casino.com/guides/best-litecoin-casinos",
+    keywords: ["litecoin casino", "LTC gambling", "crypto casino", "litecoin slots", "LTC bonus", "litecoin gambling guide"],
+  },
+  "tether-casino-guide": {
+    title: "Tether Casino Guide 2025 | Best USDT Gambling Sites & Bonuses",
+    description: "Your guide to the best Tether (USDT) casinos in 2025. Compare USDT casino bonuses, games, and instant payouts. Safe and stable crypto gambling.",
+    ogImage: "https://crypto-online-casino.com/og/tether-casino-guide.png",
+    canonical: "https://crypto-online-casino.com/guides/tether-casino-guide",
+    keywords: ["tether casino", "USDT gambling", "stablecoin casino", "usdt slots", "tether bonus", "tether gambling guide"],
+  },
+  "binance-casino-guide": {
+    title: "Binance Casino Guide 2025 | Best BNB Gambling Sites & Bonuses",
+    description: "The best Binance Coin (BNB) casinos for 2025. Compare BNB casino bonuses, games, and fast payouts. Your BNB gambling guide.",
+    ogImage: "https://crypto-online-casino.com/og/binance-casino-guide.png",
+    canonical: "https://crypto-online-casino.com/guides/binance-casino-guide",
+    keywords: ["binance casino", "BNB gambling", "bnb casino bonus", "binance slots", "bnb gambling guide"],
+  },
+  "usdc-casino-guide": {
+    title: "USDC Casino Guide 2025 | Best USD Coin Gambling Sites & Bonuses",
+    description: "Find the top USDC casinos for 2025. Compare USD Coin casino bonuses, games, and instant payouts. Your stablecoin gambling guide.",
+    ogImage: "https://crypto-online-casino.com/og/usdc-casino-guide.png",
+    canonical: "https://crypto-online-casino.com/guides/usdc-casino-guide",
+    keywords: ["usdc casino", "usd coin gambling", "stablecoin casino", "usdc slots", "usdc bonus", "usdc gambling guide"],
+  },
+  "dogecoin-casino-guide": {
+    title: "Dogecoin Casino Guide 2025 | Best DOGE Gambling Sites & Bonuses",
+    description: "Explore the best Dogecoin casinos for 2025. Compare DOGE casino bonuses, games, and instant payouts. Your DOGE gambling guide.",
+    ogImage: "https://crypto-online-casino.com/og/dogecoin-casino-guide.png",
+    canonical: "https://crypto-online-casino.com/guides/dogecoin-casino-guide",
+    keywords: ["dogecoin casino", "doge gambling", "dogecoin slots", "doge bonus", "dogecoin gambling guide"],
+  },
+};

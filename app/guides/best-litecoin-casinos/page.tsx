@@ -1,6 +1,43 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { Metadata } from "next";
+import { guideMeta } from "@/data/guideMeta";
+
+export const generateMetadata = (): Metadata => {
+  const meta = guideMeta["best-litecoin-casinos"];
+  return {
+    title: meta.title,
+    description: meta.description,
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      url: meta.canonical,
+      images: [
+        {
+          url: meta.ogImage,
+          width: 1200,
+          height: 630,
+          alt: meta.title + " OG Image",
+        },
+      ],
+      type: "article",
+      siteName: "Crypto Online Casino",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: meta.title,
+      description: meta.description,
+      images: [meta.ogImage],
+      creator: "@CryptoCasinoSite",
+    },
+    alternates: {
+      canonical: meta.canonical,
+    },
+    keywords: meta.keywords,
+  };
+};
+
 const casinos = [
   {
     name: 'BitStarz Casino',
