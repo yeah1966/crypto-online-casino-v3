@@ -2,8 +2,37 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { Metadata } from "next";
-import { getOgMetaForCasino } from "@/lib/og"; // Pas het pad aan indien nodig
 
+export const generateMetadata = (): Metadata => ({
+  title: "$DOG Casino Guide | Why Dog Memecoin Casinos Should Exist",
+  description: "Discover why $DOG (the Bitcoin memecoin) deserves its own crypto casinos. Meme power, no VCs, pure community. The ultimate $DOG gambling guide.",
+  openGraph: {
+    title: "$DOG Casino Guide | Why Dog Memecoin Casinos Should Exist",
+    description: "Discover why $DOG (the Bitcoin memecoin) deserves its own crypto casinos. Meme power, no VCs, pure community. The ultimate $DOG gambling guide.",
+    url: "https://crypto-online-casino.com/guides/dog-casino-guide",
+    images: [
+      {
+        url: "https://crypto-online-casino.com/og-images/dog-casino-guide.png",
+        width: 1200,
+        height: 630,
+        alt: "$DOG Casino Guide OG Image",
+      },
+    ],
+    type: "article",
+    siteName: "Crypto Online Casino",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "$DOG Casino Guide | Why Dog Memecoin Casinos Should Exist",
+    description: "Discover why $DOG (the Bitcoin memecoin) deserves its own crypto casinos. Meme power, no VCs, pure community. The ultimate $DOG gambling guide.",
+    images: ["https://crypto-online-casino.com/og-images/dog-casino-guide.png"],
+    creator: "@CryptoCasinoSite",
+  },
+  alternates: {
+    canonical: "https://crypto-online-casino.com/guides/dog-casino-guide",
+  },
+  keywords: ["dog casino", "$DOG casino", "bitcoin memecoin casino", "crypto gambling guide", "dog memecoin", "$DOG guide"],
+});
 
 export default function DogCasinoGuide() {
   return (
