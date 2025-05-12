@@ -5,7 +5,11 @@ import { getBlogStructuredData, getBreadcrumbListStructuredData } from "@/lib/st
 
 export default function ProvablyFair() {
   return (
-    <BlogPostLayout title="🧪 How Crypto Casinos Stay Fair: Behind the Scenes" date="April 2025">
+    <>
+      {/* Achtergrondafbeelding en overlay */}
+      <div className="fixed inset-0 -z-10 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-center bg-fixed" />
+      <div className="fixed inset-0 -z-10 bg-black/80" />
+      <BlogPostLayout title="🧪 How Crypto Casinos Stay Fair: Behind the Scenes" date="April 2025">
       <Head>
         <title>Provably Fair Casino’s – Hoe Werkt Het?</title>
         <meta name="description" content="Leer alles over provably fair casino’s. Hoe werkt het, waarom is het veilig en welke crypto casino’s bieden dit aan?" />
@@ -72,5 +76,6 @@ export default function ProvablyFair() {
         <p className="mb-4 text-gray-300">Casinos like <b>FortuneJack</b>, <b>CoinPoker</b>, and <b>Roobet</b> all use this system — and often provide tools to verify results right on the site.</p>
       </section>
     </BlogPostLayout>
+    </>
   );
 }

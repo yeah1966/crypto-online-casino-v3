@@ -6,7 +6,7 @@ export default function TopRtpSlotsPage() {
     <>
       <div className="min-h-screen fixed inset-0 -z-10 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-center bg-fixed" />
       <div className="relative z-10 flex items-center justify-center min-h-screen py-8 px-2">
-        <div className="bg-black/65 backdrop-blur-lg rounded-2xl p-6 md:p-10 shadow-xl max-w-5xl mx-auto w-full">
+        <div className="bg-black/75 backdrop-blur-lg rounded-3xl p-6 md:p-12 shadow-2xl max-w-5xl mx-auto w-full border-2 border-yellow-400/20">
           <Head>
             <title>Top 5 Crypto Slots with the Highest RTP – 2025 Guide</title>
             <meta
@@ -14,17 +14,17 @@ export default function TopRtpSlotsPage() {
               content="Play smart with our handpicked list of the highest RTP crypto slots in 2025. Discover which games give you the best returns and where to play them."
             />
           </Head>
-          <h1 className="text-4xl font-extrabold text-yellow-300 text-center mb-6">
-            Top 5 Crypto Slots with the Highest RTP – 2025
+          <h1 className="text-4xl md:text-5xl font-extrabold text-yellow-300 text-center mb-6 drop-shadow-lg">
+            🎰 Top 5 Crypto Slots with the <span className="text-green-400">Highest RTP</span> – 2025
           </h1>
           <p className="text-lg text-white/90 text-center mb-10">
             <strong>RTP</strong> (Return to Player) tells you how much a slot pays back on average.
             The higher the RTP, the better your chances! Every slot here has an RTP above{' '}
             <span className="text-green-400 font-bold">97%</span>.
           </p>
-          <div className="grid gap-6">
-            {slots.map((slot) => (
-              <SlotCard key={slot.name} {...slot} />
+          <div className="grid gap-8">
+            {slots.map((slot, idx) => (
+              <SlotCard key={slot.name} {...slot} index={idx + 1} />
             ))}
           </div>
           <div className="mt-12 text-white/90 text-sm">
@@ -104,6 +104,7 @@ function SlotCard({
   img,
   desc,
   casinos,
+  index,
 }: {
   name: string;
   rtp: string;
@@ -113,28 +114,66 @@ function SlotCard({
   img: string;
   desc: string;
   casinos: string[];
+  index: number;
 }) {
   return (
-    <div className="rounded-xl border border-purple-600 bg-black/40 p-5 shadow-lg flex flex-col md:flex-row gap-4">
-      <div className="flex flex-col items-center md:items-start w-28">
-        {/* <span className="text-3xl">{emoji}</span> */}
-        <img src={img} alt={name} width={64} height={64} className="rounded-lg mt-2 border border-white/60" />
+    <div className="rounded-2xl border-2 border-purple-700 bg-gradient-to-br from-purple-900/80 via-black/80 to-yellow-900/60 p-6 shadow-2xl flex flex-col md:flex-row gap-5 hover:scale-[1.015] transition-transform">
+      <div className="flex flex-col items-center md:items-start w-32 relative">
+        <span className="absolute -top-4 -left-4 bg-yellow-300 text-purple-900 font-extrabold px-4 py-1 rounded-full shadow-lg text-lg border-2 border-yellow-500">
+          #{index}
+        </span>
+        <img src={img} alt={name} width={72} height={72} className="rounded-xl mt-2 border-2 border-yellow-400/70 shadow-lg" />
+        <span className="text-3xl mt-2">{emoji}</span>
       </div>
       <div className="flex-1">
-        <h2 className="text-xl font-bold text-yellow-300 mb-1">{name}</h2>
+        <h2 className="text-2xl font-bold text-yellow-200 mb-1">{name}</h2>
         <div className="flex flex-wrap gap-2 text-sm mb-2">
-          <span className="bg-green-500/80 text-black font-bold px-2 py-1 rounded-full">RTP: {rtp}</span>
-          <span className="bg-pink-500/80 text-white px-2 py-1 rounded-full">Volatility: {volatility}</span>
-          <span className="bg-purple-500/80 text-white px-2 py-1 rounded-full">Theme: {theme}</span>
+          <span className="bg-green-400/90 text-black font-bold px-2 py-1 rounded-full shadow">RTP: {rtp}</span>
+          <span className="bg-pink-500/80 text-white px-2 py-1 rounded-full shadow">Volatility: {volatility}</span>
+          <span className="bg-purple-600/80 text-white px-2 py-1 rounded-full shadow">Theme: {theme}</span>
         </div>
-        <p className="text-white/90 text-sm mb-2">{desc}</p>
+        <p className="text-white/90 text-base mb-2">{desc}</p>
+        {name === 'Mega Joker' && (
+          <p className="text-white/70 text-sm mb-2 italic">
+            Mega Joker is renowned for its classic fruit machine experience and extremely high RTP. The Supermeter mode adds an extra layer of excitement, allowing players to gamble their winnings for even bigger rewards. Its simple gameplay and retro design make it a favorite among both new and seasoned slot enthusiasts.
+          </p>
+        )}
+        {name === 'Ugga Bugga' && (
+          <p className="text-white/70 text-sm mb-2 italic">
+            Ugga Bugga stands out due to its unique gameplay mechanics, where players can hold reels and strategize each spin. This Playtech slot is famous for having one of the highest RTPs in the industry. The jungle theme and innovative features provide a refreshing twist compared to traditional slots.
+          </p>
+        )}
+        {name === '1429 Uncharted Seas' && (
+          <p className="text-white/70 text-sm mb-2 italic">
+            1429 Uncharted Seas impresses with its hand-drawn graphics and exploration theme. The expanding wilds and bonus features keep the gameplay engaging, while the high RTP ensures players get great value. It's ideal for those who appreciate both aesthetics and strong odds.
+          </p>
+        )}
+        {name === 'Blood Suckers' && (
+          <p className="text-white/70 text-sm mb-2 italic">
+            Blood Suckers is a vampire-themed slot packed with spooky symbols and bonus rounds. Its low volatility means frequent wins, making it a great choice for cautious players. The game’s high RTP and immersive atmosphere have made it a classic in the online slot world.
+          </p>
+        )}
+        {name === 'Jackpot 6000' && (
+          <p className="text-white/70 text-sm mb-2 italic">
+            Jackpot 6000 is a tribute to old-school Vegas slot machines, complete with a gamble feature and vintage graphics. The high volatility offers the chance for big wins, especially in the Supermeter mode. Players who love a challenge and nostalgic vibes will enjoy this NetEnt favorite.
+          </p>
+        )}
         <div className="flex flex-wrap gap-2 items-center">
           <span className="text-green-300 font-bold text-xs">✅ Available at:</span>
-          {casinos.map((casino) => (
-            <Link key={casino} href={`/crypto-casino-reviews/${casino.toLowerCase().replace(/\s+/g, '-')}`} className="underline text-yellow-200 hover:text-pink-400 text-xs font-bold">
-              {casino}
-            </Link>
-          ))}
+          {casinos.map((casino) => {
+            // Mapping for special cases
+            const casinoLinkMap: Record<string, string> = {
+              '7Bit Casino': '/crypto-casino-reviews/7bit',
+              'Dreams Casino': '/crypto-casino-reviews/dreams',
+              // Add more mappings if needed
+            };
+            const href = casinoLinkMap[casino] || `/crypto-casino-reviews/${casino.toLowerCase().replace(/\s+/g, '-')}`;
+            return (
+              <Link key={casino} href={href} className="underline text-yellow-200 hover:text-pink-400 text-xs font-bold">
+                {casino}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

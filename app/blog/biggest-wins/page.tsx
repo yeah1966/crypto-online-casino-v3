@@ -5,7 +5,11 @@ import { getBlogStructuredData, getBreadcrumbListStructuredData } from "@/lib/st
 
 export default function BiggestWins() {
   return (
-    <BlogPostLayout title="🪙 Biggest Crypto Casino Jackpots Ever Won" date="April 2025">
+    <>
+      {/* Achtergrondafbeelding en overlay */}
+      <div className="fixed inset-0 -z-10 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-center bg-fixed" />
+      <div className="fixed inset-0 -z-10 bg-black/80" />
+      <BlogPostLayout title="🪙 Biggest Crypto Casino Jackpots Ever Won" date="April 2025">
       <Head>
         <title>De Grootste Crypto Casino Wins Ooit</title>
         <meta name="description" content="Lees over de grootste crypto casino winsten ooit. Ontdek inspirerende verhalen van spelers die miljoenen wonnen met Bitcoin, Ethereum en meer." />
@@ -28,7 +32,7 @@ export default function BiggestWins() {
             __html: JSON.stringify(getBreadcrumbListStructuredData([
               { name: "Home", href: "/" },
               { name: "Blog", href: "/blog" },
-              { name: "Grootste Wins", href: "/blog/biggest-wins" }
+              { name: "Biggest Wins", href: "/blog/biggest-wins" }
             ], "https://www.yourdomain.com"))
           }}
         />
@@ -37,7 +41,7 @@ export default function BiggestWins() {
         items={[
           { name: "Home", href: "/" },
           { name: "Blog", href: "/blog" },
-          { name: "Grootste Wins", href: "/blog/biggest-wins" }
+          { name: "Biggest Wins", href: "/blog/biggest-wins" }
         ]}
       />
       <h2 className="text-2xl font-bold mb-4">Discover the wildest wins in crypto gambling history — from million-dollar spins to legendary streaks.</h2>
@@ -106,5 +110,6 @@ export default function BiggestWins() {
         <p className="font-semibold text-yellow-300">Just remember: luck is unpredictable — but fun is guaranteed.</p>
       </section>
     </BlogPostLayout>
+    </>
   );
 }

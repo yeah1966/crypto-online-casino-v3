@@ -5,7 +5,11 @@ import { getBlogStructuredData, getBreadcrumbListStructuredData } from "@/lib/st
 
 export default function Trends2025() {
   return (
-    <BlogPostLayout title="📈 Crypto Gambling Trends: What’s Hot in 2025?" date="April 2025">
+    <>
+      {/* Achtergrondafbeelding en overlay */}
+      <div className="fixed inset-0 -z-10 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-center bg-fixed" />
+      <div className="fixed inset-0 -z-10 bg-black/80" />
+      <BlogPostLayout title="📈 Crypto Gambling Trends: What’s Hot in 2025?" date="April 2025">
       <Head>
         <title>Crypto Casino Trends 2025</title>
         <meta name="description" content="Ontdek de belangrijkste trends voor crypto casino’s in 2025. Wat verandert er op het gebied van blockchain, bonussen en regelgeving?" />
@@ -107,5 +111,6 @@ export default function Trends2025() {
         <p className="font-semibold text-yellow-300">Play smart. Play free. Play the future.</p>
       </section>
     </BlogPostLayout>
+    </>
   );
 }

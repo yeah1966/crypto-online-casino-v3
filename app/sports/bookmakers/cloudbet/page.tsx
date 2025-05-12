@@ -1,207 +1,193 @@
+"use client";
+import Head from "next/head";
 import Image from "next/image";
-import cloudbetSeo from "./seo";
-import { Metadata } from "next";
+import { useState } from "react";
 
-export const metadata: Metadata = cloudbetSeo;
+const faqs = [
+  {
+    q: "Is Cloudbet a trustworthy crypto sportsbook?",
+    a: "Yes, Cloudbet has been operating since 2013, is fully licensed, and is known for its reliability and fast crypto payouts.",
+  },
+  {
+    q: "Which cryptocurrencies does Cloudbet accept?",
+    a: "You can bet with Bitcoin, Ethereum, Litecoin, USDT, USDC, BNB, TRX, and more.",
+  },
+  {
+    q: "Is there a welcome bonus for new players?",
+    a: "Yes, new players can claim a 100% deposit bonus up to 5 BTC or equivalent in other cryptocurrencies.",
+  },
+  {
+    q: "Is KYC mandatory at Cloudbet?",
+    a: "For most crypto deposits and withdrawals, KYC is not required unless you reach high withdrawal limits.",
+  },
+  {
+    q: "Can I place live bets at Cloudbet?",
+    a: "Yes, Cloudbet offers live betting and HD streaming for a wide range of sports events.",
+  },
+];
 
 export default function CloudbetSportsbookPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 relative">
-      {/* Transparant groot vlak achter de content voor verduistering */}
-      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="w-full h-full bg-black/60 rounded-3xl backdrop-blur-sm" />
-      </div>
-      <div className="max-w-3xl mx-auto space-y-10 relative z-10">
-        {/* SPORTSBETTING MENU */}
-        <nav className="mb-10 w-full mx-auto">
-          <div className="rounded-2xl border-2 border-yellow-400 bg-gradient-to-br from-yellow-400 via-purple-500 to-orange-400 p-1 shadow-xl flex">
-            <div className="flex-1 flex items-center justify-center gap-6 bg-purple-800/95 rounded-2xl p-4">
-              <a href="/sports" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
-                <span className="text-2xl">⚽</span> Sports Overview
-              </a>
-              <a href="/sports/bookmakers/1xbet" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
-                <span className="text-2xl">🏆</span> 1xBet
-              </a>
-              <a href="/sports/bookmakers/cloudbet" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
-                <span className="text-2xl">⚡</span> Cloudbet
-              </a>
-              <a href="/sports/bookmakers/wildvegas" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
-                <span className="text-2xl">🎲</span> Wild Vegas
-              </a>
+    <>
+      <Head>
+        <title>Cloudbet Review 2025 – Best Crypto Sportsbook?</title>
+        <meta name="description" content="Read our in-depth Cloudbet review: discover bonuses, crypto options, sports markets, reliability, and real user experiences. Find out if Cloudbet is the best crypto sportsbook for you!" />
+        <meta name="keywords" content="Cloudbet review, Cloudbet experiences, crypto sportsbook, Cloudbet bonus, sports betting, bitcoin betting" />
+        <link rel="canonical" href="https://www.yoursite.com/sports/bookmakers/cloudbet" />
+      </Head>
+      {/* Background image and overlay */}
+      <div className="fixed inset-0 -z-10 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-center bg-fixed" />
+      <div className="fixed inset-0 -z-10 bg-black/80" />
+      <main className="relative min-h-screen py-12 px-2 md:px-0">
+        <div className="max-w-3xl mx-auto bg-black/70 rounded-3xl p-6 md:p-12 shadow-2xl border-2 border-yellow-400/20 text-white">
+          {/* Header with logo and mascot */}
+          <div className="flex items-center justify-center md:justify-between gap-4 mb-6">
+            {/* Cloudbet Logo */}
+            <div className="flex-shrink-0 hidden md:block">
+              <Image src="/logos/cloudbet.png" alt="Cloudbet Logo" width={80} height={80} className="rounded-xl shadow bg-white/10" />
+            </div>
+            <div className="flex-1 text-center">
+              <h1 className="text-4xl md:text-5xl font-extrabold text-yellow-300 drop-shadow-lg">Cloudbet Review 2025 – Best Crypto Sportsbook?</h1>
+            </div>
+            {/* Mascot */}
+            <div className="flex-shrink-0 hidden md:block">
+              <Image src="/mascot.png" alt="Mascot" width={72} height={72} className="rounded-full shadow-xl bg-white/10" />
             </div>
           </div>
-        </nav>
-        {/* Header - logo links van tekst */}
-        <div className="flex items-center bg-transparent mb-2 gap-6">
-          <Image
-            src="/logos/cloudbet.png"
-            alt="Cloudbet Logo"
-            width={80}
-            height={80}
-            className="flex-shrink-0 rounded-xl shadow-md bg-white/5"
-          />
-          <div className="flex-1">
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-yellow-400 mb-2 leading-tight">
-              CLOUDBET SPORTSBOOK — CRYPTO BETTING REVIEW 2025
-            </h1>
-            <p className="text-lg text-zinc-300">
-              Cloudbet is one of the most established crypto sportsbooks, known for its broad
-              sports offering, live betting options, and instant crypto payouts.
-            </p>
-          </div>
-        </div>
+          <p className="text-lg text-zinc-200 text-center mb-8">Cloudbet is one of the world’s most established crypto sportsbooks. Read all about bonuses, crypto options, sports markets, reliability, and our expert verdict.</p>
 
-        {/* Accepted Cryptocurrencies */}
-        <div className="flex items-center bg-black/60 rounded-2xl shadow-lg p-6 gap-8 backdrop-blur-sm">
-          <Image src="/icons/btc.svg" alt="BTC" width={84} height={84} className="flex-shrink-0" />
-          <div className="flex-1">
-            <h2 className="text-2xl font-extrabold text-white mb-2 tracking-wide uppercase">Accepted Cryptocurrencies</h2>
-            <div className="flex flex-wrap justify-between items-center gap-4 mt-4 w-full">
-              {[
-                { symbol: 'btc', label: 'BTC' },
-                { symbol: 'eth', label: 'ETH' },
-                { symbol: 'ltc', label: 'LTC' },
-                { symbol: 'usdt', label: 'USDT' },
-                { symbol: 'usdc', label: 'USDC' },
-                { symbol: 'bnb', label: 'BNB' },
-                { symbol: 'trx', label: 'TRX' },
-              ].map(({ symbol, label }) => (
-                <div key={symbol} className="flex flex-col items-center mx-2">
-                  <Image
-                    src={`/icons/${symbol}.svg`}
-                    alt={label}
-                    width={48}
-                    height={48}
-                  />
-                  <span className="mt-2 text-base font-semibold tracking-wide text-white/90">{label}</span>
+          {/* Pros & Cons */}
+          <div className="flex flex-col md:flex-row gap-6 mb-10">
+            <div className="flex-1 bg-black/60 rounded-2xl p-5 shadow-lg">
+              <h2 className="text-xl font-bold text-green-400 mb-2">Pros</h2>
+              <ul className="list-disc list-inside space-y-1 text-green-100">
+                <li>Instant crypto deposits & payouts</li>
+                <li>Wide range of sports & markets</li>
+                <li>Generous welcome bonus</li>
+                <li>Live betting & HD streaming</li>
+                <li>No KYC for crypto players</li>
+              </ul>
+            </div>
+            <div className="flex-1 bg-black/60 rounded-2xl p-5 shadow-lg">
+              <h2 className="text-xl font-bold text-red-400 mb-2">Cons</h2>
+              <ul className="list-disc list-inside space-y-1 text-red-200">
+                <li>Some country restrictions</li>
+                <li>Bonus terms can be strict</li>
+                <li>Interface can be overwhelming for beginners</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bonus & Promotions */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center"><span className="mr-2">🎁</span>Cloudbet Bonus & Promotions</h2>
+            <p className="mb-3">New players can claim a <span className="font-bold text-yellow-200">100% deposit bonus up to 5 BTC</span> or equivalent in other crypto. Plus, enjoy regular free bets, reload bonuses, and exclusive tournaments.</p>
+            <a href="https://cldbt.cloud/go/en/landing/bitcoin-casino?af_token=&aftm_campaign=CryptoCasino&aftm_source=GEO&aftm_medium=link&aftm_content=cryptoinfo" target="_blank" rel="noopener noreferrer" className="inline-block bg-yellow-400 text-black font-bold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition text-lg mt-2">Claim your Cloudbet Bonus</a>
+          </section>
+
+          {/* Sports & Markets */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center"><span className="mr-2">🏟️</span>Sports & Markets</h2>
+            <p className="mb-3">Cloudbet offers betting on 30+ sports, from football and tennis to esports and MMA. Enjoy live betting, high odds, and unique markets.</p>
+            <div className="flex flex-wrap gap-4 mt-4">
+              <span className="bg-purple-700/60 px-4 py-2 rounded-full text-white font-semibold">Football</span>
+              <span className="bg-purple-700/60 px-4 py-2 rounded-full text-white font-semibold">Tennis</span>
+              <span className="bg-purple-700/60 px-4 py-2 rounded-full text-white font-semibold">Basketball</span>
+              <span className="bg-purple-700/60 px-4 py-2 rounded-full text-white font-semibold">Esports</span>
+              <span className="bg-purple-700/60 px-4 py-2 rounded-full text-white font-semibold">MMA</span>
+              <span className="bg-purple-700/60 px-4 py-2 rounded-full text-white font-semibold">Horse Racing</span>
+              <span className="bg-purple-700/60 px-4 py-2 rounded-full text-white font-semibold">Table Tennis</span>
+            </div>
+          </section>
+
+          {/* Crypto & Payment Options */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center"><span className="mr-2">₿</span>Crypto & Payment Options</h2>
+            <p className="mb-3">Deposit and withdraw with Bitcoin, Ethereum, Litecoin, USDT, USDC, BNB, TRX, and more. Payouts are fast and usually require no KYC. No extra fees for crypto transactions.</p>
+            <div className="flex gap-5 mt-3">
+              <Image src="/icons/btc.svg" alt="BTC" width={48} height={48} />
+              <Image src="/icons/eth.svg" alt="ETH" width={48} height={48} />
+              <Image src="/icons/ltc.svg" alt="LTC" width={48} height={48} />
+              <Image src="/icons/usdt.svg" alt="USDT" width={48} height={48} />
+              <Image src="/icons/usdc.svg" alt="USDC" width={48} height={48} />
+              <Image src="/icons/bnb.svg" alt="BNB" width={48} height={48} />
+              <Image src="/icons/trx.svg" alt="TRX" width={48} height={48} />
+            </div>
+          </section>
+
+          {/* User Experience & Mobile */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center"><span className="mr-2">📱</span>User Experience & Mobile</h2>
+            <p>The Cloudbet website and app are fast, mobile-friendly, and offer a smooth experience for both beginners and advanced players. Live betting and streaming work flawlessly on mobile.</p>
+          </section>
+
+          {/* Customer Support & Security */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center"><span className="mr-2">🔒</span>Customer Support & Security</h2>
+            <p>24/7 live chat, a comprehensive helpdesk, and fast support. Cloudbet holds an international license and uses modern security technology.</p>
+          </section>
+
+          {/* Our Cloudbet Verdict */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center"><span className="mr-2">⭐</span>Our Cloudbet Verdict</h2>
+            <p>We consider Cloudbet one of the best crypto sportsbooks right now. The combination of high odds, fast payouts, and a huge selection makes it ideal for crypto bettors.</p>
+            <div className="flex items-center gap-2 mt-3">
+              <span className="text-3xl">9.1</span>
+              <span className="text-yellow-300 font-bold">/ 10</span>
+            </div>
+          </section>
+
+          {/* FAQ Accordion */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-4 flex items-center"><span className="mr-2">❓</span>Frequently Asked Questions about Cloudbet</h2>
+            <div className="space-y-3">
+              {faqs.map((faq, idx) => (
+                <div key={faq.q} className="border border-yellow-300/40 rounded-lg overflow-hidden">
+                  <button
+                    className="w-full flex justify-between items-center px-5 py-4 bg-black/40 hover:bg-yellow-400/10 transition text-left font-semibold text-lg"
+                    onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                  >
+                    {faq.q}
+                    <span className="ml-2 text-yellow-300">{openFaq === idx ? "–" : "+"}</span>
+                  </button>
+                  {openFaq === idx && (
+                    <div className="px-5 pb-4 text-base text-zinc-200 bg-black/70">{faq.a}</div>
+                  )}
                 </div>
               ))}
             </div>
+          </section>
+
+          {/* Sticky CTA */}
+          <div className="fixed bottom-6 left-0 right-0 flex justify-center z-50 pointer-events-none">
+            <a
+              href="https://cldbt.cloud/go/en/landing/bitcoin-casino?af_token=&aftm_campaign=CryptoCasino&aftm_source=GEO&aftm_medium=link&aftm_content=cryptoinfo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pointer-events-auto bg-yellow-400 text-black font-bold px-10 py-4 rounded-full shadow-2xl text-xl hover:bg-yellow-300 transition border-4 border-yellow-300 animate-bounce"
+            >
+              🎯 Claim your Cloudbet Bonus
+            </a>
           </div>
         </div>
-
-        {/* Most Popular Sports */}
-        <div className="flex items-center bg-black/60 rounded-2xl shadow-lg p-6 gap-8 backdrop-blur-sm">
-          <Image src="/sports-icons/Football.svg" alt="Sports" width={96} height={96} className="flex-shrink-0" />
-          <div className="flex-1">
-            <h2 className="text-2xl font-extrabold text-white mb-2 tracking-wide uppercase">Most Popular Sports</h2>
-            <div className="grid grid-cols-3 gap-y-6 gap-x-4 mt-6 w-full">
-              {[
-                { src: 'Football.svg', label: 'Soccer' },
-                { src: 'Basketball.svg', label: 'Basketball' },
-                { src: 'Tennis.svg', label: 'Tennis' },
-                { src: 'Boxing.svg', label: 'Boxing' },
-                { src: 'Esports.svg', label: 'Csports (C&GD)' },
-                { src: 'American football.png', label: 'American football' },
-              ].map(({ src, label }) => (
-                <div key={label} className="flex flex-col items-center">
-                  <Image
-                    src={`/sports-icons/${src}`}
-                    alt={label}
-                    width={64}
-                    height={64}
-                  />
-                  <span className="mt-2 text-base font-semibold tracking-wide text-white/90 text-center">{label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Live Betting & Streaming */}
-        <div className="flex items-center bg-black/60 rounded-2xl shadow-lg p-6 gap-8 backdrop-blur-sm">
-          <Image src="/casino-icons/Live Casino.svg" alt="Live Betting & Streaming" width={84} height={84} className="flex-shrink-0" />
-          <div className="flex-1">
-            <h2 className="text-2xl font-extrabold text-yellow-300 mb-2 tracking-wide uppercase">Live Betting & Streaming</h2>
-            <p className="text-base text-zinc-200 leading-relaxed">Cloudbet offers HD live streams and a responsive in-play betting interface for dozens of sports.</p>
-          </div>
-        </div>
-
-        {/* Bonuses & Promotions */}
-        <div className="flex items-center bg-black/60 rounded-2xl shadow-lg p-6 gap-8 backdrop-blur-sm">
-          <Image src="/casino-icons/Bonus.svg" alt="Bonuses & Promotions" width={84} height={84} className="flex-shrink-0" />
-          <div className="flex-1">
-            <h2 className="text-2xl font-extrabold text-yellow-300 mb-2 tracking-wide uppercase">Bonuses & Promotions</h2>
-            <p className="text-base text-zinc-200 leading-relaxed">Welcome bonus up to 5 BTC for new users. Frequent reload bonuses and enhanced odds.</p>
-          </div>
-        </div>
-
-        {/* User Experience & Mobile App */}
-        <div className="flex items-center bg-black/60 rounded-2xl shadow-lg p-6 gap-8 backdrop-blur-sm">
-          <Image src="/casino-icons/Smartphone.svg" alt="User Experience & Mobile App" width={84} height={84} className="flex-shrink-0" />
-          <div className="flex-1">
-            <h2 className="text-2xl font-extrabold text-yellow-300 mb-2 tracking-wide uppercase">User Experience & Mobile App</h2>
-            <p className="text-base text-zinc-200 leading-relaxed">Fast-loading website, fully optimized mobile version, and native app support.</p>
-          </div>
-        </div>
-
-        {/* Trust & Reputation */}
-        <div className="flex items-center bg-black/60 rounded-2xl shadow-lg p-6 gap-8 backdrop-blur-sm">
-          <Image src="/casino-icons/Good Review.svg" alt="Trust & Reputation" width={84} height={84} className="flex-shrink-0" />
-          <div className="flex-1">
-            <h2 className="text-2xl font-extrabold text-yellow-300 mb-2 tracking-wide uppercase">Trust & Reputation</h2>
-            <p className="text-base text-zinc-200 leading-relaxed">Operating since 2013 with excellent reviews and a strong track record in the crypto betting space.</p>
-          </div>
-        </div>
-
-        {/* Feature Blocks */}
-        {[
-          {
-            title: 'User Perks & Promotions',
-            icon: 'Bonus.svg',
-            description:
-              'Cloudbet offers early cash-out options, live statistics, and a loyalty points system.',
-          },
-          {
-            title: 'Unique Features',
-            icon: 'Strategy Tips.svg',
-            description:
-              'Cloudbet offers up to cash-out option, live statistics, and a loyalty points system.',
-          },
-          {
-            title: 'Privacy & KYC',
-            icon: 'Lock.svg',
-            description:
-              'No KYC required up to a certain threshold. High anonymity for casual bettors.',
-          },
-          {
-            title: 'Minimum Bets & Limits',
-            icon: 'Dollar.svg',
-            description:
-              'Bet from as little as $1 worth of crypto. High limits available for VIPs.',
-          },
-          {
-            title: 'Region Availability & Languages',
-            icon: 'Globe.svg',
-            description:
-              'Accessible globally. Including most of Europe, Asia, and Latin America. Site available in 18+ languages.',
-          },
-        ].map(({ title, icon, description }) => (
-          <div
-            key={title}
-            className="flex items-center bg-black/60 rounded-2xl shadow-lg p-6 gap-8 backdrop-blur-sm"
-          >
-            <Image src={`/casino-icons/${icon}`} alt={title} width={84} height={84} className="flex-shrink-0" />
-            <div className="flex-1">
-              <h3 className="text-2xl font-extrabold text-yellow-300 mb-2 tracking-wide uppercase">{title}</h3>
-              <p className="text-base text-zinc-200 leading-relaxed">{description}</p>
-            </div>
-          </div>
-        ))}
-
-        <div className="text-center mt-10">
-          <a
-            href="https://cldbt.cloud/go/en/landing/bitcoin-casino?af_token=&aftm_campaign=CryptoCasino&aftm_source=GEO&aftm_medium=link&aftm_content=cryptoinfo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-3 bg-yellow-400 text-black font-bold rounded-full hover:bg-yellow-300 transition"
-          >
-            Visit Cloudbet Sportsbook
-          </a>
-        </div>
-      </div>
-    </div>
+        {/* Schema.org FAQ structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqs.map(faq => ({
+                "@type": "Question",
+                name: faq.q,
+                acceptedAnswer: { "@type": "Answer", text: faq.a },
+              })),
+            }),
+          }}
+        />
+      </main>
+    </>
   );
 }

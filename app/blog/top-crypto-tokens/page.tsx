@@ -6,7 +6,11 @@ import Head from "next/head";
 
 export default function TopCryptoTokens() {
   return (
-    <BlogPostLayout title="🪙 Top Crypto Tokens for Gambling in 2025" date="April 2025">
+    <>
+      {/* Achtergrondafbeelding en overlay */}
+      <div className="fixed inset-0 -z-10 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-center bg-fixed" />
+      <div className="fixed inset-0 -z-10 bg-black/80" />
+      <BlogPostLayout title="🪙 Top Crypto Tokens for Gambling in 2025" date="April 2025">
       <Head>
         <title>Top Crypto Tokens voor Online Casino’s in 2025</title>
         <meta name="description" content="Ontdek de beste crypto tokens voor gokken in online casino’s in 2025. Welke coins zijn snel, veilig en populair? Lees onze analyse!" />
@@ -162,5 +166,6 @@ export default function TopCryptoTokens() {
         <p className="font-semibold text-yellow-300">Pro Tip: Always double-check which coins your chosen casino supports before you deposit!</p>
       </section>
     </BlogPostLayout>
+    </>
   );
 }

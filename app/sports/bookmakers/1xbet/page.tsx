@@ -1,138 +1,192 @@
+"use client";
 import Head from "next/head";
-import BookmakerTemplate from "../BookmakerTemplate";
+import Image from "next/image";
+import { useState } from "react";
 
-const cryptocurrencies = [
-  { symbol: "btc", label: "BTC", icon: "/icons/btc.svg" },
-  { symbol: "eth", label: "ETH", icon: "/icons/eth.svg" },
-  { symbol: "ltc", label: "LTC", icon: "/icons/ltc.svg" },
-  { symbol: "usdt", label: "USDT", icon: "/icons/usdt.svg" },
-];
-
-const sports = [
-  { label: "Soccer", icon: "/sports-icons/Football.svg" },
-  { label: "Basketball", icon: "/sports-icons/Basketball.svg" },
-  { label: "Tennis", icon: "/sports-icons/Tennis.svg" },
-  { label: "Boxing", icon: "/sports-icons/Boxing.svg" },
-  { label: "Esports", icon: "/sports-icons/Esports.svg" },
-];
-
-const mainBlocks = [
+const faqs = [
   {
-    title: "Why Bet with Crypto?",
-    icon: "/icons/Bitcoin.svg",
-    description:
-      "Crypto betting offers instant deposits, fast withdrawals, and complete privacy. Your funds are secure and transactions are processed within minutes, no matter where you are in the world.",
+    q: "Is 1xBet trustworthy for sports betting?",
+    a: "Yes, 1xBet operates worldwide, is fully licensed, and is known for fast crypto payouts.",
   },
   {
-    title: "How Does Crypto Sports Betting Work?",
-    icon: "/casino-icons/Dollars.svg",
-    description:
-      "Sign up, deposit with your favorite cryptocurrency, and place bets on thousands of sports events. Winnings are paid out instantly in crypto, with no hidden fees or delays.",
-  },
-];
-
-const featureBlocks = [
-  {
-    title: "No KYC Needed",
-    icon: "/casino-icons/Lock.svg",
-    description: "1xBet allows crypto betting without mandatory identity verification.",
+    q: "Which cryptocurrencies does 1xBet accept?",
+    a: "You can bet with Bitcoin, Ethereum, Litecoin, USDT, Dogecoin, and many more.",
   },
   {
-    title: "Fast Crypto Payouts",
-    icon: "/casino-icons/Instant Withdrawals.svg",
-    description: "Lightning-fast payouts directly to your crypto wallet.",
+    q: "Is there a welcome bonus for new players?",
+    a: "Yes, new players receive a generous welcome bonus, often including free bets or deposit matches.",
   },
   {
-    title: "Big Bonuses",
-    icon: "/casino-icons/Bonus.svg",
-    description: "Frequent reload bonuses and ongoing promotions to boost your bankroll.",
+    q: "Is KYC mandatory at 1xBet?",
+    a: "For crypto deposits, KYC is usually not required unless you withdraw large amounts.",
   },
   {
-    title: "24/7 Support",
-    icon: "/casino-icons/Support.svg",
-    description: "Live chat support available 24/7 for all players.",
-  },
-  {
-    title: "Global Availability",
-    icon: "/casino-icons/Globe.svg",
-    description: "Accessible for crypto bettors worldwide.",
+    q: "Can I place live bets at 1xBet?",
+    a: "Yes, 1xBet offers live betting on hundreds of sports events, including cashout options.",
   },
 ];
 
 export default function OneXBetBookmaker() {
-  const sportsbettingMenu = (
-    <nav className="mb-10 w-full mx-auto">
-      <div className="rounded-2xl border-2 border-yellow-400 bg-gradient-to-br from-yellow-400 via-purple-500 to-orange-400 p-1 shadow-xl flex">
-        <div className="flex-1 flex items-center justify-center gap-6 bg-purple-800/95 rounded-2xl p-4">
-          <a href="/sports" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
-            <span className="text-2xl">⚽</span> Sports Overview
-          </a>
-          <a href="/sports/bookmakers/1xbet" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
-            <span className="text-2xl">🏆</span> 1xBet
-          </a>
-          <a href="/sports/bookmakers/cloudbet" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
-            <span className="text-2xl">⚡</span> Cloudbet
-          </a>
-          <a href="/sports/bookmakers/wildvegas" className="flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-300">
-            <span className="text-2xl">🎲</span> Wild Vegas
-          </a>
-        </div>
-      </div>
-    </nav>
-  );
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   return (
-    <BookmakerTemplate
-      logo="/logos/1xbet.png"
-      title="1XBET SPORTSBOOK — CRYPTO BETTING REVIEW 2025"
-      description="1xBet is a world-renowned crypto sportsbook and casino with a huge selection of sports betting, casino games, and bonuses. Perfect for crypto bettors who value speed and versatility."
-      cryptocurrencies={cryptocurrencies}
-      sports={sports}
-      mainBlocks={mainBlocks}
-      featureBlocks={featureBlocks}
-      sportsbettingMenu={sportsbettingMenu}
-    >
-      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
-      <div className="max-w-3xl mx-auto space-y-10 relative z-10">
-        {/* OUR REVIEW */}
-        <div className="mt-8 bg-black/70 rounded-xl p-6 shadow-lg">
-          <h2 className="text-2xl font-bold text-yellow-300 mb-4">Our Review</h2>
-          <p className="text-base text-zinc-100 leading-relaxed">
-            1xBet stands out as one of the most complete online betting platforms, with thousands of sports events, live betting, and a huge selection of slots and table games.<br /><br />
-            Crypto users benefit from instant deposits and fast withdrawals with Bitcoin, Ethereum, and other coins. The bonus offers are among the best in the industry, and regular promotions keep things exciting.<br /><br />
-            The site features a modern interface, mobile-friendly design, and 24/7 customer support. Whether you're into sports betting or casino action, 1xBet has it all – all in one place!
-          </p>
-        </div>
-        {/* CRYPTO & PAYMENT OPTIONS */}
-        <div className="mt-8 bg-purple-900/80 rounded-xl p-6 shadow-lg">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-2xl">💸</span>
-            <span className="text-purple-100 font-bold text-xl">CRYPTO & PAYMENT OPTIONS</span>
+    <>
+      <Head>
+        <title>1xBet Review 2025 – Best Crypto Sportsbook?</title>
+        <meta name="description" content="Read our in-depth 1xBet review: discover bonuses, crypto options, sports markets, reliability, and real user experiences. Find out if 1xBet is the best crypto sportsbook for you!" />
+        <meta name="keywords" content="1xBet review, 1xBet experiences, crypto sportsbook, 1xBet bonus, sports betting, bitcoin betting" />
+        <link rel="canonical" href="https://www.yoursite.com/sports/bookmakers/1xbet" />
+      </Head>
+      {/* Achtergrondafbeelding */}
+      <div className="fixed inset-0 -z-10 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-center bg-fixed" />
+      {/* Donkere overlay voor leesbaarheid */}
+      <div className="fixed inset-0 -z-10 bg-black/80" />
+      <main className="relative min-h-screen py-12 px-2 md:px-0">
+        <div className="max-w-3xl mx-auto bg-black/70 rounded-3xl p-6 md:p-12 shadow-2xl border-2 border-yellow-400/20 text-white">
+          {/* H1 & Intro */}
+          <div className="flex items-center justify-center md:justify-between gap-4 mb-6">
+            {/* 1xBet Logo */}
+            <div className="flex-shrink-0 hidden md:block">
+              <Image src="/logos/1xbet.png" alt="1xBet Logo" width={80} height={80} className="rounded-xl shadow bg-white/10" />
+            </div>
+            <div className="flex-1 text-center">
+              <h1 className="text-4xl md:text-5xl font-extrabold text-yellow-300 drop-shadow-lg">1xBet Review 2025 – Best Crypto Sportsbook?</h1>
+            </div>
+            {/* Mascot */}
+            <div className="flex-shrink-0 hidden md:block">
+              <Image src="/mascot.png" alt="Mascot" width={72} height={72} className="rounded-full shadow-xl bg-white/10" />
+            </div>
           </div>
-          <ul className="list-disc list-inside text-purple-100 space-y-2">
-            <li>
-              <span className="font-bold">Crypto Accepted:</span> Bitcoin (BTC), Ethereum (ETH), Litecoin (LTC), USDT, and more
-            </li>
-            <li>
-              <span className="font-bold">Payouts:</span> Usually processed within minutes
-            </li>
-            <li>
-              <span className="font-bold">No extra fees:</span> 1xBet charges no fees for crypto transactions
-            </li>
-          </ul>
+          <p className="text-lg text-zinc-200 text-center mb-8">1xBet is one of the world’s largest crypto sportsbooks. Read all about bonuses, crypto options, sports markets, reliability, and our expert verdict.</p> 
+
+          {/* Voordelen & Nadelen */}
+          <div className="flex flex-col md:flex-row gap-6 mb-10">
+            <div className="flex-1 bg-black/60 rounded-2xl p-5 shadow-lg">
+              <h2 className="text-xl font-bold text-green-400 mb-2">Pros</h2>
+              <ul className="list-disc list-inside space-y-1 text-green-100">
+                <li>Fast crypto payouts</li>
+                <li>Huge selection of sports & markets</li>
+                <li>Generous bonuses & promotions</li>
+                <li>Live betting & cashout</li>
+                <li>No KYC for crypto deposits</li>
+              </ul>
+            </div>
+            <div className="flex-1 bg-black/60 rounded-2xl p-5 shadow-lg">
+              <h2 className="text-xl font-bold text-red-400 mb-2">Cons</h2>
+              <ul className="list-disc list-inside space-y-1 text-red-200">
+                <li>Website can be busy and complex</li>
+                <li>Not available in all countries</li>
+                <li>Bonus terms can be strict</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bonus & Promoties */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center"><span className="mr-2">🎁</span>1xBet Bonus & Promotions</h2>
+            <p className="mb-3">New players receive a <span className="font-bold text-yellow-200">welcome bonus up to €100</span> or the equivalent in crypto. Plus, enjoy regular reload bonuses, free bets, and cashback offers.</p>
+            <a href="https://refpa3740576.top/L?tag=d_3915280m_1599c_&site=3915280&ad=1599" target="_blank" rel="noopener noreferrer" className="inline-block bg-yellow-400 text-black font-bold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition text-lg mt-2">Claim your 1xBet Bonus</a>
+          </section>
+
+          {/* Beschikbare sporten & markten */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center"><span className="mr-2">🏟️</span>Sports & Markets</h2>
+            <p className="mb-3">1xBet offers betting on over 40 sports, from football and tennis to esports and MMA. Enjoy live betting, high odds, and unique markets.</p>
+            <div className="flex flex-wrap gap-4 mt-4">
+              <span className="bg-purple-700/60 px-4 py-2 rounded-full text-white font-semibold">Football</span>
+              <span className="bg-purple-700/60 px-4 py-2 rounded-full text-white font-semibold">Tennis</span>
+              <span className="bg-purple-700/60 px-4 py-2 rounded-full text-white font-semibold">Basketball</span>
+              <span className="bg-purple-700/60 px-4 py-2 rounded-full text-white font-semibold">Esports</span>
+              <span className="bg-purple-700/60 px-4 py-2 rounded-full text-white font-semibold">MMA</span>
+              <span className="bg-purple-700/60 px-4 py-2 rounded-full text-white font-semibold">Horse Racing</span>
+              <span className="bg-purple-700/60 px-4 py-2 rounded-full text-white font-semibold">Table Tennis</span>
+            </div>
+          </section>
+
+          {/* Crypto & betaalopties */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center"><span className="mr-2">₿</span>Crypto & Payment Options</h2>
+            <p className="mb-3">Deposit and withdraw with Bitcoin, Ethereum, Litecoin, USDT, Dogecoin, and more. Payouts are fast and usually require no KYC. No extra fees for crypto transactions.</p>
+            <div className="flex gap-5 mt-3">
+              <Image src="/icons/btc.svg" alt="BTC" width={48} height={48} />
+              <Image src="/icons/eth.svg" alt="ETH" width={48} height={48} />
+              <Image src="/icons/ltc.svg" alt="LTC" width={48} height={48} />
+              <Image src="/icons/usdt.svg" alt="USDT" width={48} height={48} />
+              <Image src="/icons/doge.svg" alt="DOGE" width={48} height={48} />
+            </div>
+          </section>
+
+          {/* Gebruikerservaring & mobiel */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center"><span className="mr-2">📱</span>User Experience & Mobile</h2>
+            <p>The 1xBet website and app are fast, mobile-friendly, and offer a smooth experience for both beginners and advanced players. Live betting works flawlessly on mobile.</p>
+          </section>
+
+          {/* Klantenservice & veiligheid */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center"><span className="mr-2">🔒</span>Customer Support & Security</h2>
+            <p>24/7 live chat, a comprehensive helpdesk, and fast support. 1xBet holds an international license and uses modern security technology.</p>
+          </section>
+
+          {/* Onze ervaring & eindoordeel */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center"><span className="mr-2">⭐</span>Our 1xBet Verdict</h2>
+            <p>We consider 1xBet one of the best crypto sportsbooks right now. The combination of high odds, fast payouts, and a huge selection makes it ideal for crypto bettors.</p>
+            <div className="flex items-center gap-2 mt-3">
+              <span className="text-3xl">9.2</span>
+              <span className="text-yellow-300 font-bold">/ 10</span>
+            </div>
+          </section>
+
+          {/* FAQ Accordion */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-4 flex items-center"><span className="mr-2">❓</span>Frequently Asked Questions about 1xBet</h2>
+            <div className="space-y-3">
+              {faqs.map((faq, idx) => (
+                <div key={faq.q} className="border border-yellow-300/40 rounded-lg overflow-hidden">
+                  <button
+                    className="w-full flex justify-between items-center px-5 py-4 bg-black/40 hover:bg-yellow-400/10 transition text-left font-semibold text-lg"
+                    onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                  >
+                    {faq.q}
+                    <span className="ml-2 text-yellow-300">{openFaq === idx ? "–" : "+"}</span>
+                  </button>
+                  {openFaq === idx && (
+                    <div className="px-5 pb-4 text-base text-zinc-200 bg-black/70">{faq.a}</div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Sticky CTA */}
+          <div className="fixed bottom-6 left-0 right-0 flex justify-center z-50 pointer-events-none">
+            <a
+              href="https://refpa3740576.top/L?tag=d_3915280m_1599c_&site=3915280&ad=1599"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pointer-events-auto bg-yellow-400 text-black font-bold px-10 py-4 rounded-full shadow-2xl text-xl hover:bg-yellow-300 transition border-4 border-yellow-300 animate-bounce"
+            >
+              🎯 Claim your 1xBet Bonus
+            </a>
+          </div>
         </div>
-        <a
-          href="https://refpa3740576.top/L?tag=d_3915280m_1599c_&site=3915280&ad=1599"
-          className="mt-8 block bg-yellow-400 hover:bg-yellow-300 text-center text-purple-900 font-bold py-3 rounded-lg shadow-lg transition-all duration-300 text-lg"
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-        >
-          🏅 Claim your 1xBet bonus!
-        </a>
-        <p className="text-center text-xs text-gray-200 mt-3">
-          18+ | Play responsibly. 1xBet may not be available in all jurisdictions.
-        </p>
-      </div>
-    </BookmakerTemplate>
+        {/* Schema.org FAQ structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqs.map(faq => ({
+                "@type": "Question",
+                name: faq.q,
+                acceptedAnswer: { "@type": "Answer", text: faq.a },
+              })),
+            }),
+          }}
+        />
+      </main>
+    </>
   );
 }
+

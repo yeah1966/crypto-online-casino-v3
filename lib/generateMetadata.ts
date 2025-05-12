@@ -42,21 +42,26 @@ export function generateCasinoMetadata(slug: string): Metadata {
   };
 }
 
+import type { Metadata } from "next";
+
 export function generateGuideMetadata(slug: string): Metadata {
-  console.log(">>> generateGuideMetadata() CALLED with slug:", slug);
-  const formatTitle = (s: string) => s.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-  const title = `Crypto Guide: ${formatTitle(slug)} – Everything You Need to Know in 2025`;
-  const description = `Discover everything about ${formatTitle(slug)} in our crypto guide. Learn safe gambling, payments, and how to use crypto at online casinos.`;
+  // Titel netjes opbouwen
+  const name = slug.replace(/-/g, " ");
+  const capitalized = name.charAt(0).toUpperCase() + name.slice(1);
+
+  // OG & Twitter meta (zelfde als casino, maar guide-tekst)
   const ogImage = `https://www.crypto-online-casino.com/og/${slug}.png`;
   const url = `https://www.crypto-online-casino.com/guides/${slug}`;
+  const siteName = "Crypto Casino Online";
+
   return {
-    title,
-    description,
+    title: `${capitalized} Guide 2025 – Crypto Tips & Safe Play`,
+    description: `Read our ${capitalized} guide for 2025: discover safe gambling, payments, and how to use crypto at online casinos.`,
     openGraph: {
-      title,
-      description,
+      title: `${capitalized} Guide 2025 – Crypto Tips & Safe Play`,
+      description: `Read our ${capitalized} guide for 2025: discover safe gambling, payments, and how to use crypto at online casinos.`,
       url,
-      siteName: "Crypto Casino Online",
+      siteName,
       images: [
         {
           url: ogImage,
@@ -68,8 +73,8 @@ export function generateGuideMetadata(slug: string): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
+      title: `${capitalized} Guide 2025 – Crypto Tips & Safe Play`,
+      description: `Read our ${capitalized} guide for 2025: discover safe gambling, payments, and how to use crypto at online casinos.`,
       images: [ogImage],
     },
   };

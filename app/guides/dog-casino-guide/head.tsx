@@ -1,8 +1,6 @@
-import { generateGuideMetadata } from '@/lib/generateMetadata';
+import { generateGuideMetadata } from "@/lib/generateMetadata";
+import type { Metadata } from "next";
 
-import { generateGuideMetadata } from '@/lib/generateMetadata';
-
-export function generateMetadata({ params }: { params?: { slug?: string } }) {
-  return generateGuideMetadata('dog-casino-guide');
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  return generateGuideMetadata(params.slug || "dog-casino-guide");
 }
-

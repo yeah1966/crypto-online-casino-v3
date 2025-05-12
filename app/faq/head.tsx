@@ -1,4 +1,4 @@
 export const metadata = {
-  title: "Veelgestelde Vragen over Crypto Casino’s – Alles wat je moet weten",
-  description: "Antwoorden op de meest gestelde vragen over crypto casino’s, veiligheid, betalingen, bonussen en meer. Vind snel wat je zoekt!",
+  title: "Frequently Asked Questions about Crypto Casinos – Everything You Need to Know",
+  description: "Answers to the most common questions about crypto casinos, safety, payments, bonuses, and more. Quickly find what you're looking for!",
 };

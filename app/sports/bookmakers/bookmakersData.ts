@@ -13,21 +13,21 @@ export const bookmakers: BookmakerCard[] = [
     name: '1xBet',
     logo: '/logos/1xbet.png',
     rating: 4.5,
-    description: 'Bekend wereldwijd, crypto stortingen, vele sporten en hoge odds.'
+    description: 'World-renowned, crypto deposits, many sports and high odds.'
   },
   {
     slug: 'cloudbet',
     name: 'Cloudbet',
     logo: '/logos/cloudbet.png',
     rating: 4.7,
-    description: 'Snelle uitbetalingen, hoge limieten en veel cryptomunten.'
+    description: 'Fast payouts, high limits and many cryptocurrencies.'
   },
   {
     slug: 'wildvegas',
     name: 'Wild Vegas',
     logo: '/logos/wildvegas.png',
     rating: 4.3,
-    description: 'Amerikaans thema, scherpe odds en directe crypto withdrawals.'
+    description: 'American theme, sharp odds and instant crypto withdrawals.'
   },
   // Voeg hier meer bookmakers toe...
 ];

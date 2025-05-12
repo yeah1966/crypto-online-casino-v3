@@ -1,4 +1,4 @@
 export const metadata = {
-  title: "Over Crypto Casino Online – Wie we zijn en wat we doen",
-  description: "Lees meer over Crypto Casino Online: onze missie, visie en het team achter de site. Transparantie en betrouwbaarheid staan bij ons voorop.",
+  title: "About Crypto Casino Online – Who We Are and What We Do",
+  description: "Learn more about Crypto Casino Online: our mission, vision, and the team behind the site. Transparency and reliability are our top priorities.",
 };

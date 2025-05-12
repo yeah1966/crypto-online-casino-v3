@@ -1,4 +1,8 @@
 export default function Top10Page() {
+  // Achtergrond
+  // Je kunt hier eventueel een andere afbeelding kiezen
+  // of de gradient uit de slots-pagina gebruiken
+
   const casinos = [
     {
       name: "BitStarz",
@@ -117,7 +121,7 @@ export default function Top10Page() {
       name: "Golden Billy",
       rank: "#11",
       bonus: "Live on the website",
-      tagline: "Crypto casino",
+      tagline: "A new crypto casino with a growing selection of games.",
       slug: "goldenbilly",
       logo: "/logos/goldenbilly.png",
       url: "https://goldenbillylink.com/h62218aaa",
@@ -128,7 +132,7 @@ export default function Top10Page() {
       name: "Ninlay",
       rank: "#12",
       bonus: "Not yet live",
-      tagline: "Crypto casino",
+      tagline: "A fresh crypto platform with exclusive deals for new players.",
       slug: "ninlayplay",
       logo: "/logos/ninlaycasino.png",
       url: "https://ninlayplay.com/hecd2573b",
@@ -139,7 +143,7 @@ export default function Top10Page() {
       name: "Crownslots",
       rank: "#13",
       bonus: "Not yet live",
-      tagline: "Crypto casino",
+      tagline: "A trusted name in crypto betting with a global reputation.",
       slug: "crownslots",
       logo: "/logos/crownslots.png",
       url: "https://crownslotslink.com/hfb84c81c",
@@ -150,7 +154,7 @@ export default function Top10Page() {
       name: "1xBet",
       rank: "#14",
       bonus: "For sports betting",
-      tagline: "Crypto casino",
+      tagline: "A modern site offering both classic and innovative crypto games.",
       slug: "1xbet",
       logo: "/logos/1xbet.png",
       url: "https://refpa3740576.top/L?tag=d_3915280m_1599c_&site=3915280&ad=1599",
@@ -161,7 +165,7 @@ export default function Top10Page() {
       name: "Loki Casino",
       rank: "#15",
       bonus: "Not yet live",
-      tagline: "Crypto casino",
+      tagline: "A colorful crypto casino experience with fast payouts and top bonuses.",
       slug: "lokicasino",
       logo: "/logos/lokicasino.png",
       url: "https://lokicasinolink.com/hd8471080",
@@ -188,60 +192,83 @@ export default function Top10Page() {
   };
 
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
-      <div className="relative rounded-3xl bg-black/65 shadow-2xl border-2 border-yellow-400 p-8 md:p-12 space-y-10 max-w-6xl mx-auto mt-6">
-        <h1 className="text-4xl md:text-5xl font-extrabold neon-text text-center mb-2 text-purple-700 flex items-center justify-center gap-3">
-          <img src="/casino-icons/Diamond 1.svg" alt="Diamond" width={48} height={48} className="drop-shadow-lg" />
-          TOP CRYPTO CASINOS 2025
-          <img src="/casino-icons/Roulette Wheel.svg" alt="Roulette wheel" width={48} height={48} className="drop-shadow-lg animate-bounce" />
-        </h1>
+    <>
+      <div className="min-h-screen fixed inset-0 -z-10 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-center bg-fixed" />
+      <main className="min-h-screen bg-transparent py-10 px-2 md:px-0">
+        <div className="max-w-6xl mx-auto bg-black/65 rounded-3xl p-6 md:p-12 shadow-2xl border-2 border-yellow-400/20">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-yellow-300 text-center mb-10 drop-shadow-lg">
+            🏆 Top 10 Crypto Casinos – 2025
+          </h1>
         <p className="mb-10 text-lg text-white/80 text-center max-w-3xl mx-auto">
           Discover our handpicked selection of the most rewarding and trusted crypto casinos — tested for speed, bonuses, and crypto compatibility.
         </p>
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-10">
           {casinos.map((casino, idx) => (
             <section
               key={casino.slug}
-              className={`relative rounded-2xl border-2 ${idx === 0 ? 'border-yellow-400' : idx === 1 ? 'border-pink-400' : idx === 2 ? 'border-green-400' : 'border-purple-700'} bg-[#1a1442]/90 text-white px-6 py-8 shadow-xl hover:scale-[1.015] hover:shadow-[0_0_18px_#facc15] transition-all duration-300 w-full flex flex-col md:flex-row items-center gap-6 md:gap-10 animate-fade-in-up`}
+              className="relative rounded-3xl border-2 border-yellow-400/70 bg-gradient-to-br from-yellow-900/60 via-black/90 to-purple-900/70 text-white px-8 py-8 shadow-2xl flex flex-col md:flex-row items-center gap-6 md:gap-10 mb-10 animate-fade-in-up hover:scale-[1.01] transition-transform"
             >
               <div className="flex flex-col items-center md:items-start min-w-[120px]">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-3xl font-extrabold text-yellow-300 drop-shadow">{casino.rank}</span>
-                  <img src={casino.logo} alt={casino.name} className="w-14 h-14 rounded-xl border-2 border-white/70 bg-white/40 shadow" />
+                  <span className="text-4xl font-extrabold text-yellow-300 drop-shadow border-4 border-yellow-400 bg-black/70 rounded-full px-5 py-2">{casino.rank}</span>
+                  <img src={casino.logo} alt={casino.name} className="w-16 h-16 rounded-2xl border-2 border-white/80 bg-white/40 shadow-lg" />
                 </div>
-                <span className="font-bold text-lg text-yellow-200 mb-1 text-center md:text-left">{casino.name}</span>
-                <span className="underline text-purple-300 text-xs text-center md:text-left">{casino.name}</span>
+                <span className="font-bold text-xl text-yellow-200 mb-1 text-center md:text-left tracking-wide">{casino.name}</span>
               </div>
               <div className="flex-1 flex flex-col gap-2 items-center md:items-start">
-                <span className="font-semibold text-green-300 text-lg">{casino.bonus}</span>
-                <span className="text-purple-200 text-sm mb-1">{casino.tagline}</span>
+                <span className="font-semibold text-yellow-200 text-xl mb-1">{casino.bonus}</span>
+                <span className="text-purple-200 text-base mb-1 italic">{casino.tagline}</span>
+                {casino.slug === "bitstarz" && (
+                  <p className="text-white/90 text-base mb-2">BitStarz is a multi-award-winning crypto casino known for its fast payouts, huge game selection, and generous bonuses. Players enjoy a seamless experience and top-tier customer support.</p>
+                )}
+                {casino.slug === "wildvegas" && (
+                  <p className="text-white/90 text-base mb-2">Wild Vegas brings the excitement of Las Vegas to your screen, offering a wide range of slots and table games. Their bonuses and promotions keep things lively for every player.</p>
+                )}
+                {casino.slug === "7bit" && (
+                  <p className="text-white/90 text-base mb-2">7Bit Casino is famous for its retro vibe and massive slot selection. With support for many cryptocurrencies, it’s a favorite for both new and experienced crypto gamblers.</p>
+                )}
+                {casino.slug === "cloudbet" && (
+                  <p className="text-white/90 text-base mb-2">Cloudbet is a pioneer in the crypto gambling space, offering both a casino and sportsbook. High limits and fast withdrawals make it a top pick for serious players.</p>
+                )}
+                {casino.slug === "crypto-loko" && (
+                  <p className="text-white/90 text-base mb-2">Cryptoloko stands out with its colorful design and unique games. It’s known for rewarding regular players with exclusive promotions and a fun, community-driven atmosphere.</p>
+                )}
+                {casino.slug === "dreams" && (
+                  <p className="text-white/90 text-base mb-2">Dreams Casino delivers a classic Vegas-style experience with a modern twist. Their welcome bonuses and variety of slots attract players from all over the world.</p>
+                )}
+                {casino.slug === "betzard" && (
+                  <p className="text-white/90 text-base mb-2">Betzard offers a robust sportsbook and casino platform, supporting a wide range of cryptocurrencies. Their user-friendly interface makes betting easy and enjoyable.</p>
+                )}
+                {casino.slug === "prismcasino" && (
+                  <p className="text-white/90 text-base mb-2">PrismCasino is known for its bright design and exclusive crypto deals. It’s a great choice for players looking for something fresh and exciting.</p>
+                )}
+                {casino.slug === "slotsofvegas" && (
+                  <p className="text-white/90 text-base mb-2">Slots of Vegas brings the glitz and glamour of Vegas slots to the online world. Their focus on crypto payments ensures fast and secure transactions.</p>
+                )}
+                {casino.slug === "coinpoker" && (
+                  <p className="text-white/90 text-base mb-2">CoinPoker is a leading crypto poker room where you can play with USDT, BTC, and more. Enjoy exclusive tournaments and a vibrant community of poker enthusiasts.</p>
+                )}
               </div>
-              {/* Crypto icons and labels, right-aligned for desktop */}
               <div className="flex flex-wrap justify-center md:justify-end items-center gap-x-4 gap-y-2 flex-1 md:max-w-xs">
                 {casino.cryptos.map((c) => cryptoIcons[c] ? (
-                  <div key={c} className="flex flex-col items-center w-14">
-                    <img src={cryptoIcons[c]} alt={c} title={c} className="w-7 h-7 mb-1" />
-                    <span className="text-xs text-white/80 font-mono tracking-wide">{c}</span>
-                  </div>
+                  <img key={c} src={cryptoIcons[c]} alt={c} title={c} className="w-8 h-8" />
                 ) : (
                   <span key={c} className="text-xs">{c}</span>
                 ))}
               </div>
-              <div className="flex flex-col gap-2 items-center md:items-end min-w-[160px]">
+              <div className="flex flex-col gap-2 items-center md:items-end min-w-[180px]">
                 <a
                   href={casino.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-gradient-to-r from-yellow-400 to-pink-500 text-black font-bold px-6 py-3 rounded-full text-base shadow-md hover:scale-105 transition flex justify-center items-center text-center"
+                  className="inline-block bg-gradient-to-r from-yellow-400 to-pink-500 text-black font-bold px-7 py-3 rounded-full text-lg shadow-lg hover:scale-105 hover:shadow-yellow-400/60 transition flex justify-center items-center text-center"
                 >
                   Visit Casino
                 </a>
                 {casino.hasReview && (
                   <a
                     href={`/reviews/${casino.slug}`}
-                    className="inline-block bg-gradient-to-r from-purple-400 to-yellow-400 text-black font-bold px-6 py-3 rounded-full text-base shadow-md hover:scale-105 transition flex justify-center items-center text-center mt-2"
+                    className="inline-block bg-gradient-to-r from-purple-400 to-yellow-400 text-black font-bold px-7 py-3 rounded-full text-lg shadow-lg hover:scale-105 hover:shadow-purple-400/60 transition flex justify-center items-center text-center mt-3"
                   >
                     Read Review
                   </a>
@@ -257,32 +284,39 @@ export default function Top10Page() {
             {extraCasinos.map((casino) => (
               <section
                 key={casino.slug}
-                className="relative rounded-2xl border-2 border-green-400 bg-[#1a1442]/90 text-white px-8 py-8 shadow-xl flex flex-col md:flex-row items-center gap-6 md:gap-10 animate-fade-in-up"
+                className="relative rounded-3xl border-2 border-yellow-400/70 bg-gradient-to-br from-yellow-900/60 via-black/90 to-purple-900/70 text-white px-8 py-8 shadow-2xl flex flex-col md:flex-row items-center gap-6 md:gap-10 mb-10 animate-fade-in-up hover:scale-[1.01] transition-transform"
               >
                 <div className="flex flex-col items-center md:items-start min-w-[120px]">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-3xl font-extrabold text-green-300 drop-shadow">{casino.rank}</span>
-                    <img src={casino.logo} alt={casino.name} className="w-14 h-14 rounded-xl border-2 border-white/70 bg-white/40 shadow" />
+                    <span className="text-4xl font-extrabold text-yellow-300 drop-shadow border-4 border-yellow-400 bg-black/70 rounded-full px-5 py-2">{casino.rank}</span>
+                    <img src={casino.logo} alt={casino.name} className="w-16 h-16 rounded-2xl border-2 border-white/80 bg-white/40 shadow-lg" />
                   </div>
-                  <span className="font-bold text-lg text-green-200 mb-1 text-center md:text-left">{casino.name}</span>
+                  <span className="font-bold text-xl text-yellow-200 mb-1 text-center md:text-left tracking-wide">{casino.name}</span>
                 </div>
                 <div className="flex-1 flex flex-col gap-2 items-center md:items-start">
-                  <span className="font-semibold text-green-300 text-lg">{casino.bonus}</span>
-                  <span className="text-purple-200 text-sm mb-1">{casino.tagline}</span>
+                  <span className="font-semibold text-yellow-200 text-xl mb-1">{casino.bonus}</span>
+                  <span className="text-purple-200 text-base mb-1 italic">{casino.tagline}</span>
                 </div>
                 <div className="flex flex-wrap justify-center md:justify-end items-center gap-x-4 gap-y-2 flex-1 md:max-w-xs">
                   {casino.cryptos.map((c) => cryptoIcons[c] ? (
-                    <img src={cryptoIcons[c]} alt={c} title={c} className="w-7 h-7" />
+                    <img src={cryptoIcons[c]} alt={c} title={c} className="w-8 h-8" />
                   ) : (
                     <span key={c} className="text-xs">{c}</span>
                   ))}
                 </div>
-                <div className="flex flex-col gap-2 items-center md:items-end min-w-[160px]">
-                  <a href={casino.url} target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-to-r from-yellow-400 to-pink-500 text-black font-bold px-6 py-3 rounded-full text-base shadow-md hover:scale-105 transition flex justify-center items-center text-center">Visit Casino</a>
+                <div className="flex flex-col gap-2 items-center md:items-end min-w-[180px]">
+                  <a
+                    href={casino.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-gradient-to-r from-yellow-400 to-pink-500 text-black font-bold px-7 py-3 rounded-full text-lg shadow-lg hover:scale-105 hover:shadow-yellow-400/60 transition flex justify-center items-center text-center"
+                  >
+                    Visit Casino
+                  </a>
                   {casino.hasReview && (
                     <a
                       href={`/reviews/${casino.slug}`}
-                      className="inline-block bg-gradient-to-r from-purple-400 to-yellow-400 text-black font-bold px-6 py-3 rounded-full text-base shadow-md hover:scale-105 transition flex justify-center items-center text-center mt-2"
+                      className="inline-block bg-gradient-to-r from-purple-400 to-yellow-400 text-black font-bold px-7 py-3 rounded-full text-lg shadow-lg hover:scale-105 hover:shadow-purple-400/60 transition flex justify-center items-center text-center mt-3"
                     >
                       Read Review
                     </a>
@@ -295,5 +329,6 @@ export default function Top10Page() {
         <div className="text-center mt-16 hidden"></div>
       </div>
     </main>
+    </>
   );
 }

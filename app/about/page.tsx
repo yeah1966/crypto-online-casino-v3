@@ -8,6 +8,7 @@ export default function AboutPage() {
       <div className="min-h-screen fixed inset-0 -z-10 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-center bg-fixed" />
       <div className="relative z-10 flex items-center justify-center min-h-screen py-8 px-2">
         <div className="bg-black/65 backdrop-blur-lg rounded-2xl p-6 md:p-10 shadow-xl max-w-5xl mx-auto w-full">
+  <section className="w-full px-4 py-12 md:py-20 lg:py-28 text-white">
           <h1 className="text-4xl md:text-5xl font-extrabold text-yellow-400 mb-6 text-center">
             🎰 About Crypto Vegas
           </h1>
@@ -53,6 +54,7 @@ export default function AboutPage() {
           </p>
 
           <MeetTheTeam />
+          </section>
         </div>
       </div>
     </>

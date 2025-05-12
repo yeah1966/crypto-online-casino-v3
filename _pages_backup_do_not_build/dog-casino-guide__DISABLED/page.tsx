@@ -1,10 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Metadata } from "next";
-import { getOgMetaForCasino } from "@/lib/og"; // Pas het pad aan indien nodig
-
-
 export default function DogCasinoGuide() {
   return (
     <>
