@@ -63,6 +63,20 @@ export default function DogCasinoGuide() {
           </div>
         </div>
       </div>
+      {/* $DOG Info Block */}
+      <section className="mb-6 max-w-2xl mx-auto rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
+        <div className="flex items-center gap-3 mb-1">
+          <span className="text-3xl">🐕</span>
+          <span className="text-xl font-bold text-yellow-400">What is $DOG (DOG•GO•TO•THE•MOON)?</span>
+        </div>
+        <ul className="list-disc ml-7 text-white/90 space-y-1">
+          <li><b>A Rune</b> on Bitcoin</li>
+          <li>Launched on <b>April 20, 2024</b> during the Bitcoin halving</li>
+          <li><b>Rune ID:</b> #3 on Magic Eden</li>
+          <li>Part of the new <b>Runes protocol</b> by Casey Rodarmor</li>
+          <li>Store and trade with wallets like <b>Xverse</b>, <b>Leather</b> (and soon Hiro with Runes support)</li>
+        </ul>
+      </section>
       {/* Breadcrumbs */}
       <nav className="text-sm text-yellow-200 mb-6 mt-4 ml-2" aria-label="breadcrumb">
         <ol className="list-reset flex">
@@ -111,7 +125,7 @@ export default function DogCasinoGuide() {
         <section className="mb-10 rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg">
           <h2 className="text-xl font-bold text-yellow-400 mb-4 uppercase tracking-wide">How to Prepare for the $DOG Casino Takeover</h2>
           <ol className="list-decimal ml-6 text-white/90 mb-2 space-y-1">
-            <li><span className="text-yellow-400">🦴</span> Get a wallet: $DOG is BRC-20 — try UniSat or Hiro.</li>
+            <li><span className="text-yellow-400">🦴</span> Get a wallet: $DOG is a Rune — use Xverse or Leather.</li>
             <li><span className="text-yellow-400">🐕</span> Stack $DOG: Buy it on OKX or track it via DEX tools.</li>
             <li><span className="text-yellow-400">🎯</span> Spread the meme: Tag your favorite casinos and ask: “wen $DOG?”</li>
           </ol>
