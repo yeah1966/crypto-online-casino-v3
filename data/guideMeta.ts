@@ -9,7 +9,7 @@ export const guideMeta = {
   "best-ethereum-casinos": {
     title: "Best Ethereum Casinos 2025 | Top ETH Gambling Sites & Bonuses",
     description: "Find the best Ethereum casinos for 2025. Compare ETH casino bonuses, games, and instant payouts. Your essential ETH gambling guide.",
-    ogImage: "https://crypto-online-casino.com/og/best-ethereum-casinos.png",
+    ogImage: "https://crypto-online-casino.com/og/ethereum-casino-guide.png",
     canonical: "https://crypto-online-casino.com/guides/best-ethereum-casinos",
     keywords: ["ethereum casino", "ETH gambling", "crypto casino", "ethereum slots", "ETH bonus", "ethereum gambling guide"],
   },
