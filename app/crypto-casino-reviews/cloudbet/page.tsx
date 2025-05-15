@@ -1,130 +1,183 @@
-import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import Head from "next/head";
-import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
-import { getOgMetaForCasino } from "@/lib/ogMeta";
 import type { Metadata } from "next";
 
-export const generateMetadata = async (): Promise<Metadata> => {
-  const og = getOgMetaForCasino("cloudbet");
+export const generateMetadata = (): Metadata => {
   return {
-    title: og.title,
-    description: og.description,
+    title: "Cloudbet Casino Review 2025 | Crypto Casino & Sportsbook Pioneer",
+    description: "Read our Cloudbet review: crypto pioneer, high limits, instant payouts, 1000+ games & sportsbook. Trusted since 2013.",
+    alternates: {
+      canonical: "https://crypto-online-casino.com/crypto-casino-reviews/cloudbet",
+    },
     openGraph: {
-      title: og.title,
-      description: og.description,
-      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/cloudbet",
-      images: [{ url: og.image }],
+      title: "Cloudbet Casino Review 2025 | Crypto Casino & Sportsbook Pioneer",
+      description: "Read our Cloudbet review: crypto pioneer, high limits, instant payouts, 1000+ games & sportsbook. Trusted since 2013.",
+      url: "https://crypto-online-casino.com/crypto-casino-reviews/cloudbet",
       type: "website",
+      images: [
+        {
+          url: "https://crypto-online-casino.com/og/cloudbet.png",
+          width: 1200,
+          height: 630,
+          alt: "Cloudbet Casino OG Image",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: og.title,
-      description: og.description,
-      images: [og.image],
+      title: "Cloudbet Casino Review 2025 | Crypto Casino & Sportsbook Pioneer",
+      description: "Read our Cloudbet review: crypto pioneer, high limits, instant payouts, 1000+ games & sportsbook. Trusted since 2013.",
+      images: ["https://crypto-online-casino.com/og/cloudbet.png"],
     },
-    robots: "index, follow",
   };
 };
 
-export default function CloudbetReview() {
-  return (
-    <>
-      <Head>
-        <title>Cloudbet Review (2025) – Claim Bonus & Bet Instantly</title>
-        <meta name="description" content="Read our 2025 Cloudbet review. Trusted crypto sportsbook & casino with fast payouts, high limits, and huge bonuses. Claim your bonus now!" />
-      </Head>
-      <Breadcrumbs
-        items={[
-          { name: "Home", href: "/" },
-          { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-          { name: "Cloudbet", href: "/crypto-casino-reviews/cloudbet" }
-        ]}
-      />
-      <CasinoReviewTemplate
-        logo="/logos/cloudbet.png"
-        casinoName="CLOUDBET"
-        rating={4.5}
-        ratingStars="★★★★½"
-        affiliateUrl="https://cldbt.cloud/go/en/landing/bitcoin-casino?af_token=&aftm_campaign=CryptoCasino&aftm_source=GEO&aftm_medium=link&aftm_content=cryptoinfo"
-        affiliateLabel="Play at Cloudbet"
-        introText="Cloudbet is known for its crypto sportsbook and high betting limits, ideal for Bitcoin sports betting fans. It offers fast crypto payouts and one of the best live casinos among crypto-friendly platforms. Enjoy Bitcoin betting, live casino action, and fast crypto withdrawals at Cloudbet."
-        reviewText={`If you’re looking for a crypto casino that doesn’t compromise on professionalism, Cloudbet is your spot. From the moment you land on the site, you’re greeted with a clean interface, sleek dark theme, and instant access to both casino games and a full sportsbook.<br><br>The real kicker? Cloudbet was one of the first crypto casinos on the scene, meaning they’ve had time to build a reputation for reliability and fast payouts.<br><br>It shines with its live betting features, high betting limits, and impressive welcome bonuses. There’s even a VIP system that scales with your loyalty, unlocking better rewards and cashback tiers.<br><br>Not everything glows — beginners might find the interface a bit advanced, and casual players could feel overwhelmed by the depth of options. But if you want a serious crypto betting experience with proven performance, Cloudbet is the real deal.<br><br>Whether you’re into blackjack, sports betting, or just looking to test your luck with crypto, Cloudbet delivers in classic style.`}
-        pros={[
-          "Fully integrated crypto sportsbook",
-          "Instant crypto withdrawals",
-          "High betting limits",
-          "Great reputation & longevity"
-        ]}
-        cons={[
-          "Interface can be complex for newcomers",
-          "VIP benefits mostly for high-rollers"
-        ]}
-        highlights={[
-          "Sports & casino games in one platform",
-          "Huge welcome bonus for new players",
-          "Long-standing trusted platform",
-          "Supports BTC, ETH, USDT, and more"
-        ]}
-      >
-        <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
-        <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
-        {/* CRYPTO & PAYMENT OPTIONS */}
-        <div className="mt-8 bg-purple-900/80 rounded-xl p-6 shadow-lg">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-2xl">💸</span>
-            <span className="text-purple-100 font-bold text-xl">CRYPTO & PAYMENT OPTIONS</span>
-          </div>
-          <ul className="list-disc list-inside text-purple-100 space-y-2">
-            <li>
-              <span className="font-bold">Crypto Accepted:</span> Bitcoin (BTC), Ethereum (ETH), USDT, and more
-            </li>
-            <li>
-              <span className="font-bold">Fast Withdrawals:</span> Crypto payouts processed instantly
-            </li>
-            <li>
-              <span className="font-bold">High Limits:</span> Bet big with high deposit and withdrawal limits
-            </li>
-            <li>
-              <span className="font-bold">No Extra Fees:</span> Cloudbet does not charge additional fees for crypto transactions
-            </li>
-          </ul>
-        </div>
+import React from "react";
+
+const data = {
+  introduction: `Cloudbet is a pioneer in the crypto casino and sportsbook space, established in 2013. Known for its high betting limits, instant withdrawals, and wide crypto support, Cloudbet is trusted globally by both casino and sports enthusiasts. The platform is fully licensed and offers a seamless, secure experience.`,
+  bonuses: `New Cloudbet players receive a generous welcome bonus, often matched in Bitcoin or other cryptocurrencies. Regular promotions, free bets, tournaments, and a loyalty program provide ongoing value for both casino and sportsbook users.`,
+  games: `Cloudbet offers thousands of games from top providers such as Evolution, NetEnt, and Play'n GO. The selection includes slots, live dealer games, provably fair crypto games, and a robust sportsbook for betting on major and niche sports events.`,
+  support: `24/7 customer support is available via live chat and email. The Cloudbet team is knowledgeable and quick to assist, and there is a comprehensive help center for self-service support.`,
+  mobile: `Cloudbet’s mobile site is fully responsive, allowing for seamless play, deposits, and withdrawals on any device. No app download is required to access the full range of features on smartphones and tablets.`,
+  security: `Cloudbet operates under a Curacao eGaming license and uses advanced SSL encryption to protect player data. The casino is committed to responsible gambling and undergoes regular audits for fairness and transparency.`,
+  payments: `Cloudbet is a true crypto-first platform, supporting Bitcoin (BTC), Ethereum (ETH), Litecoin (LTC), Bitcoin Cash (BCH), Dogecoin (DOGE), and Tether (USDT). Payments are processed instantly and securely, with high limits and low fees.`,
+  verdict: `Cloudbet stands out for its deep crypto integration, high betting limits, and excellent reputation. It’s a top choice for players seeking both casino games and sports betting with the flexibility and privacy of cryptocurrencies.`,
+  facts: {
+    founded: "2013",
+    license: "Curacao eGaming",
+    cryptoAccepted: "BTC, ETH, LTC, BCH, DOGE, USDT",
+  },
+};
+
+const CloudbetReview = () => (
+  <div className="max-w-screen-xl mx-auto py-10 px-4 bg-dark text-white">
+    {/* First Impressions */}
+    <section id="first-impressions" className="mb-8">
+      <h2 className="text-2xl font-bold mb-4">First Impressions</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <img src="/screenshots/cloudbet1.jpg" alt="Screenshot 1" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <img src="/screenshots/cloudbet2.jpg" alt="Screenshot 2" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <img src="/screenshots/cloudbet3.jpg" alt="Screenshot 3" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <img src="/screenshots/cloudbet4.jpg" alt="Screenshot 4" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+      </div>
+      <div className="text-center text-sm text-gray-300 mt-2">
+        Screenshots are indicative and show what a typical Cloudbet experience looks like.
+      </div>
+    </section>
+
+    {/* Title Bar */}
+    <div className="bg-gradient-to-r from-purple-900 to-purple-700 border-2 border-pink-500 shadow-[0_0_20px_#ff00ff] rounded-xl px-6 py-4 mb-8 grid grid-cols-1 sm:grid-cols-3 items-center">
+      {/* Logo left */}
+      <div className="flex justify-start items-center mb-4 sm:mb-0">
+        <img src="/logos/cloudbet.png" alt="Cloudbet logo" className="w-16 h-auto mr-4" />
+      </div>
+      {/* Title centered */}
+      <div className="flex justify-center items-center">
+        <h2 className="text-4xl font-bold text-white text-center">CLOUDBET CASINO REVIEW</h2>
+        <img src="/mascot.png" alt="Mascot" className="w-16 h-16 ml-4 animate-pulse" />
+      </div>
+      {/* Button right */}
+      <div className="flex justify-end items-center mt-4 sm:mt-0">
         <a
           href="https://cldbt.cloud/go/en/landing/bitcoin-casino?af_token=&aftm_campaign=CryptoCasino&aftm_source=GEO&aftm_medium=link&aftm_content=cryptoinfo"
-          className="mt-8 block bg-yellow-400 hover:bg-yellow-300 text-center text-purple-900 font-bold py-3 rounded-lg shadow-lg transition-all duration-300 text-lg"
           target="_blank"
-          rel="noopener noreferrer nofollow"
+          rel="noopener noreferrer"
+          className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-4 py-2 rounded-full shadow transition-all duration-300 ease-in-out hover:shadow-[0_0_15px_#ff0] whitespace-nowrap"
         >
-          🎲 Claim your Cloudbet bonus now!
+          Play at Cloudbet
         </a>
-        <p className="text-center text-xs text-gray-200 mt-3">
-          18+ | Gamble responsibly. Cloudbet may not be available in all jurisdictions.
+      </div>
+    </div>
+
+    {/* Info grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      <section id="introduction" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Crown.svg" alt="Crown icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Introduction</h3>
+        <p className="text-white">{data.introduction}</p>
+      </section>
+      <section id="bonuses" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Bonus.svg" alt="Bonus icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Bonuses & Promotions</h3>
+        <p className="text-white">{data.bonuses}</p>
+      </section>
+      <section id="games" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Poker.svg" alt="Poker icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Games & Providers</h3>
+        <p className="text-white">{data.games}</p>
+      </section>
+      <section id="support" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Support.svg" alt="Support icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Customer Support</h3>
+        <p className="text-white">{data.support}</p>
+      </section>
+      <section id="mobile" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Smartphone.svg" alt="Smartphone icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Mobile Experience</h3>
+        <p className="text-white">{data.mobile}</p>
+      </section>
+      <section id="security" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Shield.svg" alt="Shield icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Security & Licensing</h3>
+        <p className="text-white">{data.security}</p>
+      </section>
+      <section className="p-6 bg-[#0e1a46] rounded-xl border border-yellow-500 shadow-md text-white">
+        <img src="/casino-icons/Credit.svg" alt="Credit icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Crypto Supported</h3>
+        <p>
+          Cloudbet supports a variety of cryptocurrencies and digital payment methods for convenient and secure transactions. Supported coins include:
         </p>
-      </CasinoReviewTemplate>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(getReviewStructuredData({
-            name: "Cloudbet",
-            reviewRating: 4.5,
-            reviewCount: 1123,
-            url: "https://www.crypto-online-casino.com/crypto-casino-reviews/cloudbet",
-            image: "https://www.crypto-online-casino.com/logos/cloudbet.png",
-            description: "Cloudbet is a trusted crypto casino and sportsbook with high bonuses, fast payouts, and a large game selection. Read our full review!"
-          }))
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(getBreadcrumbListStructuredData([
-            { name: "Home", href: "/" },
-            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-            { name: "Cloudbet", href: "/crypto-casino-reviews/cloudbet" }
-          ], "https://www.crypto-online-casino.com"))
-        }}
-      />
-    </>
-  );
-}
+        <div className="flex gap-4 items-center mt-4 flex-wrap">
+          <img src="/icons/btc.svg" alt="Bitcoin" className="w-8 h-8" title="Bitcoin (BTC)" />
+          <img src="/icons/eth.svg" alt="Ethereum" className="w-8 h-8" title="Ethereum (ETH)" />
+          <img src="/icons/ltc.svg" alt="Litecoin" className="w-8 h-8" title="Litecoin (LTC)" />
+          <img src="/icons/bch.svg" alt="Bitcoin Cash" className="w-8 h-8" title="Bitcoin Cash (BCH)" />
+          <img src="/icons/doge.svg" alt="Dogecoin" className="w-8 h-8" title="Dogecoin (DOGE)" />
+          <img src="/icons/usdt.svg" alt="Tether" className="w-8 h-8" title="Tether (USDT)" />
+        </div>
+        <p className="mt-4">
+          These options enable fast deposits and withdrawals with low fees. Traditional payment methods are also available for convenience.
+        </p>
+      </section>
+      <section id="verdict" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Trophy.svg" alt="Trophy icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Final Verdict</h3>
+        <p className="text-white">{data.verdict}</p>
+      </section>
+    </div>
+
+    {/* At a Glance */}
+    <section id="at-a-glance" className="mb-8">
+      <h2 className="text-2xl font-bold mb-3 text-white">At a Glance</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10 flex flex-col justify-between h-24 text-center">
+          <span className="block text-yellow-400 text-lg font-semibold mb-2">Founded</span>
+          <span className="text-white">{data.facts.founded}</span>
+        </div>
+        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10 flex flex-col justify-between h-24 text-center">
+          <span className="block text-yellow-400 text-lg font-semibold mb-2">License</span>
+          <span className="text-white">{data.facts.license}</span>
+        </div>
+        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10 flex flex-col justify-between h-24 text-center">
+          <span className="block text-yellow-400 text-lg font-semibold mb-2">Crypto Accepted</span>
+          <span className="text-white">{data.facts.cryptoAccepted}</span>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA with mascot */}
+    <section id="cta" className="mt-10 text-center flex flex-col items-center justify-center gap-4">
+      <img src="/mascot.png" alt="Mascot" className="w-12 h-12 mb-2" />
+      <h2 className="text-xl font-bold text-yellow-400">READY TO GET STARTED?</h2>
+      <a
+        href="https://cldbt.cloud/go/en/landing/bitcoin-casino?af_token=&aftm_campaign=CryptoCasino&aftm_source=GEO&aftm_medium=link&aftm_content=cryptoinfo"
+        className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 px-6 rounded-xl shadow-lg hover:scale-105 transition-transform"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Play at Cloudbet
+      </a>
+    </section>
+  </div>
+);
+
+export default CloudbetReview;

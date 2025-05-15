@@ -1,244 +1,184 @@
-import Link from "next/link";
-import CasinoSuggestions from "@/components/CasinoSuggestions";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
-import { getOgMetaForCasino } from "@/lib/ogMeta";
-import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import type { Metadata } from "next";
 
-export const generateMetadata = async (): Promise<Metadata> => {
-  const og = getOgMetaForCasino("rakoocasino");
+export const generateMetadata = (): Metadata => {
   return {
-    title: og.title,
-    description: og.description,
+    title: "Rakoocasino Review 2025 | Crypto Casino, Fast Payouts & 4000+ Games",
+    description: "Read our Rakoocasino review: 100% bonus, instant crypto payouts, 4000+ games, and top-tier security. Play with BTC, ETH, DOGE & more.",
+    alternates: {
+      canonical: "https://crypto-online-casino.com/crypto-casino-reviews/rakoocasino",
+    },
     openGraph: {
-      title: og.title,
-      description: og.description,
-      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/rakoocasino",
-      images: [{ url: og.image }],
+      title: "Rakoocasino Review 2025 | Crypto Casino, Fast Payouts & 4000+ Games",
+      description: "Read our Rakoocasino review: 100% bonus, instant crypto payouts, 4000+ games, and top-tier security. Play with BTC, ETH, DOGE & more.",
+      url: "https://crypto-online-casino.com/crypto-casino-reviews/rakoocasino",
       type: "website",
+      images: [
+        {
+          url: "https://crypto-online-casino.com/og/rakoocasino.png",
+          width: 1200,
+          height: 630,
+          alt: "Rakoocasino OG Image",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: og.title,
-      description: og.description,
-      images: [og.image],
+      title: "Rakoocasino Review 2025 | Crypto Casino, Fast Payouts & 4000+ Games",
+      description: "Read our Rakoocasino review: 100% bonus, instant crypto payouts, 4000+ games, and top-tier security. Play with BTC, ETH, DOGE & more.",
+      images: ["https://crypto-online-casino.com/og/rakoocasino.png"],
     },
-    robots: "index, follow",
   };
 };
 
-export default function RakoocasinoReview() {
+import React from "react";
+
+const data = {
+  introduction: "Rakoocasino is a next-generation crypto casino founded in 2023. With a strong focus on player experience, Rakoocasino offers a sleek interface, instant crypto payments, and a wide range of exclusive games. The platform is designed for both casual players and high rollers who value privacy, speed, and variety.",
+  bonuses: "New players at Rakoocasino can claim a generous welcome package including a 100% deposit bonus and up to 100 free spins on top slots. Daily reload bonuses, cashback on losses, and regular tournaments offer ongoing value. The VIP program rewards loyal players with exclusive perks, higher withdrawal limits, and personal account managers.",
+  games: "Rakoocasino boasts a massive library of over 4,000 games, including slots, live dealer tables, provably fair crypto games, and jackpot titles. Top providers like Pragmatic Play, Evolution, and Play'n GO ensure high-quality gameplay. Unique features include instant search, favorites, and exclusive in-house games only available at Rakoocasino.",
+  support: "Customer support is available 24/7 via live chat and email. The multilingual team responds within minutes and can assist with account issues, bonuses, payments, and technical questions. An extensive help center and FAQ section provide answers to common queries, making it easy to find information quickly.",
+  mobile: "The Rakoocasino website is fully responsive and optimized for all devices. Whether you use iOS, Android, or desktop, you can enjoy fast loading times, touch-friendly navigation, and access to all games and features. No app download required—just play instantly in your browser.",
+  security: "Rakoocasino operates under a Curacao eGaming license and uses advanced SSL encryption to protect player data and funds. Responsible gaming tools, two-factor authentication, and strict KYC procedures ensure a safe and fair gaming environment for all users.",
+  payments: "Rakoocasino supports Bitcoin, Ethereum, Litecoin, Tether, Bitcoin Cash, and Dogecoin for instant deposits and withdrawals. All transactions are processed on-chain for maximum transparency and security. There are no hidden fees, and most withdrawals are completed within minutes.",
+  verdict: "Rakoocasino is a standout choice for crypto casino fans seeking a modern platform, quick payouts, and a vast selection of games. The site excels in bonuses, support, and security, making it a reliable option for both new and experienced players. Try Rakoocasino for a seamless and rewarding crypto gambling experience.",
+  facts: {
+    founded: "2023",
+    license: "Curacao eGaming",
+    cryptoAccepted: "BTC, ETH, LTC, USDT, BCH, DOGE"
+  }
+};
+
+export default function RakoocasinoPage() {
   return (
-    <>
-      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
-      {/* SEO structured data: Review */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            getReviewStructuredData({
-              name: "Rakoocasino",
-              reviewRating: 4.7,
-              reviewCount: 0,
-              url: "https://www.crypto-online-casino.com/crypto-casino-reviews/rakoocasino",
-              image: "https://www.crypto-online-casino.com/logos/rakoocasino.png",
-              description: "Rakoocasino is a fast-rising crypto casino with a colorful design, big bonuses, and direct crypto payouts. Read our full review!"
-            })
-          )
-        }}
-      />
-      {/* SEO structured data: Breadcrumbs */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(getBreadcrumbListStructuredData([
-            { name: "Home", href: "/" },
-            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-            { name: "Rakoocasino", href: "/crypto-casino-reviews/rakoocasino" }
-          ], "https://www.crypto-online-casino.com"))
-        }}
-      />
-      {/* SEO structured data: FAQPage */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "Is Rakoocasino trustworthy?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, Rakoocasino is a new but reliable crypto casino with fast payouts, a valid license, and a helpful support team."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Which cryptocurrencies are accepted at Rakoocasino?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "You can deposit and withdraw using Bitcoin (BTC), Ethereum (ETH), Litecoin (LTC), Tether (USDT), and Ripple (XRP)."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What is the welcome bonus at Rakoocasino?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "New players receive an attractive welcome bonus. Check the site for the latest offer."
-                }
-              }
-            ]
-          })
-        }}
-      />
-      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
-      <main className="relative z-10 min-h-screen pt-1 pb-16 px-4 text-white">
-        <div className="max-w-3xl mx-auto bg-black/60 rounded-2xl shadow-2xl p-8 mt-8">
-          {/* HEADER met logo, rating, naam, button (links) en tekst (rechts, uitgelijnd met rating) */}
-          <div className="flex flex-col md:flex-row items-center md:items-start mb-6 gap-6">
-            {/* Linkerkant: logo, rating, naam, button */}
-            <div className="flex flex-col items-center md:items-start gap-2 min-w-[180px] md:min-w-[220px]">
-              <img src="/logos/rakoocasino.png" alt="Rakoocasino Logo" width={96} height={96} className="rounded-xl bg-white shadow-lg mb-1" />
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-yellow-300 text-2xl">★★★★½</span>
-                <span className="text-white/70 text-sm">4.7/5</span>
-              </div>
-              <Breadcrumbs
-                items={[
-                  { name: "Home", href: "/" },
-                  { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-                  { name: "Rakoocasino", href: "/crypto-casino-reviews/rakoocasino" }
-                ]}
-              />
-              <h1 className="text-3xl font-extrabold text-yellow-300 drop-shadow mb-1 text-center md:text-left">RAKOOCASINO</h1>
-              <a
-                href="https://rakoolink.com/ha03e587d"
-                className="inline-block mt-2 px-3 py-1.5 bg-yellow-300 text-purple-900 font-bold rounded-full text-sm shadow hover:bg-purple-800 hover:text-yellow-300 transition-all border border-yellow-400 hover:border-purple-800"
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                style={{ minWidth: 'fit-content' }}
-              >
-                🎲 Claim your Rakoocasino bonus now!
-              </a>
-            </div>
-            {/* Rechterkant: tekst, uitgelijnd met rating */}
-            <div className="flex-1 flex items-start justify-center">
-              <div className="mt-[40px] md:mt-[40px] w-full">
-                <p className="text-purple-200 text-lg font-semibold text-center md:text-left max-w-xl">
-                  Rakoocasino is a brand-new crypto casino quickly gaining popularity among players worldwide. In this review, you'll discover everything about bonuses, games, payments, and trustworthiness — and why more and more crypto gamers are choosing Rakoocasino.
-                </p>
-              </div>
-            </div>
+    <div className="max-w-screen-xl mx-auto py-10 px-4 bg-[#0a0f40] text-white">
+      {/* Hero Section */}
+      <section id="hero" className="mb-8">
+        <h1 className="text-4xl font-bold mb-4">Rakoocasino Review</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          <img src="/screenshots/rakoocasino1.jpg" alt="Screenshot 1" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+          <img src="/screenshots/rakoocasino2.jpg" alt="Screenshot 2" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+          <img src="/screenshots/rakoocasino3.jpg" alt="Screenshot 3" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+          <img src="/screenshots/rakoocasino4.jpg" alt="Screenshot 4" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        </div>
+        <div className="text-center text-sm text-[#1a2c8b] mt-2">
+          Screenshots are indicative and show what a typical Rakoocasino experience looks like.
+        </div>
+      </section>
+
+      {/* Title Bar */}
+      <div className="bg-gradient-to-r from-purple-900 to-purple-700 border-2 border-pink-500 shadow-[0_0_20px_#ff00ff] rounded-xl px-6 py-4 mb-8 grid grid-cols-1 sm:grid-cols-3 items-center">
+        {/* Logo left */}
+        <div className="flex justify-start items-center mb-4 sm:mb-0">
+          <img src="/logos/rakoocasino.png" alt="Rakoocasino logo" className="w-16 h-auto mr-4" />
+        </div>
+        {/* Title centered */}
+        <div className="flex justify-center items-center">
+          <h2 className="text-4xl font-bold text-white text-center">RAKOOCASINO REVIEW</h2>
+          <img src="/mascot.png" alt="Mascot" className="w-16 h-16 ml-4 animate-pulse" />
+        </div>
+        {/* Button right */}
+        <div className="flex justify-end items-center mt-4 sm:mt-0">
+          <a
+            href="https://rakoolink.com/ha03e587d"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-4 py-2 rounded-full shadow transition-all duration-300 ease-in-out hover:shadow-[0_0_15px_#ff0] whitespace-nowrap"
+          >
+            Play at Rakoocasino
+          </a>
+        </div>
+      </div>
+
+      {/* Info grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <section id="introduction" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+          <img src="/casino-icons/Crown.svg" alt="Crown icon" className="w-14 h-14 mb-2" />
+          <h3 className="text-yellow-400 text-lg font-semibold mb-2">Introduction</h3>
+          <p className="text-white">{data.introduction}</p>
+        </section>
+        <section id="bonuses" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+          <img src="/casino-icons/Bonus.svg" alt="Bonus icon" className="w-14 h-14 mb-2" />
+          <h3 className="text-yellow-400 text-lg font-semibold mb-2">Bonuses & Promotions</h3>
+          <p className="text-white">{data.bonuses}</p>
+        </section>
+        <section id="games" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+          <img src="/casino-icons/Poker.svg" alt="Poker icon" className="w-14 h-14 mb-2" />
+          <h3 className="text-yellow-400 text-lg font-semibold mb-2">Games & Providers</h3>
+          <p className="text-white">{data.games}</p>
+        </section>
+        <section id="support" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+          <img src="/casino-icons/Support.svg" alt="Support icon" className="w-14 h-14 mb-2" />
+          <h3 className="text-yellow-400 text-lg font-semibold mb-2">Customer Support</h3>
+          <p className="text-white">{data.support}</p>
+        </section>
+        <section id="mobile" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+          <img src="/casino-icons/Smartphone.svg" alt="Smartphone icon" className="w-14 h-14 mb-2" />
+          <h3 className="text-yellow-400 text-lg font-semibold mb-2">Mobile Experience</h3>
+          <p className="text-white">{data.mobile}</p>
+        </section>
+        <section id="security" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+          <img src="/casino-icons/Shield.svg" alt="Shield icon" className="w-14 h-14 mb-2" />
+          <h3 className="text-yellow-400 text-lg font-semibold mb-2">Security & Licensing</h3>
+          <p className="text-white">{data.security}</p>
+        </section>
+        <section id="payments" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+          <img src="/casino-icons/Credit.svg" alt="Credit icon" className="w-14 h-14 mb-2" />
+          <h3 className="text-yellow-400 text-lg font-semibold mb-2">Crypto Supported</h3>
+          <p>
+            Rakoocasino supports a variety of cryptocurrencies and digital payment methods for convenient and secure transactions. Supported coins include:
+          </p>
+          <div className="flex gap-4 items-center mt-4 flex-wrap">
+            <img src="/icons/btc.svg" alt="Bitcoin" className="w-8 h-8" title="Bitcoin (BTC)" />
+            <img src="/icons/eth.svg" alt="Ethereum" className="w-8 h-8" title="Ethereum (ETH)" />
+            <img src="/icons/ltc.svg" alt="Litecoin" className="w-8 h-8" title="Litecoin (LTC)" />
+            <img src="/icons/bch.svg" alt="Bitcoin Cash" className="w-8 h-8" title="Bitcoin Cash (BCH)" />
+            <img src="/icons/doge.svg" alt="Dogecoin" className="w-8 h-8" title="Dogecoin (DOGE)" />
+            <img src="/icons/usdt.svg" alt="Tether" className="w-8 h-8" title="Tether (USDT)" />
           </div>
-          {/* OUR REVIEW */}
-          <div className="my-8 bg-purple-950/80 rounded-xl p-6 shadow-lg border-2 border-yellow-400 relative overflow-hidden">
-            <div className="absolute left-0 top-0 w-full h-1 bg-gradient-to-r from-yellow-400 via-purple-400 to-purple-600 animate-pulse" />
-            <h2 className="text-2xl font-bold text-yellow-300 mb-3 flex items-center gap-2">
-              <span className="inline-block text-yellow-300 drop-shadow-lg">★</span>
-              OUR REVIEW
-            </h2>
-            <p className="text-white/90 text-lg leading-relaxed">
-              Rakoocasino focuses on speed, style, and crypto-friendly features. With a colorful design, generous bonuses, and instant crypto payouts, this casino offers everything modern players want. From classic slots to live dealers – Rakoocasino blends the best of Vegas with the power of Web3. The support team is fast and helpful, and new players get an attractive welcome bonus.<br /><br />
-              Looking for a fresh crypto casino experience? Rakoocasino might just be your next favorite.
-            </p>
-            <div className="absolute pointer-events-none select-none left-1/2 -translate-x-1/2 bottom-0 w-2/3 h-8 bg-gradient-to-r from-yellow-400/20 via-purple-400/10 to-purple-600/20 blur-2xl opacity-70 animate-pulse" />
+          <p className="mt-4">
+            These options enable fast deposits and withdrawals with low fees. No traditional banking required.
+          </p>
+        </section>
+        <section id="verdict" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+          <img src="/casino-icons/Trophy.svg" alt="Trophy icon" className="w-14 h-14 mb-2" />
+          <h3 className="text-yellow-400 text-lg font-semibold mb-2">Final Verdict</h3>
+          <p className="text-white">{data.verdict}</p>
+        </section>
+      </div>
+
+      {/* At a Glance */}
+      <section id="at-a-glance" className="mb-8">
+        <h2 className="text-2xl font-bold mb-3 text-white">At a Glance</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10">
+            <span className="block text-yellow-400 text-lg font-semibold mb-2">Founded</span>
+            <span className="text-white">{data.facts.founded}</span>
           </div>
-          {/* PROS & CONS */}
-          <div className="grid grid-cols-1 gap-6 mt-8">
-            <div className="flex flex-col md:flex-row gap-6">
-              <div className="flex-1 bg-green-900/80 rounded-2xl p-6 shadow-lg flex flex-col items-center">
-                <div className="flex items-center justify-center w-14 h-14 bg-green-700 rounded-xl mb-3">
-                  <span className="text-3xl">✅</span>
-                </div>
-                <h2 className="text-green-300 text-xl font-bold mb-2">PROS</h2>
-                <ul className="list-disc list-inside space-y-1 text-white/90 text-left w-full">
-                  <li>Fast crypto payouts</li>
-                  <li>Unique interface and colorful design</li>
-                  <li>Great welcome bonus</li>
-                  <li>Diverse game selection</li>
-                  <li>24/7 live support</li>
-                </ul>
-              </div>
-              <div className="flex-1 bg-pink-900/80 rounded-2xl p-6 shadow-lg flex flex-col items-center">
-                <div className="flex items-center justify-center w-14 h-14 bg-pink-700 rounded-xl mb-3">
-                  <span className="text-3xl">❌</span>
-                </div>
-                <h2 className="text-pink-300 text-xl font-bold mb-2">CONS</h2>
-                <ul className="list-disc list-inside space-y-1 text-white/90 text-left w-full">
-                  <li>Still relatively unknown</li>
-                  <li>Limited community reviews</li>
-                </ul>
-              </div>
-            </div>
+          <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10">
+            <span className="block text-yellow-400 text-lg font-semibold mb-2">License</span>
+            <span className="text-white">{data.facts.license}</span>
           </div>
-          {/* HIGHLIGHTS */}
-          <div className="mt-8 bg-orange-900/90 rounded-2xl p-6 shadow-lg">
-            <h2 className="text-yellow-300 text-xl font-bold mb-2 flex items-center gap-2">
-              <span className="inline-block">✨</span>
-              HIGHLIGHTS
-            </h2>
-            <ul className="list-disc list-inside space-y-1 text-white/90">
-              <li>Instant deposits with Bitcoin, Ethereum, Litecoin</li>
-              <li>Daily bonuses & promotions</li>
-              <li>Live casino & crypto jackpots</li>
-              <li>Multilingual support team</li>
-              <li>Mobile-optimized for smooth gameplay</li>
-              <li>Big welcome bonus for new players</li>
-            </ul>
-          </div>
-          {/* CRYPTO & PAYMENT OPTIONS */}
-          <div className="mt-6 flex justify-center">
-            <div className="w-full max-w-2xl bg-purple-800 rounded-2xl p-6 shadow-lg text-white">
-              <h2 className="text-xl font-bold mb-4 uppercase">CRYPTO & PAYMENT OPTIONS</h2>
-              <ul className="space-y-2">
-                <li><strong>Accepted Cryptocurrencies:</strong> BTC, ETH, LTC, USDT, XRP</li>
-                <li><strong>Payouts:</strong> Typically processed within 10 minutes</li>
-                <li><strong>Exchange:</strong> Built-in crypto exchange</li>
-                <li><strong>Fees:</strong> No extra fees for crypto transactions</li>
-              </ul>
-            </div>
-          </div>
-          {/* FAQ Section */}
-          <div className="mt-8 flex justify-center">
-            <div className="w-full max-w-2xl bg-purple-900/80 rounded-2xl p-6 shadow-lg">
-              <h2 className="text-yellow-300 text-xl font-bold mb-2 text-center uppercase">Frequently Asked Questions about Rakoocasino</h2>
-              <ul className="space-y-2 text-white/90">
-                <li><strong>Is Rakoocasino trustworthy?</strong> Yes, Rakoocasino is a new but reliable crypto casino with fast payouts, a valid license, and a helpful support team.</li>
-                <li><strong>Which cryptocurrencies are accepted at Rakoocasino?</strong> You can deposit and withdraw using Bitcoin (BTC), Ethereum (ETH), Litecoin (LTC), Tether (USDT), and Ripple (XRP).</li>
-                <li><strong>What is the welcome bonus at Rakoocasino?</strong> New players receive an attractive welcome bonus. Check the site for the latest offer.</li>
-              </ul>
-            </div>
-          </div>
-          {/* CTA Button */}
-          <div className="my-8 flex justify-center">
-            <a
-              href="https://rakoolink.com/ha03e587d"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              className="block w-full max-w-2xl text-center bg-yellow-400 hover:bg-yellow-300 text-purple-900 font-bold py-4 px-8 text-lg rounded-xl shadow-lg transition-all"
-              style={{ minWidth: 'fit-content' }}
-            >
-              🎲 Claim your Rakoocasino bonus now!
-            </a>
-          </div>
-          {/* Casino Suggestions */}
-          <CasinoSuggestions />
-          {/* Responsible Gambling Disclaimer */}
-          <div className="mt-10 text-center text-xs text-white/60">
-            18+ | Gamble responsibly. Rakoocasino may not be available in all jurisdictions.
-          </div>
-          {/* Last updated */}
-          <div className="mt-4 text-center text-xs text-white/60">
-            Last updated: May 2025
+          <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10">
+            <span className="block text-yellow-400 text-lg font-semibold mb-2">Crypto Accepted</span>
+            <span className="text-white">{data.facts.cryptoAccepted}</span>
           </div>
         </div>
-      </main>
-    </>
+      </section>
+
+      {/* CTA with mascot */}
+      <section id="cta" className="mt-10 text-center flex flex-col items-center justify-center gap-4">
+        <img src="/mascot.png" alt="Mascot" className="w-12 h-12 mb-2" />
+        <h2 className="text-xl font-bold text-yellow-400">READY TO GET STARTED?</h2>
+        <p className="text-white">Sign up now and claim your Rakoocasino bonus!</p>
+        <a
+          href="https://rakoolink.com/ha03e587d"
+          className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-6 rounded-full shadow transition-all duration-300 ease-in-out hover:shadow-[0_0_15px_#ff0]"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Play at Rakoocasino
+        </a>
+      </section>
+    </div>
   );
 }

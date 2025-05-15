@@ -1,127 +1,183 @@
-import { getOgMetaForCasino } from "@/lib/ogMeta";
-import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
-import Head from "next/head";
 import type { Metadata } from "next";
 
-export const generateMetadata = async (): Promise<Metadata> => {
-  const og = getOgMetaForCasino("7bit");
+export const generateMetadata = (): Metadata => {
   return {
-    title: og.title,
-    description: og.description,
+    title: "7Bit Casino Review 2025 | Retro Vegas Crypto Casino",
+    description: "Read our 7Bit review: 7000+ games, retro Vegas vibes, fast crypto payouts, big bonuses. Trusted since 2014.",
+    alternates: {
+      canonical: "https://crypto-online-casino.com/crypto-casino-reviews/7bit",
+    },
     openGraph: {
-      title: og.title,
-      description: og.description,
-      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/7bit",
-      images: [{ url: og.image }],
+      title: "7Bit Casino Review 2025 | Retro Vegas Crypto Casino",
+      description: "Read our 7Bit review: 7000+ games, retro Vegas vibes, fast crypto payouts, big bonuses. Trusted since 2014.",
+      url: "https://crypto-online-casino.com/crypto-casino-reviews/7bit",
       type: "website",
+      images: [
+        {
+          url: "https://crypto-online-casino.com/og/7bit.png",
+          width: 1200,
+          height: 630,
+          alt: "7Bit Casino OG Image",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: og.title,
-      description: og.description,
-      images: [og.image],
+      title: "7Bit Casino Review 2025 | Retro Vegas Crypto Casino",
+      description: "Read our 7Bit review: 7000+ games, retro Vegas vibes, fast crypto payouts, big bonuses. Trusted since 2014.",
+      images: ["https://crypto-online-casino.com/og/7bit.png"],
     },
-    robots: "index, follow",
   };
 };
 
-export default function SevenBitReview() {
-  return (
-    <>
-      <Head>
-        <title>7Bit Casino Review (2025) – Crypto Bonussen & Spellen</title>
-        <meta name="description" content="Lees onze 2025 7Bit Casino review. Alles over bonussen, crypto games, uitbetalingen en unieke features." />
-      </Head>
-      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
-      <Breadcrumbs
-        items={[
-          { name: "Home", href: "/" },
-          { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-          { name: "7Bit Casino", href: "/crypto-casino-reviews/7bit" }
-        ]}
-      />
-      <CasinoReviewTemplate
-        logo="/logos/7bit.png"
-        casinoName="7BIT CASINO"
-        rating={4.0}
-        ratingStars="★★★★☆"
-        affiliateUrl="https://www.7bitcasino.com/a/b8c1d2e3f4"
-        affiliateLabel="Play at 7Bit Casino"
-        introText="7Bit Casino blends retro charm with modern crypto tech, creating a colorful playground for slot lovers and bonus chasers."
-        reviewText={`7Bit Casino is one of those rare platforms that knows exactly what it is — and leans all-in. From the pixel-style logo to the vintage arcade vibes, the whole site feels like stepping into a neon-lit time machine. But don’t let the retro aesthetics fool you — under the hood, this casino runs like a finely-tuned crypto machine.<br><br>There are over 7,000 games, from classic slots to provably fair titles, and crypto is king: BTC, LTC, ETH, DOGE, and more are accepted with lightning-fast payouts. The welcome bonus is one of the most generous in the industry, especially if you deposit using crypto.<br><br>7Bit shines when it comes to slot tournaments, daily cashback, and VIP levels that reward loyal players. However, live casino fans and sports bettors might find the offering a little too slot-heavy.`}
-        pros={[
-          "Huge variety of crypto slots & games",
-          "Generous welcome bonus",
-          "Daily cashback & reloads",
-          "Retro arcade theme"
-        ]}
-        cons={[
-          "No sportsbook",
-          "Not ideal for live table players"
-        ]}
-        highlights={[
-          "7,000+ crypto-friendly games",
-          "Top-tier bonuses & free spins",
-          "Provably fair titles available",
-          "Bitcoin, Litecoin, Ethereum, DOGE & more"
-        ]}
-      >
-        {/* CRYPTO & PAYMENT OPTIONS */}
-        <div className="mt-8 bg-purple-900/80 rounded-xl p-6 shadow-lg">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-2xl">💸</span>
-            <span className="text-purple-100 font-bold text-xl">CRYPTO & PAYMENT OPTIONS</span>
-          </div>
-          <ul className="list-disc list-inside text-purple-100 space-y-2">
-            <li>
-              <span className="font-bold">Crypto Accepted:</span> Bitcoin (BTC), Ethereum (ETH), Litecoin (LTC), Dogecoin (DOGE), and more
-            </li>
-            <li>
-              <span className="font-bold">Fast Withdrawals:</span> Crypto payouts processed within minutes
-            </li>
-            <li>
-              <span className="font-bold">No Extra Fees:</span> 7Bit Casino does not charge additional fees for crypto transactions
-            </li>
-          </ul>
-        </div>
+import React from "react";
+
+// --- EDIT THIS DATA FOR 7BIT ONLY ---
+const data = {
+  introduction: `7Bit Casino is a leading crypto-focused online casino established in 2014. Known for its retro Vegas theme and wide acceptance of cryptocurrencies, 7Bit offers players a seamless blend of classic casino vibes and modern gaming technology. The platform is licensed and caters to a global audience, with fast payouts and a reputation for fairness.`,
+  bonuses: `New players at 7Bit Casino enjoy a generous welcome package: up to 1.5 BTC or €500 plus 100 free spins across the first four deposits. Regular promotions include daily cashback, free spins, weekend reloads, and a rewarding VIP program with exclusive perks for loyal players.`,
+  games: `7Bit features over 7,000 games from top providers like BGaming, NetEnt, Betsoft, Pragmatic Play, and Evolution. The selection includes slots, live casino, table games, jackpot titles, and provably fair crypto games. The search and filter tools make it easy to find your favorites.`,
+  support: `Customer support is available 24/7 via live chat and email. The support team is responsive and knowledgeable, helping with everything from account issues to bonus queries. The casino also provides an extensive FAQ for self-service assistance.`,
+  mobile: `7Bit Casino is fully optimized for mobile play, with a responsive website that works smoothly on both iOS and Android devices. All features, including deposits, gameplay, and withdrawals, are accessible on mobile without needing an app.`,
+  security: `7Bit operates under a Curacao eGaming license and uses advanced SSL encryption to secure player data. The site promotes responsible gambling and ensures fair play through provably fair technology and independent audits.`,
+  payments: `7Bit Casino specializes in crypto payments, supporting Bitcoin (BTC), Ethereum (ETH), Litecoin (LTC), Dogecoin (DOGE), and Tether (USDT). Fiat options such as credit cards and e-wallets are also available. Deposits and withdrawals are fast, secure, and usually processed within minutes.`,
+  verdict: `7Bit Casino combines the nostalgia of classic Vegas with the power of crypto gaming. With thousands of games, generous bonuses, and a strong reputation for security and speed, it’s a top choice for both new and experienced crypto casino players.`,
+  facts: {
+    founded: "2014",
+    license: "Curacao eGaming",
+    cryptoAccepted: "BTC, ETH, LTC, DOGE, USDT",
+  },
+};
+
+const SevenBitReview = () => (
+  <div className="max-w-screen-xl mx-auto py-10 px-4 bg-dark text-white">
+    {/* First Impressions */}
+    <section id="first-impressions" className="mb-8">
+      <h2 className="text-2xl font-bold mb-4">First Impressions</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <img src="/screenshots/7bit1.jpg" alt="Screenshot 1" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <img src="/screenshots/7bit2.jpg" alt="Screenshot 2" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <img src="/screenshots/7bit3.jpg" alt="Screenshot 3" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <img src="/screenshots/7bit4.jpg" alt="Screenshot 4" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+      </div>
+      <div className="text-center text-sm text-gray-300 mt-2">
+        Screenshots are indicative and show what a typical 7Bit Casino experience looks like.
+      </div>
+    </section>
+
+    {/* Title Bar */}
+    <div className="bg-gradient-to-r from-purple-900 to-purple-700 border-2 border-pink-500 shadow-[0_0_20px_#ff00ff] rounded-xl px-6 py-4 mb-8 grid grid-cols-1 sm:grid-cols-3 items-center">
+      {/* Logo left */}
+      <div className="flex justify-start items-center mb-4 sm:mb-0">
+        <img src="/logos/7bit.png" alt="7Bit logo" className="w-16 h-auto mr-4" />
+      </div>
+      {/* Title centered */}
+      <div className="flex justify-center items-center">
+        <h2 className="text-4xl font-bold text-white text-center">7BIT CASINO REVIEW</h2>
+        <img src="/mascot.png" alt="Mascot" className="w-16 h-16 ml-4 animate-pulse" />
+      </div>
+      {/* Button right */}
+      <div className="flex justify-end items-center mt-4 sm:mt-0">
         <a
           href="https://www.7bitcasino.com/a/b8c1d2e3f4"
-          className="mt-8 block bg-yellow-400 hover:bg-yellow-300 text-center text-purple-900 font-bold py-3 rounded-lg shadow-lg transition-all duration-300 text-lg"
           target="_blank"
-          rel="noopener noreferrer nofollow"
+          rel="noopener noreferrer"
+          className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-4 py-2 rounded-full shadow transition-all duration-300 ease-in-out hover:shadow-[0_0_15px_#ff0] whitespace-nowrap"
         >
-          🎰 Claim your 7Bit bonus now!
+          Play at 7Bit
         </a>
-        <p className="text-center text-xs text-gray-200 mt-3">
-          18+ | Gamble responsibly. 7Bit Casino may not be available in all jurisdictions.
+      </div>
+    </div>
+
+    {/* Info grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      <section id="introduction" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Crown.svg" alt="Crown icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Introduction</h3>
+        <p className="text-white">{data.introduction}</p>
+      </section>
+      <section id="bonuses" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Bonus.svg" alt="Bonus icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Bonuses & Promotions</h3>
+        <p className="text-white">{data.bonuses}</p>
+      </section>
+      <section id="games" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Poker.svg" alt="Poker icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Games & Providers</h3>
+        <p className="text-white">{data.games}</p>
+      </section>
+      <section id="support" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Support.svg" alt="Support icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Customer Support</h3>
+        <p className="text-white">{data.support}</p>
+      </section>
+      <section id="mobile" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Smartphone.svg" alt="Smartphone icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Mobile Experience</h3>
+        <p className="text-white">{data.mobile}</p>
+      </section>
+      <section id="security" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Shield.svg" alt="Shield icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Security & Licensing</h3>
+        <p className="text-white">{data.security}</p>
+      </section>
+      <section className="p-6 bg-[#0e1a46] rounded-xl border border-yellow-500 shadow-md text-white">
+        <img src="/casino-icons/Credit.svg" alt="Credit icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Crypto Supported</h3>
+        <p>
+          7Bit Casino accepts a variety of cryptocurrencies and digital payment methods for convenient and secure transactions. Supported coins include:
         </p>
-      </CasinoReviewTemplate>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(getReviewStructuredData({
-            name: "7Bit Casino",
-            reviewRating: 4.7,
-            reviewCount: 801,
-            url: "https://www.crypto-online-casino.com/crypto-casino-reviews/7bit",
-            image: "https://www.crypto-online-casino.com/logos/7bit.png",
-            description: "7Bit Casino is een populair crypto casino met snelle betalingen, duizenden spellen en royale bonussen. Lees onze volledige review!"
-          }))
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(getBreadcrumbListStructuredData([
-            { name: "Home", href: "/" },
-            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-            { name: "7Bit Casino", href: "/crypto-casino-reviews/7bit" }
-          ], "https://www.crypto-online-casino.com"))
-        }}
-      />
-    </>
-  );
-}
+        <div className="flex gap-4 items-center mt-4 flex-wrap">
+          <img src="/icons/btc.svg" alt="Bitcoin" className="w-8 h-8" title="Bitcoin (BTC)" />
+          <img src="/icons/eth.svg" alt="Ethereum" className="w-8 h-8" title="Ethereum (ETH)" />
+          <img src="/icons/ltc.svg" alt="Litecoin" className="w-8 h-8" title="Litecoin (LTC)" />
+          <img src="/icons/doge.svg" alt="Dogecoin" className="w-8 h-8" title="Dogecoin (DOGE)" />
+          <img src="/icons/usdt.svg" alt="Tether" className="w-8 h-8" title="Tether (USDT)" />
+        </div>
+        <p className="mt-4">
+          These options enable fast deposits and withdrawals with low fees. Fiat alternatives like credit cards and e-wallets are also available.
+        </p>
+      </section>
+      <section id="verdict" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Trophy.svg" alt="Trophy icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Final Verdict</h3>
+        <p className="text-white">{data.verdict}</p>
+      </section>
+    </div>
+
+    {/* At a Glance */}
+    <section id="at-a-glance" className="mb-8">
+      <h2 className="text-2xl font-bold mb-3 text-white">At a Glance</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10 flex flex-col justify-between h-24 text-center">
+          <span className="block text-yellow-400 text-lg font-semibold mb-2">Founded</span>
+          <span className="text-white">{data.facts.founded}</span>
+        </div>
+        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10 flex flex-col justify-between h-24 text-center">
+          <span className="block text-yellow-400 text-lg font-semibold mb-2">License</span>
+          <span className="text-white">{data.facts.license}</span>
+        </div>
+        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10 flex flex-col justify-between h-24 text-center">
+          <span className="block text-yellow-400 text-lg font-semibold mb-2">Crypto Accepted</span>
+          <span className="text-white">{data.facts.cryptoAccepted}</span>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA with mascot */}
+    <section id="cta" className="mt-10 text-center flex flex-col items-center justify-center gap-4">
+      <img src="/mascot.png" alt="Mascot" className="w-12 h-12 mb-2" />
+      <h2 className="text-xl font-bold text-yellow-400">READY TO GET STARTED?</h2>
+      <a
+        href="https://www.7bitcasino.com/a/b8c1d2e3f4"
+        className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 px-6 rounded-xl shadow-lg hover:scale-105 transition-transform"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Play at 7Bit
+      </a>
+    </section>
+  </div>
+);
+
+export default SevenBitReview;

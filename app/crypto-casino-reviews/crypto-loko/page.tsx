@@ -1,127 +1,184 @@
-import { getOgMetaForCasino } from "@/lib/ogMeta";
-import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import CasinoReviewTemplate from "@/templates/CasinoReviewTemplate";
-import Head from "next/head";
 import type { Metadata } from "next";
 
-export const generateMetadata = async (): Promise<Metadata> => {
-  const og = getOgMetaForCasino("crypto-loko");
+export const generateMetadata = (): Metadata => {
   return {
-    title: og.title,
-    description: og.description,
+    title: "Crypto Loko Casino Review 2025 | Neon Crypto Casino & Fast Payouts",
+    description: "Read our Crypto Loko review: neon design, instant crypto payouts, 100s of games, and big bonuses. Trusted, mobile-friendly & secure.",
+    alternates: {
+      canonical: "https://crypto-online-casino.com/crypto-casino-reviews/crypto-loko",
+    },
     openGraph: {
-      title: og.title,
-      description: og.description,
-      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/crypto-loko",
-      images: [{ url: og.image }],
+      title: "Crypto Loko Casino Review 2025 | Neon Crypto Casino & Fast Payouts",
+      description: "Read our Crypto Loko review: neon design, instant crypto payouts, 100s of games, and big bonuses. Trusted, mobile-friendly & secure.",
+      url: "https://crypto-online-casino.com/crypto-casino-reviews/crypto-loko",
       type: "website",
+      images: [
+        {
+          url: "https://crypto-online-casino.com/og/crypto-loko.png",
+          width: 1200,
+          height: 630,
+          alt: "Crypto Loko Casino OG Image",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: og.title,
-      description: og.description,
-      images: [og.image],
+      title: "Crypto Loko Casino Review 2025 | Neon Crypto Casino & Fast Payouts",
+      description: "Read our Crypto Loko review: neon design, instant crypto payouts, 100s of games, and big bonuses. Trusted, mobile-friendly & secure.",
+      images: ["https://crypto-online-casino.com/og/crypto-loko.png"],
     },
-    robots: "index, follow",
   };
 };
 
-export default function CryptoLokoReview() {
-  return (
-    <>
-      <Head>
-        <title>Crypto Loko Casino Review (2025) – Crypto Bonussen & Spellen</title>
-        <meta name="description" content="Lees onze 2025 Crypto Loko review. Alles over crypto bonussen, games en unieke features." />
-      </Head>
-      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
-      <Breadcrumbs
-        items={[
-          { name: "Home", href: "/" },
-          { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-          { name: "Crypto Loko Casino", href: "/crypto-casino-reviews/crypto-loko" }
-        ]}
-      />
-      <CasinoReviewTemplate
-        logo="/logos/cryptoloko.png"
-        casinoName="CRYPTO LOKO"
-        rating={4.2}
-        ratingStars="★★★★☆"
-        affiliateUrl="https://cryptolokolink.com/click/77/441/6060/1"
-        affiliateLabel="Play at Crypto Loko"
-        introText="Crypto Loko Casino brings the energy with wild crypto slots, massive bonuses, and lightning-fast Bitcoin payouts – perfect for crypto thrill-seekers. This vibrant online casino offers everything from high-volatility games to secure crypto payments, all wrapped in a unique Loko experience."
-        reviewText={`Crypto Loko makes no apologies for its bold, in-your-face style. From the moment you land on the site, it’s clear: this casino is here to entertain. Flashy fonts, colorful graphics, and massive bonus banners dominate the screen — and behind it all? A solid crypto gaming experience.<br><br>The platform is mobile-friendly and quick to navigate, offering a decent range of slots, video poker, and classic casino games. While it may not host 10,000+ titles, what it <strong>does</strong> offer runs smoothly and comes from trusted providers.<br><br>Crypto Loko supports Bitcoin and other major coins, with fast payouts and responsive support. The welcome bonus is often paired with <strong>free spins</strong> and <strong>daily chip reloads</strong>, keeping players engaged.<br><br>It’s not for the faint-hearted — but if you’re looking for a fun, energetic, crypto-powered playground, Crypto Loko might just be your match.`}
-        pros={[
-          "Big crypto bonuses + free spins",
-          "Fast signup & clean UI",
-          "Daily reload chip offers",
-          "Supports BTC & other cryptos"
-        ]}
-        cons={[
-          "No sportsbook",
-          "A bit “too loud” for some players"
-        ]}
-        highlights={[
-          "Welcome bonuses with crypto deposit",
-          "Mobile-optimized layout",
-          "Good user ratings",
-          "High RTP slots"
-        ]}
-      >
-        {/* CRYPTO & PAYMENT OPTIONS */}
-        <div className="mt-8 bg-purple-900/80 rounded-xl p-6 shadow-lg">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-2xl">💸</span>
-            <span className="text-purple-100 font-bold text-xl">CRYPTO & PAYMENT OPTIONS</span>
-          </div>
-          <ul className="list-disc list-inside text-purple-100 space-y-2">
-            <li>
-              <span className="font-bold">Crypto Accepted:</span> Bitcoin (BTC) and other major coins
-            </li>
-            <li>
-              <span className="font-bold">Fast Withdrawals:</span> Crypto payouts typically processed within 24 hours
-            </li>
-            <li>
-              <span className="font-bold">No Extra Fees:</span> Crypto Loko does not charge additional fees for crypto transactions
-            </li>
-          </ul>
-        </div>
+import React from "react";
+
+const data = {
+  introduction: `Crypto Loko is a vibrant online casino with a neon aesthetic, focusing on crypto-friendly gaming and instant transactions. Launched in 2022, it quickly gained popularity for its unique design, fast payouts, and rewarding promotions.`,
+  bonuses: `New players at Crypto Loko enjoy a generous welcome package with matched deposits and free spins. Regular reload bonuses, daily offers, and a loyalty program provide ongoing value for active players.`,
+  games: `Crypto Loko offers a broad selection of slots, table games, and live casino options from leading providers. The platform is known for its fair games, frequent new releases, and easy navigation.`,
+  support: `Customer support is available 24/7 via live chat and email. The support team is responsive and knowledgeable, ensuring players get assistance whenever needed.`,
+  mobile: `Crypto Loko is fully optimized for mobile play, allowing users to access all games and features directly from their smartphone or tablet browsers.`,
+  security: `The casino is licensed and uses advanced SSL encryption to keep player data safe. Crypto Loko is committed to responsible gaming and transparent operations.`,
+  payments: `Crypto Loko specializes in crypto payments, supporting Bitcoin, Ethereum, Litecoin, and more. Deposits and withdrawals are processed instantly, with no extra fees.`,
+  verdict: `With its modern design, crypto focus, and rewarding bonuses, Crypto Loko is a top pick for players seeking a fresh and secure online casino experience.`,
+  facts: {
+    founded: "2022",
+    license: "Curacao",
+    cryptoAccepted: "BTC, ETH, LTC, BCH, DOGE, USDT",
+  },
+};
+
+const CryptoLokoReview = () => (
+  <div className="max-w-screen-xl mx-auto py-10 px-4 bg-dark text-white">
+    {/* First Impressions */}
+    <section id="first-impressions" className="mb-8">
+      <h2 className="text-2xl font-bold mb-4">First Impressions</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <img src="/screenshots/crypto-loko1.jpg" alt="Screenshot 1" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <img src="/screenshots/crypto-loko2.jpg" alt="Screenshot 2" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <img src="/screenshots/crypto-loko3.jpg" alt="Screenshot 3" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <img src="/screenshots/crypto-loko4.jpg" alt="Screenshot 4" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+      </div>
+      <div className="text-center text-sm text-gray-300 mt-2">
+        Screenshots are indicative and show what a typical Crypto Loko experience looks like.
+      </div>
+    </section>
+
+    {/* Title Bar */}
+    <div className="bg-gradient-to-r from-purple-900 to-purple-700 border-2 border-pink-500 shadow-[0_0_20px_#ff00ff] rounded-xl px-6 py-4 mb-8 grid grid-cols-1 sm:grid-cols-3 items-center">
+      {/* Logo left */}
+      <div className="flex justify-start items-center mb-4 sm:mb-0">
+        <img src="/logos/crypto-loko.png" alt="Crypto Loko logo" className="w-16 h-auto mr-4" />
+      </div>
+      {/* Title centered */}
+      <div className="flex justify-center items-center">
+        <h2 className="text-4xl font-bold text-white text-center">CRYPTO LOKO REVIEW</h2>
+        <img src="/mascot.png" alt="Mascot" className="w-16 h-16 ml-4 animate-pulse" />
+      </div>
+      {/* Button right */}
+      <div className="flex justify-end items-center mt-4 sm:mt-0">
         <a
           href="https://cryptolokolink.com/click/77/441/6060/1"
-          className="mt-8 block bg-yellow-400 hover:bg-yellow-300 text-center text-purple-900 font-bold py-3 rounded-lg shadow-lg transition-all duration-300 text-lg"
           target="_blank"
-          rel="noopener noreferrer nofollow"
+          rel="noopener noreferrer"
+          className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-4 py-2 rounded-full shadow transition-all duration-300 ease-in-out hover:shadow-[0_0_15px_#ff0] whitespace-nowrap"
         >
-          🎯 Go Loko – Play now
+          Play at Crypto Loko
         </a>
-        <p className="text-center text-xs text-gray-200 mt-3">
-          18+ | Gamble responsibly. Crypto Loko may not be available in all jurisdictions.
+      </div>
+    </div>
+
+    {/* Info grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      <section id="introduction" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Crown.svg" alt="Crown icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Introduction</h3>
+        <p className="text-white">{data.introduction}</p>
+      </section>
+      <section id="bonuses" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Bonus.svg" alt="Bonus icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Bonuses & Promotions</h3>
+        <p className="text-white">{data.bonuses}</p>
+      </section>
+      <section id="games" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Poker.svg" alt="Poker icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Games & Providers</h3>
+        <p className="text-white">{data.games}</p>
+      </section>
+      <section id="support" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Support.svg" alt="Support icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Customer Support</h3>
+        <p className="text-white">{data.support}</p>
+      </section>
+      <section id="mobile" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Smartphone.svg" alt="Smartphone icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Mobile Experience</h3>
+        <p className="text-white">{data.mobile}</p>
+      </section>
+      <section id="security" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Shield.svg" alt="Shield icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Security & Licensing</h3>
+        <p className="text-white">{data.security}</p>
+      </section>
+      <section className="p-6 bg-[#0e1a46] rounded-xl border border-yellow-500 shadow-md text-white">
+        <img src="/casino-icons/Credit.svg" alt="Credit icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Crypto Supported</h3>
+        <p>
+          Crypto Loko supports a variety of cryptocurrencies and digital payment methods for convenient and secure transactions. Supported coins include:
         </p>
-      </CasinoReviewTemplate>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(getReviewStructuredData({
-            name: "Crypto Loko",
-            reviewRating: 4.1,
-            reviewCount: 205,
-            url: "https://www.crypto-online-casino.com/crypto-casino-reviews/crypto-loko",
-            image: "https://www.crypto-online-casino.com/logos/crypto-loko.png",
-            description: "Crypto Loko is een kleurrijk crypto casino met snelle betalingen, leuke bonussen en een uniek spelaanbod. Lees onze volledige review!"
-          }))
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(getBreadcrumbListStructuredData([
-            { name: "Home", href: "/" },
-            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-            { name: "Crypto Loko Casino", href: "/crypto-casino-reviews/crypto-loko" }
-          ], "https://www.crypto-online-casino.com"))
-        }}
-      />
-    </>
-  );
-}
+        <div className="flex gap-4 items-center mt-4 flex-wrap">
+          <img src="/icons/btc.svg" alt="Bitcoin" className="w-8 h-8" title="Bitcoin (BTC)" />
+          <img src="/icons/eth.svg" alt="Ethereum" className="w-8 h-8" title="Ethereum (ETH)" />
+          <img src="/icons/ltc.svg" alt="Litecoin" className="w-8 h-8" title="Litecoin (LTC)" />
+          <img src="/icons/bch.svg" alt="Bitcoin Cash" className="w-8 h-8" title="Bitcoin Cash (BCH)" />
+          <img src="/icons/doge.svg" alt="Dogecoin" className="w-8 h-8" title="Dogecoin (DOGE)" />
+          <img src="/icons/usdt.svg" alt="Tether" className="w-8 h-8" title="Tether (USDT)" />
+        </div>
+        <p className="mt-4">
+          These options enable fast deposits and withdrawals with low fees. No traditional banking required.
+        </p>
+      </section>
+      <section id="verdict" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Trophy.svg" alt="Trophy icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Final Verdict</h3>
+        <p className="text-white">{data.verdict}</p>
+      </section>
+    </div>
+
+    {/* At a Glance */}
+    <section id="at-a-glance" className="mb-8">
+      <h2 className="text-2xl font-bold mb-3 text-white">At a Glance</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10 flex flex-col justify-between h-24 text-center">
+          <span className="block text-yellow-400 text-lg font-semibold mb-2">Founded</span>
+          <span className="text-white">{data.facts.founded}</span>
+        </div>
+        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10 flex flex-col justify-between h-24 text-center">
+          <span className="block text-yellow-400 text-lg font-semibold mb-2">License</span>
+          <span className="text-white">{data.facts.license}</span>
+        </div>
+        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10 flex flex-col justify-between h-24 text-center">
+          <span className="block text-yellow-400 text-lg font-semibold mb-2">Crypto Accepted</span>
+          <span className="text-white">{data.facts.cryptoAccepted}</span>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA with mascot */}
+    <section id="cta" className="mt-10 text-center flex flex-col items-center justify-center gap-4">
+      <img src="/mascot.png" alt="Mascot" className="w-12 h-12 mb-2" />
+      <h2 className="text-xl font-bold text-yellow-400">READY TO GET STARTED?</h2>
+      <p className="text-white">Sign up now and claim your Crypto Loko bonus!</p>
+      <a
+        href="https://cryptolokolink.com/click/77/441/6060/1"
+        className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 px-6 rounded-xl shadow-lg hover:scale-105 transition-transform"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Play at Crypto Loko
+      </a>
+    </section>
+  </div>
+);
+
+export default CryptoLokoReview;

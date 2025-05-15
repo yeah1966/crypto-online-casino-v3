@@ -1,213 +1,179 @@
-import Link from "next/link";
-import CasinoSuggestions from "@/components/CasinoSuggestions";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import { getOgMetaForCasino } from "@/lib/ogMeta";
-import { getReviewStructuredData, getBreadcrumbListStructuredData } from "@/lib/structuredData";
 import type { Metadata } from "next";
 
-export const generateMetadata = async (): Promise<Metadata> => {
-  const og = getOgMetaForCasino("coolcatcasino");
+export const generateMetadata = (): Metadata => {
   return {
-    title: og.title,
-    description: og.description,
+    title: "CoolCat Casino Review 2025 | Classic RTG Slots & Bitcoin Accepted",
+    description: "Read our CoolCat Casino review: classic RTG slots, big bonuses, Bitcoin accepted, and 24/7 support. Trusted since 2002.",
+    alternates: {
+      canonical: "https://crypto-online-casino.com/crypto-casino-reviews/coolcatcasino",
+    },
     openGraph: {
-      title: og.title,
-      description: og.description,
-      url: "https://www.crypto-online-casino.com/crypto-casino-reviews/coolcatcasino",
-      images: [{ url: og.image }],
+      title: "CoolCat Casino Review 2025 | Classic RTG Slots & Bitcoin Accepted",
+      description: "Read our CoolCat Casino review: classic RTG slots, big bonuses, Bitcoin accepted, and 24/7 support. Trusted since 2002.",
+      url: "https://crypto-online-casino.com/crypto-casino-reviews/coolcatcasino",
       type: "website",
+      images: [
+        {
+          url: "https://crypto-online-casino.com/og/coolcatcasino.png",
+          width: 1200,
+          height: 630,
+          alt: "CoolCat Casino OG Image",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: og.title,
-      description: og.description,
-      images: [og.image],
+      title: "CoolCat Casino Review 2025 | Classic RTG Slots & Bitcoin Accepted",
+      description: "Read our CoolCat Casino review: classic RTG slots, big bonuses, Bitcoin accepted, and 24/7 support. Trusted since 2002.",
+      images: ["https://crypto-online-casino.com/og/coolcatcasino.png"],
     },
-    robots: "index, follow",
   };
 };
 
-export default function CoolCatCasinoReview() {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            getReviewStructuredData({
-              name: "Cool Cat Casino",
-              reviewRating: 3.8,
-              reviewCount: 312,
-              url: "https://www.crypto-online-casino.com/crypto-casino-reviews/coolcatcasino",
-              image: "https://www.crypto-online-casino.com/logos/coolcatcasino.png",
-              description: "Cool Cat Casino is a classic American online casino with a vintage Vegas vibe, big crypto bonuses, and a loyal player base."
-            })
-          )
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(getBreadcrumbListStructuredData([
-            { name: "Home", href: "/" },
-            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-            { name: "Cool Cat Casino", href: "/crypto-casino-reviews/coolcatcasino" }
-          ], "https://www.crypto-online-casino.com"))
-        }}
-      />
-      <div className="fixed inset-0 -z-20 bg-[url('/images/crypto-casino-online.png')] bg-cover bg-no-repeat" aria-hidden="true" />
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black/40 via-black/20 to-black/60 backdrop-blur-[2px]" aria-hidden="true" />
-      <main className="relative z-10 min-h-screen pt-1 pb-16 px-4 text-white">
-        <Breadcrumbs
-          items={[
-            { name: "Home", href: "/" },
-            { name: "Casino Reviews", href: "/crypto-casino-reviews" },
-            { name: "Cool Cat Casino", href: "/crypto-casino-reviews/coolcatcasino" }
-          ]}
-        />
-        <div className="max-w-3xl mx-auto bg-black/60 rounded-2xl shadow-2xl p-8 relative border-2 border-transparent bg-gradient-to-br from-[#241f6b]/90 via-black/70 to-pink-900/60 before:content-[''] before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none before:z-10 before:bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,0,0.07)_0,transparent_60%),radial-gradient(circle_at_80%_80%,rgba(255,0,200,0.09)_0,transparent_70%)]" style={{boxShadow: '0 0 32px 0 rgba(255, 0, 200, 0.18), 0 0 8px 0 #fff2'}}>
-          {/* HEADER */}
-          <div className="flex flex-col md:flex-row items-center md:items-start mb-6 gap-6">
-            {/* Linkerkant: logo, rating, naam, button */}
-            <div className="flex flex-col items-center md:items-start gap-2 min-w-[180px] md:min-w-[220px]">
-              <img src="/logos/coolcatcasino.png" alt="Cool Cat Casino Logo" width={96} height={96} className="rounded-xl bg-white shadow-lg mb-1" />
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-yellow-300 text-2xl">★★★★☆</span>
-                <span className="text-white/70 text-sm">3.8/5</span>
-              </div>
-              <h1 className="text-3xl font-extrabold text-yellow-300 drop-shadow mb-1 text-center md:text-left">COOL CAT CASINO</h1>
-              <a
-                href="https://www.coolcatlinks.com/click/7/3936/15512/1"
-                className="inline-block mt-2 px-3 py-1.5 bg-yellow-300 text-blue-900 font-bold rounded-full text-sm shadow hover:bg-blue-700 hover:text-white transition-all border border-yellow-400 hover:border-blue-700"
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                style={{ minWidth: 'fit-content' }}
-              >
-                🟡 Visit Cool Cat Casino
-              </a>
-            </div>
-            {/* Rechterkant: tekst, uitgelijnd met rating */}
-            <div className="flex-1 flex items-start justify-center">
-              <div className="mt-[40px] md:mt-[40px] w-full">
-                <p className="text-blue-200 text-lg font-semibold text-center md:text-left max-w-xl">
-                  Cool Cat Casino is a veteran name in online gambling, known for its vintage Vegas style and generous promotions. While it may look classic, it accepts crypto and delivers fast-paced fun with slots and table games.<br /><br />
-                  Players looking for no-nonsense casino action with proven games and crypto options will feel right at home. Despite its retro design, Cool Cat is still alive and kicking, with regular bonuses and tournaments to keep players engaged.
-                </p>
-              </div>
-            </div>
-          </div>
+import React from "react";
 
-          {/* OUR REVIEW */}
-          <div className="bg-white/5 rounded-2xl p-6 shadow-lg mb-6">
-            <h2 className="text-yellow-400 text-xl font-bold mb-2">OUR REVIEW</h2>
-            <p className="text-white/90">
-              Cool Cat Casino blends old-school charm with modern rewards. The interface is simple, the games are quick to load, and the overall vibe is nostalgic — but that’s what gives it its appeal.<br /><br />
-              Slot fans will find plenty of choices from RealTime Gaming (RTG), including progressive jackpots and unique bonus rounds. Table game lovers aren’t left out either, with blackjack, baccarat, and roulette all available in crypto-friendly formats.<br /><br />
-              Where Cool Cat really shines is in its bonus department: new players are greeted with a large match bonus, and regulars get ongoing offers via email and promotions.<br /><br />
-              If you’re into casinos with a retro soul and modern payment options, Cool Cat Casino is a hidden gem worth a spin.
-            </p>
-          </div>
+const data = {
+  introduction: `CoolCat Casino is a well-established online casino, popular for its vibrant theme and extensive selection of slots and table games. Licensed and trusted, CoolCat focuses on providing a fun and secure gaming environment for players worldwide.`,
+  bonuses: `New players at CoolCat Casino are greeted with a generous welcome bonus, often including a large matched deposit and free spins. There are frequent reload bonuses, cashback offers, and a VIP program with exclusive rewards.`,
+  games: `CoolCat features a wide range of slots, table games, and specialty games from RealTime Gaming (RTG). The casino is known for its progressive jackpots and regular game releases, ensuring there’s always something new to try.`,
+  support: `Customer support is available 24/7 via live chat, phone, and email. The support team is friendly and efficient, and there’s a detailed help section for common questions and troubleshooting.`,
+  mobile: `CoolCat Casino is fully optimized for mobile, allowing players to enjoy games and manage their accounts on smartphones and tablets. No app download is required; the site works smoothly in any mobile browser.`,
+  security: `CoolCat Casino operates under a recognized license and uses SSL encryption to protect player data. The platform is committed to responsible gaming and regularly audited for fairness.`,
+  payments: `CoolCat supports a variety of payment methods, including credit cards, e-wallets, and select cryptocurrencies. Deposits and withdrawals are processed securely, with a focus on player convenience.`,
+  verdict: `With its lively design, generous promotions, and strong reputation, CoolCat Casino is a solid choice for players seeking a trustworthy and entertaining online casino experience.`,
+  facts: {
+    founded: "2002",
+    license: "Costa Rica",
+    cryptoAccepted: "BTC",
+  },
+};
 
-          {/* PROS & CONS */}
-          <div className="flex flex-col md:flex-row gap-6 mb-6">
-            <div className="flex-1 bg-green-900/80 rounded-2xl p-6 shadow-lg flex flex-col items-center">
-              <div className="flex items-center justify-center w-14 h-14 bg-green-700 rounded-xl mb-3">
-                <span className="text-3xl">✅</span>
-              </div>
-              <h2 className="text-green-300 text-xl font-bold mb-2">PROS</h2>
-              <ul className="list-disc list-inside space-y-1 text-white/90 text-left w-full">
-                <li>Big welcome bonuses for new players</li>
-                <li>Accepts Bitcoin and other cryptos</li>
-                <li>Easy-to-use classic interface</li>
-                <li>RealTime Gaming slots & table games</li>
-                <li>VIP program with monthly perks</li>
-              </ul>
-            </div>
-            <div className="flex-1 bg-pink-900/80 rounded-2xl p-6 shadow-lg flex flex-col items-center">
-              <div className="flex items-center justify-center w-14 h-14 bg-pink-700 rounded-xl mb-3">
-                <span className="text-3xl">❌</span>
-              </div>
-              <h2 className="text-pink-300 text-xl font-bold mb-2">CONS</h2>
-              <ul className="list-disc list-inside space-y-1 text-white/90 text-left w-full">
-                <li>Website design feels outdated</li>
-                <li>Some withdrawal methods can be slow</li>
-                <li>No sportsbook</li>
-              </ul>
-            </div>
-          </div>
+const CoolCatCasinoReview = () => (
+  <div className="max-w-screen-xl mx-auto py-10 px-4 bg-dark text-white">
+    {/* First Impressions */}
+    <section id="first-impressions" className="mb-8">
+      <h2 className="text-2xl font-bold mb-4">First Impressions</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <img src="/screenshots/coolcatcasino1.jpg" alt="Screenshot 1" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <img src="/screenshots/coolcatcasino2.jpg" alt="Screenshot 2" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <img src="/screenshots/coolcatcasino3.jpg" alt="Screenshot 3" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <img src="/screenshots/coolcatcasino4.jpg" alt="Screenshot 4" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+      </div>
+      <div className="text-center text-sm text-gray-300 mt-2">
+        Screenshots are indicative and show what a typical CoolCat Casino experience looks like.
+      </div>
+    </section>
 
-          {/* HIGHLIGHTS */}
-          <div className="flex items-start bg-yellow-900/80 rounded-2xl p-6 shadow-lg mb-6">
-            <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 bg-yellow-700 rounded-xl mr-5">
-              <span className="text-3xl">✨</span>
-            </div>
-            <div>
-              <h2 className="text-yellow-300 text-xl font-bold mb-2">HIGHLIGHTS</h2>
-              <ul className="list-disc list-inside space-y-1 text-white/90">
-                <li>Up to 330% welcome bonus for new users</li>
-                <li>Slot-heavy selection with daily competitions</li>
-                <li>Frequent free chip promos</li>
-                <li>Loyalty rewards & VIP events</li>
-                <li>US-friendly casino with 24/7 live chat</li>
-              </ul>
-            </div>
-          </div>
+    {/* Title Bar */}
+    <div className="bg-gradient-to-r from-purple-900 to-purple-700 border-2 border-pink-500 shadow-[0_0_20px_#ff00ff] rounded-xl px-6 py-4 mb-8 grid grid-cols-1 sm:grid-cols-3 items-center">
+      {/* Logo left */}
+      <div className="flex justify-start items-center mb-4 sm:mb-0">
+        <img src="/logos/coolcatcasino.png" alt="CoolCat Casino logo" className="w-16 h-auto mr-4" />
+      </div>
+      {/* Title centered */}
+      <div className="flex justify-center items-center">
+        <h2 className="text-4xl font-bold text-white text-center">COOLCAT CASINO REVIEW</h2>
+        <img src="/mascot.png" alt="Mascot" className="w-16 h-16 ml-4 animate-pulse" />
+      </div>
+      {/* Button right */}
+      <div className="flex justify-end items-center mt-4 sm:mt-0">
+        <a
+          href="https://www.coolcatlinks.com/click/7/3936/15512/1"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-4 py-2 rounded-full shadow transition-all duration-300 ease-in-out hover:shadow-[0_0_15px_#ff0] whitespace-nowrap"
+        >
+          Play at CoolCat
+        </a>
+      </div>
+    </div>
 
-          {/* CRYPTO & PAYMENT OPTIONS */}
-          <div className="flex items-start bg-purple-900/80 rounded-2xl p-6 shadow-lg mb-6">
-            <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 bg-purple-700 rounded-xl mr-5">
-              <span className="text-3xl">🪙</span>
-            </div>
-            <div>
-              <h2 className="text-purple-300 text-xl font-bold mb-2">Crypto & Payment Options</h2>
-              <ul className="space-y-2 text-white/90">
-                <li>
-                  <span className="text-lg mr-2">💱</span>
-                  <span className="font-bold">Crypto Deposits:</span> Players can deposit using Bitcoin and start playing instantly — no third-party wallet delays.
-                </li>
-                <li>
-                  <span className="text-lg mr-2">💳</span>
-                  <span className="font-bold">Traditional Payments:</span> Visa, Mastercard, Neteller, and more are available for fiat users.
-                </li>
-                <li>
-                  <span className="text-lg mr-2">🔒</span>
-                  <span className="font-bold">Security:</span> All transactions are SSL-encrypted and processed securely.
-                </li>
-                <li>
-                  <span className="text-lg mr-2">🪙</span>
-                  <span className="font-bold">Accepted Cryptocurrencies:</span> Bitcoin (BTC), Ethereum (ETH), Litecoin (LTC)
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* CALL TO ACTION BUTTONS */}
-          <div className="flex flex-col gap-4 mt-8 mb-4">
-            <a
-              href="https://www.coolcatlinks.com/click/7/3936/15512/1"
-              className="w-full inline-block text-center text-white bg-yellow-500 hover:bg-yellow-400 px-6 py-4 rounded-full transition font-bold shadow-lg text-lg"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
-              🟡 Claim your Cool Cat Casino bonus now!
-            </a>
-            <a
-              href="https://www.coolcatlinks.com/click/7/3936/15512/1"
-              className="w-full inline-block text-center text-white bg-blue-700 hover:bg-blue-600 px-6 py-4 rounded-full transition font-bold shadow-lg text-lg"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
-              🪙 Visit Cool Cat Casino
-            </a>
-          </div>
-
-          <p className="text-center text-xs text-gray-400 mt-2">
-            18+ | Gamble responsibly. Cool Cat Casino may not be available in all jurisdictions.
-          </p>
-
-          <CasinoSuggestions />
+    {/* Info grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      <section id="introduction" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Crown.svg" alt="Crown icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Introduction</h3>
+        <p className="text-white">{data.introduction}</p>
+      </section>
+      <section id="bonuses" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Bonus.svg" alt="Bonus icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Bonuses & Promotions</h3>
+        <p className="text-white">{data.bonuses}</p>
+      </section>
+      <section id="games" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Poker.svg" alt="Poker icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Games & Providers</h3>
+        <p className="text-white">{data.games}</p>
+      </section>
+      <section id="support" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Support.svg" alt="Support icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Customer Support</h3>
+        <p className="text-white">{data.support}</p>
+      </section>
+      <section id="mobile" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Smartphone.svg" alt="Smartphone icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Mobile Experience</h3>
+        <p className="text-white">{data.mobile}</p>
+      </section>
+      <section id="security" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Shield.svg" alt="Shield icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Security & Licensing</h3>
+        <p className="text-white">{data.security}</p>
+      </section>
+      <section className="p-6 bg-[#0e1a46] rounded-xl border border-yellow-500 shadow-md text-white">
+        <img src="/casino-icons/Credit.svg" alt="Credit icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Crypto Supported</h3>
+        <p>
+          CoolCat supports a variety of cryptocurrencies and digital payment methods for convenient and secure transactions. Supported coins include:
+        </p>
+        <div className="flex gap-4 items-center mt-4 flex-wrap">
+          <img src="/icons/btc.svg" alt="Bitcoin" className="w-8 h-8" title="Bitcoin (BTC)" />
         </div>
-      </main>
-    </>
-  );
-}
+        <p className="mt-4">
+          These options enable fast deposits and withdrawals with low fees. Traditional payment methods are also available for convenience.
+        </p>
+      </section>
+      <section id="verdict" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <img src="/casino-icons/Trophy.svg" alt="Trophy icon" className="w-14 h-14 mb-2" />
+        <h3 className="text-yellow-400 text-lg font-semibold mb-2">Final Verdict</h3>
+        <p className="text-white">{data.verdict}</p>
+      </section>
+    </div>
+
+    {/* At a Glance */}
+    <section id="at-a-glance" className="mb-8">
+      <h2 className="text-2xl font-bold mb-3 text-white">At a Glance</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10 flex flex-col justify-between h-24 text-center">
+          <span className="block text-yellow-400 text-lg font-semibold mb-2">Founded</span>
+          <span className="text-white">{data.facts.founded}</span>
+        </div>
+        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10 flex flex-col justify-between h-24 text-center">
+          <span className="block text-yellow-400 text-lg font-semibold mb-2">License</span>
+          <span className="text-white">{data.facts.license}</span>
+        </div>
+        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10 flex flex-col justify-between h-24 text-center">
+          <span className="block text-yellow-400 text-lg font-semibold mb-2">Crypto Accepted</span>
+          <span className="text-white">{data.facts.cryptoAccepted}</span>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA with mascot */}
+    <section id="cta" className="mt-10 text-center flex flex-col items-center justify-center gap-4">
+      <img src="/mascot.png" alt="Mascot" className="w-12 h-12 mb-2" />
+      <h2 className="text-xl font-bold text-yellow-400">READY TO GET STARTED?</h2>
+      <p className="text-white">Sign up now and claim your CoolCat Casino bonus!</p>
+      <a
+        href="https://www.coolcatlinks.com/click/7/3936/15512/1"
+        className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 px-6 rounded-xl shadow-lg hover:scale-105 transition-transform"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Play at CoolCat
+      </a>
+    </section>
+  </div>
+);
+
+export default CoolCatCasinoReview;
