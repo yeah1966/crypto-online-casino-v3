@@ -50,20 +50,25 @@ const data = {
 
 export default function RakoocasinoPage() {
   return (
-    <div className="max-w-screen-xl mx-auto py-10 px-4 bg-[#0a0f40] text-white">
-      {/* Hero Section */}
-      <section id="hero" className="mb-8">
-        <h1 className="text-4xl font-bold mb-4">Rakoocasino Review</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <img src="/screenshots/rakoocasino1.jpg" alt="Screenshot 1" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
-          <img src="/screenshots/rakoocasino2.jpg" alt="Screenshot 2" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
-          <img src="/screenshots/rakoocasino3.jpg" alt="Screenshot 3" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
-          <img src="/screenshots/rakoocasino4.jpg" alt="Screenshot 4" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
-        </div>
-        <div className="text-center text-sm text-[#1a2c8b] mt-2">
-          Screenshots are indicative and show what a typical Rakoocasino experience looks like.
-        </div>
-      </section>
+    <div
+      className="min-h-screen bg-cover bg-center text-white"
+      style={{
+        backgroundImage: "url('/images/crypto-casino-online.webp')",
+      }}
+    >
+      <div className="max-w-screen-xl mx-auto py-10 px-4 bg-black bg-opacity-70 rounded-2xl">
+        <section id="hero" className="mb-8">
+          <h1 className="text-4xl font-bold mb-4">Rakoocasino Review</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <img src="/screenshots/rakoocasino1.jpg" alt="Screenshot 1" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+            <img src="/screenshots/rakoocasino2.jpg" alt="Screenshot 2" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+            <img src="/screenshots/rakoocasino3.jpg" alt="Screenshot 3" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+            <img src="/screenshots/rakoocasino4.jpg" alt="Screenshot 4" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+          </div>
+          <div className="text-center text-sm text-[#1a2c8b] mt-2">
+            Screenshots are indicative and show what a typical Rakoocasino experience looks like.
+          </div>
+        </section>
 
       {/* Title Bar */}
       <div className="bg-gradient-to-r from-purple-900 to-purple-700 border-2 border-pink-500 shadow-[0_0_20px_#ff00ff] rounded-xl px-6 py-4 mb-8 grid grid-cols-1 sm:grid-cols-3 items-center">
@@ -91,37 +96,37 @@ export default function RakoocasinoPage() {
 
       {/* Info grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-        <section id="introduction" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <section id="introduction" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
           <img src="/casino-icons/Crown.svg" alt="Crown icon" className="w-14 h-14 mb-2" />
           <h3 className="text-yellow-400 text-lg font-semibold mb-2">Introduction</h3>
           <p className="text-white">{data.introduction}</p>
         </section>
-        <section id="bonuses" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <section id="bonuses" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
           <img src="/casino-icons/Bonus.svg" alt="Bonus icon" className="w-14 h-14 mb-2" />
           <h3 className="text-yellow-400 text-lg font-semibold mb-2">Bonuses & Promotions</h3>
           <p className="text-white">{data.bonuses}</p>
         </section>
-        <section id="games" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <section id="games" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
           <img src="/casino-icons/Poker.svg" alt="Poker icon" className="w-14 h-14 mb-2" />
           <h3 className="text-yellow-400 text-lg font-semibold mb-2">Games & Providers</h3>
           <p className="text-white">{data.games}</p>
         </section>
-        <section id="support" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <section id="support" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
           <img src="/casino-icons/Support.svg" alt="Support icon" className="w-14 h-14 mb-2" />
           <h3 className="text-yellow-400 text-lg font-semibold mb-2">Customer Support</h3>
           <p className="text-white">{data.support}</p>
         </section>
-        <section id="mobile" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <section id="mobile" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
           <img src="/casino-icons/Smartphone.svg" alt="Smartphone icon" className="w-14 h-14 mb-2" />
           <h3 className="text-yellow-400 text-lg font-semibold mb-2">Mobile Experience</h3>
           <p className="text-white">{data.mobile}</p>
         </section>
-        <section id="security" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <section id="security" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
           <img src="/casino-icons/Shield.svg" alt="Shield icon" className="w-14 h-14 mb-2" />
           <h3 className="text-yellow-400 text-lg font-semibold mb-2">Security & Licensing</h3>
           <p className="text-white">{data.security}</p>
         </section>
-        <section id="payments" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <section id="payments" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
           <img src="/casino-icons/Credit.svg" alt="Credit icon" className="w-14 h-14 mb-2" />
           <h3 className="text-yellow-400 text-lg font-semibold mb-2">Crypto Supported</h3>
           <p>
@@ -139,7 +144,7 @@ export default function RakoocasinoPage() {
             These options enable fast deposits and withdrawals with low fees. No traditional banking required.
           </p>
         </section>
-        <section id="verdict" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
+        <section id="verdict" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
           <img src="/casino-icons/Trophy.svg" alt="Trophy icon" className="w-14 h-14 mb-2" />
           <h3 className="text-yellow-400 text-lg font-semibold mb-2">Final Verdict</h3>
           <p className="text-white">{data.verdict}</p>
@@ -179,6 +184,7 @@ export default function RakoocasinoPage() {
           Play at Rakoocasino
         </a>
       </section>
+      </div>
     </div>
   );
 }

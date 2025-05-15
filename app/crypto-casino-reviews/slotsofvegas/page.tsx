@@ -49,8 +49,15 @@ const data = {
   },
 };
 
-const SlotsOfVegasReview = () => (
-  <div className="max-w-screen-xl mx-auto py-10 px-4 bg-dark text-white">
+export default function SlotsOfVegasPage() {
+  return (
+    <div
+      className="min-h-screen bg-cover bg-center text-white"
+      style={{
+        backgroundImage: "url('/images/crypto-casino-online.webp')",
+      }}
+    >
+      <div className="max-w-screen-xl mx-auto py-10 px-4 bg-black bg-opacity-70 rounded-2xl">
     {/* First Impressions */}
     <section id="first-impressions" className="mb-8">
       <h2 className="text-2xl font-bold mb-4">First Impressions</h2>
@@ -179,7 +186,7 @@ const SlotsOfVegasReview = () => (
         Play at Slots of Vegas
       </a>
     </section>
-  </div>
-);
-
-export default SlotsOfVegasReview;
+      </div>
+    </div>
+  );
+}

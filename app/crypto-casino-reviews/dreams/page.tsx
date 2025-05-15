@@ -48,8 +48,15 @@ const data = {
   },
 };
 
-const DreamsCasinoReview = () => (
-  <div className="max-w-screen-xl mx-auto py-10 px-4 bg-dark text-white">
+export default function DreamsCasinoPage() {
+  return (
+    <div
+      className="min-h-screen bg-cover bg-center text-white"
+      style={{
+        backgroundImage: "url('/images/crypto-casino-online.webp')",
+      }}
+    >
+      <div className="max-w-screen-xl mx-auto py-10 px-4 bg-black bg-opacity-70 rounded-2xl">
     {/* First Impressions */}
     <section id="first-impressions" className="mb-8">
       <h2 className="text-2xl font-bold mb-4">First Impressions</h2>
@@ -120,7 +127,7 @@ const DreamsCasinoReview = () => (
         <h3 className="text-yellow-400 text-lg font-semibold mb-2">Security & Licensing</h3>
         <p className="text-white">{data.security}</p>
       </section>
-      <section className="p-6 bg-[#0e1a46] rounded-xl border border-yellow-500 shadow-md text-white">
+      <section className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
         <img src="/casino-icons/Credit.svg" alt="Credit icon" className="w-14 h-14 mb-2" />
         <h3 className="text-yellow-400 text-lg font-semibold mb-2">Crypto Supported</h3>
         <p>
@@ -144,15 +151,15 @@ const DreamsCasinoReview = () => (
     <section id="at-a-glance" className="mb-8">
       <h2 className="text-2xl font-bold mb-3 text-white">At a Glance</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10 flex flex-col justify-between h-24 text-center">
+        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10">
           <span className="block text-yellow-400 text-lg font-semibold mb-2">Founded</span>
           <span className="text-white">{data.facts.founded}</span>
         </div>
-        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10 flex flex-col justify-between h-24 text-center">
+        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10">
           <span className="block text-yellow-400 text-lg font-semibold mb-2">License</span>
           <span className="text-white">{data.facts.license}</span>
         </div>
-        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10 flex flex-col justify-between h-24 text-center">
+        <div className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-500 rounded-xl p-6 text-white shadow-lg shadow-yellow-500/10">
           <span className="block text-yellow-400 text-lg font-semibold mb-2">Crypto Accepted</span>
           <span className="text-white">{data.facts.cryptoAccepted}</span>
         </div>
@@ -172,7 +179,7 @@ const DreamsCasinoReview = () => (
         Play at Dreams Casino
       </a>
     </section>
-  </div>
-);
-
-export default DreamsCasinoReview;
+      </div>
+    </div>
+  );
+}
