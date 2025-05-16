@@ -12,9 +12,7 @@ const mobileMainItems = menuItems.filter(item =>
     'Casino Reviews',
     'Guides',
     'Slots & Games',
-    'Blog',
-    'FAQ',
-    'About'
+    'More'
   ].includes(item.label)
 );
 

@@ -18,9 +18,28 @@ type CasinoReviewData = {
 
 interface CasinoReviewTemplateProps {
   data: CasinoReviewData;
+  logo?: string;
+  title?: string;
+  affiliateUrl?: string;
+  ctaText?: string;
+  screenshots?: string[];
 }
 
-const CasinoReviewTemplate: React.FC<CasinoReviewTemplateProps> = ({ data }) => {
+const CasinoReviewTemplate: React.FC<CasinoReviewTemplateProps> = ({ data, logo, title, affiliateUrl, ctaText, screenshots }) => {
+  // Default fallback values for backwards compatibility
+  const casinoLogo = logo || "/logos/bitstarz.png";
+  const casinoTitle = title || "BitStarz Casino Review";
+  const casinoAffiliateUrl = affiliateUrl || "https://bitstarz.com";
+  const casinoCtaText = ctaText || "Play at BitStarz";
+  const casinoScreenshots = screenshots && screenshots.length === 4
+    ? screenshots
+    : [
+        "/screenshots/1.jpg",
+        "/screenshots/2.jpg",
+        "/screenshots/3.jpg",
+        "/screenshots/4.jpg"
+      ];
+
   return (
     <div className="max-w-screen-xl mx-auto py-10 px-4 bg-dark text-white">
 
@@ -28,34 +47,36 @@ const CasinoReviewTemplate: React.FC<CasinoReviewTemplateProps> = ({ data }) => 
       <section id="first-impressions" className="mb-8">
         <h2 className="text-2xl font-bold mb-4">First Impressions</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <img src="/screenshots/1.jpg" alt="Screenshot 1" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
-          <img src="/screenshots/2.jpg" alt="Screenshot 2" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
-          <img src="/screenshots/3.jpg" alt="Screenshot 3" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
-          <img src="/screenshots/4.jpg" alt="Screenshot 4" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
-          <div className="bg-dark text-white rounded-xl p-4">
-          </div>
+          {casinoScreenshots.map((src, idx) => (
+            <img
+              key={src}
+              src={src}
+              alt={`Screenshot ${idx + 1}`}
+              className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105"
+            />
+          ))}
         </div>
       </section>
 
       <div className="bg-gradient-to-r from-purple-900 to-purple-700 border-2 border-pink-500 shadow-[0_0_20px_#ff00ff] rounded-xl px-6 py-4 mb-8 grid grid-cols-1 sm:grid-cols-3 items-center">
         {/* Logo links */}
         <div className="flex justify-start items-center mb-4 sm:mb-0">
-          <img src="/logos/bitstarz.png" alt="BitStarz logo" className="w-16 h-auto mr-4" />
+          <img src={casinoLogo} alt="Casino logo" className="w-16 h-auto mr-4" />
         </div>
         {/* Titel gecentreerd */}
         <div className="flex justify-center items-center">
-          <h2 className="text-4xl font-bold text-white text-center">BitStarz Casino Review</h2>
+          <h2 className="text-4xl font-bold text-white text-center">{casinoTitle}</h2>
           <img src="/mascot.png" alt="Mascot" className="w-16 h-16 ml-4 animate-pulse" />
         </div>
         {/* Button rechts */}
         <div className="flex justify-end items-center mt-4 sm:mt-0">
           <a
-            href="https://bitstarz.com"
+            href={casinoAffiliateUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-4 py-2 rounded-full shadow transition-all duration-300 ease-in-out hover:shadow-[0_0_15px_#ff0] whitespace-nowrap"
           >
-            Play at BitStarz
+            {casinoCtaText}
           </a>
         </div>
       </div>
@@ -142,19 +163,21 @@ const CasinoReviewTemplate: React.FC<CasinoReviewTemplateProps> = ({ data }) => 
 
       {/* CTA Section */}
       <section
-  id="cta"
-  className="mt-10 text-center flex flex-col items-center justify-center gap-4"
->
-  <img src="/mascot.png" alt="Mascot" className="w-12 h-12 mb-2" />
-  <h2 className="text-xl font-bold text-yellow-400">READY TO GET STARTED?</h2>
-  <p className="text-white">Placeholder for call-to-action text.</p>
-  <a
-    href="#"
-    className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 px-6 rounded-xl shadow-lg hover:scale-105 transition-transform"
-  >
-    CTA Button
-  </a>
-</section>
+        id="cta"
+        className="mt-10 text-center flex flex-col items-center justify-center gap-4"
+      >
+        <img src="/mascot.png" alt="Mascot" className="w-12 h-12 mb-2" />
+        <h2 className="text-xl font-bold text-yellow-400">Ready to play at {casinoTitle.replace(' Review', '')}?</h2>
+        <p className="text-white">Sign up now and claim your welcome bonus or check out all the games!</p>
+        <a
+          href={casinoAffiliateUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 px-6 rounded-xl shadow-lg hover:scale-105 transition-transform"
+        >
+          {casinoCtaText}
+        </a>
+      </section>
     </div>
   );
 };
