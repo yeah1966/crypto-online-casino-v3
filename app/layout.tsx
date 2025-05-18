@@ -35,16 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }
 }
 `}</script>
-       {/* Open Graph tags */}
-       <meta property="og:title" content="Crypto Online Casino | Vegas-style gambling meets crypto rewards" />
-       <meta property="og:description" content="Explore top-rated crypto casinos with thrilling bonuses, fast payouts, and a Las Vegas vibe. Welcome to Crypto Online Casino!" />
-       <meta property="og:image" content="https://crypto-online-casino.com/og/crypto-online-casino.png" />
-       <meta property="og:url" content="https://crypto-online-casino.com/" />
-       {/* Twitter card tags */}
-       <meta name="twitter:card" content="summary_large_image" />
-       <meta name="twitter:title" content="Crypto Online Casino | Vegas-style gambling meets crypto rewards" />
-       <meta name="twitter:description" content="Explore top-rated crypto casinos with thrilling bonuses, fast payouts, and a Las Vegas vibe. Welcome to Crypto Online Casino!" />
-       <meta name="twitter:image" content="https://crypto-online-casino.com/og/crypto-online-casino.png" />
+
       </head>
       <body className="bg-black text-white font-sans">
         <ClientLayout>{children}</ClientLayout>
