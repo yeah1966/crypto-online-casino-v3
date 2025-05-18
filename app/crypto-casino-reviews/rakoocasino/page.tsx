@@ -143,7 +143,7 @@ export default function RakoocasinoPage() {
           <p className="text-white text-lg md:text-xl mb-6 leading-relaxed">{data.mobile}</p>
         </section>
         <section id="security" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
-          <img src="/casino-icons/Security.svg" alt="Security icon" className="w-14 h-14 mb-4" />
+          <img src="/casino-icons/Shield.svg" alt="Security icon" className="w-14 h-14 mb-2" />
           <h3 className="text-yellow-400 text-2xl font-semibold mb-4">Security & Fairness</h3>
           <p className="text-white text-lg md:text-xl mb-6 leading-relaxed">{data.security}</p>
         </section>
