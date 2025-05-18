@@ -13,14 +13,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <meta name="ga-site-verification" content="D9g8tk-yLwOk8LVeD66C_5zc" />
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4CJL887NL"></script>
-        <script dangerouslySetInnerHTML={{__html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-R4CJL887NL');
-        `}} />
+       {/* Google Analytics */}
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4CJL887NL"></script>
+       <script dangerouslySetInnerHTML={{__html: `
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'G-R4CJL887NL');
+       `}} />
+       {/* Structured Data: WebSite + SearchAction */}
+       <script type="application/ld+json" suppressHydrationWarning>{`
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Crypto Online Casino",
+  "url": "https://crypto-online-casino.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://crypto-online-casino.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+`}</script>
       </head>
       <body className="bg-black text-white font-sans">
         <ClientLayout>{children}</ClientLayout>
