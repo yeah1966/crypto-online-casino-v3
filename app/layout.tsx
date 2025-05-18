@@ -13,6 +13,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <meta name="ga-site-verification" content="D9g8tk-yLwOk8LVeD66C_5zc" />
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4CJL887NL"></script>
+        <script dangerouslySetInnerHTML={{__html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-R4CJL887NL');
+        `}} />
       </head>
       <body className="bg-black text-white font-sans">
         <ClientLayout>{children}</ClientLayout>
