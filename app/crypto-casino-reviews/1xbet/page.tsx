@@ -14,7 +14,7 @@ export const generateMetadata = (): Metadata => {
       type: "website",
       images: [
         {
-          url: "https://crypto-online-casino.com/og/1xbet.png",
+          url: "/og/7bit.png", // Correcte bestandsnaam en pad
           width: 1200,
           height: 630,
           alt: "1xBet Casino OG Image",
@@ -25,7 +25,7 @@ export const generateMetadata = (): Metadata => {
       card: "summary_large_image",
       title: "1xBet Casino Review 2025 | International Crypto Casino & Sportsbook",
       description: "Read our 1xBet review: 5000+ games, huge sportsbook, fast crypto payouts, top bonuses. Trusted since 2007.",
-      images: ["https://crypto-online-casino.com/og/1xbet.png"],
+      images: ["/og/7bit.png"], // Correcte bestandsnaam en pad
     },
   };
 };
