@@ -14,7 +14,7 @@ export const generateMetadata = (): Metadata => {
       type: "website",
       images: [
         {
-          url: "https://crypto-online-casino.com/og/bitstarz.png",
+          url: "/og/bitstarz.png",
           width: 1200,
           height: 630,
           alt: "BitStarz Casino OG Image",
@@ -25,7 +25,7 @@ export const generateMetadata = (): Metadata => {
       card: "summary_large_image",
       title: "BitStarz Casino Review 2025 | Award-Winning Crypto Casino",
       description: "Read our BitStarz review: 4000+ games, lightning-fast crypto payouts, huge bonuses, and award-winning support. Trusted since 2014.",
-      images: ["https://crypto-online-casino.com/og/bitstarz.png"],
+      images: ["/og/bitstarz.png"],
     },
   };
 };
@@ -49,13 +49,44 @@ const data = {
 };
 
 export default function BitStarzPage() {
+  // Dynamische review structured data
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+      "@type": "Organization",
+      name: "BitStarz Casino"
+    },
+    author: {
+      "@type": "Person",
+      name: "Crypto Online Casino Team"
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "4.5",
+      bestRating: "5"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Crypto Online Casino",
+      url: "https://crypto-online-casino.com/"
+    }
+  };
+
   return (
-    <div
-      className="min-h-screen bg-cover bg-center text-white"
-      style={{
-        backgroundImage: "url('/images/crypto-casino-online.webp')",
-      }}
-    >
+    <>
+      {/* Review structured data for rich results */}
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+      <div
+        className="min-h-screen bg-cover bg-center text-white"
+        style={{
+          backgroundImage: "url('/images/crypto-casino-online.webp')",
+        }}
+      >
       <div className="max-w-screen-xl mx-auto py-10 px-4 bg-black bg-opacity-70 rounded-2xl">
     {/* First Impressions */}
     <section id="first-impressions" className="mb-8">
@@ -185,5 +216,6 @@ export default function BitStarzPage() {
     </section>
       </div>
     </div>
+    </>
   );
 }

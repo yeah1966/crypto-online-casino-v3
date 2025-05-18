@@ -14,7 +14,7 @@ export const generateMetadata = (): Metadata => {
       type: "website",
       images: [
         {
-          url: "https://crypto-online-casino.com/og/cloudbet.png",
+          url: "/og/cloudbet.png",
           width: 1200,
           height: 630,
           alt: "Cloudbet Casino OG Image",
@@ -25,7 +25,7 @@ export const generateMetadata = (): Metadata => {
       card: "summary_large_image",
       title: "Cloudbet Casino Review 2025 | Crypto Casino & Sportsbook Pioneer",
       description: "Read our Cloudbet review: crypto pioneer, high limits, instant payouts, 1000+ games & sportsbook. Trusted since 2013.",
-      images: ["https://crypto-online-casino.com/og/cloudbet.png"],
+      images: ["/og/cloudbet.png"],
     },
   };
 };
@@ -49,8 +49,39 @@ const data = {
 };
 
 export default function CloudbetPage() {
+  // Dynamische review structured data
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+      "@type": "Organization",
+      name: "Cloudbet"
+    },
+    author: {
+      "@type": "Person",
+      name: "Crypto Online Casino Team"
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "4.3",
+      bestRating: "5"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Crypto Online Casino",
+      url: "https://crypto-online-casino.com/"
+    }
+  };
+
   return (
-    <div
+    <>
+      {/* Review structured data for rich results */}
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+      <div
       className="min-h-screen bg-cover bg-center text-white"
       style={{
         backgroundImage: "url('/images/crypto-casino-online.webp')",
@@ -186,5 +217,6 @@ export default function CloudbetPage() {
     </section>
       </div>
     </div>
+    </>
   );
 }

@@ -162,8 +162,8 @@ export default function Home() {
               reviewLink: `/crypto-casino-reviews/${casino.slug}`,
             }))} />
           </div>
-          {/* SEO Content Block - English, styled with brand neon colors */}
-          <section className="max-w-4xl mx-auto mt-16 px-4 py-10 bg-[#181826] rounded-2xl shadow-lg border-2 border-yellow-400">
+           {/* SEO Content Block - English, styled with brand neon colors */}
+           <section className="max-w-4xl mx-auto mt-16 px-4 py-10 bg-[#181826] rounded-2xl shadow-lg border-2 border-yellow-400">
             <h2 className="text-3xl md:text-4xl font-extrabold text-yellow-400 mb-4 text-center drop-shadow-neon">
               Everything About Crypto Casinos in 2025
             </h2>

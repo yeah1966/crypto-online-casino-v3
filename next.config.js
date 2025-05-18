@@ -2,7 +2,7 @@
 const nextConfig = {
   experimental: {
     mdxRs: true,
-    serverActions: true,
+    serverActions: {}, // Changed from boolean to object
   },
   eslint: {
     ignoreDuringBuilds: true,
@@ -11,6 +11,10 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  images: {
+    // Voor lokale of whitelisted bronnen, geen DALL·E meer
+    domains: [],
+  },
 };
 
 module.exports = nextConfig;

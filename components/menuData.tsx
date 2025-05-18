@@ -17,6 +17,15 @@ export type MenuItem = {
 export const menuItems: MenuItem[] = [
   { label: "Home", href: "/", icon: <FaHome /> },
   {
+    label: "By Country",
+    icon: <span role="img" aria-label="By Country" style={{fontSize:18,verticalAlign:'middle'}}>🌍</span>,
+    children: [
+      { label: "🇩🇪 Germany", href: "/casinos/germany", icon: <span role="img" aria-label="Germany" style={{fontSize:18,verticalAlign:'middle'}}>🇩🇪</span> },
+      { label: "🇪🇸 Spain", href: "/casinos/spain", icon: <span role="img" aria-label="Spain" style={{fontSize:18,verticalAlign:'middle'}}>🇪🇸</span> },
+      { label: "🇧🇷 Brazil", href: "/casinos/brazil", icon: <span role="img" aria-label="Brazil" style={{fontSize:18,verticalAlign:'middle'}}>🇧🇷</span> },
+    ]
+  },
+  {
     label: "Crypto Guides",
     icon: <FaBookOpen />,
     children: [

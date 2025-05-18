@@ -14,7 +14,7 @@ export const generateMetadata = (): Metadata => {
       type: "website",
       images: [
         {
-          url: "https://crypto-online-casino.com/og/betplay.png",
+          url: "/og/betplay.png",
           width: 1200,
           height: 630,
           alt: "BetPlay Casino OG Image",
@@ -25,7 +25,7 @@ export const generateMetadata = (): Metadata => {
       card: "summary_large_image",
       title: "BetPlay Casino Review 2025 | Latin America’s Top Crypto Casino",
       description: "Read our BetPlay review: top Latin American crypto casino, 1000+ games, fast payouts, sports & casino. Trusted since 2017.",
-      images: ["https://crypto-online-casino.com/og/betplay.png"],
+      images: ["/og/betplay.png"],
     },
   };
 };
@@ -49,8 +49,39 @@ const data = {
 };
 
 export default function BetPlayPage() {
+  // Dynamische review structured data
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+      "@type": "Organization",
+      name: "Betplay"
+    },
+    author: {
+      "@type": "Person",
+      name: "Crypto Online Casino Team"
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "4.2",
+      bestRating: "5"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Crypto Online Casino",
+      url: "https://crypto-online-casino.com/"
+    }
+  };
+
   return (
-    <div
+    <>
+      {/* Review structured data for rich results */}
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+      <div
       className="min-h-screen bg-cover bg-center text-white"
       style={{
         backgroundImage: "url('/images/crypto-casino-online.webp')",
@@ -184,5 +215,6 @@ export default function BetPlayPage() {
     </section>
       </div>
     </div>
+    </>
   );
 }

@@ -14,7 +14,7 @@ export const generateMetadata = (): Metadata => {
       type: "website",
       images: [
         {
-          url: "https://crypto-online-casino.com/og/7bit.png",
+          url: "/og/7bit.png",
           width: 1200,
           height: 630,
           alt: "7Bit Casino OG Image",
@@ -25,7 +25,7 @@ export const generateMetadata = (): Metadata => {
       card: "summary_large_image",
       title: "7Bit Casino Review 2025 | Retro Vegas Crypto Casino",
       description: "Read our 7Bit review: 7000+ games, retro Vegas vibes, fast crypto payouts, big bonuses. Trusted since 2014.",
-      images: ["https://crypto-online-casino.com/og/7bit.png"],
+      images: ["/og/7bit.png"],
     },
   };
 };
@@ -50,8 +50,39 @@ const data = {
 };
 
 export default function SevenBitPage() {
+  // Dynamische review structured data
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+      "@type": "Organization",
+      name: "7Bit Casino"
+    },
+    author: {
+      "@type": "Person",
+      name: "Crypto Online Casino Team"
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "4.4",
+      bestRating: "5"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Crypto Online Casino",
+      url: "https://crypto-online-casino.com/"
+    }
+  };
+
   return (
-    <div
+    <>
+      {/* Review structured data for rich results */}
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+      <div
       className="min-h-screen bg-cover bg-center text-white"
       style={{
         backgroundImage: "url('/images/crypto-casino-online.webp')",
@@ -186,5 +217,6 @@ export default function SevenBitPage() {
     </section>
       </div>
     </div>
+    </>
   );
 }

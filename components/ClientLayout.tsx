@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation";
 import DesktopMenu from "@/components/DesktopMenu";
 import MobileMenu from "@/components/MobileMenu";
 import { Toaster } from "react-hot-toast";
-import { FooterBrandingStrip } from "@/components/BrandingElements";
+import Footer from "@/components/Footer";
+import ConsentBanner from "@/components/ConsentBanner";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -29,7 +30,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       {/* Mobiel menu overlay */}
       <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
       <main>{children}</main>
-      <FooterBrandingStrip />
+      <ConsentBanner />
     </>
   );
 }

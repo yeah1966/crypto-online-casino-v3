@@ -49,8 +49,37 @@ const data = {
 };
 
 export default function LokiCasinoPage() {
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+      "@type": "Organization",
+      name: "Loki Casino"
+    },
+    author: {
+      "@type": "Person",
+      name: "Crypto Online Casino Team"
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "4.2",
+      bestRating: "5"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Crypto Online Casino",
+      url: "https://crypto-online-casino.com/"
+    }
+  };
+
   return (
-    <div
+    <>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+      <div
       className="min-h-screen bg-cover bg-center text-white"
       style={{
         backgroundImage: "url('/images/crypto-casino-online.webp')",
@@ -184,7 +213,9 @@ export default function LokiCasinoPage() {
         Play at Loki Casino
       </a>
     </section>
-      </div>
     </div>
-  );
+  </div>
+</>
+);
 }
+

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import React from "react";
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -14,7 +15,7 @@ export const generateMetadata = (): Metadata => {
       type: "website",
       images: [
         {
-          url: "https://crypto-online-casino.com/og/wildvegas.png",
+          url: "/og/wildvegas.png",
           width: 1200,
           height: 630,
           alt: "Wild Vegas Casino OG Image",
@@ -25,14 +26,11 @@ export const generateMetadata = (): Metadata => {
       card: "summary_large_image",
       title: "Wild Vegas Casino Review 2025 | Classic RTG Slots & Crypto Bonuses",
       description: "Read our Slots of Vegas review: 250% bonus, classic RTG slots, fast Bitcoin payouts, and 20+ years of trusted Vegas action.",
-      images: ["https://crypto-online-casino.com/og/wildvegas.png"],
+      images: ["/og/wildvegas.png"],
     },
   };
 };
 
-import React from "react";
-
-// --- PAS DEZE DATA AAN VOOR EEN NIEUW CASINO ---
 const data = {
   introduction: `Wild Vegas is a vibrant online casino with a classic Las Vegas vibe. Since its launch in 2004, it has been known for its generous bonuses, fast payouts, and a unique atmosphere for fans of RTG slots.`,
   bonuses: `New players receive a 250% welcome bonus on their first deposit, plus free spins on popular slots. There are regular promotions such as cashback, reload bonuses, and exclusive tournaments. The loyalty program rewards regular players with extra benefits.`,
@@ -50,14 +48,39 @@ const data = {
 };
 
 export default function WildVegasPage() {
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+      "@type": "Organization",
+      name: "Wild Vegas"
+    },
+    author: {
+      "@type": "Person",
+      name: "Crypto Online Casino Team"
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "4.1",
+      bestRating: "5"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Crypto Online Casino",
+      url: "https://crypto-online-casino.com/"
+    }
+  };
+
   return (
-    <div
-      className="min-h-screen bg-cover bg-center text-white"
-      style={{
-        backgroundImage: "url('/images/crypto-casino-online.webp')",
-      }}
-    >
-      <div className="max-w-screen-xl mx-auto py-10 px-4 bg-black bg-opacity-70 rounded-2xl">
+    <>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+
+      <div className="min-h-screen bg-cover bg-center text-white" style={{ backgroundImage: "url('/images/crypto-casino-online.webp')" }}>
+        <div className="max-w-screen-xl mx-auto py-10 px-4 bg-black bg-opacity-70 rounded-2xl">
         {/* Hero Section */}
     <section id="first-impressions" className="mb-8">
       <h2 className="text-2xl font-bold mb-4">First Impressions</h2>
@@ -185,7 +208,9 @@ export default function WildVegasPage() {
         Play at Wild Vegas
       </a>
     </section>
+    </div>
   </div>
-  </div>
+</>
 );
 }
+
