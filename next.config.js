@@ -1,5 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/bonuses/no-deposit',
+        destination: '/no-deposit',
+        permanent: true,
+      },
+    ];
+  },
   experimental: {
     mdxRs: true,
     serverActions: {}, // Changed from boolean to object
