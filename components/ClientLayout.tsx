@@ -30,6 +30,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       {/* Mobiel menu overlay */}
       <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
       <main>{children}</main>
+      <Footer />
       <ConsentBanner />
     </>
   );

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useRef } from 'react';
-import Footer from '../components/Footer';
 import WheelOfFortune from '../components/WheelOfFortune';
 import SpinButton from '@/components/SpinButton';
 import CasinoGrid from '../components/CasinoGrid';
@@ -214,7 +213,7 @@ export default function Home() {
           </section>
         </div>
       </div>
-      <Footer />
+
     </>
   );
 }
