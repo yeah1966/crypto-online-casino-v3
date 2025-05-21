@@ -8,15 +8,26 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-black text-white pt-6 pb-12">
       <div className="flex flex-col items-center text-center space-y-2 px-4">
-        {/* 18+ logo */}
-        <div className="bg-white rounded-full p-1 w-12 h-12 flex items-center justify-center">
-          <Image
-            src="/icons/18.svg"
-            alt="18+"
-            width={36}
-            height={36}
-            className="w-9 h-9"
-          />
+        {/* 18+ logo en mascotte */}
+        <div className="flex flex-row items-center gap-4 mb-1">
+          <div className="bg-white rounded-full p-1 w-12 h-12 flex items-center justify-center">
+            <Image
+              src="/icons/18.svg"
+              alt="18+"
+              width={36}
+              height={36}
+              className="w-9 h-9"
+            />
+          </div>
+          <div className="bg-white rounded-full p-1 w-12 h-12 flex items-center justify-center">
+            <Image
+              src="/mascot.png"
+              alt="Mascot"
+              width={36}
+              height={36}
+              className="w-9 h-9"
+            />
+          </div>
         </div>
         <p className="text-sm text-white/80 mt-1">
           Gambling can be addictive. Please play responsibly. For support visit{' '}
