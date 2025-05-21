@@ -99,6 +99,30 @@ export const generateMetadata = () => ({
 });
 
 export default function CryptoGambling101Page() {
+  // Structured Data JSON-LD (Article)
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Crypto Gambling 101 – How Bitcoin & Blockchain Changed Online Casinos",
+    "description": "A beginner-friendly guide to the rise of crypto gambling, its advantages, and how it works – including key innovations like provably fair gaming and stablecoin casinos.",
+    "author": {
+      "@type": "Organization",
+      "name": "Crypto Online Casino"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Crypto Online Casino",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://crypto-online-casino.com/branding/logo.png"
+      }
+    },
+    "image": "https://crypto-online-casino.com/images/crypto-gambling-101.webp",
+    "url": "https://crypto-online-casino.com/crypto-gambling-101",
+    "datePublished": "2025-05-21",
+    "dateModified": "2025-05-21"
+  };
+
   return (
     <>
       {/* Achtergrondafbeelding */}
@@ -106,6 +130,11 @@ export default function CryptoGambling101Page() {
 
       {/* Zwarte overlay */}
       <div className="pointer-events-none fixed inset-0 -z-20 bg-black bg-opacity-65" aria-hidden="true" />
+      {/* Structured Data JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Content */}
       <div className="relative z-20 max-w-3xl mx-auto px-4 md:px-8 py-10 pt-16">
         {/* Transparante wrapper start */}
