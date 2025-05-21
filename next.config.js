@@ -3,6 +3,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/comments/feed',
+        destination: '/',
+        permanent: true,
+      },
+      {
         source: '/bonuses/no-deposit',
         destination: '/no-deposit',
         permanent: true,
