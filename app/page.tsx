@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeClient from './HomeClient';
+import MagicConsent from './components/MagicConsent';
 
 export const generateMetadata = () => ({
   title: "Crypto Online Casino | Vegas-style gambling meets crypto rewards",
@@ -78,6 +79,7 @@ export default function Home() {
           }}
         />
       </div>
+      <MagicConsent />
       <HomeClient />
     </>
   );

@@ -101,7 +101,8 @@ export const menuItems: MenuItem[] = [
     children: [
       { label: "Blog", href: "/blog", icon: <FaFeatherAlt /> },
       { label: "FAQ", href: "/faq", icon: <FaQuestion /> },
-      { label: "About", href: "/about", icon: <FaAddressCard /> }
+      { label: "About", href: "/about", icon: <FaAddressCard /> },
+      { label: "🔮 Bonus Wizard", href: "/wizard", icon: <span role="img" aria-label="Bonus Wizard" style={{fontSize:18,verticalAlign:'middle'}}>🔮</span> }
     ]
   }
 ];

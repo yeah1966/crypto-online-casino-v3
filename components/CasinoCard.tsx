@@ -10,6 +10,7 @@ interface CasinoCardProps {
   flag?: string;
 }
 
+import { affiliateLinks } from "@/data/affiliateLinks";
 import CasinoLogo from "./CasinoLogo";
 
 export default function CasinoCard({
@@ -43,7 +44,7 @@ export default function CasinoCard({
       <h3 className="font-bold text-white text-center mb-2 flex items-center justify-center gap-2" style={{fontSize: 30}}>
   {name}
   {/* Duitse vlag als emoji voor Germany */}
-  {flag && flag.toLowerCase().includes('germany') && (
+  {flag?.toLowerCase().includes('germany') && (
     <span role="img" aria-label="Germany">🇩🇪</span>
   )}
   {/* fallback op bestaande flag prop voor andere landen */}
@@ -55,9 +56,9 @@ export default function CasinoCard({
       {(() => {
         let bonusLine1 = bonus;
         let bonusLine2 = '';
-        if (bonus.includes('+')) {
+        if (bonus?.includes('+')) {
           [bonusLine1, bonusLine2] = bonus.split('+').map(s => s.trim());
-        } else if (bonus.includes('/')) {
+        } else if (bonus?.includes('/')) {
           [bonusLine1, bonusLine2] = bonus.split('/').map(s => s.trim());
         }
         return (
@@ -82,8 +83,16 @@ export default function CasinoCard({
   </div>
 </div>
       {/* CTA knop */}
-      <a href="/" className="block mt-4 w-full bg-yellow-400 text-black font-bold py-3 rounded-xl hover:scale-[1.02] hover:shadow-yellow-500/40 transition text-center uppercase tracking-wide shadow font-extrabold text-lg" style={{textShadow:'0 2px 8px #fff,0 0 2px #ff0'}}>PLAY NOW ➜</a>
-<a href="/" className="block text-xs text-white/60 underline mt-2 text-center">Back to Homepage</a>
+      <a
+  href={affiliateLinks[slug] ?? "#"}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block mt-4 w-full bg-yellow-400 text-black font-bold py-3 rounded-xl hover:scale-[1.02] hover:shadow-yellow-500/40 transition text-center uppercase tracking-wide shadow font-extrabold text-lg"
+  style={{textShadow:'0 2px 8px #fff,0 0 2px #ff0'}}
+>
+  PLAY NOW ➜
+</a>
+
     </div>
   );
 }

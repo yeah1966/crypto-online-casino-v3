@@ -27,6 +27,9 @@ export const casinos: CasinoCard[] = [
   {
     slug: 'bitstarz',
     name: 'BitStarz',
+    bonusTags: ['Welcome Bonus', 'Free Spins', 'No Deposit'],
+    cryptos: ['Bitcoin', 'Litecoin', 'Ethereum', 'USDT'],
+    noKyc: true,
     logo: '/logos/bitstarz.png',
     rating: 4.5,
     description: 'Bekroond crypto casino met snelle uitbetalingen.',
@@ -49,6 +52,9 @@ export const casinos: CasinoCard[] = [
   {
     slug: 'goldenbilly',
     name: 'Golden Billy',
+    bonusTags: ['Welcome Bonus', 'Free Spins'],
+    cryptos: ['Bitcoin', 'Litecoin', 'Ethereum'],
+    noKyc: false,
     logo: '/logos/goldenbilly.png',
     rating: 4,
     description: 'Nieuwe crypto casino met jackpots.',
@@ -66,6 +72,9 @@ export const casinos: CasinoCard[] = [
   {
     slug: 'ninlayplay',
     name: 'NinlayPlay',
+    bonusTags: ['Welcome Bonus', 'Free Spins'],
+    cryptos: ['Bitcoin', 'Litecoin'],
+    noKyc: true,
     logo: '/logos/ninlaycasino.png',
     rating: 3.5,
     description: 'Avontuurlijke slots & crypto rewards.',
@@ -83,6 +92,9 @@ export const casinos: CasinoCard[] = [
   {
     slug: 'crownslots',
     name: 'Crownslots',
+    bonusTags: ['Welcome Bonus'],
+    cryptos: ['Bitcoin'],
+    noKyc: false,
     logo: '/logos/crownslots.png',
     rating: 3.5,
     description: 'Eenvoudige crypto casino met Britse flair.',
@@ -103,6 +115,9 @@ export const casinos: CasinoCard[] = [
   {
     slug: 'lokicasino',
     name: 'Loki Casino',
+    bonusTags: ['Welcome Bonus', 'Free Spins', 'No Deposit'],
+    cryptos: ['Bitcoin', 'Litecoin', 'Ethereum'],
+    noKyc: true,
     logo: '/logos/lokicasino.png',
     rating: 4.2,
     description: 'International crypto slot destination.',
@@ -123,6 +138,9 @@ export const casinos: CasinoCard[] = [
   {
     slug: 'slotsofvegas',
     name: 'Slots of Vegas',
+    bonusTags: ['Welcome Bonus', 'Free Spins', 'No Deposit'],
+    cryptos: ['Bitcoin', 'Litecoin'],
+    noKyc: false,
     logo: '/logos/slotsofvegas.png',
     rating: 5,
     description: 'Famous for fast payouts and big bonuses.',
@@ -140,6 +158,9 @@ export const casinos: CasinoCard[] = [
   {
     slug: 'wildvegas',
     name: 'Wild Vegas',
+    bonusTags: ['Welcome Bonus', 'Free Spins'],
+    cryptos: ['Bitcoin', 'Litecoin', 'Ethereum'],
+    noKyc: true,
     logo: '/logos/wildvegas.png',
     rating: 4,
     description: 'American-themed, sharp odds, and instant crypto withdrawals.',
@@ -157,6 +178,9 @@ export const casinos: CasinoCard[] = [
   {
     slug: 'cloudbet',
     name: 'Cloudbet',
+    bonusTags: ['Welcome Bonus'],
+    cryptos: ['Bitcoin', 'Ethereum', 'USDT'],
+    noKyc: true,
     logo: '/logos/cloudbet.png',
     rating: 4.7,
     description: 'Largest selection, high odds, fast payouts & live streaming.',
@@ -174,6 +198,9 @@ export const casinos: CasinoCard[] = [
   {
     slug: '7bit',
     name: '7Bit',
+    bonusTags: ['Welcome Bonus', 'Free Spins'],
+    cryptos: ['Bitcoin', 'Litecoin', 'Ethereum', 'USDT', 'Dogecoin'],
+    noKyc: true,
     logo: '/logos/7bit.png',
     rating: 4.2,
     description: 'Crypto casino with many coins and fast payouts.',
