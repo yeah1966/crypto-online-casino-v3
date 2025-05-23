@@ -1,12 +1,8 @@
 'use client';
 
-import React from "react";
-
 export default function BlogPostLayout({
-  meta,
   children,
 }: {
-  meta: { title: string; description: string };
   children: React.ReactNode;
 }) {
   return (

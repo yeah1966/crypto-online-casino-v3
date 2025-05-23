@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useRouter } from "next/router";
 
 const casinos = [
   { name: "BitStarz", slug: "bitstarz" },
@@ -17,7 +16,7 @@ const casinos = [
 export default function SpinToWin() {
   const [spinning, setSpinning] = useState(false);
   const [selected, setSelected] = useState<null | { name: string; slug: string }>(null);
-  const router = useRouter();
+  
 
   const handleSpin = () => {
     if (spinning) return;

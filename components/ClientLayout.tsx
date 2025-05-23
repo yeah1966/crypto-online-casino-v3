@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { usePathname } from "next/navigation";
+
 import DesktopMenu from "@/components/DesktopMenu";
 import MobileMenu from "@/components/MobileMenu";
 import { Toaster } from "react-hot-toast";
@@ -10,7 +10,7 @@ import ConsentBanner from "@/components/ConsentBanner";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const pathname = usePathname();
+  
 
   return (
     <>

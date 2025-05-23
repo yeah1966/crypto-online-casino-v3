@@ -91,14 +91,6 @@ export default function VegasHeader() {
     dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 180);
   };
 
-  // NavItems omzetten naar { label, path, icon } voor MobileMenu
-  // Alleen items met een geldige href (dus geen dropdown-hoofdcategorieën)
-  const navItems = menu.filter(item => !!item.href).map(item => ({
-    label: item.label,
-    path: item.href || '#',
-    icon: item.icon,
-  }));
-
   return (
     <header className="w-full">
       <nav ref={navRef} className="w-full flex flex-wrap justify-center items-center gap-2 py-4 bg-gradient-to-r from-purple-800 to-purple-900 shadow-xl z-40 relative">

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 // TypeScript: declareer gtag & gtagLoaded op het Window object
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
+    gtag?: (...args: unknown[]) => void;
     gtagLoaded?: boolean;
   }
 }
@@ -20,9 +20,9 @@ export default function ConsentBanner() {
     else if (consent === "accepted") loadGtag();
   }, []);
 
-  function handleChoice(choice: "accepted" | "declined") {
-    localStorage.setItem("cookieConsent", choice);
-    if (choice === "accepted") {
+  function handleChoice(consent: "accepted" | "declined") {
+    localStorage.setItem("cookieConsent", String(consent));
+    if (consent === "accepted") {
       loadGtag();
       if (typeof window.gtag === 'function') {
         window.gtag('consent', 'update', {

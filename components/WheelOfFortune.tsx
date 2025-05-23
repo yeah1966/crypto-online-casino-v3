@@ -4,7 +4,7 @@ import React, { useRef, useState, forwardRef, useImperativeHandle } from 'react'
 import dynamic from 'next/dynamic';
 const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Wheel), { ssr: false });
 import { casinos } from "../data/casinosData";
-import Image from 'next/image';
+
 
 type CasinoOption = { option: string; style: { backgroundColor: string }; logo: string };
 
@@ -30,7 +30,6 @@ const WheelOfFortune = forwardRef((props, ref) => {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [winner, setWinner] = useState<CasinoOption | null>(null); 
-  const isSpinning = mustSpin;
   const audioRefSpin = useRef<HTMLAudioElement>(null);
   const audioRefWin = useRef<HTMLAudioElement>(null);
 

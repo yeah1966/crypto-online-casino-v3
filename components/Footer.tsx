@@ -43,12 +43,12 @@ const Footer: React.FC = () => {
         <p className="text-md mt-1">
           🎲 You’re on <span className="text-yellow-400 font-semibold">Crypto Online Casino</span> — spin smart, win big!
         </p>
-        <a
+        <Link
           className="inline-block px-4 py-2 bg-yellow-400 text-black font-semibold rounded hover:bg-yellow-300 transition mt-2"
-          href="/guides/getting-started"
+          href="/guides/getting-started/"
         >
           Start Playing
-        </a>
+        </Link>
       </div>
     </footer>
   );

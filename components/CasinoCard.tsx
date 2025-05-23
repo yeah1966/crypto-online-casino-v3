@@ -31,11 +31,6 @@ export default function CasinoCard({
   if (dealLower === "rs" || dealLower === "revenue share") bonusColor = "text-blue-400";
   if (dealLower === "hybrid") bonusColor = "text-purple-400";
 
-  // Deal badge kleur
-  let badgeColor = "bg-green-700";
-  if (dealLower === "rs" || dealLower === "revenue share") badgeColor = "bg-blue-700";
-  if (dealLower === "hybrid") badgeColor = "bg-purple-700";
-
   return (
     <div className="flex flex-col items-center justify-between w-full max-w-[400px] rounded-2xl shadow-lg p-6 bg-gradient-to-b from-black/80 to-purple-950 min-h-[410px] transition-all duration-200 ease-in-out hover:scale-[1.02] border border-purple-900">
       {/* Logo */}

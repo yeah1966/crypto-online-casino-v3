@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { menuItems } from './menuData';
 import { FaChevronDown } from 'react-icons/fa';
-import { useState, useRef } from 'react';
 
 export default function DesktopMenu() {
   return (

@@ -24,7 +24,7 @@ export default function TopRtpSlotsPage() {
           </p>
           <div className="grid gap-8">
             {slots.map((slot, idx) => (
-              <SlotCard key={slot.name} {...slot} index={idx + 1} />
+              <SlotCard key={slot.name || idx} {...slot} index={idx + 1} />
             ))}
           </div>
           <div className="mt-12 text-white/90 text-sm">
@@ -145,7 +145,7 @@ function SlotCard({
         )}
         {name === '1429 Uncharted Seas' && (
           <p className="text-white/70 text-sm mb-2 italic">
-            1429 Uncharted Seas impresses with its hand-drawn graphics and exploration theme. The expanding wilds and bonus features keep the gameplay engaging, while the high RTP ensures players get great value. It's ideal for those who appreciate both aesthetics and strong odds.
+            1429 Uncharted Seas impresses with its hand-drawn graphics and exploration theme. The expanding wilds and bonus features keep the gameplay engaging, while the high RTP ensures players get great value. It&apos;s ideal for those who appreciate both aesthetics and strong odds.
           </p>
         )}
         {name === 'Blood Suckers' && (
@@ -160,20 +160,15 @@ function SlotCard({
         )}
         <div className="flex flex-wrap gap-2 items-center">
           <span className="text-green-300 font-bold text-xs">✅ Available at:</span>
-          {casinos.map((casino) => {
-            // Mapping for special cases
-            const casinoLinkMap: Record<string, string> = {
-              '7Bit Casino': '/crypto-casino-reviews/7bit',
-              'Dreams Casino': '/crypto-casino-reviews/dreams',
-              // Add more mappings if needed
-            };
-            const href = casinoLinkMap[casino] || `/crypto-casino-reviews/${casino.toLowerCase().replace(/\s+/g, '-')}`;
-            return (
-              <Link key={casino} href={href} className="underline text-yellow-200 hover:text-pink-400 text-xs font-bold">
-                {casino}
-              </Link>
-            );
-          })}
+          {casinos.map((casino, idx) => (
+            <Link
+              key={casino || idx}
+              href={`/crypto-casino-reviews/${casino.toLowerCase().replace(/\s+/g, '-')}`}
+              className="underline text-yellow-200 hover:text-pink-400 text-xs font-bold"
+            >
+              {casino}
+            </Link>
+          ))}
         </div>
       </div>
     </div>

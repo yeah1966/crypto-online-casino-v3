@@ -205,7 +205,7 @@ export default function Top10Page() {
         <div className="flex flex-col gap-10">
           {casinos.map((casino, idx) => (
             <section
-              key={casino.slug}
+              key={idx}
               className="relative rounded-3xl border-2 border-yellow-400/70 bg-gradient-to-br from-yellow-900/60 via-black/90 to-purple-900/70 text-white px-8 py-8 shadow-2xl flex flex-col md:flex-row items-center gap-6 md:gap-10 mb-10 animate-fade-in-up hover:scale-[1.01] transition-transform"
             >
               <div className="flex flex-col items-center md:items-start min-w-[120px]">
@@ -299,7 +299,7 @@ export default function Top10Page() {
                 </div>
                 <div className="flex flex-wrap justify-center md:justify-end items-center gap-x-4 gap-y-2 flex-1 md:max-w-xs">
                   {casino.cryptos.map((c) => cryptoIcons[c] ? (
-                    <img src={cryptoIcons[c]} alt={c} title={c} className="w-8 h-8" />
+                    <img key={c} src={cryptoIcons[c]} alt={c} title={c} className="w-8 h-8" />
                   ) : (
                     <span key={c} className="text-xs">{c}</span>
                   ))}

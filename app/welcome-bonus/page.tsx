@@ -12,11 +12,11 @@ export default function WelcomeBonusPage() {
       {/* HERO SECTION */}
       <section className="animate-fade-in-up">
         <div className="flex items-center justify-center gap-4 mb-3">
-          <span className="text-4xl">🎁</span>
+          <span className="text-4xl">&#x1F3C6;</span>
           <h1 className="text-4xl sm:text-5xl font-extrabold uppercase text-yellow-300 tracking-tight bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 text-transparent bg-clip-text neon-glow">Best Crypto Casino Welcome Bonuses 2025</h1>
-          <span className="text-4xl">🪙</span>
+          <span className="text-4xl">&#x1FA99;</span>
         </div>
-        <p className="text-lg text-white mt-2 mb-1 max-w-2xl mx-auto text-center">Kick off your crypto casino journey with exclusive welcome bonuses! From massive Bitcoin deposit matches to hundreds of free spins, these offers are tailor-made for new players looking to boost their bankroll from the start.</p>
+        <p className="text-lg text-white mt-2 mb-1 max-w-2xl mx-auto text-center">Kick off you&apos;re crypto casino journey with exclusive welcome bonuses! From massive Bitcoin deposit matches to hundreds of free spins, these offers are tailor-made for new players looking to boost their bankroll from the start.</p>
         <div className="flex justify-center gap-2 mt-2">
           <Image src="/icons/btc.svg" alt="BTC" width={28} height={28} />
           <Image src="/icons/eth.svg" alt="ETH" width={28} height={28} />
@@ -26,7 +26,7 @@ export default function WelcomeBonusPage() {
       {/* WHAT IS A WELCOME BONUS */}
       <section className="animate-fade-in-up">
         <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center gap-2">What Is a Welcome Bonus?</h2>
-        <p className="text-lg text-white mb-4">A welcome bonus is a special offer for new players when they join a crypto casino. These bonuses usually include a deposit match (e.g. 100% up to 5 BTC), free spins, or both. They're designed to give you more value when starting out, helping you explore the casino with extra funds.</p>
+        <p className="text-lg text-white mb-4">A welcome bonus is a special offer for new players when they join a crypto casino. These bonuses usually include a deposit match (e.g. 100% up to 5 BTC), free spins, or both. They&apos;re designed to give you more value when starting out, helping you explore the casino with extra funds.</p>
       </section>
       {/* TYPES OF WELCOME BONUSES */}
       <section className="animate-fade-in-up">
@@ -56,9 +56,9 @@ export default function WelcomeBonusPage() {
       <section className="animate-fade-in-up">
         <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center gap-2">How to Claim Your Bonus</h2>
         <ol className="list-decimal list-inside space-y-2 text-lg text-white">
-          <li>Choose your favorite casino from our list.</li>
-          <li>Register your account using your email or wallet.</li>
-          <li>Make your first deposit using crypto.</li>
+          <li>Choose you&apos;re favorite casino from our list.</li>
+          <li>Register you&apos;re account using you&apos;re email or wallet.</li>
+          <li>Make you&apos;re first deposit using crypto.</li>
           <li>Your bonus will be activated — sometimes a bonus code is required.</li>
         </ol>
       </section>

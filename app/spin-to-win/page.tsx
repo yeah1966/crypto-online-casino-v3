@@ -15,6 +15,7 @@ const winners = [
 ];
 
 // Deze pagina is niet langer actief. Spin-to-win is gesloten.
+import Link from "next/link";
 export default function SpinToWinClosed() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white">
@@ -22,9 +23,9 @@ export default function SpinToWinClosed() {
       <p className="text-lg text-gray-300 mb-8 max-w-xl text-center">
         Deze pagina is niet langer beschikbaar. Probeer onze nieuwe <b>Sportsbetting</b> sectie voor de beste crypto sportweddenschappen!
       </p>
-      <a href="/sports" className="px-8 py-4 bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold rounded-full shadow-lg hover:scale-105 transition text-xl">
+      <Link href="/sports" className="px-8 py-4 bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold rounded-full shadow-lg hover:scale-105 transition text-xl">
         Ga naar Sports
-      </a>
+      </Link>
     </main>
   );
 }
