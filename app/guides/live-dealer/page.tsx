@@ -1,3 +1,6 @@
+import React from "react";
+import Image from "next/image";
+
 export default function LiveDealerCasinosPage() {
   return (
     <div className="relative w-full min-h-screen z-10 px-4 md:px-8 py-16 max-w-6xl mx-auto text-white space-y-12">
@@ -57,9 +60,11 @@ export default function LiveDealerCasinosPage() {
 
       {/* OG-image */}
       <div className="max-w-2xl mx-auto">
-        <img
+        <Image
           src="/images/live-dealer-crypto-casinos.webp"
           alt="Live Dealer Crypto Casinos"
+          width={800}
+          height={400}
           className="w-full rounded-xl shadow-lg mt-8"
         />
       </div>

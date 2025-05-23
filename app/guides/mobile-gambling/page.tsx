@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: "Mobile Crypto Gambling – How to Play on Your Phone",
@@ -118,9 +119,11 @@ export default function MobileCryptoGamblingPage() {
 
       {/* OG-image */}
       <div className="max-w-2xl mx-auto">
-        <img
+        <Image
           src="/images/mobile-crypto-gambling.webp"
           alt="Mobile Crypto Gambling"
+          width={800}
+          height={400}
           className="w-full rounded-xl shadow-lg mt-8"
         />
       </div>

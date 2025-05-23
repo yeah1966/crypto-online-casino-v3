@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
@@ -65,9 +66,9 @@ export default function StablecoinsGuide() {
             {/* Intro */}
             <section ref={refs.intro} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col items-center gap-2">
               <div className="flex flex-row items-center gap-4 mb-2">
-                <img src="/icons/USDT.svg" alt="USDT" width={60} height={60} className="drop-shadow-lg" />
-                <img src="/icons/USDC.svg" alt="USDC" width={60} height={60} className="drop-shadow-lg" />
-                <img src="/icons/DAI.svg" alt="DAI" width={60} height={60} className="drop-shadow-lg" />
+                <Image src="/icons/USDT.svg" alt="USDT" width={60} height={60} className="drop-shadow-lg" />
+                <Image src="/icons/USDC.svg" alt="USDC" width={60} height={60} className="drop-shadow-lg" />
+                <Image src="/icons/DAI.svg" alt="DAI" width={60} height={60} className="drop-shadow-lg" />
               </div>
               <h1 className="text-3xl md:text-5xl font-extrabold neon-text text-center mb-2 text-purple-700">
                 What Are Stablecoins in Crypto Gambling? 📀
@@ -79,31 +80,31 @@ export default function StablecoinsGuide() {
             {/* Section 1: What Is a Stablecoin? */}
             <section ref={refs.what} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
               <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-yellow-600">
-                <img src="/icons/USDT.svg" alt="Stablecoin" width={32} height={32} />
+                <Image src="/icons/USDT.svg" alt="Stablecoin" width={32} height={32} />
                 What Is a Stablecoin?
               </h2>
               <ul className="list-disc ml-6 text-white/90 mt-2">
-                <li className="flex items-center gap-2 mb-1"><img src="/icons/lock.svg" alt="Lock" width={18} height={18} />A stablecoin is a cryptocurrency designed to maintain a fixed value (usually 1 USD).</li>
-                <li className="flex items-center gap-2 mb-1"><img src="/icons/USDT.svg" alt="USDT" width={18} height={18} />Common examples: <b>USDT (Tether)</b>, <b>USDC (USD Coin)</b>, <b>DAI</b>.</li>
-                <li className="flex items-center gap-2 mb-1"><img src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />These coins are backed by real-world assets or algorithmic systems.</li>
+                <li className="flex items-center gap-2 mb-1"><Image src="/icons/lock.svg" alt="Lock" width={18} height={18} />A stablecoin is a cryptocurrency designed to maintain a fixed value (usually 1 USD).</li>
+                <li className="flex items-center gap-2 mb-1"><Image src="/icons/USDT.svg" alt="USDT" width={18} height={18} />Common examples: <b>USDT (Tether)</b>, <b>USDC (USD Coin)</b>, <b>DAI</b>.</li>
+                <li className="flex items-center gap-2 mb-1"><Image src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />These coins are backed by real-world assets or algorithmic systems.</li>
               </ul>
             </section>
             {/* Section 2: Why Use Stablecoins? */}
             <section ref={refs.why} className="rounded-2xl border border-green-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
               <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-green-600">
-                <img src="/icons/bolt.svg" alt="Why stablecoins" width={32} height={32} />
+                <Image src="/icons/bolt.svg" alt="Why stablecoins" width={32} height={32} />
                 Why Use Stablecoins?
               </h2>
               <ul className="list-disc ml-6 text-white/90 mt-2">
                 <li className="flex items-center gap-2 mb-1"><img src="/icons/lock.svg" alt="Lock" width={18} height={18} />No value fluctuations (no wild swings like Bitcoin/Ethereum)</li>
                 <li className="flex items-center gap-2 mb-1"><img src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />Faster and cheaper than fiat bank transfers</li>
-                <li className="flex items-center gap-2 mb-1"><img src="/icons/shib.svg" alt="Privacy" width={18} height={18} />More privacy and control over your bankroll</li>
+                <li className="flex items-center gap-2 mb-1"><Image src="/icons/shib.svg" alt="Privacy" width={18} height={18} />More privacy and control over your bankroll</li>
               </ul>
             </section>
             {/* Section 3: How to Deposit */}
             <section ref={refs.how} className="rounded-2xl border border-blue-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
               <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-blue-600">
-                <img src="/icons/bolt.svg" alt="Deposit" width={32} height={32} />
+                <Image src="/icons/bolt.svg" alt="Deposit" width={32} height={32} />
                 How to Deposit with Stablecoins
               </h2>
               <ul className="list-disc ml-6 text-white/90 mt-2">
@@ -115,7 +116,7 @@ export default function StablecoinsGuide() {
             {/* Section 4: Popular Stablecoins */}
             <section ref={refs.popular} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
               <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-yellow-600">
-                <img src="/icons/USDT.svg" alt="Popular stablecoins" width={32} height={32} />
+                <Image src="/icons/USDT.svg" alt="Popular stablecoins" width={32} height={32} />
                 Popular Stablecoins
               </h2>
               <div className="overflow-x-auto">
@@ -154,7 +155,7 @@ export default function StablecoinsGuide() {
             {/* Section 5: Pros & Cons of Stablecoin Gambling */}
             <section ref={refs.proscons} className="rounded-2xl border border-purple-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
               <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-purple-600">
-                <img src="/icons/bolt.svg" alt="Pros & Cons" width={32} height={32} />
+                <Image src="/icons/bolt.svg" alt="Pros & Cons" width={32} height={32} />
                 Pros & Cons of Stablecoin Gambling
               </h2>
               <div className="overflow-x-auto">
@@ -185,7 +186,7 @@ export default function StablecoinsGuide() {
             {/* Final Tip */}
             <section ref={refs.final} className="rounded-2xl border border-green-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
               <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-green-700">
-                <img src="/icons/bolt.svg" alt="Final Tip" width={32} height={32} />
+                <Image src="/icons/bolt.svg" alt="Final Tip" width={32} height={32} />
                 Final Tip
               </h2>
               <div className="bg-yellow-300/90 border-l-4 border-yellow-600 p-4 rounded">

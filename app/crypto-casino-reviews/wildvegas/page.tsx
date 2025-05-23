@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
+import Image from "next/image";
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -152,24 +153,24 @@ export default function WildVegasPage() {
         </section>
         <section className="p-6 bg-[#0e1a46] rounded-xl border border-yellow-500 shadow-md text-white">
   <div className="flex items-center mb-4">
-    <img src="/casino-icons/Credit.svg" alt="Credit icon" className="w-14 h-14 mb-2" />
+    <Image src="/casino-icons/Credit.svg" alt="Credit icon" width={56} height={56} className="w-14 h-14 mb-2" />
     <h3 className="text-yellow-400 font-semibold uppercase">Crypto Supported</h3>
   </div>
   <p>
     Wild Vegas accepteert verschillende cryptovaluta en betaalmethoden voor snelle, veilige transacties. Ondersteunde coins zijn:
   </p>
   <div className="flex gap-4 items-center mt-4 flex-wrap">
-    <img src="/icons/btc.svg" alt="Bitcoin" className="w-8 h-8" title="Bitcoin (BTC)" />
-    <img src="/icons/eth.svg" alt="Ethereum" className="w-8 h-8" title="Ethereum (ETH)" />
-    <img src="/icons/ltc.svg" alt="Litecoin" className="w-8 h-8" title="Litecoin (LTC)" />
-    <img src="/icons/usdt.svg" alt="Tether" className="w-8 h-8" title="Tether (USDT)" />
+    <Image src="/icons/btc.svg" alt="Bitcoin" width={32} height={32} className="w-8 h-8" title="Bitcoin (BTC)" />
+    <Image src="/icons/eth.svg" alt="Ethereum" width={32} height={32} className="w-8 h-8" title="Ethereum (ETH)" />
+    <Image src="/icons/ltc.svg" alt="Litecoin" width={32} height={32} className="w-8 h-8" title="Litecoin (LTC)" />
+    <Image src="/icons/usdt.svg" alt="Tether" width={32} height={32} className="w-8 h-8" title="Tether (USDT)" />
   </div>
   <p className="mt-4">
     Deze opties zorgen voor snelle stortingen en uitbetalingen zonder hoge kosten. Je kunt ook kiezen voor creditcards of bankoverschrijving.
   </p>
 </section>
         <section id="verdict" className="bg-gradient-to-br from-[#1a2c8b] to-[#0a0f40] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
-          <img src="/casino-icons/Trophy.svg" alt="Trophy icon" className="w-14 h-14 mb-2" />
+          <Image src="/casino-icons/Trophy.svg" alt="Trophy icon" width={56} height={56} className="w-14 h-14 mb-2" />
           <h3 className="text-yellow-400 text-lg font-semibold mb-2">Final Verdict</h3>
           <p className="text-white">{data.verdict}</p>
         </section>
@@ -197,7 +198,7 @@ export default function WildVegasPage() {
 
     {/* CTA met mascotte */}
     <section id="cta" className="mt-10 text-center flex flex-col items-center justify-center gap-4">
-      <img src="/mascot.png" alt="Mascot" className="w-12 h-12 mb-2" />
+      <Image src="/mascot.png" alt="Mascot" width={48} height={48} className="w-12 h-12 mb-2" />
       <h2 className="text-xl font-bold text-yellow-400">READY TO GET STARTED?</h2>
       <a
         href="https://www.wildvegaslinks.com/click/11/4315/15512/1"

@@ -5,7 +5,7 @@ export default function AccessDenied() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-900 via-black to-yellow-900">
       <div className="bg-black/80 rounded-2xl shadow-2xl p-10 max-w-xl w-full flex flex-col items-center">
         <div className="mb-6 bg-black rounded-full p-2 shadow-lg">
-          <img
+          <Image
             src="/images/mascots/access-denied.png"
             alt="Mascot geo-blocked"
             style={{ width: 200, height: 'auto' }}

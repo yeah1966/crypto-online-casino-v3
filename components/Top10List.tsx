@@ -1,4 +1,4 @@
-
+import Image from "next/image";
 import { topCasinos } from "../lib/topCasinos";
 import { casinos, CasinoCard } from "../data/casinosData";
 
@@ -30,7 +30,7 @@ export default function Top10List() {
           } bg-gradient-to-br from-[#0f0f2f] to-[#1b1b45]`}
         >
           {/* Logo */}
-          <img
+          <Image
             src={casino.logo}
             alt={`${casino.name} crypto casino logo`}
             width={90}

@@ -4,7 +4,7 @@ import React, { useRef, useState, forwardRef, useImperativeHandle } from 'react'
 import dynamic from 'next/dynamic';
 const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Wheel), { ssr: false });
 import { casinos } from "../data/casinosData";
-
+import Image from "next/image";
 
 type CasinoOption = { option: string; style: { backgroundColor: string }; logo: string };
 
@@ -97,9 +97,11 @@ const WheelOfFortune = forwardRef((props, ref) => {
         {/* Shine overlay effect */}
         <div className="absolute inset-0 rounded-full pointer-events-none" style={{background: 'radial-gradient(circle at 60% 30%, rgba(255,255,255,0.14), transparent 60%)'}} />
         {/* Midden van het Wheel met afbeelding */}
-        <img
+        <Image
           src="/assets/roulette-center.png"
           alt="Roulette center"
+          width={150}
+          height={150}
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[110px] h-[110px] md:w-[150px] md:h-[150px] rounded-full border-4 border-black/60 shadow-inner shadow-black/60 pointer-events-none object-cover"
           style={{zIndex: 10}}
         />
@@ -119,7 +121,7 @@ const WheelOfFortune = forwardRef((props, ref) => {
               textShadow: '2px 2px 8px #000, 0 0 8px #FF6E00',
             }}
           >
-            <img src={winner.logo} alt={`${winner.option} logo`} width={40} height={40} className="inline-block mr-2 align-middle rounded bg-black p-1" />
+            <Image src={winner.logo} alt={`${winner.option} logo`} width={40} height={40} className="inline-block mr-2 align-middle rounded bg-black p-1" />
             Go to {winner.option}
           </a>
         ) : (

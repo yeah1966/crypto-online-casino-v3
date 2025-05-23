@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function TopRtpSlotsPage() {
   return (
@@ -122,7 +123,7 @@ function SlotCard({
         <span className="absolute -top-4 -left-4 bg-yellow-300 text-purple-900 font-extrabold px-4 py-1 rounded-full shadow-lg text-lg border-2 border-yellow-500">
           #{index}
         </span>
-        <img src={img} alt={name} width={72} height={72} className="rounded-xl mt-2 border-2 border-yellow-400/70 shadow-lg" />
+        <Image src={img} alt={name} width={72} height={72} className="rounded-xl mt-2 border-2 border-yellow-400/70 shadow-lg" />
         <span className="text-3xl mt-2">{emoji}</span>
       </div>
       <div className="flex-1">

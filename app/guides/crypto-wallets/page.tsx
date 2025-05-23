@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: "Crypto Wallets for Gambling – Best Wallets for BTC, ETH, USDT",
@@ -106,9 +107,11 @@ export default function CryptoWalletsPage() {
 
       {/* OG-image */}
       <div className="max-w-2xl mx-auto">
-        <img
+        <Image
           src="/images/crypto-wallets-for-gambling.webp"
           alt="Crypto Wallets for Gambling"
+          width={800}
+          height={400}
           className="w-full rounded-xl shadow-lg mt-8"
         />
       </div>

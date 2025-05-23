@@ -85,7 +85,7 @@ export default function WildVegasPage() {
             <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center"><span className="mr-2">🎁</span>Wild Vegas Bonus & Promotions</h2>
             <p className="mb-3">New players can claim a <span className="font-bold text-yellow-200">100% welcome bonus up to $5000</span> (or crypto equivalent). Plus, enjoy reload bonuses and tournaments for loyal players.</p>
             <Link href="https://www.wildvegaslinks.com/click/11/4315/15512/1" passHref legacyBehavior>
-  <a target="_blank" rel="noopener noreferrer" className="inline-block bg-yellow-400 text-black font-bold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition text-lg mt-2">Claim your Wild Vegas Bonus</a>
+  <Link href="https://www.wildvegaslinks.com/click/11/4315/15512/1" target="_blank" rel="noopener noreferrer" className="inline-block bg-yellow-400 text-black font-bold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition text-lg mt-2">Claim your Wild Vegas Bonus</Link>
 </Link>
           </section>
 

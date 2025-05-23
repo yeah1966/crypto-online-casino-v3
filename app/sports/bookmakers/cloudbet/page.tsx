@@ -86,7 +86,7 @@ export default function CloudbetSportsbookPage() {
             <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center"><span className="mr-2">🎁</span>Cloudbet Bonus & Promotions</h2>
             <p className="mb-3">New players can claim a <span className="font-bold text-yellow-200">100% deposit bonus up to 5 BTC</span> or equivalent in other crypto. Plus, enjoy regular free bets, reload bonuses, and exclusive tournaments.</p>
             <Link href="https://cldbt.cloud/go/en/landing/bitcoin-casino?af_token=&aftm_campaign=CryptoCasino&aftm_source=GEO&aftm_medium=link&aftm_content=cryptoinfo" passHref legacyBehavior>
-  <a target="_blank" rel="noopener noreferrer" className="inline-block bg-yellow-400 text-black font-bold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition text-lg mt-2">Claim your Cloudbet Bonus</a>
+  <Link href="https://cldbt.cloud/go/en/landing/bitcoin-casino?af_token=&aftm_campaign=CryptoCasino&aftm_source=GEO&aftm_medium=link&aftm_content=cryptoinfo" target="_blank" rel="noopener noreferrer" className="inline-block bg-yellow-400 text-black font-bold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition text-lg mt-2">Claim your Cloudbet Bonus</Link>
 </Link>
           </section>
 

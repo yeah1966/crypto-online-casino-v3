@@ -32,10 +32,8 @@ export default function TopBonusesList() {
                 Claim Bonus
               </a>
             </Link>
-            <Link href={`/bonussen/${bonus.slug}`} passHref legacyBehavior>
-              <a className="bg-gradient-to-r from-[#1b1b45] to-[#0f0f2f] border border-yellow-400 text-yellow-300 font-semibold py-2 px-4 rounded-xl hover:scale-105 transition shadow text-center w-full block">
+            <Link href={`/bonussen/${bonus.slug}`} className="bg-gradient-to-r from-[#1b1b45] to-[#0f0f2f] border border-yellow-400 text-yellow-300 font-semibold py-2 px-4 rounded-xl hover:scale-105 transition shadow text-center w-full block">
                 More info
-              </a>
             </Link>
           </div>
         </div>

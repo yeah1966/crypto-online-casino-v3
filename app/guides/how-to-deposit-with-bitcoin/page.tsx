@@ -3,6 +3,7 @@
 import React, { useRef, useMemo } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
@@ -83,9 +84,9 @@ export default function DepositWithBitcoinGuide() {
           {/* Hero image */}
           <section ref={refs.intro} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col items-center gap-2">
             <div className="flex flex-row items-center gap-4 mb-2">
-              <img src="/icons/Bitcoin.svg" alt="Bitcoin logo" width={60} height={60} className="drop-shadow-lg" />
-              <img src="/casino-icons/Roulette Wheel.svg" alt="Roulette wheel" width={60} height={60} className="drop-shadow-lg animate-bounce" />
-              <img src="/casino-icons/koc.png" alt="Step by step" width={60} height={60} className="drop-shadow-lg" />
+              <Image src="/icons/Bitcoin.svg" alt="Bitcoin logo" width={60} height={60} className="drop-shadow-lg" />
+              <Image src="/casino-icons/Roulette Wheel.svg" alt="Roulette wheel" width={60} height={60} className="drop-shadow-lg animate-bounce" />
+              <Image src="/casino-icons/koc.png" alt="Step by step" width={60} height={60} className="drop-shadow-lg" />
             </div>
             <h1 className="text-3xl md:text-5xl font-extrabold neon-text text-center mb-2 text-purple-700">
               ₿ Deposit with Bitcoin: How to Fund Your Crypto Casino Account
@@ -97,7 +98,7 @@ export default function DepositWithBitcoinGuide() {
           {/* Step 1 */}
           <section ref={refs.step1} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-yellow-600">
-              <img src="/casino-icons/Poker Chip.svg" alt="Casino chip" width={32} height={32} />
+              <Image src="/casino-icons/Poker Chip.svg" alt="Casino chip" width={32} height={32} />
               Step 1: Choose a Crypto Casino
             </h2>
             <p className="text-white/90">
@@ -107,27 +108,27 @@ export default function DepositWithBitcoinGuide() {
           {/* Step 2 */}
           <section ref={refs.step2} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-blue-600">
-              <img src="/icons/Bitcoin.svg" alt="Bitcoin" width={32} height={32} />
-              <img src="/fun/wallet.png" alt="Wallet" width={32} height={32} />
+              <Image src="/icons/Bitcoin.svg" alt="Bitcoin" width={32} height={32} />
+              <Image src="/fun/wallet.png" alt="Wallet" width={32} height={32} />
               Step 2: Deposit with Bitcoin or Another Coin
             </h2>
             <ol className="list-decimal pl-5 mb-4 text-white/90">
-              <li className="mb-2 text-white/90 flex items-center gap-2"><img src="/casino-icons/Diamond 1.svg" alt="Diamond" width={18} height={18} />Click “Deposit” in the casino</li>
-              <li className="mb-2 text-white/90 flex items-center gap-2"><img src="/icons/Bitcoin.svg" alt="Bitcoin" width={18} height={18} />Select Bitcoin or another crypto</li>
-              <li className="mb-2 text-white/90 flex items-center gap-2"><img src="/casino-icons/Poker Chip.svg" alt="Chip" width={18} height={18} />Copy the wallet address or scan the QR code</li>
-              <li className="mb-2 text-white/90 flex items-center gap-2"><img src="/icons/MetaMask.svg" alt="Wallet" width={18} height={18} />Send crypto from your own wallet (see below)</li>
-              <li className="mb-2 text-white/90 flex items-center gap-2"><img src="/icons/bolt.svg" alt="Lightning" width={18} height={18} />Wait for blockchain confirmation (usually <b>seconds</b> to a few minutes)</li>
+              <li className="mb-2 text-white/90 flex items-center gap-2"><Image src="/casino-icons/Diamond 1.svg" alt="Diamond" width={18} height={18} />Click “Deposit” in the casino</li>
+              <li className="mb-2 text-white/90 flex items-center gap-2"><Image src="/icons/Bitcoin.svg" alt="Bitcoin" width={18} height={18} />Select Bitcoin or another crypto</li>
+              <li className="mb-2 text-white/90 flex items-center gap-2"><Image src="/casino-icons/Poker Chip.svg" alt="Chip" width={18} height={18} />Copy the wallet address or scan the QR code</li>
+              <li className="mb-2 text-white/90 flex items-center gap-2"><Image src="/icons/MetaMask.svg" alt="Wallet" width={18} height={18} />Send crypto from your own wallet (see below)</li>
+              <li className="mb-2 text-white/90 flex items-center gap-2"><Image src="/icons/bolt.svg" alt="Lightning" width={18} height={18} />Wait for blockchain confirmation (usually <b>seconds</b> to a few minutes)</li>
             </ol>
           </section>
           {/* Wallets */}
           <section ref={refs.wallets} className="rounded-2xl border border-green-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-4 text-green-600">
-              <img src="/fun/crypto-flames.png" alt="Wallets" width={32} height={32} />
+              <Image src="/fun/crypto-flames.png" alt="Wallets" width={32} height={32} />
               Best Wallets for Crypto Deposits
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="flex flex-col items-center bg-orange-900/60 rounded-lg p-3 shadow">
-                <img src="/icons/MetaMask.svg" alt="MetaMask" width={44} height={44} className="mb-2" />
+                <Image src="/icons/MetaMask.svg" alt="MetaMask" width={44} height={44} className="mb-2" />
                 <span className="font-bold text-yellow-300 mb-1">MetaMask</span>
                 <span className="text-xs text-white/90 text-center">Browser wallet, easy for beginners</span>
                 <Link href="https://metamask.io" target="_blank" rel="noopener" className="mt-2 px-3 py-1 bg-yellow-300 text-purple-900 text-xs font-bold rounded-full shadow hover:bg-yellow-400 transition">Visit MetaMask</Link>

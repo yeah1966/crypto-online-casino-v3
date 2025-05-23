@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ResponsibleGamblingPage() {
   return (
@@ -43,17 +44,19 @@ export default function ResponsibleGamblingPage() {
           If gambling affects your finances, mental health, or relationships, it's time to take a break. Professional help is available. And it works.
         </p>
         <ul className="list-disc list-inside space-y-2">
-          <li><Link href="https://www.begambleaware.org/" passHref legacyBehavior><a target="_blank" rel="noopener noreferrer">BeGambleAware.org</a></Link></li>
-          <li><Link href="https://www.gamcare.org.uk/" passHref legacyBehavior><a target="_blank" rel="noopener noreferrer">GamCare.org.uk</a></Link></li>
-          <li><Link href="https://www.gamblersanonymous.org.uk/" passHref legacyBehavior><a target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a></Link></li>
+          <li><Link href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware.org</Link></li>
+          <li><Link href="https://www.gamcare.org.uk/" target="_blank" rel="noopener noreferrer">GamCare.org.uk</Link></li>
+          <li><Link href="https://www.gamblersanonymous.org.uk/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</Link></li>
         </ul>
       </section>
 
       {/* OG-image */}
       <div className="max-w-2xl mx-auto">
-        <img
+        <Image
           src="/images/responsible-gambling-with-crypto.webp"
           alt="Responsible Gambling with Crypto"
+          width={800}
+          height={400}
           className="w-full rounded-xl shadow-lg mt-8"
         />
       </div>

@@ -181,9 +181,11 @@ export default function CryptoGambling101Page() {
           Crypto gambling may seem complex at first, but it's built on a few simple principles that make it faster, more private, and borderless compared to traditional online casinos.
         </p>
         <div className="flex justify-center my-8">
-          <img
+          <Image
             src="/images/how-crypto-gambling-works.webp"
             alt="How crypto gambling works illustration"
+            width={400}
+            height={300}
             className="max-w-xs md:max-w-md w-full rounded-xl shadow-lg border border-neutral-700 bg-neutral-900/60"
             loading="lazy"
           />

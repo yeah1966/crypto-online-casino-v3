@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: "Provably Fair Gambling – How Blockchain Proves Casino Fairness",
@@ -114,9 +115,11 @@ export default function ProvablyFairPage() {
 
       {/* OG-image */}
       <div className="max-w-2xl mx-auto">
-        <img
-          src="/images/provably-fair-gambling-explained.webp"
+        <Image
+          src="/images/provably-fair-gambling.webp"
           alt="Provably Fair Gambling Explained"
+          width={800}
+          height={400}
           className="w-full rounded-xl shadow-lg mt-8"
         />
       </div>

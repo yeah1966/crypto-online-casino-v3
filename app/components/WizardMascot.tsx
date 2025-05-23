@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 
 const mascotSteps = [
@@ -32,8 +33,8 @@ export default function WizardMascot({ step, resultsVisible }: { step: number; r
         <Image
           src="/images/mascots/mascot-wizard.png"
           alt="Bonus Wizard Mascot"
-          width={120}
-          height={120}
+          width={96}
+          height={96}
           className={`drop-shadow-xl animate-mascot-${resultsVisible ? 'celebrate' : 'idle'}`}
           priority
         />

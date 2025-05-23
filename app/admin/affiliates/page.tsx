@@ -136,9 +136,7 @@ export default function AffiliatesAdminPage() {
                 {a.name}
               </td>
               <td className="py-3 px-4 text-blue-300 underline break-all">
-                <Link href={a.url} passHref legacyBehavior>
-                  <a target="_blank" rel="noopener noreferrer" onClick={() => handleClick(a.name)}>{a.url}</a>
-                </Link>
+                <Link href={a.url} target="_blank" rel="noopener noreferrer" onClick={() => handleClick(a.name)} className="underline text-blue-300 break-all">{a.url}</Link>
               </td>
               <td className="py-3 px-4 text-yellow-200 font-mono text-center">{a.clicks}</td>
               <td className="py-3 px-4">

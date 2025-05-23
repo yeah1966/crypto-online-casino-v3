@@ -3,6 +3,7 @@
 // Kopieer deze structuur en styling voor een consistente look & feel.
 
 import React from "react";
+import Image from "next/image";
 import CasinoSuggestions from "@/components/CasinoSuggestions";
 
 export default function CasinoReviewTemplate({
@@ -44,7 +45,7 @@ export default function CasinoReviewTemplate({
         <div className="flex flex-col md:flex-row items-center md:items-start mb-6 gap-6">
           {/* Linkerkant: logo, rating, naam, button */}
           <div className="flex flex-col items-center md:items-start gap-2 min-w-[180px] md:min-w-[220px]">
-            <img src={logo} alt={`${casinoName} Logo`} width={96} height={96} className="rounded-xl bg-white shadow-lg mb-1" />
+            <Image src={logo} alt={`${casinoName} Logo`} width={96} height={96} className="rounded-xl bg-white shadow-lg mb-1" />
             <div className="flex items-center gap-2 mb-1">
               <span className="text-yellow-300 text-2xl">{ratingStars}</span>
               <span className="text-white/70 text-sm">{rating.toFixed(1)}/5</span>

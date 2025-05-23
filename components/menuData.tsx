@@ -3,6 +3,7 @@
 import { FaHome, FaBookOpen, FaBtc, FaUserSecret, FaAddressCard, FaSearch, FaFeatherAlt, FaQuestion, FaStar, FaEllipsisH, FaFutbol, FaTrophy, FaBolt, FaDice, FaListAlt } from 'react-icons/fa';
 import { SiLitecoin } from 'react-icons/si';
 import type { ReactNode } from 'react';
+import Image from 'next/image';
 // --- End icon imports ---
 
 export type MenuItem = {
@@ -29,14 +30,14 @@ export const menuItems: MenuItem[] = [
     label: "Crypto Guides",
     icon: <FaBookOpen />,
     children: [
-      { label: "Bitcoin Casinos", href: "/guides/bitcoin-casinos", icon: <img src='/icons/bitcoin.svg' alt='BTC' style={{width:18,height:18,display:'inline',verticalAlign:'middle'}} /> },
-      { label: "Ethereum Casinos", href: "/guides/best-ethereum-casinos", icon: <img src='/icons/eth.svg' alt='ETH' style={{width:18,height:18,display:'inline',verticalAlign:'middle'}} /> },
-      { label: "Binance Casinos", href: "/guides/binance-casino-guide", icon: <img src='/icons/bnb.svg' alt='BNB' style={{width:18,height:18,display:'inline',verticalAlign:'middle'}} /> },
-      { label: "$DOG Casinos", href: "/guides/dog-casino-guide", icon: <img src='/icons/dog.png' alt='$DOG' style={{width:18,height:18,display:'inline',verticalAlign:'middle'}} /> },
-      { label: "Dogecoin Casinos", href: "/guides/dogecoin-casino-guide", icon: <img src='/icons/doge.svg' alt='DOGE' style={{width:18,height:18,display:'inline',verticalAlign:'middle'}} /> },
-      { label: "USDC Casinos", href: "/guides/usdc-casino-guide", icon: <img src='/icons/usdc.svg' alt='USDC' style={{width:18,height:18,display:'inline',verticalAlign:'middle'}} /> },
-      { label: "Best Litecoin Casinos", href: "/guides/best-litecoin-casinos", icon: <img src='/icons/ltc.svg' alt='LTC' style={{width:18,height:18,display:'inline',verticalAlign:'middle'}} /> },
-      { label: "Tether Casinos", href: "/guides/tether-casino-guide", icon: <img src='/icons/usdt.svg' alt='USDT' style={{width:18,height:18,display:'inline',verticalAlign:'middle'}} /> },
+      { label: "Bitcoin Casinos", href: "/guides/bitcoin-casinos", icon: <Image src='/icons/bitcoin.svg' alt='BTC' width={18} height={18} style={{display:'inline',verticalAlign:'middle'}} /> },
+      { label: "Ethereum Casinos", href: "/guides/best-ethereum-casinos", icon: <Image src='/icons/eth.svg' alt='ETH' width={18} height={18} style={{display:'inline',verticalAlign:'middle'}} /> },
+      { label: "Binance Casinos", href: "/guides/binance-casino-guide", icon: <Image src='/icons/bnb.svg' alt='BNB' width={18} height={18} style={{display:'inline',verticalAlign:'middle'}} /> },
+      { label: "$DOG Casinos", href: "/guides/dog-casino-guide", icon: <Image src='/icons/dog.png' alt='$DOG' width={18} height={18} style={{display:'inline',verticalAlign:'middle'}} /> },
+      { label: "Dogecoin Casinos", href: "/guides/dogecoin-casino-guide", icon: <Image src='/icons/doge.svg' alt='DOGE' width={18} height={18} style={{display:'inline',verticalAlign:'middle'}} /> },
+      { label: "USDC Casinos", href: "/guides/usdc-casino-guide", icon: <Image src='/icons/usdc.svg' alt='USDC' width={18} height={18} style={{display:'inline',verticalAlign:'middle'}} /> },
+      { label: "Best Litecoin Casinos", href: "/guides/best-litecoin-casinos", icon: <Image src='/icons/ltc.svg' alt='LTC' width={18} height={18} style={{display:'inline',verticalAlign:'middle'}} /> },
+      { label: "Tether Casinos", href: "/guides/tether-casino-guide", icon: <Image src='/icons/usdt.svg' alt='USDT' width={18} height={18} style={{display:'inline',verticalAlign:'middle'}} /> },
       
       { label: "No KYC Casinos", href: "/guides/no-kyc-crypto-casinos", icon: <FaAddressCard /> }
     ]

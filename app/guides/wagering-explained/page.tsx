@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: "Wagering Requirements Explained – Crypto Casino Bonus Guide",
@@ -111,9 +112,11 @@ export default function WageringExplainedPage() {
 
       {/* OG-image */}
       <div className="max-w-2xl mx-auto">
-        <img
-          src="/images/wagering-requirements-explained.webp"
+        <Image
+          src="/images/wagering-explained.webp"
           alt="Wagering Requirements Explained"
+          width={800}
+          height={400}
           className="w-full rounded-xl shadow-lg mt-8"
         />
       </div>

@@ -1,4 +1,6 @@
 // app/sports/page.tsx
+import React from "react";
+import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import { FaTrophy, FaBolt, FaShieldAlt, FaGift, FaFutbol, FaBitcoin } from "react-icons/fa";
@@ -16,13 +18,13 @@ export default function SportsbettingPage() {
       <main className="relative z-10 min-h-screen flex flex-col items-center pt-6 pb-16 px-4 text-white">
         <div className="max-w-4xl w-full mx-auto bg-black/65 rounded-3xl p-6 md:p-12 shadow-2xl border-2 border-yellow-400/20 relative z-10 flex flex-col items-center">
           {/* Mascot bottom right */}
-          <img
+          <Image
             src="/favicon-180.png"
             alt="Crypto Casino Mascot"
             className="hidden md:block absolute bottom-6 right-6 w-16 h-16 drop-shadow-xl z-20 pointer-events-none select-none"
             style={{ borderRadius: '22%' }}
           />
-          <img
+          <Image
             src="/favicon-64.png"
             alt="Crypto Casino Mascot"
             className="block md:hidden absolute bottom-4 right-4 w-10 h-10 drop-shadow-xl z-20 pointer-events-none select-none"
@@ -84,7 +86,7 @@ export default function SportsbettingPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {bookmakers.map(bm => (
                 <div key={bm.slug} className="flex flex-col items-center bg-gradient-to-br from-purple-900/90 via-black/90 to-yellow-900/70 rounded-2xl p-6 shadow-2xl border-2 border-yellow-400/60 hover:scale-[1.015] transition-transform">
-                  <img src={bm.logo} alt={bm.name + ' Sportsbook'} width={64} height={64} className="mb-3 rounded-xl bg-white/80 shadow-lg border-2 border-yellow-400/40" />
+                  <Image src={bm.logo} alt={bm.name + ' Sportsbook'} width={64} height={64} className="mb-3 rounded-xl bg-white/80 shadow-lg border-2 border-yellow-400/40" />
                   <span className="font-bold text-yellow-200 text-xl mb-1 text-center">{bm.name}</span>
                   <span className="text-white/90 text-base text-center mb-2">{bm.description}</span>
                   <span className="text-yellow-300 text-lg mb-2">{'★'.repeat(Math.floor(bm.rating))}{bm.rating % 1 ? '½' : ''}</span>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 export const generateMetadata = (): Metadata => ({
   title: 'How to Choose a Safe Crypto Casino – Stay Protected While Gambling',
@@ -93,9 +94,11 @@ export default function SafeCryptoCasinoGuide() {
       </section>
       {/* OG Image */}
       <div className="max-w-2xl mx-auto">
-        <img
+        <Image
           src="/images/how-to-choose-a-safe-crypto-casino.webp"
           alt="How to Choose a Safe Crypto Casino"
+          width={800}
+          height={400}
           className="w-full rounded-xl shadow-lg mt-8"
         />
       </div>

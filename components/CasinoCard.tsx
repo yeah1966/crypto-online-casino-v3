@@ -10,6 +10,9 @@ export interface CasinoCardProps {
   flag?: string;
 }
 
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { affiliateLinks } from "@/data/affiliateLinks";
 import CasinoLogo from "./CasinoLogo";
 
@@ -59,7 +62,7 @@ export default function CasinoCard({
         return (
           <div className="text-center mb-2 flex flex-col items-center">
   <div className="flex items-center gap-2">
-    <img src="/casino-icons/Trophy.svg" alt="bonus icon" className="w-5 h-5 inline-block" />
+    <Image src="/casino-icons/Trophy.svg" alt="bonus icon" width={20} height={20} className="w-5 h-5 inline-block" />
     <p className={`${bonusColor} text-2xl font-bold leading-none inline-block`}>{bonusLine1}</p>
   </div>
   {bonusLine2 && <p className="text-white text-sm mt-1">{bonusLine2}</p>}
@@ -69,16 +72,16 @@ export default function CasinoCard({
       {/* Deal type en categorie */}
       <div className="mt-3 text-center space-y-1">
   <span className="bg-gray-800 text-sm px-3 py-1 rounded-md inline-flex items-center gap-1">
-    <img src="/casino-icons/Poker Chip.svg" alt="deal icon" className="w-4 h-4 inline-block" />
+    <Image src="/casino-icons/Poker Chip.svg" alt="deal icon" width={16} height={16} className="w-4 h-4 inline-block" />
     {deal}
   </span>
   <div className="text-sm text-white/70 flex items-center gap-1 justify-center">
-    <img src="/casino-icons/Casino.svg" alt="type icon" className="w-4 h-4 inline-block" />
+    <Image src="/casino-icons/Casino.svg" alt="type icon" width={16} height={16} className="w-4 h-4 inline-block" />
     {type}
   </div>
 </div>
       {/* CTA knop */}
-      <a
+      <Link
   href={affiliateLinks[slug] ?? "#"}
   target="_blank"
   rel="noopener noreferrer"
@@ -86,7 +89,7 @@ export default function CasinoCard({
   style={{textShadow:'0 2px 8px #fff,0 0 2px #ff0'}}
 >
   PLAY NOW ➜
-</a>
+</Link>
 
     </div>
   );
