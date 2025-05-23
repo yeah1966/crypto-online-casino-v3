@@ -5,7 +5,7 @@ import { germanyCasinos } from "@/data/countries/germany";
 import { spainCasinos } from "@/data/countries/spain";
 import { brazilCasinos } from "@/data/countries/brazil";
 
-const countryCasinoMap: Record<string, any[]> = {
+const countryCasinoMap: Record<string, unknown[]> = {
   germany: germanyCasinos,
   spain: spainCasinos,
   brazil: brazilCasinos,
@@ -81,9 +81,12 @@ export default function CountryCasinosPage({ params }: { params: { country: stri
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
-            {casinos.map((casino) => (
-              <CasinoCard key={casino.slug} {...casino} />
-            ))}
+            {casinos.map((casino, idx) => {
+              if (typeof casino === 'object' && casino !== null && 'slug' in casino) {
+                return <CasinoCard key={(casino as any).slug} {...(casino as any)} />;
+              }
+              return null;
+            })}
           </div>
 
           <div className="text-white/80 text-sm mt-8">

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import CasinoCard from '../../components/CasinoCard'; // herbruikbare kaartcomponent
 import { casinos as casinosData } from '@/data/casinosData';
 import WizardMascot from './WizardMascot';
@@ -94,8 +95,8 @@ export default function BonusWizard() {
           <h2 className="text-2xl font-bold text-green-400 mb-6">🎉 HERE’S WHAT WE RECOMMEND:</h2>
           {(() => {
             const filtered = casinosData.filter((casino) => {
-              const bonusMatch = answers.bonusType === '' || casino.bonusTags?.includes(answers.bonusType);
-              const cryptoMatch = answers.crypto === '' || casino.cryptos?.includes(answers.crypto);
+              const bonusMatch = answers.bonusType === '' || (Array.isArray(casino.bonusTags) && casino.bonusTags.includes(answers.bonusType));
+              const cryptoMatch = answers.crypto === '' || (Array.isArray(casino.cryptos) && casino.cryptos.includes(answers.crypto));
               const kycMatch =
                 answers.kyc === 'Doesn’t matter' ||
                 (answers.kyc === 'Yes' && casino.noKyc === true) ||
@@ -105,7 +106,10 @@ export default function BonusWizard() {
             return filtered.length > 0 ? (
               <div className="animate-fade-in-up mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 z-10">
                 {filtered.map((casino) => (
-                  <CasinoCard key={casino.slug} {...casino} />
+                  (typeof casino === 'object' && casino !== null &&
+  'slug' in casino && 'name' in casino && 'logo' in casino && 'type' in casino && 'deal' in casino && 'bonus' in casino) ? (
+  <CasinoCard key={(casino as any).slug} {...(casino as any)} />
+) : null
                 ))}
               </div>
             ) : (
@@ -113,7 +117,7 @@ export default function BonusWizard() {
             );
           })()}
           <p className="text-center text-white/80 mt-8">
-            Want to explore more options? <a href="/crypto-casino-reviews" className="text-yellow-400 underline">Browse all reviews</a>
+            Want to explore more options? <Link href="/crypto-casino-reviews" className="text-yellow-400 underline">Browse all reviews</Link>
           </p>
         </div>
       )}

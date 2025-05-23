@@ -1,4 +1,5 @@
 'use client';
+import Link from "next/link";
 import React from 'react';
 
 export default function AboutPage() {
@@ -59,7 +60,7 @@ export default function AboutPage() {
             <h2 className="text-yellow-400 text-xl font-bold mb-2">📞 CONTACT & PARTNERSHIPS</h2>
             <p className="text-sm text-gray-200">
               Want to partner with us or have a crypto casino you’d like us to review?{' '}
-              <a href="/contact" className="text-yellow-300 underline">Reach out via our contact form →</a>
+              <Link href="/contact" className="text-yellow-300 underline">Reach out via our contact form →</Link>
             </p>
           </div>
           {/* BLOCK 6 */}

@@ -3,16 +3,17 @@ import React, { useRef } from 'react';
 import WheelOfFortune from '../components/WheelOfFortune';
 import SpinButton from '@/components/SpinButton';
 import CasinoGrid from '../components/CasinoGrid';
-import Image from "next/image";
+
 import Link from "next/link";
 import { casinos } from '@/data/casinosData';
 
 export default function HomeClient() {
-  const wheelRef = useRef<any>(null);
+  const wheelRef = useRef<unknown>(null);
 
   const spin = () => {
-    if (wheelRef.current && typeof wheelRef.current.spin === 'function') {
-      wheelRef.current.spin();
+    const wheel = wheelRef.current as { spin?: () => void } | null;
+    if (wheel && typeof wheel.spin === 'function') {
+      wheel.spin();
     }
   };
 

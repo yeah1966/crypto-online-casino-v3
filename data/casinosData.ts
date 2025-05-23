@@ -19,7 +19,7 @@ export interface CasinoCard {
   reviewUrl?: string;
   bonusText?: string;
   depositType?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export const casinos: CasinoCard[] = [

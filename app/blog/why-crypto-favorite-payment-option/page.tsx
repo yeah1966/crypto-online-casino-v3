@@ -1,6 +1,6 @@
 
 import React from "react";
-import Image from "next/image";
+
 
 const proseClass =
   "prose lg:prose-lg prose-invert prose-headings:text-yellow-400 prose-h2:mb-3 prose-h2:mt-10 prose-h3:text-purple-400 prose-h3:mt-8 prose-h3:mb-2 prose-p:text-gray-100 prose-strong:text-yellow-300 prose-blockquote:border-l-4 prose-blockquote:border-yellow-400 prose-blockquote:bg-black/40 prose-blockquote:p-4 prose-blockquote:rounded-xl max-w-none";
@@ -55,13 +55,13 @@ export default function Page() {
         />
 
         {/* OG Image at the top */}
-        <Image
+        <img
           src="/images/crypto-the-favorite-payment-option.webp"
           alt="Why Crypto Is Becoming the World’s Favorite Payment Option"
           width={800}
           height={450}
           className="rounded-xl shadow-lg w-full h-auto object-cover mb-4"
-          priority
+          loading="eager"
         />
 
         {/* Header */}

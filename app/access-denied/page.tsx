@@ -1,7 +1,5 @@
 'use client';
 
-import Image from 'next/image';
-
 export default function AccessDenied() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-900 via-black to-yellow-900">
