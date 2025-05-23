@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation";
+import React from "react";
+import Image from "next/image";
 import path from "path";
 import fs from "fs/promises";
 import matter from "gray-matter";
@@ -39,7 +41,7 @@ export default async function BlogPostPage({ params: { slug } }: { params: { slu
             </h1>
             {/* Mascotte rechtsboven, alleen desktop */}
             <div className="hidden md:block absolute top-0 right-0 -mt-8 mr-[-60px] z-20">
-              <img src="/favicon-512.png" alt="Mascotte" width={90} height={90} className="drop-shadow-xl" />
+              <Image src="/favicon-512.png" alt="Mascotte" width={90} height={90} className="drop-shadow-xl" />
             </div>
           </div>
           <p className="absolute left-1/2 -bottom-5 -translate-x-1/2 px-4 py-1 rounded-full bg-fuchsia-700/90 text-yellow-200 font-bold text-base shadow border border-yellow-400/40">
@@ -163,7 +165,7 @@ export default async function BlogPostPage({ params: { slug } }: { params: { slu
               });
             }
             // Render blocks in cards
-            return blocks.map((block, i) => {
+            return blocks.map((block) => {
               if (block.type === 'table') {
                 return (
                   <div className="vegas-table-card" key={block.key} aria-label="Comparison Table" dangerouslySetInnerHTML={{ __html: block.html }} />
