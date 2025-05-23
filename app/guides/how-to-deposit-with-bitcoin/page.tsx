@@ -15,24 +15,6 @@ const sections = [
   { id: "tips", label: "Tips" },
 ];
 
-const wallets = [
-  {
-    name: "MetaMask",
-    icon: "/icons/MetaMask.svg",
-    desc: "Browser wallet, easy for beginners",
-  },
-  {
-    name: "Coinbase Wallet",
-    icon: "/icons/Coinbase.svg",
-    desc: "Well-known and secure, works with many coins",
-  },
-  {
-    name: "Trust Wallet",
-    icon: "/icons/Trust Wallet.svg",
-    desc: "Mobile, secure and user-friendly",
-  },
-];
-
 const advantages = [
   {
     title: "Fast Deposits",
@@ -134,13 +116,13 @@ export default function DepositWithBitcoinGuide() {
                 <Link href="https://metamask.io" target="_blank" rel="noopener" className="mt-2 px-3 py-1 bg-yellow-300 text-purple-900 text-xs font-bold rounded-full shadow hover:bg-yellow-400 transition">Visit MetaMask</Link>
               </div>
               <div className="flex flex-col items-center bg-blue-900/60 rounded-lg p-3 shadow">
-                <img src="/icons/Coinbase.svg" alt="Coinbase Wallet" width={44} height={44} className="mb-2" />
+                <Image src="/icons/Coinbase.svg" alt="Coinbase Wallet" width={44} height={44} className="mb-2" />
                 <span className="font-bold text-blue-300 mb-1">Coinbase Wallet</span>
                 <span className="text-xs text-white/90 text-center">Well-known and secure, works with many coins</span>
                 <Link href="https://www.coinbase.com/" target="_blank" rel="noopener" className="mt-2 px-3 py-1 bg-yellow-300 text-purple-900 text-xs font-bold rounded-full shadow hover:bg-yellow-400 transition">Visit Coinbase</Link>
               </div>
               <div className="flex flex-col items-center bg-cyan-900/60 rounded-lg p-3 shadow">
-                <img src="/icons/Trust Wallet.svg" alt="Trust Wallet" width={44} height={44} className="mb-2" />
+                <Image src="/icons/Trust Wallet.svg" alt="Trust Wallet" width={44} height={44} className="mb-2" />
                 <span className="font-bold text-cyan-300 mb-1">Trust Wallet</span>
                 <span className="text-xs text-white/90 text-center">Mobile, secure and user-friendly</span>
                 <Link href="https://trustwallet.com/" target="_blank" rel="noopener" className="mt-2 px-3 py-1 bg-yellow-300 text-purple-900 text-xs font-bold rounded-full shadow hover:bg-yellow-400 transition">Visit Trust Wallet</Link>
@@ -150,22 +132,22 @@ export default function DepositWithBitcoinGuide() {
           {/* Advantages */}
           <section className="rounded-2xl border border-orange-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-purple-700">
-              <img src="/icons/bolt.svg" alt="Lightning" width={32} height={32} />
+              <Image src="/icons/bolt.svg" alt="Lightning" width={32} height={32} />
               Why Deposit with Crypto?
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="flex flex-col items-center bg-gradient-to-br from-yellow-200 via-pink-100 to-purple-100 rounded-xl p-4 border-2 border-yellow-400 shadow hover:scale-105 transition-transform duration-200">
-                <img src="/icons/bolt.svg" alt="Fast" width={36} height={36} className="mb-2" />
+                <Image src="/icons/bolt.svg" alt="Fast" width={36} height={36} className="mb-2" />
                 <span className="font-bold text-black mb-1">Fast Deposits</span>
                 <span className="text-xs text-black/70 text-center">Blockchain transactions are instant, no bank delays.</span>
               </div>
               <div className="flex flex-col items-center bg-gradient-to-br from-yellow-200 via-pink-100 to-purple-100 rounded-xl p-4 border-2 border-yellow-400 shadow hover:scale-105 transition-transform duration-200">
-                <img src="/casino-icons/koc.png" alt="No KYC" width={36} height={36} className="mb-2" />
+                <Image src="/casino-icons/koc.png" alt="No KYC" width={36} height={36} className="mb-2" />
                 <span className="font-bold text-black mb-1">No KYC</span>
                 <span className="text-xs text-black/70 text-center">Deposit and play without identity checks.</span>
               </div>
               <div className="flex flex-col items-center bg-gradient-to-br from-yellow-200 via-pink-100 to-purple-100 rounded-xl p-4 border-2 border-yellow-400 shadow hover:scale-105 transition-transform duration-200">
-                <img src="/icons/shib.svg" alt="Privacy" width={36} height={36} className="mb-2" />
+                <Image src="/icons/shib.svg" alt="Privacy" width={36} height={36} className="mb-2" />
                 <span className="font-bold text-black mb-1">Privacy</span>
                 <span className="text-xs text-black/70 text-center">Your data stays private at crypto casinos.</span>
               </div>
@@ -174,14 +156,14 @@ export default function DepositWithBitcoinGuide() {
           {/* Tips */}
           <section ref={refs.tips} className="rounded-2xl border border-purple-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-pink-700">
-              <img src="/casino-icons/Lock.svg" alt="Tips" width={32} height={32} />
+              <Image src="/casino-icons/Lock.svg" alt="Tips" width={32} height={32} />
               Tips for Fast & Secure Deposits
             </h2>
             <ul className="list-disc pl-5 mb-4 text-white/90">
-              <li className="mb-2 text-white/90 flex items-center gap-2"><img src="/casino-icons/Lock.svg" alt="Lock" width={18} height={18} />Always double-check the wallet address before sending</li>
-              <li className="mb-2 text-white/90 flex items-center gap-2"><img src="/icons/MetaMask.svg" alt="Wallet" width={18} height={18} />Use a trusted wallet (see above)</li>
-              <li className="mb-2 text-white/90 flex items-center gap-2"><img src="/icons/bolt.svg" alt="Lightning" width={18} height={18} />Try a small test deposit first</li>
-              <li className="mb-2 text-white/90 flex items-center gap-2"><img src="/icons/eth.svg" alt="Ethereum" width={18} height={18} />Watch out for network fees during busy times</li>
+              <li className="mb-2 text-white/90 flex items-center gap-2"><Image src="/casino-icons/Lock.svg" alt="Lock" width={18} height={18} />Always double-check the wallet address before sending</li>
+              <li className="mb-2 text-white/90 flex items-center gap-2"><Image src="/icons/MetaMask.svg" alt="Wallet" width={18} height={18} />Use a trusted wallet (see above)</li>
+              <li className="mb-2 text-white/90 flex items-center gap-2"><Image src="/icons/bolt.svg" alt="Lightning" width={18} height={18} />Try a small test deposit first</li>
+              <li className="mb-2 text-white/90 flex items-center gap-2"><Image src="/icons/eth.svg" alt="Ethereum" width={18} height={18} />Watch out for network fees during busy times</li>
             </ul>
           </section>
           {/* CTA */}
