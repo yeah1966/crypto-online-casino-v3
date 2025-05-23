@@ -15,12 +15,6 @@ const sections = [
   { id: "compare", label: "Crypto vs Bank" },
 ];
 
-const wallets = [
-  { name: "MetaMask", icon: "/icons/MetaMask.svg", desc: "Browser wallet, easy for beginners" },
-  { name: "Ledger", icon: "/icons/ledger.svg", desc: "Hardware wallet for ultimate security" },
-  { name: "Coinbase Wallet", icon: "/icons/Coinbase.svg", desc: "Famous & secure, works with many coins" },
-  { name: "Trust Wallet", icon: "/icons/trustwallet.svg", desc: "Mobile, secure and user-friendly" },
-];
 
 export default function CryptoPaymentsGuide() {
   const refs = sections.reduce((acc, section) => {
