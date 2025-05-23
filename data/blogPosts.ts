@@ -1,5 +1,12 @@
 export const blogPosts = [
   {
+    slug: "why-crypto-favorite-payment-option",
+    title: "Why Crypto is Becoming the Favorite Payment Option",
+    description: "How cryptocurrency is becoming the preferred way to pay — from privacy to speed, discover why the shift is happening now.",
+    date: "2025-05-22",
+    image: "/images/crypto-the-favorite-payment-option.webp"
+  },
+  {
     slug: "provably-fair-gaming",
     title: "What is Provably Fair Gaming?",
     excerpt: "Learn how provably fair technology ensures transparency in crypto casinos.",
