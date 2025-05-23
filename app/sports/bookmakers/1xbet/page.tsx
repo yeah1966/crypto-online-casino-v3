@@ -85,7 +85,9 @@ export default function OneXBetBookmaker() {
           <section className="mb-10">
             <h2 className="text-2xl font-bold text-yellow-300 mb-2 flex items-center"><span className="mr-2">🎁</span>1xBet Bonus & Promotions</h2>
             <p className="mb-3">New players receive a <span className="font-bold text-yellow-200">welcome bonus up to €100</span> or the equivalent in crypto. Plus, enjoy regular reload bonuses, free bets, and cashback offers.</p>
-            <a href="https://refpa3740576.top/L?tag=d_3915280m_1599c_&site=3915280&ad=1599" target="_blank" rel="noopener noreferrer" className="inline-block bg-yellow-400 text-black font-bold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition text-lg mt-2">Claim your 1xBet Bonus</a>
+            <Link href="https://refpa3740576.top/L?tag=d_3915280m_1599c_&site=3915280&ad=1599" passHref legacyBehavior>
+  <a target="_blank" rel="noopener noreferrer" className="inline-block bg-yellow-400 text-black font-bold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition text-lg mt-2">Claim your 1xBet Bonus</a>
+</Link>
           </section>
 
           {/* Beschikbare sporten & markten */}

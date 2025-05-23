@@ -15,9 +15,9 @@ const casinos = [
     icon: '/casino-icons/Dices.svg',
     url: 'https://www.slotsofvegaslinks.com/click/15/4298/15512/1',
     perks: [
-      'Fast LTC payouts',
-      'Big welcome bonus',
-      'No KYC required',
+      "Fast LTC payouts",
+      "Big welcome bonus",
+      "No KYC required",
     ],
   },
   {
@@ -25,9 +25,9 @@ const casinos = [
     icon: '/casino-icons/Diamond 1.svg',
     url: 'https://www.wildvegaslinks.com/click/11/4315/15512/1',
     perks: [
-      'Instant deposits',
-      'Frequent reloads',
-      'VIP rewards',
+      "Instant deposits",
+      "Frequent reloads",
+      "VIP rewards",
     ],
   },
   {
@@ -35,9 +35,9 @@ const casinos = [
     icon: '/casino-icons/Casino.svg',
     url: 'https://bs5.direct/b2bZr0de07',
     perks: [
-      'Award-winning support',
-      'Fast LTC withdrawals',
-      'Provably fair games',
+      "Award-winning support",
+      "Fast LTC withdrawals",
+      "Provably fair games",
     ],
   },
   {
@@ -45,9 +45,9 @@ const casinos = [
     icon: '/casino-icons/Lucky Charm.svg',
     url: 'https://dlcbt.cloud/go/en/landing/bitcoin-casino?af_token=36d323f0afab6d541b76115d29e88c18&afm_campaign=CQC&afm_source=website&afm_medium=banner&afm_content=banner-468',
     perks: [
-      'High limits',
-      'Live casino action',
-      'Fast payouts',
+      "High limits",
+      "Live casino action",
+      "Fast payouts",
     ],
   },
   {
@@ -55,9 +55,9 @@ const casinos = [
     icon: '/casino-icons/Bonus.svg',
     url: 'https://www.7bitcasino.com/a/b8c1d2e3f4',
     perks: [
-      'Up to 5 LTC welcome',
-      'Thousands of slots',
-      'Crypto races',
+      "Up to 5 LTC welcome",
+      "Thousands of slots",
+      "Crypto races",
     ],
   },
   {
@@ -65,9 +65,9 @@ const casinos = [
     icon: '/casino-icons/Crown.svg',
     url: 'https://betplay.io?ref=b412fd5f5cd18',
     perks: [
-      'No KYC',
-      'Instant payouts',
-      'Sports & casino',
+      "No KYC",
+      "Instant payouts",
+      "Sports & casino",
     ],
   },
   {
@@ -75,9 +75,9 @@ const casinos = [
     icon: '/casino-icons/Diamond 2.svg',
     url: 'https://www.dreamslinks.com/click/64/305/15512/1',
     perks: [
-      'Crypto-friendly',
-      'Big jackpots',
-      '24/7 support',
+      "Crypto-friendly",
+      "Big jackpots",
+      "24/7 support",
     ],
   },
   {
@@ -85,7 +85,7 @@ const casinos = [
     icon: '/casino-icons/Lucky Charm.svg',
     url: 'https://cryptolokio.click/click/774/461/6060/1',
     perks: [
-      'No KYC',
+      "No KYC",
       'Exclusive LTC promos',
       'Fast withdrawals',
     ],
@@ -95,7 +95,7 @@ const casinos = [
     icon: '/casino-icons/Diamond 3.svg',
     url: 'https://www.betzard.com/?ref=YOUR_ID',
     perks: [
-      'Sports & casino',
+      "Sports & casino",
       'Crypto bonuses',
       'Easy registration',
     ],
@@ -107,7 +107,7 @@ const casinos = [
     perks: [
       'Provably fair poker',
       'Fast crypto payouts',
-      'No KYC',
+      "No KYC",
     ],
   },
 ];
