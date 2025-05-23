@@ -17,13 +17,6 @@ const sections = [
   { id: "wallets", label: "Wallets" },
 ];
 
-const wallets = [
-  { name: "MetaMask", icon: "/icons/metamask.svg", desc: "Browser wallet, easy for beginners" },
-  { name: "Coinbase Wallet", icon: "/icons/coinbase.svg", desc: "Well-known and secure, works with many coins" },
-  { name: "Trust Wallet", icon: "/icons/trustwallet.svg", desc: "Mobile, secure and user-friendly" },
-  { name: "Ledger", icon: "/icons/ledger.svg", desc: "Hardware wallet for ultimate security" },
-  { name: "Binance Wallet", icon: "/icons/binance.svg", desc: "Popular in EU/Asia, easy deposits" },
-];
 
 const advantages = [
   { title: "No KYC (usually)", desc: "Sign up with just an email", icon: "/fun/wallet.png" },
