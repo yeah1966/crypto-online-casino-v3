@@ -1,5 +1,6 @@
 "use client";
 import Head from "next/head";
+import Link from 'next/link';
 import Image from "next/image";
 import { useState } from "react";
 
@@ -160,14 +161,15 @@ export default function OneXBetBookmaker() {
 
           {/* Sticky CTA */}
           <div className="fixed bottom-6 left-0 right-0 flex justify-center z-50 pointer-events-none">
-            <a
-              href="https://refpa3740576.top/L?tag=d_3915280m_1599c_&site=3915280&ad=1599"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pointer-events-auto bg-yellow-400 text-black font-bold px-10 py-4 rounded-full shadow-2xl text-xl hover:bg-yellow-300 transition border-4 border-yellow-300 animate-bounce"
-            >
-              🎯 Claim your 1xBet Bonus
-            </a>
+            <Link href="https://refpa3740576.top/L?tag=d_3915280m_1599c_&site=3915280&ad=1599" passHref legacyBehavior>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pointer-events-auto bg-yellow-400 text-black font-bold px-10 py-4 rounded-full shadow-2xl text-xl hover:bg-yellow-300 transition border-4 border-yellow-300 animate-bounce"
+              >
+                🎯 Claim your 1xBet Bonus
+              </a>
+            </Link>
           </div>
         </div>
         {/* Schema.org FAQ structured data */}

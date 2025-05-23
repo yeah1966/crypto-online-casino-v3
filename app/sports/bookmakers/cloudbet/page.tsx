@@ -1,5 +1,6 @@
 "use client";
 import Head from "next/head";
+import Link from 'next/link';
 import Image from "next/image";
 import { useState } from "react";
 
@@ -162,14 +163,15 @@ export default function CloudbetSportsbookPage() {
 
           {/* Sticky CTA */}
           <div className="fixed bottom-6 left-0 right-0 flex justify-center z-50 pointer-events-none">
-            <a
-              href="https://cldbt.cloud/go/en/landing/bitcoin-casino?af_token=&aftm_campaign=CryptoCasino&aftm_source=GEO&aftm_medium=link&aftm_content=cryptoinfo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pointer-events-auto bg-yellow-400 text-black font-bold px-10 py-4 rounded-full shadow-2xl text-xl hover:bg-yellow-300 transition border-4 border-yellow-300 animate-bounce"
-            >
-              🎯 Claim your Cloudbet Bonus
-            </a>
+            <Link href="https://cldbt.cloud/go/en/landing/bitcoin-casino?af_token=&aftm_campaign=CryptoCasino&aftm_source=GEO&aftm_medium=link&aftm_content=cryptoinfo" passHref legacyBehavior>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pointer-events-auto bg-yellow-400 text-black font-bold px-10 py-4 rounded-full shadow-2xl text-xl hover:bg-yellow-300 transition border-4 border-yellow-300 animate-bounce"
+              >
+                🎯 Claim your Cloudbet Bonus
+              </a>
+            </Link>
           </div>
         </div>
         {/* Schema.org FAQ structured data */}

@@ -1,5 +1,6 @@
 "use client";
 import Head from "next/head";
+import Link from 'next/link';
 import Image from "next/image";
 import { useState } from "react";
 
@@ -157,14 +158,15 @@ export default function WildVegasPage() {
 
           {/* Sticky CTA */}
           <div className="fixed bottom-6 left-0 right-0 flex justify-center z-50 pointer-events-none">
-            <a
-              href="https://www.wildvegaslinks.com/click/11/4315/15512/1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pointer-events-auto bg-yellow-400 text-black font-bold px-10 py-4 rounded-full shadow-2xl text-xl hover:bg-yellow-300 transition border-4 border-yellow-300 animate-bounce"
-            >
-              🎯 Claim your Wild Vegas Bonus
-            </a>
+            <Link href="https://www.wildvegaslinks.com/click/11/4315/15512/1" passHref legacyBehavior>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pointer-events-auto bg-yellow-400 text-black font-bold px-10 py-4 rounded-full shadow-2xl text-xl hover:bg-yellow-300 transition border-4 border-yellow-300 animate-bounce"
+              >
+                🎯 Claim your Wild Vegas Bonus
+              </a>
+            </Link>
           </div>
         </div>
         {/* Schema.org FAQ structured data */}

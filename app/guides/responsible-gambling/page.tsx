@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function ResponsibleGamblingPage() {
   return (
     <div className="relative w-full min-h-screen z-10 px-4 md:px-8 py-16 max-w-6xl mx-auto text-white space-y-12">
@@ -41,9 +43,9 @@ export default function ResponsibleGamblingPage() {
           If gambling affects your finances, mental health, or relationships, it's time to take a break. Professional help is available. And it works.
         </p>
         <ul className="list-disc list-inside space-y-2">
-          <li><a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware.org</a></li>
-          <li><a href="https://www.gamcare.org.uk/" target="_blank" rel="noopener noreferrer">GamCare.org.uk</a></li>
-          <li><a href="https://www.gamblersanonymous.org.uk/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a></li>
+          <li><Link href="https://www.begambleaware.org/" passHref legacyBehavior><a target="_blank" rel="noopener noreferrer">BeGambleAware.org</a></Link></li>
+          <li><Link href="https://www.gamcare.org.uk/" passHref legacyBehavior><a target="_blank" rel="noopener noreferrer">GamCare.org.uk</a></Link></li>
+          <li><Link href="https://www.gamblersanonymous.org.uk/" passHref legacyBehavior><a target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a></Link></li>
         </ul>
       </section>
 
@@ -59,12 +61,9 @@ export default function ResponsibleGamblingPage() {
       {/* Call to Action */}
       <section className="text-center">
         <p className="text-lg text-white/80 mb-4">Want to gamble safely and stay in control?</p>
-        <a
-          href="/crypto-casino-reviews"
-          className="inline-block bg-yellow-400 text-black font-bold px-6 py-3 rounded-xl hover:bg-yellow-300 transition shadow-lg"
-        >
+        <Link href="/crypto-casino-reviews" className="inline-block bg-yellow-400 text-black font-bold px-6 py-3 rounded-xl hover:bg-yellow-300 transition shadow-lg">
           🧩 Explore Reputable Crypto Casinos
-        </a>
+        </Link>
       </section>
     </div>
   );

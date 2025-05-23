@@ -16,21 +16,11 @@ export default function NoKycCryptoCasinos() {
 
       {/* Section Navigation Buttons (fixed for prompt) */}
       <div className="flex flex-wrap justify-center gap-4 my-6">
-        <a href="#why-kyc" className="px-6 py-3 rounded-full bg-gradient-to-r from-orange-400 to-red-400 font-bold text-black shadow hover:scale-105 transition-all">
-          Why KYC
-        </a>
-        <a href="#benefits" className="px-6 py-3 rounded-full bg-gradient-to-r from-pink-400 to-red-400 font-bold text-black shadow hover:scale-105 transition-all">
-          Benefits
-        </a>
-        <a href="#things-to-know" className="px-6 py-3 rounded-full bg-gradient-to-r from-green-400 to-lime-400 font-bold text-black shadow hover:scale-105 transition-all">
-          Things To Know
-        </a>
-        <a href="#no-kyc" className="px-6 py-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 font-bold text-black shadow hover:scale-105 transition-all">
-          No KYC
-        </a>
-        <a href="#faq" className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 font-bold text-black shadow hover:scale-105 transition-all">
-          FAQ
-        </a>
+        <Link href="#why-kyc" className="px-6 py-3 rounded-full bg-gradient-to-r from-orange-400 to-red-400 font-bold text-black shadow hover:scale-105 transition-all">Why KYC</Link>
+        <Link href="#benefits" className="px-6 py-3 rounded-full bg-gradient-to-r from-pink-400 to-red-400 font-bold text-black shadow hover:scale-105 transition-all">Benefits</Link>
+        <Link href="#things-to-know" className="px-6 py-3 rounded-full bg-gradient-to-r from-green-400 to-lime-400 font-bold text-black shadow hover:scale-105 transition-all">Things To Know</Link>
+        <Link href="#no-kyc" className="px-6 py-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 font-bold text-black shadow hover:scale-105 transition-all">No KYC</Link>
+        <Link href="#faq" className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 font-bold text-black shadow hover:scale-105 transition-all">FAQ</Link>
       </div>
 
       <div className="relative rounded-3xl bg-black/65 shadow-2xl border-2 border-yellow-400 p-8 md:p-12 space-y-14 max-w-6xl mx-auto mt-6">
@@ -158,24 +148,9 @@ export default function NoKycCryptoCasinos() {
 
       {/* Guides Navigation CTA Buttons (bottom) */}
       <div className="flex flex-wrap justify-center gap-4 mt-8">
-        <Link
-          href="/guides/getting-started"
-          className="inline-block bg-gradient-to-r from-yellow-400 via-pink-400 to-red-400 text-black font-extrabold rounded-full px-6 py-3 text-base shadow-lg border-4 border-white/80 drop-shadow-xl hover:scale-105 transition-all"
-        >
-          🚀 Getting Started
-        </Link>
-        <Link
-          href="/guides/how-to-deposit-with-bitcoin"
-          className="inline-block bg-gradient-to-r from-yellow-400 via-pink-400 to-red-400 text-black font-extrabold rounded-full px-6 py-3 text-base shadow-lg border-4 border-white/80 drop-shadow-xl hover:scale-105 transition-all"
-        >
-          💰 Bitcoin Deposit
-        </Link>
-        <Link
-          href="/guides/how-to-use-a-vpn-for-gambling"
-          className="inline-block bg-gradient-to-r from-yellow-400 via-pink-400 to-red-400 text-black font-extrabold rounded-full px-6 py-3 text-base shadow-lg border-4 border-white/80 drop-shadow-xl hover:scale-105 transition-all"
-        >
-          🕶️ VPN Gambling
-        </Link>
+        <Link href="/guides/getting-started" className="inline-block bg-gradient-to-r from-yellow-400 via-pink-400 to-red-400 text-black font-extrabold rounded-full px-6 py-3 text-base shadow-lg border-4 border-white/80 drop-shadow-xl hover:scale-105 transition-all">🚀 Getting Started</Link>
+        <Link href="/guides/how-to-deposit-with-bitcoin" className="inline-block bg-gradient-to-r from-yellow-400 via-pink-400 to-red-400 text-black font-extrabold rounded-full px-6 py-3 text-base shadow-lg border-4 border-white/80 drop-shadow-xl hover:scale-105 transition-all">💰 Bitcoin Deposit</Link>
+        <Link href="/guides/how-to-use-a-vpn-for-gambling" className="inline-block bg-gradient-to-r from-yellow-400 via-pink-400 to-red-400 text-black font-extrabold rounded-full px-6 py-3 text-base shadow-lg border-4 border-white/80 drop-shadow-xl hover:scale-105 transition-all">🕶️ VPN Gambling</Link>
       </div>
 
       {/* Structured Data for SEO */}
