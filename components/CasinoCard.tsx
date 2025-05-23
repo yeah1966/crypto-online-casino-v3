@@ -1,6 +1,6 @@
 
 
-interface CasinoCardProps {
+export interface CasinoCardProps {
   name: string;
   logo: string;
   type: string;

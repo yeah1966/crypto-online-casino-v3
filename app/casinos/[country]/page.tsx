@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import CasinoCard from "@/components/CasinoCard";
+import CasinoCard from '../../../components/CasinoCard';
+import type { CasinoCardProps } from '../../../components/CasinoCard';
 import { germanyCasinos } from "@/data/countries/germany";
 import { spainCasinos } from "@/data/countries/spain";
 import { brazilCasinos } from "@/data/countries/brazil";
@@ -83,7 +84,7 @@ export default function CountryCasinosPage({ params }: { params: { country: stri
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
             {casinos.map((casino, idx) => {
               if (typeof casino === 'object' && casino !== null && 'slug' in casino) {
-                return <CasinoCard key={(casino as any).slug} {...(casino as any)} />;
+                return <CasinoCard key={(casino as unknown as CasinoCardProps).slug} {...(casino as unknown as CasinoCardProps)} />;
               }
               return null;
             })}

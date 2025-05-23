@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import CasinoCard from '../../components/CasinoCard'; // herbruikbare kaartcomponent
+import type { CasinoCardProps } from '../../components/CasinoCard';
 import { casinos as casinosData } from '@/data/casinosData';
 import WizardMascot from './WizardMascot';
 
@@ -108,7 +109,7 @@ export default function BonusWizard() {
                 {filtered.map((casino) => (
                   (typeof casino === 'object' && casino !== null &&
   'slug' in casino && 'name' in casino && 'logo' in casino && 'type' in casino && 'deal' in casino && 'bonus' in casino) ? (
-  <CasinoCard key={(casino as any).slug} {...(casino as any)} />
+  <CasinoCard key={(casino as unknown as CasinoCardProps).slug} {...(casino as unknown as CasinoCardProps)} />
 ) : null
                 ))}
               </div>
