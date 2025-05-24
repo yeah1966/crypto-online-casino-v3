@@ -186,13 +186,15 @@ export default function BestLitecoinCasinos() {
         </section>
         {/* CTA Button */}
         <div className="flex justify-center mt-10 mb-8">
-          <a
+          import Link from "next/link";
+
+<Link
             href="/crypto-casino-reviews"
             className="font-bold text-lg px-7 py-3 rounded-full bg-gradient-to-r from-blue-300 via-cyan-400 to-purple-400 shadow-lg border-2 border-white/80 drop-shadow-xl hover:scale-105 hover:shadow-blue-400/60 transition-all focus:outline-none"
             style={{ boxShadow: '0 0 12px 2px #38bdf8, 0 0 32px 4px #a78bfa' }}
           >
             View All Crypto Casino Reviews
-          </a>
+          </Link>
         </div>
       </main>
     </>
