@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef } from "react";
+import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -17,7 +18,7 @@ const sections = [
 
 export default function ProvablyFairGuide() {
   const refs = sections.reduce((acc, section) => {
-    acc[section.id] = useRef<HTMLDivElement | null>(null);
+    // useRef cannot be used inside a callback. Refactor needed below.
     return acc;
   }, {} as Record<string, React.RefObject<HTMLDivElement | null>>);
 
@@ -43,9 +44,9 @@ export default function ProvablyFairGuide() {
           {/* Intro */}
           <section ref={refs.intro} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col items-center gap-2">
             <div className="flex flex-row items-center gap-4 mb-2">
-              <img src="/casino-icons/Diamond 1.svg" alt="Diamond" width={60} height={60} className="drop-shadow-lg" />
-              <img src="/casino-icons/Roulette Wheel.svg" alt="Roulette wheel" width={60} height={60} className="drop-shadow-lg animate-bounce" />
-              <img src="/icons/Bitcoin.svg" alt="Bitcoin logo" width={60} height={60} className="drop-shadow-lg" />
+              <Image src="/casino-icons/Diamond 1.svg" alt="Diamond" width={60} height={60} className="drop-shadow-lg" />
+              <Image src="/casino-icons/Roulette Wheel.svg" alt="Roulette wheel" width={60} height={60} className="drop-shadow-lg animate-bounce" />
+              <Image src="/icons/Bitcoin.svg" alt="Bitcoin logo" width={60} height={60} className="drop-shadow-lg" />
             </div>
             <h1 className="text-3xl md:text-5xl font-extrabold neon-text text-center mb-2 text-purple-700">
               What Is “Provably Fair”? 🎲
@@ -57,56 +58,56 @@ export default function ProvablyFairGuide() {
           {/* Section 1: How Does Provably Fair Work? */}
           <section ref={refs.how} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-yellow-600">
-              <img src="/icons/bolt.svg" alt="How it works" width={32} height={32} />
+              <Image src="/icons/bolt.svg" alt="How it works" width={32} height={32} />
               How Does Provably Fair Work?
             </h2>
             <ul className="list-disc ml-6 text-white/90 mt-2">
-              <li className="flex items-center gap-2 mb-1"><img src="/icons/lock.svg" alt="Lock" width={18} height={18} />Every game result is generated in advance with a cryptographic algorithm.</li>
-              <li className="flex items-center gap-2 mb-1"><img src="/icons/Bitcoin.svg" alt="Bitcoin" width={18} height={18} />The result can be verified afterwards using a cryptographic hash.</li>
-              <li className="flex items-center gap-2 mb-1"><img src="/casino-icons/Shield.svg" alt="Shield" width={18} height={18} />No one (not even the casino) can change the outcome after the bet is placed.</li>
+              <li className="flex items-center gap-2 mb-1"><Image src="/icons/lock.svg" alt="Lock" width={18} height={18} />Every game result is generated in advance with a cryptographic algorithm.</li>
+              <li className="flex items-center gap-2 mb-1"><Image src="/icons/Bitcoin.svg" alt="Bitcoin" width={18} height={18} />The result can be verified afterwards using a cryptographic hash.</li>
+              <li className="flex items-center gap-2 mb-1"><Image src="/casino-icons/Shield.svg" alt="Shield" width={18} height={18} />No one (not even the casino) can change the outcome after the bet is placed.</li>
             </ul>
           </section>
           {/* Section 2: Why It Matters */}
           <section ref={refs.why} className="rounded-2xl border border-green-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-green-600">
-              <img src="/casino-icons/Strategy Tips.svg" alt="Why it matters" width={32} height={32} />
+              <Image src="/casino-icons/Strategy Tips.svg" alt="Why it matters" width={32} height={32} />
               Why Does It Matter?
             </h2>
             <ul className="list-disc ml-6 text-white/90 mt-2">
-              <li className="flex items-center gap-2 mb-1"><img src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />Ensures you’re not being cheated</li>
-              <li className="flex items-center gap-2 mb-1"><img src="/casino-icons/Lock.svg" alt="Lock" width={18} height={18} />Restores trust in online gambling</li>
-              <li className="flex items-center gap-2 mb-1"><img src="/icons/shib.svg" alt="Privacy" width={18} height={18} />Total transparency for players</li>
+              <li className="flex items-center gap-2 mb-1"><Image src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />Ensures you’re not being cheated</li>
+              <li className="flex items-center gap-2 mb-1"><Image src="/casino-icons/Lock.svg" alt="Lock" width={18} height={18} />Restores trust in online gambling</li>
+              <li className="flex items-center gap-2 mb-1"><Image src="/icons/shib.svg" alt="Privacy" width={18} height={18} />Total transparency for players</li>
             </ul>
           </section>
           {/* Section 3: Where You'll See It */}
           <section ref={refs.where} className="rounded-2xl border border-blue-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-blue-600">
-              <img src="/casino-icons/Poker Chip.svg" alt="Where" width={32} height={32} />
+              <Image src="/casino-icons/Poker Chip.svg" alt="Where" width={32} height={32} />
               Where You'll See Provably Fair
             </h2>
             <ul className="list-disc ml-6 text-white/90 mt-2">
-              <li className="flex items-center gap-2 mb-1"><img src="/casino-icons/Roulette Wheel.svg" alt="Roulette" width={18} height={18} />Crypto roulette, dice, blackjack</li>
-              <li className="flex items-center gap-2 mb-1"><img src="/casino-icons/Diamond 2.svg" alt="Diamond" width={18} height={18} />Crash, plinko, mines, slots</li>
-              <li className="flex items-center gap-2 mb-1"><img src="/icons/Bitcoin.svg" alt="Bitcoin" width={18} height={18} />All major crypto casinos</li>
+              <li className="flex items-center gap-2 mb-1"><Image src="/casino-icons/Roulette Wheel.svg" alt="Roulette" width={18} height={18} />Crypto roulette, dice, blackjack</li>
+              <li className="flex items-center gap-2 mb-1"><Image src="/casino-icons/Diamond 2.svg" alt="Diamond" width={18} height={18} />Crash, plinko, mines, slots</li>
+              <li className="flex items-center gap-2 mb-1"><Image src="/icons/Bitcoin.svg" alt="Bitcoin" width={18} height={18} />All major crypto casinos</li>
             </ul>
           </section>
           {/* Section 4: Can You Check Fairness Yourself? */}
           <section ref={refs.check} className="rounded-2xl border border-pink-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-pink-700">
-              <img src="/casino-icons/Shield.svg" alt="Check" width={32} height={32} />
+              <Image src="/casino-icons/Shield.svg" alt="Check" width={32} height={32} />
               Can You Check Fairness Yourself?
             </h2>
             <p className="text-white/90 mb-2">Yes! Most crypto casinos provide:</p>
             <ul className="list-disc ml-6 text-white/90 mt-2">
-              <li className="flex items-center gap-2 mb-1"><img src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />A “Verify” button next to the game result</li>
-              <li className="flex items-center gap-2 mb-1"><img src="/icons/lock.svg" alt="Lock" width={18} height={18} />Access to the seed + hash</li>
-              <li className="flex items-center gap-2 mb-1"><img src="/icons/Bitcoin.svg" alt="Bitcoin" width={18} height={18} />An easy verification tool on their site or an external checker</li>
+              <li className="flex items-center gap-2 mb-1"><Image src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />A “Verify” button next to the game result</li>
+              <li className="flex items-center gap-2 mb-1"><Image src="/icons/lock.svg" alt="Lock" width={18} height={18} />Access to the seed + hash</li>
+              <li className="flex items-center gap-2 mb-1"><Image src="/icons/Bitcoin.svg" alt="Bitcoin" width={18} height={18} />An easy verification tool on their site or an external checker</li>
             </ul>
           </section>
           {/* Section 5: Pros & Cons Table */}
           <section ref={refs.proscons} className="rounded-2xl border border-purple-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-purple-600">
-              <img src="/casino-icons/Bar.svg" alt="Pros & Cons" width={32} height={32} />
+              <Image src="/casino-icons/Bar.svg" alt="Pros & Cons" width={32} height={32} />
               Pros & Cons of Provably Fair
             </h2>
             <div className="overflow-x-auto">
@@ -141,7 +142,7 @@ export default function ProvablyFairGuide() {
           {/* Bonus Tip */}
           <section ref={refs.bonus} className="rounded-2xl border border-yellow-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-yellow-600">
-              <img src="/icons/bolt.svg" alt="Bonus Tip" width={32} height={32} />
+              <Image src="/icons/bolt.svg" alt="Bonus Tip" width={32} height={32} />
               Bonus Tip
             </h2>
             <div className="bg-green-400/90 border-l-4 border-green-700 p-4 rounded">

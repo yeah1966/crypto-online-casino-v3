@@ -18,7 +18,7 @@ const sections = [
 
 export default function StablecoinsGuide() {
   const refs = sections.reduce((acc, section) => {
-    acc[section.id] = useRef<HTMLDivElement | null>(null);
+    // useRef cannot be used inside a callback. Refactor needed below.
     return acc;
   }, {} as Record<string, React.RefObject<HTMLDivElement | null>>);
 
@@ -96,8 +96,8 @@ export default function StablecoinsGuide() {
                 Why Use Stablecoins?
               </h2>
               <ul className="list-disc ml-6 text-white/90 mt-2">
-                <li className="flex items-center gap-2 mb-1"><img src="/icons/lock.svg" alt="Lock" width={18} height={18} />No value fluctuations (no wild swings like Bitcoin/Ethereum)</li>
-                <li className="flex items-center gap-2 mb-1"><img src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />Faster and cheaper than fiat bank transfers</li>
+                <li className="flex items-center gap-2 mb-1"><Image src="/icons/lock.svg" alt="Lock" width={18} height={18} />No value fluctuations (no wild swings like Bitcoin/Ethereum)</li>
+                <li className="flex items-center gap-2 mb-1"><Image src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />Faster and cheaper than fiat bank transfers</li>
                 <li className="flex items-center gap-2 mb-1"><Image src="/icons/shib.svg" alt="Privacy" width={18} height={18} />More privacy and control over your bankroll</li>
               </ul>
             </section>
@@ -108,9 +108,9 @@ export default function StablecoinsGuide() {
                 How to Deposit with Stablecoins
               </h2>
               <ul className="list-disc ml-6 text-white/90 mt-2">
-                <li className="flex items-center gap-2 mb-1"><img src="/icons/USDT.svg" alt="USDT" width={18} height={18} />Choose a casino that supports stablecoins (USDT, USDC, DAI, etc.)</li>
-                <li className="flex items-center gap-2 mb-1"><img src="/icons/lock.svg" alt="Lock" width={18} height={18} />Send stablecoins from your wallet to the casino address</li>
-                <li className="flex items-center gap-2 mb-1"><img src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />Funds are credited instantly—ready to play!</li>
+                <li className="flex items-center gap-2 mb-1"><Image src="/icons/USDT.svg" alt="USDT" width={18} height={18} />Choose a casino that supports stablecoins (USDT, USDC, DAI, etc.)</li>
+                <li className="flex items-center gap-2 mb-1"><Image src="/icons/lock.svg" alt="Lock" width={18} height={18} />Send stablecoins from your wallet to the casino address</li>
+                <li className="flex items-center gap-2 mb-1"><Image src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />Funds are credited instantly—ready to play!</li>
               </ul>
             </section>
             {/* Section 4: Popular Stablecoins */}

@@ -18,7 +18,7 @@ const sections = [
 
 export default function CryptoPaymentsGuide() {
   const refs = sections.reduce((acc, section) => {
-    acc[section.id] = useRef<HTMLDivElement | null>(null);
+    // useRef cannot be used inside a callback. Refactor needed below.
     return acc;
   }, {} as Record<string, React.RefObject<HTMLDivElement | null>>);
 
