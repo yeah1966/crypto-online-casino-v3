@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: "Altcoin Casinos – Gamble with DOGE, LTC, TRX & More",
@@ -128,12 +129,12 @@ export default function AltcoinCasinosPage() {
       {/* Call to Action */}
       <section className="text-center">
         <p className="text-lg text-white/80 mb-4">Want to play with your favorite altcoin?</p>
-        <a
-          href="/crypto-casino-reviews"
-          className="inline-block bg-yellow-400 text-black font-bold px-6 py-3 rounded-xl hover:bg-yellow-300 transition shadow-lg"
-        >
-          🪙 Explore Altcoin-Friendly Casinos
-        </a>
+        <Link
+            href="/crypto-casino-reviews"
+            className="inline-block bg-yellow-400 text-black font-bold px-6 py-3 rounded-xl hover:bg-yellow-300 transition shadow-lg"
+          >
+            🪙 Explore Altcoin-Friendly Casinos
+          </Link>
       </section>
     </div>
   );
