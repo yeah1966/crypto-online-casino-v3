@@ -25,9 +25,11 @@ const CasinoTable: React.FC<CasinoTableProps> = ({ casinos }) => {
           rank={idx + 1}
           name={casino.name}
           logo={casino.logo || ''}
+          type={casino.type}
+          deal={casino.deal}
+          slug={casino.slug}
           bonus={casino.bonus}
           tagline={casino.flag ? `${casino.flag} ${casino.type}` : casino.type}
-          url={`https://example.com/${casino.slug}`}
           badge={casino.deal}
         />
       ))}

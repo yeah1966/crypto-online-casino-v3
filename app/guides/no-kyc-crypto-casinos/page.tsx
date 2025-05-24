@@ -34,8 +34,8 @@ export default function NoKycCryptoCasinos() {
       <Image
         src="/favicon-180.png"
         alt="Crypto Casino Mascot"
-        width={90}
-        height={90}
+        width={180}
+        height={180}
         className="rounded-full drop-shadow-lg bg-white/90 p-1 hover:animate-bounce transition-transform duration-300"
         priority
       />

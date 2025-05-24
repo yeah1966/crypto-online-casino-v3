@@ -6,7 +6,7 @@ const top10 = [
   {
     rank: 1,
     name: "BitStarz",
-    logo: "bitstarz.png",
+    logo: "/logos/bitstarz.png",
     bonus: "Get up to 5 BTC Bonus!",
     tagline: "Award-winning crypto casino",
     url: "/out/bitstarz",
@@ -15,7 +15,7 @@ const top10 = [
   {
     rank: 2,
     name: "Stake",
-    logo: "stake.png",
+    logo: "/logos/stake.png",
     bonus: "Up to 10% rakeback!",
     tagline: "Crypto sportsbook & casino",
     url: "/out/stake",
@@ -24,7 +24,7 @@ const top10 = [
   {
     rank: 3,
     name: "7Bit",
-    logo: "7bit.png",
+    logo: "/logos/7bit.png",
     bonus: "Up to 1.5 BTC + 100 Free Spins!",
     tagline: "Retro Vegas crypto slots",
     url: "/out/7bit",
@@ -33,7 +33,7 @@ const top10 = [
   {
     rank: 4,
     name: "Betplay",
-    logo: "betplay.png",
+    logo: "/logos/betplay.png",
     bonus: "100% up to 50 mBTC + 10% cashback!",
     tagline: "Crypto only, instant payouts",
     url: "/out/betplay",
@@ -42,7 +42,7 @@ const top10 = [
   {
     rank: 5,
     name: "Cryptoloko",
-    logo: "cryptoloko.png",
+    logo: "/logos/cryptoloko.png",
     bonus: "150% up to 1 BTC!",
     tagline: "Loco crypto casino",
     url: "/out/cryptoloko",
@@ -51,7 +51,7 @@ const top10 = [
   {
     rank: 6,
     name: "DreamCasino",
-    logo: "dreamcasino.png",
+    logo: "/logos/dreamcasino.png",
     bonus: "200% Welcome Bonus!",
     tagline: "Dream big, win bigger",
     url: "/out/dreamcasino",
@@ -60,7 +60,7 @@ const top10 = [
   {
     rank: 7,
     name: "BC.Game",
-    logo: "placeholder.png",
+    logo: "/logos/placeholder.png",
     bonus: "Mystery Bonus!",
     tagline: "Top crypto casino",
     url: "/out/bcgame",
@@ -69,7 +69,7 @@ const top10 = [
   {
     rank: 8,
     name: "Betplay",
-    logo: "betplay.png",
+    logo: "/logos/betplay.png",
     bonus: "100% up to 50 mBTC + 10% cashback!",
     tagline: "Crypto only, instant payouts",
     url: "/out/betplay",
@@ -78,7 +78,7 @@ const top10 = [
   {
     rank: 9,
     name: "PrismCasino",
-    logo: "prismcasino.png",
+    logo: "/logos/prismcasino.png",
     bonus: "$30 Free Chip!",
     tagline: "Colorful crypto slots",
     url: "/out/prismcasino",
@@ -87,7 +87,7 @@ const top10 = [
   {
     rank: 10,
     name: "Placeholder",
-    logo: "placeholder.png",
+    logo: "/logos/placeholder.png",
     bonus: "Try your luck!",
     tagline: "New crypto casino",
     url: "/out/placeholder",
@@ -105,7 +105,7 @@ const TopCasinoList: React.FC = () => {
         <div className="flex flex-col gap-6">
           {top10.map((casino) => (
             <div key={casino.rank} className="casino-card flex items-center bg-[#18182f] rounded-xl shadow-lg p-4 md:p-6 border border-yellow-900/30">
-              <Image src={`/logos/${casino.logo}`} alt={`${casino.name} logo`} width={64} height={64} className="w-16 h-16 object-contain rounded bg-[#222244] mr-4 md:mr-8" />
+              <Image src={casino.logo} alt={`${casino.name} logo`} width={64} height={64} className="w-16 h-16 object-contain rounded bg-[#222244] mr-4 md:mr-8" />
               <div className="flex-1 flex flex-col gap-1">
                 <h3 className="text-xl md:text-2xl font-bold text-yellow-300">#{casino.rank} {casino.name.toUpperCase()}</h3>
                 <p className="subtitle text-pink-400 font-semibold">{casino.tagline}</p>

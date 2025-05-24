@@ -44,7 +44,7 @@ export default async function BlogPostPage(
     const file = await fs.readFile(filePath, "utf8");
     const { content, data } = matter(file);
 
-    const compiledHtml = marked(content);
+    const compiledHtml = typeof marked === 'function' ? marked(content) : '';
 
     return (
       <div className="relative w-full max-w-4xl mx-auto px-2 md:px-0 py-10">
@@ -60,7 +60,7 @@ export default async function BlogPostPage(
             </div>
           </div>
           <p className="absolute left-1/2 -bottom-5 -translate-x-1/2 px-4 py-1 rounded-full bg-fuchsia-700/90 text-yellow-200 font-bold text-base shadow border border-yellow-400/40">
-            {data.date}
+            {typeof data.date === 'string' ? data.date : (data.date instanceof Date ? data.date.toLocaleDateString() : String(data.date))}
           </p>
         </div>
         {/* Highlight Card */}
@@ -130,8 +130,13 @@ export default async function BlogPostPage(
           {/* Dynamically split content into cards */}
           {(() => {
             // Split the compiledHtml into logical blocks based on h2/h3/table/final word
-            const blocks = [];
-            const html = compiledHtml;
+            type Block =
+  | { type: 'content'; html: string; key: string }
+  | { type: 'heading'; html: string; key: string }
+  | { type: 'table'; html: string; key: string }
+  | { type: 'final'; html: string; key: string };
+const blocks: Block[] = [];
+            const html: string = compiledHtml as string;
             let lastIndex = 0;
             // Regex to find h2, h3, table, and final word
             const regex = /(<h2.*?>.*?<\/h2>)|(<h3.*?>.*?<\/h3>)|(<table[\s\S]*?<\/table>)|(🧠\s*<strong>Final Word<\/strong>)/gi;
@@ -212,4 +217,6 @@ export default async function BlogPostPage(
     return notFound();
   }
 }
+
+
 

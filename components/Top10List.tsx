@@ -16,7 +16,7 @@ export default function Top10List() {
 
   return (
     <section className="space-y-8 px-4">
-      {(topCasinos as CasinoCard[]).map((casino) => (
+      {(topCasinos as CasinoCard[]).map((casino, index) => (
         <div
           key={casino.slug}
           className={`flex flex-col md:flex-row items-center gap-6 p-6 rounded-2xl shadow-lg border-2 transition-all duration-300 ${
@@ -47,8 +47,12 @@ export default function Top10List() {
             #{index + 1} {index === 0 ? '👑' : index === 1 ? '🥈' : index === 2 ? '🥉' : ''} {casino.name}
             </div>
             <div className="text-pink-400 mt-1">{casino.description}</div>
-            <div className="text-green-400 font-semibold mt-1">{casino.bonus}</div>
-            <p className="text-white/80 text-sm mt-2">{casino.details}</p>
+            {typeof casino.bonusText === 'string' && (
+              <div className="text-green-400 font-semibold mt-1">{casino.bonusText}</div>
+            )}
+            {typeof casino.highlight === 'string' && (
+              <p className="text-white/80 text-sm mt-2">{casino.highlight}</p>
+            )}
           </div>
 
           {/* Play Now Button */}
