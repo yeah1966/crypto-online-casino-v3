@@ -148,14 +148,14 @@ export default function BestBitcoinCasinos() {
       <section id="casino-list" className="space-y-6 mb-8">
         <h2 className="text-2xl font-bold mb-2 text-yellow-500">Top Bitcoin Casinos to Try in 2025</h2>
         <div className="bg-purple-900/80 rounded-xl p-4 shadow-lg flex flex-col gap-4 mt-6">
-          {casinos.map((casino, i) => (
+          {casinos.map((casino) => (
             <div key={casino.name} className="flex items-center gap-4 bg-purple-800/60 rounded-lg p-3 hover:shadow-2xl transition-all">
               <Image src={casino.logo} alt={`${casino.name} logo`} width={48} height={48} className="rounded-full shadow-md bg-white/90" />
               <div className="flex-1">
                 <span className="font-bold text-white text-lg">{casino.name}</span>
                 <span className="block text-purple-200 text-sm">{casino.description}</span>
               </div>
-              <a
+              <Link
                 href={casino.href}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -164,7 +164,7 @@ export default function BestBitcoinCasinos() {
               >
                 <Image src="/icons/btc.svg" alt="Bitcoin SVG icon" width={20} height={20} />
                 Play Now
-              </a>
+              </Link>
             </div>
           ))}
         </div>
@@ -197,13 +197,13 @@ export default function BestBitcoinCasinos() {
         </ul>
       </section>
       <div className="flex justify-center mt-10 mb-8">
-        <a
-          href="/crypto-casino-reviews"
-          className="font-bold text-lg px-7 py-3 rounded-full bg-gradient-to-r from-yellow-300 via-orange-400 to-pink-400 shadow-lg border-2 border-white/80 drop-shadow-xl hover:scale-105 hover:shadow-yellow-400/60 transition-all focus:outline-none"
-          style={{ boxShadow: '0 0 12px 2px #facc15, 0 0 32px 4px #ec4899' }}
-        >
-          View All Crypto Casino Reviews
-        </a>
+        <Link
+            href="/crypto-casino-reviews"
+            className="font-bold text-lg px-7 py-3 rounded-full bg-gradient-to-r from-yellow-300 via-orange-400 to-pink-400 shadow-lg border-2 border-white/80 drop-shadow-xl hover:scale-105 hover:shadow-yellow-400/60 transition-all focus:outline-none"
+            style={{ boxShadow: '0 0 12px 2px #facc15, 0 0 32px 4px #ec4899' }}
+          >
+            View All Crypto Casino Reviews
+          </Link>
       </div>
       </main>
     </>
