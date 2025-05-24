@@ -15,24 +15,6 @@ const sections = [
   { id: "tips", label: "Tips" },
 ];
 
-const advantages = [
-  {
-    title: "Fast Deposits",
-    desc: "Blockchain transactions are instant, no bank delays.",
-    icon: "/icons/bolt.svg",
-  },
-  {
-    title: "No KYC",
-    desc: "Deposit and play without identity checks.",
-    icon: "/casino-icons/koc.png",
-  },
-  {
-    title: "Privacy",
-    desc: "Your data stays private at crypto casinos.",
-    icon: "/icons/shib.svg",
-  },
-];
-
 export default function DepositWithBitcoinGuide() {
   // For sticky nav scroll
   const refs: Record<string, React.RefObject<HTMLDivElement | null>> = useMemo(
