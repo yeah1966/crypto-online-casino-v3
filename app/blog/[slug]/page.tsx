@@ -17,9 +17,7 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return slugs;
 }
 
-export async function generateMetadata(
-  { params }: { params: { slug: string } }
-) {
+export async function generateMetadata({ params }: { params: { slug: string } }) {
   const filePath = path.join(process.cwd(), "app", "blog", params.slug, "post.mdx");
 
   try {
@@ -35,9 +33,7 @@ export async function generateMetadata(
   }
 }
 
-export default async function BlogPostPage(
-  { params }: { params: { slug: string } }
-) {
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const filePath = path.join(process.cwd(), "app", "blog", params.slug, "post.mdx");
 
   try {
@@ -212,4 +208,5 @@ export default async function BlogPostPage(
     return notFound();
   }
 }
+
 
