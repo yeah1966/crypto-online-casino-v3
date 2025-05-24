@@ -2,23 +2,18 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { Metadata } from 'next';
-import { InferGetStaticPropsType } from 'next';
 
 type Props = {
-  params: {
-    slug: string;
-  };
+  params: { slug: string };
 };
 
-export async function generateStaticParams(): Promise<Props['params'][]> {
-  const blogDir = path.join(process.cwd(), 'blog');
-  const files = fs.readdirSync(blogDir);
-
-  return files.map((filename) => ({
-    slug: filename.replace('.mdx', ''),
-  }));
+// ✅ Voor dynamic routing
+export async function generateStaticParams() {
+  // Later vervangen door echte slugs uit je /blog-map
+  return [];
 }
 
+// ✅ SEO metadata genereren
 export async function generateMetadata({
   params,
 }: {
@@ -35,7 +30,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params }: Props) {
+// ✅ MDX-rendering
+export default function Page({ params }: Props) {
   const { slug } = params;
   const filePath = path.join(process.cwd(), 'blog', `${slug}.mdx`);
   const fileContent = fs.readFileSync(filePath, 'utf-8');
