@@ -12,13 +12,6 @@ const sections = [
   { id: "proscons", label: "Pros & Cons" },
 ];
 
-const vpns = [
-  { name: "NordVPN", icon: "/icons/nordvpn.svg" },
-  { name: "ExpressVPN", icon: "/icons/expressvpn.svg" },
-  { name: "Surfshark", icon: "/icons/surfshark.svg" },
-  { name: "ProtonVPN", icon: "/icons/protonvpn.svg" },
-  { name: "CyberGhost", icon: "/icons/cyberghost.svg" },
-];
 
 export default function VpnGamblingGuide() {
   const refs = sections.reduce((acc, section) => {
