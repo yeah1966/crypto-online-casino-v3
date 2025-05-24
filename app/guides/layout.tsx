@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "@/components/Footer";
 
 export const metadata = {};
 
@@ -14,6 +15,8 @@ export default function GuidesLayout({ children }: { children: React.ReactNode }
           {children}
         </div>
       </div>
+      {/* Footer onderaan de pagina */}
+      <Footer />
     </>
   );
 }
