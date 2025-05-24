@@ -71,13 +71,6 @@ const casinos = [
   },
 ];
 
-const stepIcons = [
-  '🦊', // Wallet
-  '💱', // Exchange
-  '🎰', // Choose casino
-  '💸', // Deposit
-  '🎲', // Play
-];
 
 export default function BestEthereumCasinos() {
   return (
