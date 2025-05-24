@@ -44,8 +44,10 @@ export default async function BlogPostPage(
     const file = await fs.readFile(filePath, "utf8");
     console.log("✅ post.mdx gevonden en gelezen op pad:", filePath);
     const { content, data } = matter(file);
-
+    console.log("📝 MDX content:", content);
+    console.log("📝 MDX frontmatter:", data);
     const compiledHtml = typeof marked === 'function' ? marked(content) : '';
+    console.log("📝 compiledHtml:", compiledHtml);
 
     return (
       <div className="relative w-full max-w-4xl mx-auto px-2 md:px-0 py-10">
