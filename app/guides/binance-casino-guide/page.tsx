@@ -140,7 +140,7 @@ export default function BinanceCasinoGuide() {
         <section id="casino-list" className="space-y-6 mb-8">
           <h2 className="text-2xl font-bold mb-2 text-yellow-400 uppercase tracking-wide">Top BNB Casinos to Try in 2025</h2>
           <div className="bg-yellow-900/60 rounded-xl p-4 shadow-lg flex flex-col gap-4 mt-6">
-            {bnbCasinos.map((casino, i) => (
+            {bnbCasinos.map((casino) => (
               <div key={casino.name} className="flex items-center gap-4 bg-yellow-800/40 rounded-lg p-3 hover:shadow-2xl transition-all">
                 <Image src={casino.logo} alt={`${casino.name} logo`} width={48} height={48} className="rounded-full shadow-md bg-white/90" />
                 <div className="flex-1">
