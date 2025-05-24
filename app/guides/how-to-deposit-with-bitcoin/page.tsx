@@ -1,11 +1,8 @@
 'use client';
 
-import React, { useRef, useMemo } from "react";
-import Head from "next/head";
+import React, { useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import { getBreadcrumbListStructuredData } from "@/lib/structuredData";
 
 const sections = [
   { id: "intro", label: "Intro" },
