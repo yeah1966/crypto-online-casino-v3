@@ -71,7 +71,6 @@ const bnbCasinos = [
   },
 ];
 
-const stepIcons = ['👤', '🔁', '🏆', '💸', '🎰'];
 
 export default function BinanceCasinoGuide() {
   return (
