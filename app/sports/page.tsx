@@ -92,34 +92,34 @@ export default function SportsbettingPage() {
                   <span className="text-yellow-300 text-lg mb-2">{'★'.repeat(Math.floor(bm.rating))}{bm.rating % 1 ? '½' : ''}</span>
                   <Link href={`/sports/bookmakers/${bm.slug}`} className="mt-2 bg-gradient-to-r from-yellow-400 to-pink-400 text-black font-bold py-2 px-4 rounded-full shadow-lg hover:scale-105 transition text-center w-full">Read Review</Link>
 {bm.slug === '1xbet' && (
-  <a
+  <Link
     href="https://refpa3740576.top/L?tag=d_3915280m_1599c_&site=3915280&ad=1599"
     target="_blank"
     rel="noopener noreferrer"
     className="mt-2 bg-green-400 text-black font-bold py-2 px-4 rounded-full shadow-lg hover:bg-green-300 transition text-center w-full block"
   >
     ▶️ Play Now
-  </a>
+  </Link>
 )}
 {bm.slug === 'cloudbet' && (
-  <a
+  <Link
     href="https://cldbt.cloud/go/en/landing/bitcoin-casino?af_token=&aftm_campaign=CryptoCasino&aftm_source=GEO&aftm_medium=link&aftm_content=cryptoinfo"
     target="_blank"
     rel="noopener noreferrer"
     className="mt-2 bg-green-400 text-black font-bold py-2 px-4 rounded-full shadow-lg hover:bg-green-300 transition text-center w-full block"
   >
     ▶️ Play Now
-  </a>
+  </Link>
 )}
 {bm.slug === 'wildvegas' && (
-  <a
+  <Link
     href="https://www.wildvegaslinks.com/click/11/4315/15512/1"
     target="_blank"
     rel="noopener noreferrer"
     className="mt-2 bg-green-400 text-black font-bold py-2 px-4 rounded-full shadow-lg hover:bg-green-300 transition text-center w-full block"
   >
     ▶️ Play Now
-  </a>
+  </Link>
 )}
                 </div>
               ))}

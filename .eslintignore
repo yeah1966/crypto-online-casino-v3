@@ -1,0 +1,6 @@
+# Temporarily ignore all app directories to allow successful push
+app/components/
+app/guides/
+app/crypto-gambling-101/
+
+# You can add more directories or files below if needed

@@ -118,7 +118,7 @@ export default function BonusWizard() {
             );
           })()}
           <p className="text-center text-white/80 mt-8">
-            Want to explore more options? <Link href="/crypto-casino-reviews" className="text-yellow-400 underline">Browse all reviews</Link>
+            Want to explore more options? <Link href="/crypto-casino-reviews" className="text-yellow-300 underline hover:text-yellow-400 transition">See all crypto casinos</Link>
           </p>
         </div>
       )}

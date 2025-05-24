@@ -41,7 +41,7 @@ export default function ResponsibleGamblingPage() {
 
         <h2 className="text-2xl font-semibold text-pink-400">🛑 4. Know When to Walk Away</h2>
         <p>
-          If gambling affects your finances, mental health, or relationships, it's time to take a break. Professional help is available. And it works.
+          If gambling affects your finances, mental health, or relationships, it&apos;s time to take a break. Professional help is available. And it works.
         </p>
         <ul className="list-disc list-inside space-y-2">
           <li><Link href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware.org</Link></li>

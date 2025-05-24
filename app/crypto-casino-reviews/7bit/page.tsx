@@ -31,6 +31,7 @@ export const generateMetadata = (): Metadata => {
 };
 
 import React from "react";
+import Image from "next/image";
 
 // --- EDIT THIS DATA FOR 7BIT ONLY ---
 const data = {

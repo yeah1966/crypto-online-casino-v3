@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import ClientLayout from "@/components/ClientLayout";
+import Head from "next/head";
 
 export const metadata = {
   metadataBase: new URL('https://www.crypto-online-casino.com'),
@@ -11,6 +12,23 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <Head>
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.onload = new function(){
+                var hd = document.getElementsByTagName('head').item(0);
+                var js = document.createElement('script');
+                js.setAttribute('language', 'javascript');
+                js.setAttribute('src', 'https://certify.gpwa.org/script/crypto-online-casino.com/');
+                hd.appendChild(js);
+                return false;
+              }
+            `
+          }}
+        />
+      </Head>
       <head>
         <meta name="ga-site-verification" content="D9g8tk-yLwOk8LVeD66C_5zc" />
        {/* Google Analytics */}

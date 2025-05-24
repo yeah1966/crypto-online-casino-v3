@@ -141,13 +141,13 @@ export default function DogCasinoGuide() {
         </section>
         {/* CTA + Internal links */}
         <div className="flex justify-center mt-10 mb-8">
-          <a
+          <Link
             href="/crypto-casino-reviews"
             className="font-bold text-lg px-7 py-3 rounded-full bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 shadow-lg border-2 border-white/80 drop-shadow-xl hover:scale-105 hover:shadow-yellow-400/60 transition-all focus:outline-none"
             style={{ boxShadow: '0 0 12px 2px #fde68a, 0 0 32px 4px #fbbf24' }}
           >
             View All Crypto Casino Reviews
-          </a>
+          </Link>
         </div>
         <div className="mb-12 mt-6 flex flex-col md:flex-row gap-3 justify-center items-center">
           <span className="text-white/80 font-semibold">See also:</span>

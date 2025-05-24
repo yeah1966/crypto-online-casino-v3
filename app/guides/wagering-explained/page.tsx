@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: "Wagering Requirements Explained – Crypto Casino Bonus Guide",
@@ -72,12 +73,12 @@ export default function WageringExplainedPage() {
         </h1>
 
         <p>
-          You just claimed a generous welcome bonus at a crypto casino — but now you're told you can’t withdraw your winnings yet. Sound familiar? That's where <strong>wagering requirements</strong> come in.
+          You just claimed a generous welcome bonus at a crypto casino — but now you&apos;re told you can’t withdraw your winnings yet. Sound familiar? That&apos;s where <strong>wagering requirements</strong> come in.
         </p>
 
         <h2 className="text-2xl font-semibold text-pink-400">💡 What Are Wagering Requirements?</h2>
         <p>
-          A wagering requirement (also called rollover) is the number of times you must bet your bonus (or bonus + deposit) before you can withdraw any winnings. It's how casinos protect themselves from abuse.
+          A wagering requirement (also called rollover) is the number of times you must bet your bonus (or bonus + deposit) before you can withdraw any winnings. It&apos;s how casinos protect themselves from abuse.
         </p>
         <p>
           Example: A 100 USDT bonus with a 30x wagering requirement = you must wager 3,000 USDT before withdrawing.
@@ -106,7 +107,7 @@ export default function WageringExplainedPage() {
         </ul>
 
         <p>
-          Wagering requirements aren't a scam — they're just the rules of the game. But understanding them gives you the edge.
+          Wagering requirements aren&apos;t a scam — they&apos;re just the rules of the game. But understanding them gives you the edge.
         </p>
       </section>
 
@@ -124,12 +125,12 @@ export default function WageringExplainedPage() {
       {/* Call to Action */}
       <section className="text-center">
         <p className="text-lg text-white/80 mb-4">Want to find crypto casinos with the fairest bonus terms?</p>
-        <a
+        <Link
           href="/best-crypto-casino-bonuses"
           className="inline-block bg-yellow-400 text-black font-bold px-6 py-3 rounded-xl hover:bg-yellow-300 transition shadow-lg"
         >
           🎁 View Bonus-Friendly Casinos
-        </a>
+        </Link>
       </section>
     </div>
   );

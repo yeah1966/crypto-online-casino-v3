@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Head from 'next/head';
+import Image from "next/image";
 import { FaStar, FaBolt, FaGift, FaShieldAlt, FaTrophy, FaDice, FaCoins } from "react-icons/fa";
 import { useState } from "react";
 import { casinos } from '@/data/casinosData';
@@ -100,7 +101,7 @@ export default function ReviewsPage() {
                 key={casino.slug}
                 className="bg-purple-700 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform"
               >
-                <img src={casino.logo} alt={casino.name + ' logo'} width={64} height={64} className="mb-3 rounded-xl bg-white shadow" />
+                <Image src={casino.logo} alt={casino.name + ' logo'} width={64} height={64} className="mb-3 rounded-xl bg-white shadow" />
                 <span className="font-bold text-lg text-yellow-200 mb-1 text-center">{casino.name}</span>
                 <span className="text-yellow-300 text-base mb-1">{getStars(casino.rating)}</span>
                 <span className="text-sm text-purple-100 mb-2 text-center">{casino.description}</span>

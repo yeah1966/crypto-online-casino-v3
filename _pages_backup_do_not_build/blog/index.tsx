@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image"; // added import
 import { blogPosts } from "@/data/blogPosts";
 import { useState } from "react";
 
@@ -35,7 +36,7 @@ export default function BlogIndex() {
         <div className="space-y-8">
           {filteredPosts.map(post => (
             <div key={post.slug} className="bg-gray-900 rounded-lg p-6 shadow">
-              <img src={post.cover} alt={post.title} className="w-full h-40 object-cover rounded mb-4" />
+              <Image src={post.cover} alt={post.title} width={800} height={160} className="w-full h-40 object-cover rounded mb-4" />
               <h2 className="text-2xl font-bold mb-2">
                 <Link href={`/blog/${post.slug}`} className="text-purple-400 underline">{post.title}</Link>
               </h2>

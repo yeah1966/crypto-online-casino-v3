@@ -1,4 +1,5 @@
 import GuideCard from "@/components/GuideCard";
+import Link from "next/link";
 
 export default function GuidesPage() {
   return (
@@ -12,7 +13,7 @@ export default function GuidesPage() {
           🧭 Crypto Gambling Guides
         </h1>
         <p>
-          Welcome to the ultimate knowledge base for crypto casino players. Whether you're a total beginner or a seasoned high roller, our in-depth guides are designed to help you navigate the world of decentralized gambling with confidence.
+          Welcome to the ultimate knowledge base for crypto casino players. Whether you&apos;re a total beginner or a seasoned high roller, our in-depth guides are designed to help you navigate the world of decentralized gambling with confidence.
         </p>
         <p>
           From understanding how blockchain-based casinos work to choosing the right coin for your bets, our content is crafted to answer your questions and boost your success. We explore safe gambling practices, bonus strategies, wallet tips, and how to spot trustworthy platforms.
@@ -141,12 +142,12 @@ export default function GuidesPage() {
       {/* Call to Action onderaan */}
       <section className="text-center mt-16">
         <p className="text-lg text-white/80 mb-4">Looking for real casinos to try your knowledge?</p>
-        <a
+        <Link
           href="/crypto-casino-reviews"
           className="inline-block bg-yellow-400 text-black font-bold px-6 py-3 rounded-xl hover:bg-yellow-300 transition shadow-lg"
         >
           View All Casino Reviews 🎰
-        </a>
+        </Link>
       </section>
     </div>
   );

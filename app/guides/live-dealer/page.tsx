@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function LiveDealerCasinosPage() {
   return (
@@ -72,12 +73,12 @@ export default function LiveDealerCasinosPage() {
       {/* Call to Action */}
       <section className="text-center">
         <p className="text-lg text-white/80 mb-4">Ready to play with a real dealer and crypto?</p>
-        <a
+        <Link
           href="/crypto-casino-reviews"
           className="inline-block bg-yellow-400 text-black font-bold px-6 py-3 rounded-xl hover:bg-yellow-300 transition shadow-lg"
         >
           🎲 Explore Live Dealer Crypto Casinos
-        </a>
+        </Link>
       </section>
     </div>
   );

@@ -31,6 +31,7 @@ export const generateMetadata = (): Metadata => {
 };
 
 import React from "react";
+import Image from "next/image";
 
 const data = {
   introduction: `BitStarz is one of the most acclaimed crypto casinos worldwide, established in 2014 and renowned for its fast payouts, huge game selection, and player-first approach. Licensed and trusted, BitStarz has won multiple industry awards and is a favorite among both crypto and fiat casino fans.`,

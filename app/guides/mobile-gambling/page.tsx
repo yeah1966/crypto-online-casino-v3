@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: "Mobile Crypto Gambling – How to Play on Your Phone",
@@ -73,7 +74,7 @@ export default function MobileCryptoGamblingPage() {
         />
         <p>
           More than half of all crypto gamblers now play from mobile — this guide helps you find the best wallet, casino, and setup to play on the go.<br/>
-          Crypto casinos are going mobile. Whether you're playing from the couch, the train, or your lunch break, mobile gambling lets you enjoy fast and private play wherever you are.
+          Crypto casinos are going mobile. Whether you&apos;re playing from the couch, the train, or your lunch break, mobile gambling lets you enjoy fast and private play wherever you are.
         </p>
 
         <h2 className="text-2xl font-semibold text-pink-400">📲 1. Choose a Mobile-Friendly Crypto Casino</h2>
@@ -98,7 +99,7 @@ export default function MobileCryptoGamblingPage() {
 
         <h2 className="text-2xl font-semibold text-pink-400">⚙️ 3. Quick Setup & Play</h2>
         <p>
-          Once your wallet is connected, you're usually just a few taps away from playing. Mobile casinos aim to make things seamless, so you can go from deposit to spin in under a minute.
+          Once your wallet is connected, you&apos;re usually just a few taps away from playing. Mobile casinos aim to make things seamless, so you can go from deposit to spin in under a minute.
         </p>
         <ul className="list-disc list-inside space-y-2">
           <li>Connect wallet, claim bonus, and play. No extra steps.</li>
@@ -131,12 +132,12 @@ export default function MobileCryptoGamblingPage() {
       {/* Call to Action */}
       <section className="text-center">
         <p className="text-lg text-white/80 mb-4">Discover casinos with top mobile experiences</p>
-        <a
+        <Link
           href="/crypto-casino-reviews"
           className="inline-block bg-yellow-400 text-black font-bold px-6 py-3 rounded-xl hover:bg-yellow-300 transition shadow-lg"
         >
           📲 Browse Mobile-Friendly Casinos
-        </a>
+        </Link>
       </section>
     </div>
   );

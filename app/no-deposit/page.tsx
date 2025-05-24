@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { casinos } from '@/data/casinosData';
@@ -81,7 +82,7 @@ export default function NoDepositPage() {
         </div>
         {/* MASCOT */}
         <div className="absolute right-8 bottom-8 hidden lg:block pointer-events-none select-none opacity-90">
-          <img src="/logos/crypto-mascot.png" alt="Crypto Casino Mascot" width={120} height={120} className="drop-shadow-xl" />
+          <Image src="/logos/crypto-mascot.png" alt="Crypto Casino Mascot" width={120} height={120} className="drop-shadow-xl" />
         </div>
       </div>
     </div>

@@ -31,6 +31,7 @@ export const generateMetadata = (): Metadata => {
 };
 
 import React from "react";
+import Image from "next/image";
 
 const data = {
   introduction: `Betzard Casino is a rising star in the online gaming world, offering a vibrant platform with a focus on both casino games and sports betting. Known for its modern interface and wide array of payment options, Betzard caters to players seeking variety and convenience. The casino is fully licensed and places a strong emphasis on player safety and fair play.`,

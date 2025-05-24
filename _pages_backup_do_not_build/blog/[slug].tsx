@@ -1,5 +1,6 @@
 /// <reference types="react" />
 import React from "react";
+import Image from "next/image";
 import { blogPosts } from "@/data/blogPosts";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -267,7 +268,7 @@ export default function BlogPost() {
       <main className="max-w-3xl mx-auto px-4 py-12 text-white">
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
         <div className="text-xs text-gray-400 mb-4">{post.date} • {post.author}</div>
-        <img src={post.cover} alt={post.title} className="w-full h-64 object-cover rounded mb-6" />
+        <Image src={post.cover} alt={post.title} width={800} height={256} className="w-full h-64 object-cover rounded mb-6" />
         <article className="prose prose-invert max-w-none">
           {articleContent[post.slug as string] || <p className="text-lg text-gray-200">[Full article coming soon]</p>}
         </article>

@@ -50,6 +50,24 @@ const Footer: React.FC = () => {
           Start Playing
         </Link>
       </div>
+      <div className="mt-4">
+        <a
+          href="https://certify.gpwa.org/verify/crypto-online-casino.com/"
+          onClick={() => window?.GPWAverificationPopup?.(window.document.getElementById('GPWAseal'))}
+          id="GPWAseal"
+        >
+          <img
+            src="https://certify.gpwa.org/seal/crypto-online-casino.com/"
+            alt="GPWA Approved Seal"
+            style={{ border: 0 }}
+            onError={(e) => {
+              const img = e.target as HTMLImageElement;
+              img.width = 0;
+              img.height = 0;
+            }}
+          />
+        </a>
+      </div>
     </footer>
   );
 };

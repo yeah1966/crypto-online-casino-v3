@@ -31,6 +31,7 @@ export const generateMetadata = (): Metadata => {
 };
 
 import React from "react";
+import Image from "next/image";
 
 const data = {
   introduction: `Crown Slots is a modern online casino that combines a regal theme with a huge selection of slots and table games. Licensed and secure, Crown Slots is popular for its user-friendly interface, regular promotions, and fast payouts.`,
@@ -90,10 +91,10 @@ export default function CrownSlotsPage() {
     <section id="first-impressions" className="mb-8">
       <h2 className="text-2xl font-bold mb-4">First Impressions</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-        <img src="/screenshots/crownslots1.jpg" alt="Screenshot 1" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
-        <img src="/screenshots/crownslots2.jpg" alt="Screenshot 2" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
-        <img src="/screenshots/crownslots3.jpg" alt="Screenshot 3" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
-        <img src="/screenshots/crownslots4.jpg" alt="Screenshot 4" className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <Image src="/screenshots/crownslots1.jpg" alt="Screenshot 1" width={640} height={160} className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <Image src="/screenshots/crownslots2.jpg" alt="Screenshot 2" width={640} height={160} className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <Image src="/screenshots/crownslots3.jpg" alt="Screenshot 3" width={640} height={160} className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
+        <Image src="/screenshots/crownslots4.jpg" alt="Screenshot 4" width={640} height={160} className="rounded-xl shadow-[0_0_12px_#ff00ff66] object-cover h-40 w-full transition-all duration-300 ease-in-out hover:scale-105" />
       </div>
       <div className="text-center text-sm text-gray-300 mt-2">
         Screenshots are indicative and show what a typical Crown Slots experience looks like.
@@ -104,12 +105,12 @@ export default function CrownSlotsPage() {
     <div className="bg-gradient-to-r from-purple-900 to-purple-700 border-2 border-pink-500 shadow-[0_0_20px_#ff00ff] rounded-xl px-6 py-4 mb-8 grid grid-cols-1 sm:grid-cols-3 items-center">
       {/* Logo left */}
       <div className="flex justify-start items-center mb-4 sm:mb-0">
-        <img src="/logos/crownslots.png" alt="Crown Slots logo" className="w-16 h-auto mr-4" />
+        <Image src="/logos/crownslots.png" alt="Crown Slots logo" width={64} height={64} className="w-16 h-auto mr-4" />
       </div>
       {/* Title centered */}
       <div className="flex justify-center items-center">
         <h2 className="text-4xl font-bold text-white text-center">CROWN SLOTS REVIEW</h2>
-        <img src="/mascot.png" alt="Mascot" className="w-16 h-16 ml-4 animate-pulse" />
+        <Image src="/mascot.png" alt="Mascot" width={64} height={64} className="w-16 h-16 ml-4 animate-pulse" />
       </div>
       {/* Button right */}
       <div className="flex justify-end items-center mt-4 sm:mt-0">
@@ -127,7 +128,7 @@ export default function CrownSlotsPage() {
     {/* Info grid */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
       <section id="introduction" className="bg-gradient-to-br from-[#0a0f40] to-[#1a2c8b] border-2 border-yellow-400 rounded-xl p-6 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-[1.03] hover:shadow-[0_0_20px_#ff00ff55] transition-all duration-300 ease-in-out">
-        <img src="/casino-icons/Crown.svg" alt="Crown icon" className="w-14 h-14 mb-2" />
+        <Image src="/casino-icons/Crown.svg" alt="Crown icon" width={56} height={56} className="w-14 h-14 mb-2" />
         <h3 className="text-yellow-400 text-lg font-semibold mb-2">Introduction</h3>
         <p className="text-white">{data.introduction}</p>
       </section>

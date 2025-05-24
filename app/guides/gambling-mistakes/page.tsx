@@ -83,7 +83,7 @@ export default function GamblingMistakesGuide() {
           <div className="bg-[#181826]/80 rounded-lg p-6 border-l-4 border-red-500 shadow-md">
             <h2 className="text-2xl font-bold text-red-400 mb-2 flex items-center gap-2">🚩 1. Chasing Losses</h2>
             <p className="text-white/80 text-base md:text-lg">
-              It’s tempting to bet bigger after a loss, thinking you'll "win it back." But that mindset leads to emotional gambling — and emptier wallets.
+              It’s tempting to bet bigger after a loss, thinking you&apos;ll &quot;win it back.&quot; But that mindset leads to emotional gambling — and emptier wallets.
             </p>
           </div>
           <div className="bg-[#181826]/80 rounded-lg p-6 border-l-4 border-pink-400 shadow-md">
@@ -95,7 +95,7 @@ export default function GamblingMistakesGuide() {
           <div className="bg-[#181826]/80 rounded-lg p-6 border-l-4 border-blue-400 shadow-md">
             <h2 className="text-2xl font-bold text-blue-400 mb-2 flex items-center gap-2">🧾 3. Not Verifying Casino Reputation</h2>
             <p className="text-white/80 text-base md:text-lg">
-              If the casino’s name doesn't show up on Trustpilot, Reddit, or Bitcointalk — be cautious. A shiny homepage doesn’t equal trust.
+              If the casino’s name doesn&apos;t show up on Trustpilot, Reddit, or Bitcointalk — be cautious. A shiny homepage doesn&apos;t equal trust.
             </p>
           </div>
           <div className="bg-[#181826]/80 rounded-lg p-6 border-l-4 border-purple-400 shadow-md">

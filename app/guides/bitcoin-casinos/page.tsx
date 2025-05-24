@@ -123,7 +123,7 @@ export default function BestBitcoinCasinos() {
       <section className="mb-8">
         <h2 className="text-2xl font-bold text-yellow-400 mb-2">Why Bitcoin Casinos Are Still King</h2>
         <p className="text-white/90 mb-2">
-          Bitcoin remains the most widely used cryptocurrency in online gambling. It's fast, borderless, and doesn't rely on banks or third parties. That’s why many top casinos continue to support and promote BTC payments.
+          Bitcoin remains the most widely used cryptocurrency in online gambling. It&apos;s fast, borderless, and doesn&apos;t rely on banks or third parties. That&apos;s why many top casinos continue to support and promote BTC payments.
         </p>
         <ul className="ml-6 text-white/90 mt-2 space-y-1">
           <li className="flex items-center gap-2"><span className="text-yellow-400">⚡️</span> Instant deposits and fast withdrawals</li>

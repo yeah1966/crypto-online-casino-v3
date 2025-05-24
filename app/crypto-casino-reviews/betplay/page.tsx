@@ -31,6 +31,7 @@ export const generateMetadata = (): Metadata => {
 };
 
 import React from "react";
+import Image from "next/image";
 
 const data = {
   introduction: `BetPlay Casino is a popular online gaming platform known for its strong presence in Latin America and its focus on both sports betting and casino games. With a user-friendly interface, BetPlay offers a seamless experience for new and seasoned players alike. The site is fully licensed and provides a safe, regulated environment for all users.`,

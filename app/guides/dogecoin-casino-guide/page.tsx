@@ -71,7 +71,7 @@ const dogeCasinos = [
   },
 ];
 
-const stepIcons = ['👛', '💵', '🏆', '💸', '🎰'];
+// Removed unused variable stepIcons'👛', '💵', '🏆', '💸', '🎰'];
 
 export default function DogecoinCasinoGuide() {
   return (
@@ -143,7 +143,7 @@ export default function DogecoinCasinoGuide() {
         <section id="casino-list" className="space-y-6 mb-8">
           <h2 className="text-2xl font-bold mb-2 text-orange-400 uppercase tracking-wide">Top DOGE Casinos to Try in 2025</h2>
           <div className="bg-orange-900/60 rounded-xl p-4 shadow-lg flex flex-col gap-4 mt-6">
-            {dogeCasinos.map((casino, i) => (
+            {dogeCasinos.map((casino) => (
               <div key={casino.name} className="flex items-center gap-4 bg-orange-800/40 rounded-lg p-3 hover:shadow-2xl transition-all">
                 <Image src={casino.logo} alt={`${casino.name} logo`} width={48} height={48} className="rounded-full shadow-md bg-white/90" />
                 <div className="flex-1">
@@ -187,13 +187,13 @@ export default function DogecoinCasinoGuide() {
         </section>
         {/* CTA + Internal links */}
         <div className="flex justify-center mt-10 mb-8">
-          <a
+          <Link
             href="/crypto-casino-reviews"
             className="font-bold text-lg px-7 py-3 rounded-full bg-gradient-to-r from-orange-300 via-orange-400 to-orange-500 shadow-lg border-2 border-white/80 drop-shadow-xl hover:scale-105 hover:shadow-orange-400/60 transition-all focus:outline-none"
             style={{ boxShadow: '0 0 12px 2px #fdba74, 0 0 32px 4px #fb923c' }}
           >
             View All Crypto Casino Reviews
-          </a>
+          </Link>
         </div>
         <div className="mb-12 mt-6 flex flex-col md:flex-row gap-3 justify-center items-center">
           <span className="text-white/80 font-semibold">See also:</span>

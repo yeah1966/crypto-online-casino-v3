@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
@@ -74,7 +74,7 @@ export default function ProvablyFairGuide() {
               Why Does It Matter?
             </h2>
             <ul className="list-disc ml-6 text-white/90 mt-2">
-              <li className="flex items-center gap-2 mb-1"><Image src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />Ensures you’re not being cheated</li>
+              <li className="flex items-center gap-2 mb-1"><Image src="/icons/bolt.svg" alt="Bolt" width={18} height={18} />Ensures you&apos;re not being cheated</li>
               <li className="flex items-center gap-2 mb-1"><Image src="/casino-icons/Lock.svg" alt="Lock" width={18} height={18} />Restores trust in online gambling</li>
               <li className="flex items-center gap-2 mb-1"><Image src="/icons/shib.svg" alt="Privacy" width={18} height={18} />Total transparency for players</li>
             </ul>
@@ -83,7 +83,7 @@ export default function ProvablyFairGuide() {
           <section ref={refs.where} className="rounded-2xl border border-blue-400/30 bg-black/80 p-5 shadow-lg flex flex-col gap-2">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-2 text-blue-600">
               <Image src="/casino-icons/Poker Chip.svg" alt="Where" width={32} height={32} />
-              Where You'll See Provably Fair
+              Where You&apos;ll See Provably Fair
             </h2>
             <ul className="list-disc ml-6 text-white/90 mt-2">
               <li className="flex items-center gap-2 mb-1"><Image src="/casino-icons/Roulette Wheel.svg" alt="Roulette" width={18} height={18} />Crypto roulette, dice, blackjack</li>

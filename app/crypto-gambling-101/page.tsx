@@ -178,7 +178,7 @@ export default function CryptoGambling101Page() {
           <span role="img" aria-label="gear">⚙️</span> How Crypto Gambling Works
         </h2>
         <p className="mb-6 text-white/90">
-          Crypto gambling may seem complex at first, but it's built on a few simple principles that make it faster, more private, and borderless compared to traditional online casinos.
+          Crypto gambling may seem complex at first, but it&apos;s built on a few simple principles that make it faster, more private, and borderless compared to traditional online casinos.
         </p>
         <div className="flex justify-center my-8">
           <Image

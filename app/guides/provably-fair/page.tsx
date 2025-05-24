@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: "Provably Fair Gambling – How Blockchain Proves Casino Fairness",
@@ -76,9 +77,9 @@ export default function ProvablyFairPage() {
           Tired of trusting casinos blindly? Provably fair gambling lets you verify every outcome instantly. This crypto-native innovation is changing the game for players who want real transparency.
         </p>
 
-        <h2 className="text-2xl font-semibold text-pink-400">🔐 What Does "Provably Fair" Mean?</h2>
+        <h2 className="text-2xl font-semibold text-pink-400">🔐 What Does &quot;Provably Fair&quot; Mean?</h2>
         <p>
-          "Provably fair" is a cryptographic system that proves the fairness of each result without relying on a central authority. It is transparent, verifiable, and decentralized, making it ideal for crypto gambling.
+          &quot;Provably fair&quot; is a cryptographic system that proves the fairness of each result without relying on a central authority. It is transparent, verifiable, and decentralized, making it ideal for crypto gambling.
         </p>
 
         <h2 className="text-2xl font-semibold text-pink-400">⚙️ How It Works</h2>
@@ -104,7 +105,7 @@ export default function ProvablyFairPage() {
 
         <h2 className="text-2xl font-semibold text-pink-400">🧠 What to Watch Out For</h2>
         <p>
-          Not all casinos implement this feature properly. Some label games as "provably fair" but provide no tools to verify results.
+          Not all casinos implement this feature properly. Some label games as &quot;provably fair&quot; but provide no tools to verify results.
         </p>
         <ul className="list-disc list-inside space-y-2">
           <li>Make sure the site actually provides hash and seed data</li>
@@ -127,12 +128,12 @@ export default function ProvablyFairPage() {
       {/* Call to Action */}
       <section className="text-center">
         <p className="text-lg text-white/80 mb-4">Want to gamble with total transparency?</p>
-        <a
+        <Link
           href="/crypto-casino-reviews"
           className="inline-block bg-yellow-400 text-black font-bold px-6 py-3 rounded-xl hover:bg-yellow-300 transition shadow-lg"
         >
           🔍 Explore Provably Fair Casinos
-        </a>
+        </Link>
       </section>
     </div>
   );

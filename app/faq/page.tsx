@@ -76,7 +76,7 @@ export default function FAQPage() {
             <h2 className="text-3xl font-bold text-yellow-300 mb-6 mt-12">Troubleshooting</h2>
             <div className="space-y-6 max-w-2xl mx-auto">
               <GlowCard icon="/casino-icons/Warning.svg" title="MY TRANSACTION IS STUCK. WHAT DO I DO?">
-                Check the blockchain explorer for confirmation. If it's pending, wait a few more minutes. If it's failed, contact support with your transaction ID (TXID).
+                Check the blockchain explorer for confirmation. If it&apos;s pending, wait a few more minutes. If it&apos;s failed, contact support with your transaction ID (TXID).
               </GlowCard>
               <GlowCard icon="/casino-icons/Blocked.svg" title="WHY WAS MY COUNTRY BLOCKED?">
                 Some regions are geo-restricted due to local laws. Use a VPN at your own risk if you choose to bypass restrictions.

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Crypto Wallets for Gambling – Best Wallets for BTC, ETH, USDT",
@@ -119,12 +120,12 @@ export default function CryptoWalletsPage() {
       {/* Call to Action */}
       <section className="text-center">
         <p className="text-lg text-white/80 mb-4">Ready to play with your favorite crypto wallet?</p>
-        <a
+        <Link
           href="/crypto-casino-reviews"
           className="inline-block bg-yellow-400 text-black font-bold px-6 py-3 rounded-xl hover:bg-yellow-300 transition shadow-lg"
         >
           🎰 View Compatible Crypto Casinos
-        </a>
+        </Link>
       </section>
     </div>
   );

@@ -1,3 +1,5 @@
+import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import CasinoSuggestions from "@/components/CasinoSuggestions";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -70,7 +72,7 @@ export default function CoolCatCasinoReview() {
           <div className="flex flex-col md:flex-row items-center md:items-start mb-6 gap-6">
             {/* Linkerkant: logo, rating, naam, button */}
             <div className="flex flex-col items-center md:items-start gap-2 min-w-[180px] md:min-w-[220px]">
-              <img src="/logos/coolcatcasino.png" alt="Cool Cat Casino Logo" width={96} height={96} className="rounded-xl bg-white shadow-lg mb-1" />
+              <Image src="/logos/coolcatcasino.png" alt="Cool Cat Casino Logo" width={96} height={96} className="rounded-xl bg-white shadow-lg mb-1" />
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-yellow-300 text-2xl">★★★★☆</span>
                 <span className="text-white/70 text-sm">3.8/5</span>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: "How to Withdraw Crypto Winnings – Fast & Safe Payouts",
@@ -73,12 +74,12 @@ export default function WithdrawalsPage() {
         />
         <p>
           Crypto withdrawals can be fast, but only if you follow the right steps — this guide shows you how to cash out like a pro.<br/>
-          You've had a lucky streak and now it's time to cash out. Withdrawing your crypto winnings from an online casino is usually fast — but only if you follow the right steps.
+          You&apos;ve had a lucky streak and now it&apos;s time to cash out. Withdrawing your crypto winnings from an online casino is usually fast — but only if you follow the right steps.
         </p>
 
         <h2 className="text-2xl font-semibold text-pink-400">🔐 Step 1: Verify Your Wallet</h2>
         <p>
-          Make sure the wallet address you're withdrawing to is correct and under your control. Most casinos let you use:
+          Make sure the wallet address you&apos;re withdrawing to is correct and under your control. Most casinos let you use:
         </p>
         <ul className="list-disc list-inside space-y-2">
           <li>🦊 MetaMask (ETH, tokens)</li>
@@ -137,12 +138,12 @@ export default function WithdrawalsPage() {
       {/* Call to Action */}
       <section className="text-center">
         <p className="text-lg text-white/80 mb-4">Looking for fast-payout crypto casinos?</p>
-        <a
+        <Link
           href="/crypto-casino-reviews"
           className="inline-block bg-yellow-400 text-black font-bold px-6 py-3 rounded-xl hover:bg-yellow-300 transition shadow-lg"
         >
           🚀 View Top-Rated Casinos
-        </a>
+        </Link>
       </section>
     </div>
   );

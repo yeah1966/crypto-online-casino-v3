@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Top10Page() {
   // Achtergrond
@@ -260,21 +261,21 @@ export default function Top10Page() {
                 ))}
               </div>
               <div className="flex flex-col gap-2 items-center md:items-end min-w-[180px]">
-                <a
+                <Link
                   href={casino.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-gradient-to-r from-yellow-400 to-pink-500 text-black font-bold px-7 py-3 rounded-full text-lg shadow-lg hover:scale-105 hover:shadow-yellow-400/60 transition flex justify-center items-center text-center"
                 >
                   Visit Casino
-                </a>
+                </Link>
                 {casino.hasReview && (
-                  <a
+                  <Link
                     href={`/reviews/${casino.slug}`}
                     className="inline-block bg-gradient-to-r from-purple-400 to-yellow-400 text-black font-bold px-7 py-3 rounded-full text-lg shadow-lg hover:scale-105 hover:shadow-purple-400/60 transition flex justify-center items-center text-center mt-3"
                   >
                     Read Review
-                  </a>
+                  </Link>
                 )}
               </div>
             </section>
@@ -308,22 +309,22 @@ export default function Top10Page() {
                   ))}
                 </div>
                 <div className="flex flex-col gap-2 items-center md:items-end min-w-[180px]">
-                  <a
+                  <Link
                     href={casino.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-gradient-to-r from-yellow-400 to-pink-500 text-black font-bold px-7 py-3 rounded-full text-lg shadow-lg hover:scale-105 hover:shadow-yellow-400/60 transition flex justify-center items-center text-center"
                   >
                     Visit Casino
-                  </a>
+                  </Link>
                   {casino.hasReview && (
-                    <a
-                      href={`/reviews/${casino.slug}`}
-                      className="inline-block bg-gradient-to-r from-purple-400 to-yellow-400 text-black font-bold px-7 py-3 rounded-full text-lg shadow-lg hover:scale-105 hover:shadow-purple-400/60 transition flex justify-center items-center text-center mt-3"
-                    >
-                      Read Review
-                    </a>
-                  )}
+  <Link
+    href={`/reviews/${casino.slug}`}
+    className="inline-block bg-gradient-to-r from-purple-400 to-yellow-400 text-black font-bold px-7 py-3 rounded-full text-lg shadow-lg hover:scale-105 hover:shadow-purple-400/60 transition flex justify-center items-center text-center mt-3"
+  >
+    Read Review
+  </Link>
+)}
                 </div>
               </section>
             ))}
