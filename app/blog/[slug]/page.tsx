@@ -6,7 +6,7 @@ import fs from "fs/promises";
 import matter from "gray-matter";
 import { marked } from "marked";
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const blogPath = path.join(process.cwd(), "app", "blog");
   const entries = await fs.readdir(blogPath, { withFileTypes: true });
 
