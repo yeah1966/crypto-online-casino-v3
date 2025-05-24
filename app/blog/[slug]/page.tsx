@@ -42,6 +42,7 @@ export default async function BlogPostPage(
 
   try {
     const file = await fs.readFile(filePath, "utf8");
+    console.log("✅ post.mdx gevonden en gelezen op pad:", filePath);
     const { content, data } = matter(file);
 
     const compiledHtml = typeof marked === 'function' ? marked(content) : '';
@@ -213,7 +214,8 @@ const blocks: Block[] = [];
         </div>
       </div>
     );
-  } catch {
+  } catch (err) {
+    console.error("❌ Fout bij lezen van post.mdx op pad:", filePath, err);
     return notFound();
   }
 }
