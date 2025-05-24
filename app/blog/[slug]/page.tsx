@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { Metadata } from 'next';
+import { InferGetStaticPropsType } from 'next';
 
 type Props = {
   params: {
@@ -9,7 +10,7 @@ type Props = {
   };
 };
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<Props['params'][]> {
   const blogDir = path.join(process.cwd(), 'blog');
   const files = fs.readdirSync(blogDir);
 
@@ -18,7 +19,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const { slug } = params;
   const filePath = path.join(process.cwd(), 'blog', `${slug}.mdx`);
   const fileContent = fs.readFileSync(filePath, 'utf-8');
