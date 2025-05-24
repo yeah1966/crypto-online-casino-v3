@@ -6,6 +6,18 @@ import fs from "fs/promises";
 import matter from "gray-matter";
 import { marked } from "marked";
 
+export async function generateStaticParams() {
+  const blogPath = path.join(process.cwd(), "app", "blog");
+  const entries = await fs.readdir(blogPath, { withFileTypes: true });
+
+  const slugs = entries
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => ({ slug: entry.name }));
+
+  return slugs;
+}
+
+
 export async function generateMetadata({ params: { slug } }: { params: { slug: string } }) {
   const filePath = path.join(process.cwd(), "app", "blog", slug, "post.mdx");
 
