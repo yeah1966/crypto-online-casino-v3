@@ -1,45 +1,27 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 type Props = {
-  params: { slug: string };
+  params: {
+    slug: string;
+  };
 };
 
-// ✅ Voor dynamic routing
-export async function generateStaticParams() {
-  // Later vervangen door echte slugs uit je /blog-map
-  return [];
-}
-
-// ✅ SEO metadata genereren
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
+export default async function Page({ params }: Props) {
   const { slug } = params;
-  const filePath = path.join(process.cwd(), 'blog', `${slug}.mdx`);
-  const fileContent = fs.readFileSync(filePath, 'utf-8');
-  const { data } = matter(fileContent);
 
-  return {
-    title: data.title || 'Blog Post',
-    description: data.description || '',
-  };
-}
-
-// ✅ MDX-rendering
-export default function Page({ params }: Props) {
-  const { slug } = params;
-  const filePath = path.join(process.cwd(), 'blog', `${slug}.mdx`);
-  const fileContent = fs.readFileSync(filePath, 'utf-8');
-  const { content } = matter(fileContent);
+  // Fallback content — pas aan zoals jij wilt
+  if (!slug) {
+    notFound();
+  }
 
   return (
-    <div className="prose prose-invert max-w-4xl mx-auto px-4 py-10">
-      <article dangerouslySetInnerHTML={{ __html: content }} />
+    <div className="p-6 text-white">
+      <h1 className="text-3xl font-bold mb-4">Blog: {slug}</h1>
+      <p>This is a dynamic blog page for: {slug}</p>
     </div>
   );
+}
+
+export async function generateStaticParams() {
+  return [];
 }
