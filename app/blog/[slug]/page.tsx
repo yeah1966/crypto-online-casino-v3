@@ -11,7 +11,7 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const entries = await fs.readdir(blogPath, { withFileTypes: true });
 
   const slugs = entries
-    .filter((entry) => entry.isDirectory())
+    .filter((entry) => entry.isDirectory() && entry.name !== "[slug]")
     .map((entry) => ({ slug: entry.name }));
 
   return slugs;
