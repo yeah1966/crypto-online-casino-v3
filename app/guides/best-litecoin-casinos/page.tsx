@@ -143,7 +143,7 @@ export default function BestLitecoinCasinos() {
         <section id="casino-list" className="space-y-6 mb-8">
           <h2 className="text-2xl font-bold mb-2 text-blue-400">Top Litecoin Casinos to Try in 2025</h2>
           <div className="bg-purple-900/80 rounded-xl p-4 shadow-lg flex flex-col gap-4 mt-6">
-            {casinos.map((casino, i) => (
+            {casinos.map((casino) => (
               <div key={casino.name} className="flex items-center gap-4 bg-purple-800/60 rounded-lg p-3 hover:shadow-2xl transition-all">
                 <Image src={casino.logo} alt={`${casino.name} logo`} width={48} height={48} className="rounded-full shadow-md bg-white/90" />
                 <div className="flex-1">
