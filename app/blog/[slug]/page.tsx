@@ -17,9 +17,10 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return slugs;
 }
 
-
-export async function generateMetadata({ params: { slug } }: { params: { slug: string } }) {
-  const filePath = path.join(process.cwd(), "app", "blog", slug, "post.mdx");
+export async function generateMetadata(
+  { params }: { params: { slug: string } }
+) {
+  const filePath = path.join(process.cwd(), "app", "blog", params.slug, "post.mdx");
 
   try {
     const file = await fs.readFile(filePath, "utf8");
@@ -34,8 +35,10 @@ export async function generateMetadata({ params: { slug } }: { params: { slug: s
   }
 }
 
-export default async function BlogPostPage({ params: { slug } }: { params: { slug: string } }) {
-  const filePath = path.join(process.cwd(), "app", "blog", slug, "post.mdx");
+export default async function BlogPostPage(
+  { params }: { params: { slug: string } }
+) {
+  const filePath = path.join(process.cwd(), "app", "blog", params.slug, "post.mdx");
 
   try {
     const file = await fs.readFile(filePath, "utf8");
