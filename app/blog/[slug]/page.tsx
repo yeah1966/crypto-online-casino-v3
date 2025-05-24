@@ -64,6 +64,30 @@ export default async function BlogPostPage(
             {typeof data.date === 'string' ? data.date : (data.date instanceof Date ? data.date.toLocaleDateString() : String(data.date))}
           </p>
         </div>
+        {/* Blog meta info */}
+        <div className="flex flex-col items-center mb-6">
+          <div className="bg-fuchsia-950/80 px-4 py-2 rounded-full text-yellow-200 font-bold text-lg mb-2 border border-fuchsia-400/40">
+            {data.date || ""}
+          </div>
+          {data.highlight && (
+            <div className="bg-fuchsia-900/80 px-6 py-3 rounded-2xl text-yellow-100 font-medium text-md text-center border border-fuchsia-400/20 max-w-2xl mb-2">
+              ✨ <span className="font-bold">Highlight</span><br />
+              {data.highlight}
+            </div>
+          )}
+        </div>
+
+        {/* Blog excerpt */}
+        {data.excerpt && (
+          <div className="bg-fuchsia-900/70 px-6 py-3 rounded-2xl text-yellow-100 font-semibold text-md mb-8 border border-fuchsia-400/10 max-w-2xl mx-auto">
+            <span className="text-yellow-300">🗝️ {data.title}</span><br />
+            {data.excerpt}
+          </div>
+        )}
+
+        {/* Blog body/content */}
+        <div className="prose prose-invert mx-auto mt-8" dangerouslySetInnerHTML={{ __html: compiledHtml }} />
+
         {/* Highlight Card */}
         {data.description && (
           <div className="mb-8 bg-gradient-to-br from-purple-800 via-violet-900 to-fuchsia-900 rounded-xl shadow-lg border border-fuchsia-400/30 p-5 text-center">
