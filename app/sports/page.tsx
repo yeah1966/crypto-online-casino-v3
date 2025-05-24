@@ -21,12 +21,16 @@ export default function SportsbettingPage() {
           <Image
             src="/favicon-180.png"
             alt="Crypto Casino Mascot"
+            width={64}
+            height={64}
             className="hidden md:block absolute bottom-6 right-6 w-16 h-16 drop-shadow-xl z-20 pointer-events-none select-none"
             style={{ borderRadius: '22%' }}
           />
           <Image
             src="/favicon-64.png"
             alt="Crypto Casino Mascot"
+            width={40}
+            height={40}
             className="block md:hidden absolute bottom-4 right-4 w-10 h-10 drop-shadow-xl z-20 pointer-events-none select-none"
             style={{ borderRadius: '22%' }}
           />

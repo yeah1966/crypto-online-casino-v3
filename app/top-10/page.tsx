@@ -215,7 +215,7 @@ export default function Top10Page() {
               <div className="flex flex-col items-center md:items-start min-w-[120px]">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-4xl font-extrabold text-yellow-300 drop-shadow border-4 border-yellow-400 bg-black/70 rounded-full px-5 py-2">{casino.rank}</span>
-                  <Image src={casino.logo} alt={casino.name} className="w-16 h-16 rounded-2xl border-2 border-white/80 bg-white/40 shadow-lg" />
+                  <Image src={casino.logo} alt={casino.name} width={64} height={64} className="w-16 h-16 rounded-2xl border-2 border-white/80 bg-white/40 shadow-lg" />
                 </div>
                 <span className="font-bold text-xl text-yellow-200 mb-1 text-center md:text-left tracking-wide">{casino.name}</span>
               </div>

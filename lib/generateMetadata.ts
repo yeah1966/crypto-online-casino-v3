@@ -42,7 +42,7 @@ export function generateCasinoMetadata(slug: string): Metadata {
   };
 }
 
-import type { Metadata } from "next";
+
 
 export function generateGuideMetadata(slug: string): Metadata {
   // Titel netjes opbouwen

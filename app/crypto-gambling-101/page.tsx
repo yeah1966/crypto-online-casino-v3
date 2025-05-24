@@ -1,3 +1,6 @@
+import React from "react";
+import Image from 'next/image';
+
 export const generateMetadata = () => ({
   title: 'Crypto Gambling 101 – Best Crypto Casinos, How It Works & FAQ (2025)',
   description: 'Crypto Gambling 101: Discover how crypto casinos work, the best Bitcoin & Ethereum gambling sites, and get answers to all your crypto gambling questions. Start playing safely!',
