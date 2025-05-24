@@ -23,7 +23,7 @@ export const metadata = {
     images: ["/images/crypto-the-favorite-payment-option.webp"],
   },
   alternates: {
-    canonical: "https://crypto-online-casino.com/blog/crypto-favorite-payment",
+    canonical: "https://crypto-online-casino.com/blog/why-crypto-favorite-payment-option",
   },
 };
 
